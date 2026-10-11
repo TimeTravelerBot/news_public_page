@@ -1,1 +1,206 @@
-<h1>ADS News</h1><p>placeholder</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberShaman — Decoding the Digital Frontier</title>
+  <meta name="description" content="CyberShaman covers cybersecurity, AI, and the tech that shapes the future. Sharp analysis, clear explainers, and what it means for you.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="CyberShaman — Decoding the Digital Frontier">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CyberShaman">
+  <meta property="og:locale" content="en_US">
+  <meta name="theme-color" content="#07090d">
+  <link rel="canonical" href="https://cybershaman.example/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- ===== Top bar ===== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="topbar__flash">⚡ Breaking: <a class="topbar__link" href="#">A zero-day in a major password manager is being actively exploited</a></span>
+      <span class="topbar__date" id="today-date"></span>
+    </div>
+  </div>
+
+  <!-- ===== Header / nav ===== -->
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="/" aria-label="CyberShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M16 2 29 8v9c0 8-6 13-13 15C9 30 3 25 3 17V8l13-6z" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M16 9v14M9 16h14" stroke="var(--accent-2)" stroke-width="2"/>
+          </svg>
+        </span>
+        Cyber<span class="brand__accent">Shaman</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#trending">Trending</a>
+        <a href="#cyber">Cybersecurity</a>
+        <a href="#ai">AI &amp; Tech</a>
+        <a href="#hardware">Hardware</a>
+        <a href="#explain">Explainers</a>
+        <a class="nav__btn" href="#subscribe">Subscribe</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="eyebrow">Security · AI · Hardware · The Future</span>
+        <h1 class="hero__title">Decoding the<br><span class="grad">Digital Frontier</span></h1>
+        <p class="hero__sub">Sharp reporting and clear analysis on the threats, technologies, and hardware reshaping the world — plus what it actually means for you.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#trending">Latest Stories</a>
+          <a class="btn btn--ghost" href="#subscribe">Get the Newsletter</a>
+        </div>
+        <ul class="hero__stats" aria-label="Site stats">
+          <li><strong>48k+</strong><span>monthly readers</span></li>
+          <li><strong>6</strong><span>daily feeds tracked</span></li>
+          <li><strong>0</strong><span>ads that bother you</span></li>
+        </ul>
+      </div>
+      <div class="hero__panel" aria-hidden="true">
+        <div class="scan">
+          <div class="scan__bar"></div>
+          <div class="scan__rows">
+            <div style="width:92%"></div>
+            <div style="width:64%"></div>
+            <div style="width:81%"></div>
+            <div style="width:47%"></div>
+            <div style="width:73%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Trending grid (data-driven) ===== -->
+  <section class="section" id="trending">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="eyebrow">On now</span>
+          <h2 class="section__title">Trending This Week</h2>
+        </div>
+        <a class="section__more" href="#">View all →</a>
+      </div>
+      <div class="grid" id="trending-grid" data-limit="6" data-feature="true">
+        <!-- populated by assets/js/articles.js + render.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Category sections (data-driven) ===== -->
+  <section class="section section--alt" id="cyber">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="eyebrow">Category</span>
+          <h2 class="section__title">Cybersecurity</h2>
+        </div>
+        <a class="section__more" href="#">All security →</a>
+      </div>
+      <div class="row" data-category="cybersecurity"></div>
+    </div>
+  </section>
+
+  <section class="section" id="ai">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="eyebrow">Category</span>
+          <h2 class="section__title">AI &amp; Technology</h2>
+        </div>
+        <a class="section__more" href="#">All tech →</a>
+      </div>
+      <div class="row" data-category="tech"></div>
+    </div>
+  </section>
+
+  <!-- ===== Explainers band ===== -->
+  <section class="section section--dark" id="explain">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="eyebrow">Deep dives</span>
+          <h2 class="section__title">Explainers</h2>
+          <p class="section__intro">No-hassle breakdowns of the terms you keep seeing, written for humans.</p>
+        </div>
+      </div>
+      <div class="cards" data-category="explainer"></div>
+    </div>
+  </section>
+
+  <!-- ===== Subscribe ===== -->
+  <section class="section" id="subscribe">
+    <div class="container">
+      <div class="promo">
+        <div class="promo__text">
+          <h2 class="section__title">The signal, once a week.</h2>
+          <p class="promo__sub">The five stories that mattered, plus one practical security tip. No spam, no ads in your inbox. Unsubscribe any time.</p>
+        </div>
+        <form class="promo__form" id="subscribe-form" action="#" method="post" novalidate>
+          <input type="email" name="email" placeholder="you@domain.com" aria-label="Email address" required>
+          <button class="btn btn--primary" type="submit">Subscribe</button>
+          <p class="promo__note" id="subscribe-note"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="brand">Cyber<span class="brand__accent">Shaman</span></span>
+        <p class="site-footer__desc">Independent coverage of cybersecurity, AI, and the hardware of the future — with a plain-English "what this means for you" on every story.</p>
+      </div>
+      <div class="site-footer__col">
+        <h3>Sections</h3>
+        <a href="#">Cybersecurity</a>
+        <a href="#">AI &amp; Technology</a>
+        <a href="#">Hardware</a>
+        <a href="#">Explainers</a>
+      </div>
+      <div class="site-footer__col">
+        <h3>Site</h3>
+        <a href="#">About</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+        <a href="rss.xml">RSS</a>
+      </div>
+      <div class="site-footer__col">
+        <h3>Follow</h3>
+        <a href="#">Mastodon</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">GitHub</a>
+        <a href="rss.xml">RSS Feed</a>
+      </div>
+    </div>
+    <div class="container site-footer__bar">
+      <span>© <span id="copyright-year"></span> CyberShaman. Proof-of-concept site — content is generated for testing.</span>
+      <span class="site-footer__disclosure">
+        <strong>Disclosure:</strong> some links on this site are affiliate links. If you buy through them we may earn a commission at no extra cost to you.
+      </span>
+    </div>
+  </footer>
+
+  <!-- ===== Scripts ===== -->
+  <script src="assets/js/articles.js"></script>
+  <script src="assets/js/render.js"></script>
+</body>
+</html>
