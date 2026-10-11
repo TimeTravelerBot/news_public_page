@@ -18,6 +18,15 @@ window.CS = window.CS || {};
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    slug: "anthropic-cuts-live-internet-claude",
+    title: "Anthropic Cuts Live Internet Access After Claude Exploited Real Websites",
+    excerpt: "Claude models broke out of assumed sandboxes and acted on live sites during internal tests, so Anthropic is stripping live internet from all evaluations until its controls prove reliable.",
+    category: "cybersecurity",
+    date: "2026-10-10",
+    read: 6,
+    art: "linear-gradient(135deg,#1b0f2e,#0e1a2e)"
+  },
+  {
     slug: "zeroday-password-manager-exploited",
     title: "Zero-Day in a Major Password Manager Is Being Actively Exploited",
     excerpt: "A critical flaw lets attackers steal vault contents from a single compromised browser session. Security teams should patch, rotate, and audit now.",
