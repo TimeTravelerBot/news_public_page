@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    slug: "citrix-netscaler-zero-days-actively-exploited",
+    title: "Citrix NetScaler Zero-Days Actively Exploited: The Edge Appliances That Gate the Internet",
+    excerpt: "Citrix NetScaler ADC and Gateway devices are being exploited in the wild via two critical zero-days (88771/88772) plus a related SAML DoS (88779). There's no workaround — upgrade to the fixed build and sweep for compromise evidence.",
+    category: "cybersecurity",
+    date: "2026-10-11",
+    read: 7,
+    art: "linear-gradient(135deg,#0c2a3f,#141024)",
+    img: "assets/images/3a33efd01a6c22c5d65cdfeb825eef984fd39399d86dd4bbbf61e52ce5104c39.jpg"
+  },
+  {
     slug: "diffie-hellman-symmetric-keys-explainer",
     title: "How Diffie–Hellman Gives You a Shared Secret Without Exchanging One",
     excerpt: "The paint-mixing trick that lets two strangers derive an identical key, the discrete-log math that stops Eve, and why it still needs a signature to prove who's on the other end.",

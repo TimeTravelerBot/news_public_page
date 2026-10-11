@@ -41,7 +41,7 @@
     var excerpt = feature ? "" : '<p class="card__excerpt">' + esc(a.excerpt) + "</p>";
     return (
       '<a class="' + cls + '" href="articles/' + esc(a.slug) + '.html" data-category="' + esc(a.category) + '">' +
-      '<span class="card__art" style="--art:' + esc(a.art) + '"></span>' +
+      '<span class="card__art" style="--art:' + esc(a.art) + (a.img ? "';background-image:url('" + a.img + "');background-size:cover;background-position:center" : "") + '></span>' +
       tag +
       '<h3 class="card__title">' + esc(a.title) + "</h3>" +
       (feature ? '<p class="card__excerpt">' + esc(a.excerpt) + "</p>" : excerpt) +
