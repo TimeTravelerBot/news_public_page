@@ -34,7 +34,7 @@ window.CS.ARTICLES = [
     excerpt: "Citrix NetScaler ADC and Gateway devices are being exploited in the wild via two critical zero-days (88771/88772) plus a related SAML DoS (88779). There's no workaround — upgrade to the fixed build and sweep for compromise evidence.",
     category: "cybersecurity",
     date: "2026-10-11",
-    read: 7,
+    read: 5,
     art: "linear-gradient(135deg,#0c2a3f,#141024)",
     img: "assets/images/3a33efd01a6c22c5d65cdfeb825eef984fd39399d86dd4bbbf61e52ce5104c39.jpg"
   },
