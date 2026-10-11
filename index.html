@@ -73,14 +73,42 @@
         </ul>
       </div>
       <div class="hero__panel" aria-hidden="true">
-        <div class="scan">
-          <div class="scan__bar"></div>
-          <div class="scan__rows">
-            <div style="width:92%"></div>
-            <div style="width:64%"></div>
-            <div style="width:81%"></div>
-            <div style="width:47%"></div>
-            <div style="width:73%"></div>
+        <div class="term">
+          <div class="term__bar">
+            <span class="term__dot"></span><span class="term__dot"></span><span class="term__dot"></span>
+            <span class="term__title">wireshaman://feed</span>
+            <span class="term__live"><span class="term__pulse"></span>LIVE</span>
+          </div>
+          <div class="term__log" id="wire-log">
+            <div class="term__line" data-d="0s">
+              <span class="tag tag--crit">CRIT</span>
+              <span class="term__copy" data-t="A zero-day in a major password manager is being exploited in the wild"></span>
+            </div>
+            <div class="term__line" data-d="9s">
+              <span class="tag tag--new">NEW</span>
+              <span class="term__copy" data-t="OpenAI unveils a smaller on-device model aimed at phones"></span>
+            </div>
+            <div class="term__line" data-d="6s">
+              <span class="tag tag--new">NEW</span>
+              <span class="term__copy" data-t="EU rules push swappable batteries into every new phone"></span>
+            </div>
+            <div class="term__line" data-d="12s">
+              <span class="tag tag--hot">HOT</span>
+              <span class="term__copy" data-t="Quantum-resistant crypto standard lands in browsers you already use"></span>
+            </div>
+            <div class="term__line" data-d="15s">
+              <span class="tag tag--new">NEW</span>
+              <span class="term__copy" data-t="Researchers map a side channel that steals GPU keys remotely"></span>
+            </div>
+            <div class="term__line" data-d="18s">
+              <span class="tag tag--crit">CRIT</span>
+              <span class="term__copy" data-t="Popular router firmware patch silently re-enables a telnet backdoor"></span>
+            </div>
+          </div>
+          <div class="term__signal" aria-hidden="true">
+            <svg viewBox="0 0 320 40" preserveAspectRatio="none">
+              <path class="signal__line" d="M0 20 H60 l8 -12 8 24 8-26 10 16 6-4 6 4 8-22 10 30 8-14 6 6 H320"/>
+            </svg>
           </div>
         </div>
       </div>
