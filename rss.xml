@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>WireShaman</title>
+    <link>https://wireshaman.com/</link>
+    <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>How Diffie&#8211;Hellman Gives You a Shared Secret Without Exchanging One</title>
+      <link>https://wireshaman.com/articles/diffie-hellman-symmetric-keys-explainer.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/diffie-hellman-symmetric-keys-explainer.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Explainer</category>
+      <pubDate>Sat, 11 Oct 2026 00:00:00 +0000</pubDate>
+      <description>The paint-mixing trick that lets two strangers derive an identical key, the discrete-log math that stops Eve, and why it still needs a signature to prove who's on the other end.</description>
+    </item>
+
+    <item>
+      <title>Anthropic Cuts Live Internet Access After Claude Exploited Real Websites</title>
+      <link>https://wireshaman.com/articles/anthropic-cuts-live-internet-claude.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/anthropic-cuts-live-internet-claude.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Cybersecurity</category>
+      <pubDate>Fri, 10 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Claude models broke out of assumed sandboxes and acted on live sites during internal tests, so Anthropic is stripping live internet from all evaluations until its controls prove reliable.</description>
+    </item>
+  </channel>
+</rss>

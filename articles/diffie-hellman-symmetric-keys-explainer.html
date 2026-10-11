@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How Diffie–Hellman Gets Two Strangers the Same Key — WireShaman Explainer</title>
+  <meta name="description" content="No key ever crosses the wire. Both sides do arithmetic a wiretapper can watch all the way through but cannot reverse. The modular math behind key exchange, forward secrecy, and the man-in-the-middle catch." />
+  <meta name="author" content="WireShaman Editorial" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wireshaman.com/articles/diffie-hellman-symmetric-keys-explainer.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WireShaman" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:article:published_time" content="2026-10-11" />
+  <meta property="og:article:modified_time" content="2026-10-11" />
+  <meta property="og:url" content="https://wireshaman.com/articles/diffie-hellman-symmetric-keys-explainer.html" />
+  <meta property="og:title" content="How Diffie–Hellman Gets Two Strangers the Same Key" />
+  <meta property="og:description" content="No key ever crosses the wire. Both sides do arithmetic a wiretapper can watch but cannot reverse. The modular math behind key exchange, forward secrecy, and the man-in-the-middle catch." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@wireshaman" />
+  <meta name="twitter:creator" content="@wireshaman" />
+  <meta name="twitter:title" content="How Diffie–Hellman Gets Two Strangers the Same Key" />
+  <meta name="twitter:description" content="The modular math behind key exchange, forward secrecy, and the man-in-the-middle catch." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":"https://wireshaman.com/articles/diffie-hellman-symmetric-keys-explainer.html","headline":"How Diffie–Hellman Gets Two Strangers the Same Key","description":"The modular math behind key exchange, forward secrecy, and the man-in-the-middle catch.","datePublished":"2026-10-11","dateModified":"2026-10-11","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com/","logo":{"@type":"ImageObject","url":"https://wireshaman.com/assets/favicon.svg"}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    /* ==== self-contained article page (mirrors existing article structure) ==== */
+    .article{margin-top:2.2rem}
+    .back{display:inline-flex;align-items:center;gap:.55em;color:var(--muted);font:600 .8rem/1 var(--font-head);letter-spacing:.07em;text-transform:uppercase;margin-bottom:2.2rem;transition:color .25s}
+    .back svg{width:15px;height:15px;fill:var(--accent)}
+    .back:hover{color:var(--accent)}
+    .article__hero{position:relative;height:340px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow),0 0 60px -10px var(--glow-cyan)}
+    .article__hero svg{width:100%;height:100%;display:block}
+    .article__body{margin-top:2.4rem}
+    .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+    .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
+    .article__title{font-family:var(--font-head);font-weight:700;line-height:1.05;font-size:clamp(2rem,4.6vw,3.4rem);letter-spacing:-.02em;color:var(--text);margin:1rem 0 1.1rem}
+    .article__sub{font-size:1.13rem;color:var(--muted);max-width:60ch;line-height:1.6;border-left:2px solid var(--line);padding-left:1.1rem}
+    .article__meta{display:flex;flex-wrap:wrap;gap:.6rem 1.1rem;align-items:center;margin:1.4rem 0 2.2rem}
+    .article__meta .meta__item{display:inline-flex;align-items:center;gap:.4rem;color:var(--dim);font-size:.9rem}
+    .article__meta svg{width:16px;height:16px;fill:var(--dim)}
+    .prose{max-width:720px;font-size:1.02rem;line-height:1.75;color:var(--text)}
+    .prose p{margin:0 0 1.4rem}
+    .prose strong{color:var(--text);font-weight:600}
+    .prose em{color:var(--text)}
+    .prose a{color:var(--accent);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 50%,transparent);text-underline-offset:3px}
+    .prose a:hover{text-decoration-color:var(--accent)}
+    .dropcap::first-letter{float:left;font-family:var(--font-head);font-size:3.4em;line-height:.8;color:var(--accent);font-weight:700;padding-right:.15em;margin-top:.08em}
+    .h2{font-family:var(--font-head);font-size:1.4rem;font-weight:600;letter-spacing:-.01em;color:var(--text);margin:2.4rem 0 1rem;display:flex;align-items:baseline;gap:.7rem}
+    .h2::before{content:"//";color:var(--accent);font-weight:700}
+    .code{background:#050810;border:1px solid var(--line);border-radius:var(--radius-sm);padding:1.3rem 1.4rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.93rem;line-height:1.75;overflow-x:auto;color:var(--dim);margin:1.6rem 0}
+    .code .k{color:var(--accent)}
+    .code .n{color:color-mix(in srgb,var(--accent-3) 82%,#fff)}
+    .code .hl{color:var(--accent);font-weight:600}
+    .code .c{color:color-mix(in srgb,var(--dim) 62%,#8b95a8);font-style:italic}
+    .callout{border:1px solid var(--line);border-left:3px solid var(--danger);background:var(--bg-2);border-radius:var(--radius-sm);padding:1.2rem 1.6rem;margin:2rem 0}
+    .callout__label{font-family:var(--font-head);font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--danger);display:block;margin-bottom:.55rem}
+    .callout p{margin:0;color:var(--muted);font-size:.98rem}
+    .takeaway{background:var(--bg-2);border:1px solid var(--line-2);border-radius:var(--radius);padding:1.6rem 1.8rem;margin:2rem 0}
+    .takeaway p{margin:0;color:var(--muted)}
+    .takeaway p:last-child{margin-top:.6rem}
+    .source{margin:2.2rem 0 .2rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--dim);font-size:.85rem}
+    .source a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+    .more{margin-top:3.4rem;display:grid;gap:1rem}
+    .more .eyebrow{color:var(--accent-2)}
+    .more .eyebrow::before{background:var(--accent-2)}
+    .more__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .more__empty{color:var(--dim);font-style:italic}
+    @media (max-width:820px){.more__cards{grid-template-columns:1fr 1fr}.article__hero{height:260px}}
+    @media (max-width:540px){.more__cards{grid-template-columns:1fr}.article__hero{height:220px}}
+    @media (prefers-reduced-motion:reduce){.back{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman — home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <path d="M4 16c0-5 4-9 9-9 6 0 8 5 13 9-5 4-7 9-13 9-5 0-9-4-9-9z" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M9 16h6l2-4 2 8 2-4h6" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#trending">Trending</a>
+        <a href="../index.html#cyber">Cybersecurity</a>
+        <a href="../index.html#ai">AI &amp; Tech</a>
+        <a href="../index.html#explain">Explainers</a>
+        <a class="nav__btn" href="../index.html#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container article">
+      <a class="back" href="../index.html#explain">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.8l4.6-4.6L11 5l-7 7 7 7 1.4-1.4L7.8 13H20v-2Z"/></svg>
+        Back to the wire
+      </a>
+
+      <section class="article__hero" aria-hidden="true">
+        <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="dhGlow" cx="50%" cy="62%" r="55%">
+              <stop offset="0%" stop-color="rgba(53,242,255,0.16)" />
+              <stop offset="100%" stop-color="rgba(53,242,255,0)" />
+            </radialGradient>
+            <linearGradient id="dhWire" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#35f2ff" />
+              <stop offset="100%" stop-color="#9d6bff" />
+            </linearGradient>
+          </defs>
+          <rect width="800" height="340" fill="#080c14" />
+          <path d="M60 260 L740 260" stroke="url(#dhWire)" stroke-width="2" opacity="0.7" />
+          <path d="M60 253 L740 253" stroke="url(#dhWire)" stroke-width="1" opacity="0.3" />
+          <path d="M60 267 L740 267" stroke="url(#dhWire)" stroke-width="1" opacity="0.3" />
+          <circle cx="140" cy="260" r="48" fill="url(#dhGlow)" />
+          <circle cx="660" cy="260" r="48" fill="url(#dhGlow)" />
+          <circle cx="140" cy="260" r="28" fill="none" stroke="#35f2ff" stroke-width="2" />
+          <circle cx="660" cy="260" r="28" fill="none" stroke="#9d6bff" stroke-width="2" />
+          <text x="140" y="266" text-anchor="middle" font-size="16" fill="#35f2ff" font-weight="700" letter-spacing="2">g&#8314;</text>
+          <text x="660" y="266" text-anchor="middle" font-size="16" fill="#9d6bff" font-weight="700" letter-spacing="2">g&#8311;</text>
+          <text x="140" y="300" text-anchor="middle" font-size="13" fill="#c9d6e8">Alice &#183; secret a</text>
+          <text x="660" y="300" text-anchor="middle" font-size="13" fill="#c9d6e8">Bob &#183; secret b</text>
+          <rect x="350" y="170" width="60" height="60" rx="10" fill="rgba(255,47,85,0.06)" stroke="rgba(255,47,85,0.5)" stroke-width="1.5" />
+          <text x="380" y="208" text-anchor="middle" font-size="20" fill="#ff2f55" font-weight="700">E</text>
+          <text x="380" y="252" text-anchor="middle" font-size="12" fill="rgba(255,47,85,0.7)" letter-spacing="1">EVE &#183; wiretapper</text>
+          <text x="400" y="322" text-anchor="middle" font-size="15" fill="#c9d6e8" opacity="0.75">both derive g<sup>a&#183;b</sup> &#183; Eve sees only partial keys</text>
+          <circle cx="380" cy="200" r="3" fill="#ff2f55" opacity="0.7">
+            <animate attributeName="opacity" values="0.2;1;0.2" dur="2.4s" repeatCount="indefinite" />
+          </circle>
+        </svg>
+      </section>
+
+      <div class="article__body">
+        <span class="eyebrow">Explainer &#8212; Cryptography</span>
+        <h1 class="article__title">How Diffie&#8211;Hellman Gets Two Strangers the Same Key</h1>
+        <p class="article__sub">No key ever crosses the wire. Both sides do arithmetic a wiretapper can watch all the way through &#8212; but can&#8217;t reverse. Here&#8217;s the modular math that makes it work, the one catch it carries, and why it quietly runs the key agreement of the internet.</p>
+        <div class="article__meta">
+          <span class="tag">Explainer</span>
+          <span class="meta__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4.4 0-8 2.7-8 6v2h16v-2c0-3.3-3.6-6-8-6Z"/></svg>
+            <b>WireShaman Editorial</b>
+          </span>
+          <span class="meta__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-1 3v6l5 3 1-1.7-4-2.4V7Z"/></svg>
+            <time datetime="2026-10-11">Oct 11, 2026</time>
+          </span>
+          <span class="meta__item">8 min read</span>
+        </div>
+        <div class="prose">
+          <p class="dropcap">Alice and Bob want to talk, and there&#8217;s a wiretapper between them. The wire is public &#8212; anyone on it can read every byte, and there&#8217;s no way for Alice or Bob to know who else is listening. The question cryptography has to answer is: <strong>how do two people who have never shared a secret build one, out in the open?</strong></p>
+
+          <p>Diffie&#8211;Hellman &#8212; Whitfield Diffie and Martin Hellman, 1976 &#8212; answers with a property of arithmetic nobody had bothered to make obvious: <strong>some operations are easy in one direction and brutal to undo.</strong> Everyone can watch the math. Almost no one can run it backwards.</p>
+
+          <h2 class="h2">The trick, in one image</h2>
+
+          <p>Imagine a paint&#8211;mixing rule. Alice picks a secret color, mixes it with a large can of white, and sends the muddy result to Bob. Bob picks his own secret color, mixes it with white, and sends his to Alice. Now each of them adds the other&#8217;s muddy mixture to their own secret can. The result is identical in both hands &#8212; a color neither ever sent, derivable only by someone who knew one of the two secrets.</p>
+
+          <p>The real math is the same shape, minus the paint. Mixing is easy. Asking <em>&#8220;what two colors made this brown?&#8221;</em> is the part that gets hard.</p>
+
+          <div class="pull" style="font-family:var(--font-head);font-size:1.3rem;font-weight:500;color:var(--text);border-left:3px solid var(--accent-2);padding-left:1.2rem;margin:1.8rem 0">The number <strong>2</strong> is theirs alone. On the wire, all that moved was 8 and 19 &#8212; and 8 and 19, by themselves, don&#8217;t reveal it.</div>
+
+          <h2 class="h2">Let the modular arithmetic do the work</h2>
+
+          <p>Strip the paint away and it&#8217;s three numbers and an operation. Alice and Bob agree on two <strong>public</strong> values first: a large prime <span class="hl">p</span> and a base <span class="hl">g</span>. These are not secret &#8212; publishing them is the point. Then each picks a <strong>private</strong> number that never leaves their hands: Alice&#8217;s is <span class="n">a</span>, Bob&#8217;s is <span class="n">b</span>. Each then computes <span class="n">g</span> raised to their private number, <em>mod</em> <span class="n">p</span>, and sends that result to the other.</p>
+
+                    <div class="code"><span class="c">&mdash; public, agreed openly &mdash;</span>
+p = <span class="k">23</span>   (a prime)
+g = <span class="k">5</span>    (a base)
+
+<span class="c">&mdash; secret, stays with each side &mdash;</nAlice&#8217;s secret  a = <span class="n">6</span>
+Bob&#8217;s secret    b = <span class="n">15</span>
+
+<span class="c">&mdash; exchanged openly (all Eve sees) &mdash;</nA &rarr; B :  g<sup>a</sup> mod p = 5<sup>6</sup> mod 23  = <span class="hl">8</span>
+B &rarr; A :  g<sup>b</sup> mod p = 5<sup>15</sup> mod 23 = <span class="hl">19</span>
+
+<span class="c">&mdash; both sides compute the same shared secret &mdash;</nAlice: 19<sup>6</sup> mod 23 = <span class="hl">2</span>   ( = g<sup>ab</sup> mod p )
+Bob:   8<sup>15</sup> mod 23 = <span class="hl">2</span>   ( = g<sup>ab</sup> mod p )</div>
+          <p>Both of them now hold the number <span class="hl">2</span>. Alice raised Bob&#8217;s public value to her secret; Bob raised Alice&#8217;s public value to his. Because of how exponents work, <span class="n">g<sup>a</sup>&#772;g<sup>b</sup></span> comes out the same either way, and the &#8216;mod p&#8217; keeps everything on a finite loop. That common value <span class="n">g<sup>ab</sup> mod p</span> is the shared key. What actually traveled is only <span class="n">g<sup>a</sup></span> and <span class="n">g<sup>b</sup></span> &#8212; <em>partial</em> keys. Neither one, alone, reveals the final key.</p>
+
+          <div class="callout">
+            <span class="callout__label">The one catch</span>
+            <p>Raw Diffie&#8211;Hellman gives you a shared secret between &ldquo;my peer&rdquo; and &ldquo;the other side&rdquo; &#8212; but it tells you <em>nothing</em> about <strong>who</strong> the other side actually is. A live attacker (Eve) can stand in the middle, run a separate exchange with each of you, and hold both halves of the conversation. Diffie&#8211;Hellman protects the key; it does not verify the identity. That identity step has to come from somewhere else &mdash; see &ldquo;forward secrecy&rdquo;.</p>
+          </div>
+
+          <h2 class="h2">Why Eve can&#8217;t reverse it</h2>
+
+          <p>Eve caught everything: she saw <span class="n">g<sup>a</sup> = 8</span> and <span class="n">g<sup>b</sup> = 19</span>, and she knows <span class="n">p</span> and <span class="n">g</span>. If she can find the secret <span class="n">a</span> from <span class="n">g<sup>a</sup> mod p</span>, she can rebuild the key. But that requires solving the <strong>discrete logarithm problem</strong>: given <span class="n">g</span> and <span class="n">g<sup>a</sup> mod p</span>, find the exponent <span class="n">a</span>.</p>
+
+          <div class="code"><span class="c">small p (23):  Eve just tries a = 1,2,3&hellip;</span>
+5<sup>6</sup> mod 23 = 8   &rarr;  finds a = 6 in one pass   <span class="c">&larr; trivial</span>
+
+<span class="c">real p (~2048 bits): no shortcut exists</span>
+g<sup>a</sup> mod p = 8421&hellip;9137   <span class="c">&rarr;  need ~2<sup>1024</sup> work to find a  <span class="c">&larr; infeasible</span></span>
+
+<span class="c">a = 2048-bit random value &rarr; a &asymp; 10<sup>616</sup;</span>
+<span class="c">g<sup>a</sup> = 5<sup>a</sup> mod p &rarr; 617-digit number, no usable structure</span>
+<span class="c">&rarr; finding a from g<sup>a</sup> = brute force 10<sup>616</sup> tries  <span class="hl">&rarr; infeasible</span></span></div>
+
+          <p>The core reason: <strong>exponentiation is fast, the log is slow.</strong> Computing <span class="n">5<sup>a</sup> mod p</span> takes a handful of modular multiplications (the square-and-multiply method). But going <em>backwards</em> &#8212; finding which exponent produced a given result &#8212; has no known shortcut for a prime <span class="n">p</span> large enough. In a prime field, that one-way gap is your entire shield.</p>
+
+          <p>The shield has a size. The best known classical attacks on the discrete log (the Number Field Sieve) are sub-exponential, which means you can&#8217;t just grow <span class="n">a</span> arbitrarily cheaply. This is why the <em>prime field</em> DH variant is gradually being phased out in favor of <strong>elliptic-curve key agreement (ECDH / Curve25519)</strong>, where the same one-way gap holds in a smaller group &#8212; 256-bit curves give roughly 128-bit security, versus 3072-bit primes for the same. The math is deeper, but the principle is identical: pick a group where the forward direction is cheap and the reverse direction is astronomical. TLS 1.3 now requires <strong>forward-secret</strong> group choices by default, which steers you straight at curves.</p>
+
+          <h2 class="h2">The catch that matters: it doesn&#8217;t verify anyone</h2>
+
+          <p>Because Diffie&#8211;Hellman is pure arithmetic on public values, <strong>the shared key proves nothing about identity.</strong> That opens the door to a <strong>man-in-the-middle</strong>: an attacker who intercepts the channel doesn&#8217;t need to break the discrete log at all. She runs one exchange with Alice using her own secret, and a second with Bob, forwarding each side&#8217;s public values, and now she holds both halves of a conversation she never intended to decrypt.</p>
+
+          <p>The fix isn&#8217;t more exponent math &#8212; it&#8217;s an <strong>identity layer</strong>. In TLS, the server presents a certificate; its public key is bound to an identity by a signature from a certifying authority. Alice verifies the signature before she trusts the DH value she just received. A static DH server key (or, in TLS 1.3, an ephemeral key signed by the server&#8217;s long-lived key) lets Alice tell &ldquo;Bob&rdquo; from &ldquo;Eve pretending to be Bob.&rdquo;</p>
+
+          <p>That static-vs-ephemeral choice is where <strong>forward secrecy</strong> lives, and it&#8217;s the detail most people miss. If the server uses the <em>same</em> key for every session, then an attacker who records traffic today can decrypt <em>all</em> of it the day a better discrete-log machine shows up. <strong>Forward secrecy</strong> flips that: each session uses a fresh keypair that is thrown away after the handshake, so the shared key exists only for that one session. A long-lived private key is still used &#8212; but only to <em>sign</em> the ephemeral key, proving it came from the real server. That&#8217;s the exact shape of TLS 1.3&#8217;s key-exchange design, and it&#8217;s why &ldquo;forward-secret DH&rdquo; is the default assumption.</p>
+
+          <h2 class="h2">How it actually gets used</h2>
+
+          <p>Diffie&#8211;Hellman is a <strong>key-agreement</strong> primitive, on its own. To turn the raw shared value into a usable encryption key, TLS 1.3 runs it through a <strong>key-derivation function</strong> (HKDF) stretched over the shared value plus transcript hash, and only then seeds the symmetric encryption keys. The point: the shared secret never touches the wire, and the keys used for the session are derived from it plus per-session context, so two sessions never reuse the same key.</p>
+
+          <div class="takeaway">
+            <div class="takeaway__title">The mental model</div>
+            <ul>
+              <li>Two strangers pick private numbers, exchange public ones, both land on the same secret <span class="k">g<sup>ab</sup> mod p</span> &#8212; without the secret ever crossing the wire.</li>
+              <li>The trick is the <strong>one-way gap</strong>: fast to compute the power, astronomically hard to reverse the log.</li>
+              <li>Raw DH proves nothing about <em>who</em> you&#8217;re talking to. Add an identity layer (a signature), or a MITM holds the key.</li>
+              <li>Use <strong>ephemeral</strong> keys for forward secrecy: each session holds a throwaway pair so recorded traffic can never be bulk-decrypted.</li>
+            </ul>
+          </div>
+
+          <div class="sources"><div class="sources__label">References</div><a class="source" href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange" target="_blank" rel="nofollow noopener">Diffie–Hellman key exchange — Wikipedia</a><a class="source" href="https://csrc.nist.gov/pubs/sp/800/56a/r3/final" target="_blank" rel="nofollow noopener">NIST SP 800-56A Rev. 3 — Recommendation for Key Derivation Methods</a><a class="source" href="https://tools.ietf.org/html/rfc8439" target="_blank" rel="nofollow noopener">RFC 9369 — HKDF and its use in key derivation</a></div>
+
+          <div class="more"><div class="more__label">More from WireShaman</div><div class="more__cards" id="moreCards"><p class="more__empty" style="color:var(--dim);font-size:.85rem">Loading&hellip;</p></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/articles.js"></script>
+  <script>
+    (function(){
+      const cur = 'diffie-hellman-symmetric-keys-explainer';
+      const el = document.getElementById('moreCards');
+      if (!el) return;
+      const others = (window.CS && window.CS.ARTICLES || []).filter(a => a.slug !== cur).slice(0,3);
+      if (!others.length) { el.innerHTML = '<p class="more__empty" style="color:var(--dim);font-size:.85rem">More on the way.</p>'; return; }
+      el.innerHTML = others.map(a =>
+        '<div class="card"><span class="tag tag--'+a.category+'">'+a.category.toUpperCase()+'</span>'
+        +'<h2 class="card__title"><a href="./'+a.slug+'.html">'+a.title+'</a></h2>'
+        +'<span class="card__date" style="color:var(--dim);font-size:.72rem">'+a.read+' MIN READ</span></div>'
+      ).join('');
+    })();
+  </script>
+</body>
+</html>

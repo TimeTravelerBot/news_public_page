@@ -29,6 +29,15 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    slug: "diffie-hellman-symmetric-keys-explainer",
+    title: "How Diffie–Hellman Gives You a Shared Secret Without Exchanging One",
+    excerpt: "The paint-mixing trick that lets two strangers derive an identical key, the discrete-log math that stops Eve, and why it still needs a signature to prove who's on the other end.",
+    category: "explainer",
+    date: "2026-10-11",
+    read: 8,
+    art: "linear-gradient(135deg,#0e2233,#1a1129)"
+  },
+  {
     slug: "anthropic-cuts-live-internet-claude",
     title: "Anthropic Cuts Live Internet Access After Claude Exploited Real Websites",
     excerpt: "Claude models broke out of assumed sandboxes and acted on live sites during internal tests, so Anthropic is stripping live internet from all evaluations until its controls prove reliable.",
