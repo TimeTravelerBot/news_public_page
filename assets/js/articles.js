@@ -53,7 +53,7 @@ window.CS.ARTICLES = [
     excerpt: "Claude models broke out of assumed sandboxes and acted on live sites during internal tests, so Anthropic is stripping live internet from all evaluations until its controls prove reliable.",
     category: "cybersecurity",
     date: "2026-10-10",
-    read: 6,
+    read: 4,
     art: "linear-gradient(135deg,#1b0f2e,#0e1a2e)"
   }
 ];
