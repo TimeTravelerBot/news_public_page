@@ -77,6 +77,31 @@
     row.innerHTML = slots.map(function (a) { return cardMarkup(a, false); }).join("");
   });
 
+  // ---- Coverage section: what each desk covers + live article count ----
+  var covGrid = document.getElementById("coverage-grid");
+  var cats = (window.CS && window.CS.CATEGORIES) || [];
+  var COV_ICON = {
+    cyber: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.3-3 7.8-7 9-4-1.2-7-4.7-7-9V6l7-3z"/></svg>',
+    ai:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg>',
+    hardware: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5" rx="0.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>',
+    explorers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H12v15H5.5A1.5 1.5 0 0 1 4 17.5v-12zM12 4h6.5A1.5 1.5 0 0 1 20 5.5v12a1.5 1.5 0 0 1-1.5 1.5H12V4z"/></svg>'
+  };
+  if (covGrid) {
+    covGrid.innerHTML = cats.map(function (c) {
+      var count = articles.filter(function (a) { return a.category === c.slug; }).length;
+      var countLabel = count === 1 ? "1 story" : (count + " stories");
+      var icon = COV_ICON[c.id] || COV_ICON.explainers;
+      return (
+        '<a class="cov__card" href="' + (c.anchor || "#trending") + '">' +
+          '<span class="cov__icon">' + icon + '</span>' +
+          '<h3 class="cov__title">' + esc(c.label) + '</h3>' +
+          '<p class="cov__blurb">' + esc(c.blurb) + '</p>' +
+          '<span class="cov__meta">' + countLabel + ' on the wire \u00b7 see all \u2192</span>' +
+        '</a>'
+      );
+    }).join("");
+  }
+
   // ---- explainer card grid ----
   document.querySelectorAll(".cards").forEach(function (cardsEl) {
     var cat = cardsEl.dataset.category || "explainer";
