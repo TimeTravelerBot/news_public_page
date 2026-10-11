@@ -1,5 +1,5 @@
 /* ============================================================
-   CyberShaman — articles.js
+   WireShaman — articles.js
    SINGLE SOURCE OF ARTICLE DATA. The daily pipeline REGENERATES
    this whole file. The home page + all category sections are
    rendered from these objects — no duplicated markup, no

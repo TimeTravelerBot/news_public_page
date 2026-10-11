@@ -1,5 +1,5 @@
 /* ============================================================
-   CyberShaman — render.js
+   WireShaman — render.js
    Renders EVERY story card from window.CS.ARTICLES. One card
    builder, reused for the trending grid, each category row and
    the explainer cards. The pipeline only edits articles.js —
