@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "fortimail-zero-day-cve-2026-104286",
+      title: "Fortinet FortiMail Zero-Day (CVE-2026-104286) Lets Unauthenticated Attackers Write Files and Take Over Appliances",
+      excerpt: "A single NULL byte smuggled into a request field lets an unauthenticated attacker overwrite files on a FortiMail box and run code as root. It is being exploited in the wild, and CISA has added it to its Known Exploited catalog.",
+      category: "cybersecurity",
+      date: "2026-10-12",
+      read: 5,
+      art: "linear-gradient(135deg, #0a2030 0%, #0e3340 45%, #070a12 100%)",
+      img: "assets/images/fortimail-zero-day-cve-2026-104286.jpg"
+    },
+    {
       slug: "rejetto-hfs-ai-discovered-session-cookie-rce",
       title: "AI Model Forged Session Cookies to Break Rejetto HFS",
       excerpt: "Anthropic's Mythos traced one insecure random-number generator in Rejetto HFS to a forged admin session — and remote code execution. Now actively exploited in the wild.",

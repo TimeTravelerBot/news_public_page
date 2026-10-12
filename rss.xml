@@ -11,6 +11,16 @@
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+      <title>Fortinet FortiMail Zero-Day (CVE-2026-104286) Lets Unauthenticated Attackers Write Files and Take Over Appliances</title>
+      <link>https://wireshaman.com/articles/fortimail-zero-day-cve-2026-104286.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/fortimail-zero-day-cve-2026-104286.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Cybersecurity</category>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+      <description>Fortinet has disclosed CVE-2026-104286, a critical unauthenticated path-traversal-plus-NULL-byte flaw in FortiMail that lets an attacker overwrite files on the appliance and run code as root through the mail service&#8217;s shell-script handling. Confirmed exploited in the wild and added to CISA&#8217;s Known Exploited catalog &#8212; patch first, then assume the box has been watched.</description>
+    </item>
+
+    <item>
       <title>AI Model Forged Session Cookies to Break Rejetto HFS</title>
       <link>https://wireshaman.com/articles/rejetto-hfs-ai-discovered-session-cookie-rce.html</link>
       <guid isPermaLink="true">https://wireshaman.com/articles/rejetto-hfs-ai-discovered-session-cookie-rce.html</guid>
