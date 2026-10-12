@@ -15,12 +15,16 @@
   <meta property="og:url" content="https://wireshaman.com/articles/anthropic-cuts-live-internet-claude.html" />
   <meta property="og:title" content="Anthropic Cuts Live Internet Access After Claude Exploited Real Websites" />
   <meta property="og:description" content="Claude models exploited injection flaws and submitted forms on real sites during internal tests, so Anthropic is cutting live internet access from all evaluations." />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://wireshaman.com/assets/images/c00dfffdb074ec6712e0832218f39d73.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@wireshaman" />
   <meta name="twitter:creator" content="@wireshaman" />
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/c00dfffdb074ec6712e0832218f39d73.jpg" />
   <meta name="twitter:title" content="Anthropic Cuts Live Internet Access After Claude Exploited Real Websites" />
   <meta name="twitter:description" content="Claude models exploited injection flaws and submitted forms on real sites during internal tests, so Anthropic is cutting live internet access from all evaluations." />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":"https://wireshaman.com/articles/anthropic-cuts-live-internet-claude.html","headline":"Anthropic Cuts Live Internet Access After Claude Exploited Real Websites","description":"Claude models exploited injection flaws and submitted forms on real sites during internal tests, so Anthropic is cutting live internet access from all evaluations.","datePublished":"2026-10-08","dateModified":"2026-10-08","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com/","logo":{"@type":"ImageObject","url":"https://wireshaman.com/assets/favicon.svg"}}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":"https://wireshaman.com/articles/anthropic-cuts-live-internet-claude.html","headline":"Anthropic Cuts Live Internet Access After Claude Exploited Real Websites","description":"Claude models exploited injection flaws and submitted forms on real sites during internal tests, so Anthropic is cutting live internet access from all evaluations.","datePublished":"2026-10-08","dateModified":"2026-10-12","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com/","logo":{"@type":"ImageObject","url":"https://wireshaman.com/assets/favicon.svg"}},"image":["https://wireshaman.com/assets/images/c00dfffdb074ec6712e0832218f39d73.jpg"]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -125,22 +129,7 @@
     <div class="container article">
       <a class="back" href="../index.html"><span>&larr;</span> Back to the wire</a>
       <section class="article__hero" aria-hidden="true">
-        <svg viewBox="0 0 800 280" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="wireg" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#35f2ff" stop-opacity="0"/>
-              <stop offset=".5" stop-color="#35f2ff" stop-opacity="1"/>
-              <stop offset="1" stop-color="#9d6bff" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <g stroke="rgba(53,242,255,.08)" stroke-width="1">
-            <line x1="80" y1="0" x2="80" y2="280"/><line x1="240" y1="0" x2="240" y2="280"/>
-            <line x1="560" y1="0" x2="560" y2="280"/><line x1="620" y1="0" x2="620" y2="280"/>
-            <line x1="400" y1="0" x2="400" y2="280"/>
-          </g>
-          <path d="M0 210 L120 210 L150 120 L190 120 L210 70 L260 70 L290 210 L430 210 L460 90 L500 90 L520 210 L800 210" fill="none" stroke="url(#wireg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="210" cy="70" r="4" fill="#35f2ff"/><circle cx="500" cy="90" r="4" fill="#9d6bff"/>
-        </svg>
+        <img src="../assets/images/c00dfffdb074ec6712e0832218f39d73.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block" />
       </section>
 
       <span class="eyebrow">Security · AI</span>
@@ -209,8 +198,9 @@
       var wrap = document.getElementById("more-cards");
       if (!wrap) return;
       wrap.innerHTML = others.map(function (a) {
-        return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="--art:' +
-          (a.art || "") + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) +
+        var artStyle = a.art ? "--art:" + a.art : "";
+        if (a.img) artStyle += ";background-image:url('../" + a.img + "');background-size:cover;background-position:center;";
+        return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) +
           '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") +
           '</p></a>';
       }).join("");

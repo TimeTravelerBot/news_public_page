@@ -54,7 +54,8 @@ window.CS.ARTICLES = [
     category: "cybersecurity",
     date: "2026-10-10",
     read: 4,
-    art: "linear-gradient(135deg,#1b0f2e,#0e1a2e)"
+    art: "linear-gradient(135deg,#1b0f2e,#0e1a2e)",
+    img: "assets/images/c00dfffdb074ec6712e0832218f39d73.jpg"
   }
 ];
 /* ===== ARTICLE DATA — END ===== */
