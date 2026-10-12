@@ -28,6 +28,16 @@ window.CS.CATEGORIES = [
 
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
+    {
+      slug: "rejetto-hfs-ai-discovered-session-cookie-rce",
+      title: "AI Model Forged Session Cookies to Break Rejetto HFS",
+      excerpt: "Anthropic's Mythos traced one insecure random-number generator in Rejetto HFS to a forged admin session — and remote code execution. Now actively exploited in the wild.",
+      category: "cybersecurity",
+      date: "2026-10-12",
+      read: 5,
+      art: "linear-gradient(135deg, #06281f 0%, #0a3b2e 45%, #06121f 100%)",
+      img: "assets/images/rejetto-hfs-session-forgery-ai-exploited.jpg"
+    },
   {
     slug: "citrix-netscaler-zero-days-actively-exploited",
     title: "Citrix NetScaler Zero-Days Actively Exploited: The Edge Appliances That Gate the Internet",
