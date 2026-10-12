@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "cisco-catalyst-sd-wan-manager-auth-bypass-cve-2026-76504",
+      title: "Cisco Catalyst SD-WAN Manager Auth Bypass (CVE-2026-76504) Explained",
+      excerpt: "A critical, unauthenticated authentication bypass in the SD-WAN Manager API is under active attack. One crafted request, full admin access, no workaround — and the vManage is the crown jewel of the edge. Here's what's exposed, what's patched, and what to do now.",
+      category: "cybersecurity",
+      date: "2026-10-12",
+      read: 7,
+      art: "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+      img: "assets/images/cisco-catalyst-sd-wan-manager-auth-bypass-cve-2026-76504.jpg"
+    },
+    {
       slug: "asos-data-breach-snowflake-customer-details",
       title: "ASOS Data Breach: Customer Details, Search History and a \u201cSnowflake\u201d Access Claim Explained",
       excerpt: "Employees of the online fashion retailer were social-engineered and customer records leaked — including search history. Here's what was taken, what was not, and why it matters.",

@@ -7,8 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 19:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 20:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Cisco Catalyst SD-WAN Manager Auth Bypass (CVE-2026-76504) Explained</title>
+      <link>https://wireshaman.com/articles/cisco-catalyst-sd-wan-manager-auth-bypass-cve-2026-76504.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/cisco-catalyst-sd-wan-manager-auth-bypass-cve-2026-76504.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Cybersecurity</category>
+      <pubDate>Mon, 12 Oct 2026 20:00:00 +0000</pubDate>
+      <description>Cisco&#8217;s out-of-band advisory confirms active exploitation of a critical, unauthenticated authentication bypass in the Catalyst SD-WAN Manager API (CVE-2026-76504, CVSS 9.8, added to CISA KEV). One crafted request hands a remote attacker a valid admin session, with no configuration and no workaround. Here&#8217;s what&#8217;s exposed, what&#8217;s patched, and what to do now.</description>
+    </item>
 
     <item>
       <title>ASOS Data Breach: Customer Details, Search History and a &#8220;Snowflake&#8221; Access Claim</title>
