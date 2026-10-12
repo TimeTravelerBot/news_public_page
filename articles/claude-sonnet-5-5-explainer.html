@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anthropic Claude Sonnet 5.5: What Is It, How It Differs, What It's Good For, and Where It Falls Short — WireShaman</title>
-  <meta name="description" content="Claude Sonnet 5.5 (API: claude-sonnet-5-5) is Anthropic's mid-tier model of late September 2026 — near-Opus agentic benchmarks at Sonnet prices. How it differs from Sonnet 5 and Opus 5.5, where it's good, where it falls short, and the pricing." />
+  <meta name="description" content="Claude Sonnet 5.5 offers a 1M-token context window, 128K standard maximum output, adaptive thinking, and $2/$10 per-million-token pricing. Its capabilities, migration changes, and limits." />
   <meta name="author" content="WireShaman" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://wireshaman.com/articles/claude-sonnet-5-5-explainer.html" />
@@ -13,7 +13,7 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://wireshaman.com/articles/claude-sonnet-5-5-explainer.html" />
   <meta property="og:title" content="Anthropic Claude Sonnet 5.5: How It Differs, What It's Good For, and Where It Falls Short" />
-  <meta property="og:description" content="Near-Opus agentic benchmarks at $2 per million tokens. How Sonnet 5.5 differs from the model it replaced, where it shines, where it falls short, and what it costs." />
+  <meta property="og:description" content="A 1M-token context window, adaptive thinking, and $2/$10 pricing. How Sonnet 5.5 differs, where it fits, and what integrations must change." />
   <meta property="og:image" content="https://wireshaman.com/assets/images/claude-sonnet-5-5-explainer.jpg" />
   <meta property="og:image:alt" content="A glowing neural core suspended in amber light" />
   <meta property="og:image:width" content="1200" />
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@wireshaman" />
   <meta name="twitter:title" content="Anthropic Claude Sonnet 5.5: How It Differs, Where It Falls Short" />
-  <meta name="twitter:description" content="Near-Opus agentic benchmarks at $2 per million tokens. How the model differs, where it's good, where it falls short, and the pricing." />
+  <meta name="twitter:description" content="A 1M-token context window, adaptive thinking, and $2/$10 pricing. What Sonnet 5.5 changes and where it fits." />
   <meta name="twitter:image" content="https://wireshaman.com/assets/images/claude-sonnet-5-5-explainer.jpg" />
   <script type="application/ld+json">
   {
@@ -30,7 +30,7 @@
     "@type": "Article",
     "mainEntityOfPage": "https://wireshaman.com/articles/claude-sonnet-5-5-explainer.html",
     "headline": "Anthropic Claude Sonnet 5.5: What Is It, How It Differs, What It's Good For, and Where It Falls Short",
-    "description": "Claude Sonnet 5.5 is Anthropic's mid-tier model — near-Opus agentic benchmarks at Sonnet prices. How it differs, where it's good, where it falls short, and the pricing.",
+    "description": "Claude Sonnet 5.5 offers a 1M-token context window, 128K standard maximum output, adaptive thinking, and $2/$10 per-million-token pricing. Its capabilities, migration changes, and limits.",
     "datePublished": "2026-09-29",
     "dateModified": "2026-09-29",
     "author": { "@type": "Organization", "name": "WireShaman" },
@@ -162,7 +162,7 @@
 
       <span class="eyebrow">AI &amp; Tech — Explainer</span>
       <h1 class="article__title">Claude Sonnet 5.5: What It Is, How It Differs, and Where It Falls Short</h1>
-      <p class="article__sub">Claude Sonnet 5.5 (&ldquo;Sonnet 5.5&rdquo;, API ID <code>claude-sonnet-5-5</code>) is Anthropic&rsquo;s mid-tier model, announced late September 2026. It targets the gap between cheap Sonnet-class work and flagship Opus&rsquo;s reasoning cost &mdash; and on the agentic coding benchmarks, it lands remarkably close to Opus 5.5 at half the price.</p>
+      <p class="article__sub">Claude Sonnet 5.5 (API ID <code>claude-sonnet-5-5</code>) is Anthropic&rsquo;s mid-tier model, released in late September 2026. It offers a 1M-token context window, 128K standard maximum output, and adaptive thinking at half the per-token price of Opus 5.5.</p>
       <div class="article__meta">
         <span class="tag tag--tech">Explainer</span>
         <b>WireShaman</b>
@@ -180,14 +180,15 @@
             <tr><td>API ID</td><td><code>claude-sonnet-5-5</code></td></tr>
             <tr><td>List price</td><td>$2 / M input tokens, $10 / M output tokens</td></tr>
             <tr><td>Batch API</td><td>50% off list rate</td></tr>
-            <tr><td>Context window</td><td>1M tokens (beta)</td></tr>
+            <tr><td>Context window</td><td>1M tokens</td></tr>
+            <tr><td>Max output</td><td>128K tokens (300K through the Batch API beta)</td></tr>
           </tbody>
         </table>
         <div class="pull"><p>Anthropic&rsquo;s pitch and the benchmark trail point the same way: Sonnet 5.5 lands most of the gap between Sonnet 5 and Opus 5.5 while keeping Sonnet pricing.</p></div>
 
         <h2>The benchmark picture</h2>
-        <p>The model card&rsquo;s chart reads like a Sonnet-to-Opus crossover study. Sonnet 5.5 posts <strong>70.6%</strong> on Terminal-Bench 4.0, <strong>81.3%</strong> on SWE-Bench Pro, <strong>55.5%</strong> on CursorBench 4.0, and <strong>80.1%</strong> on OSWorld 2.1 &mdash; all clustered closely with Opus 4.5 and Opus 5.5, and ahead of Sonnet 5 on nearly every agentic column it appears on. Throughput matters as much as accuracy here: the model is reportedly <strong>~30% faster</strong> than Sonnet 5, meaning more tool-calling loops per second at the same spend, not merely a smarter loop.</p>
-        <p>If the benchmark gap is real and holds outside Anthropic&rsquo;s own harnesses, the practical read is that the &ldquo;mid-tier&rdquo; model can now absorb agentic coding at a cost profile roughly half the flagship&rsquo;s. For agent-heavy workloads that burn output tokens fast &mdash; exactly where $10/M output matters most &mdash; the price delta is the whole story.</p>
+        <p>Anthropic positions Sonnet 5.5 as its best balance of speed and intelligence, with an emphasis on coding and tool-using workloads. Vendor benchmark charts are useful for choosing what to test, but they are not a substitute for evaluation on your repository, prompts, tool definitions, and latency limits.</p>
+        <p>The pricing comparison is concrete: Sonnet 5.5 costs $2 per million input tokens and $10 per million output tokens, while the documented Opus 5.5 rates are $4 and $20. That makes Sonnet the lower-cost candidate for output-heavy agent loops, but only workload-specific tests can establish quality and effective throughput.</p>
 
         <h2>How it differs from Sonnet 5 and Opus 5.5</h2>
         <ul>
@@ -195,12 +196,12 @@
           <li><strong>Sonnet 5</strong> remains the previous Sonnet tier with <code>claude-sonnet-5-0</code> semantics. Sonnet 5.5 moves the Sonnet ladder up in agentic ability and speed; Anthropic recommends new production traffic move to <code>claude-sonnet-5-5</code>. If your build is Sonnet 5-based, migration is a model-line swap, not a re-architecture.</li>
           <li><strong>Haiku</strong> keeps the cheap-throughput corner. Sonnet 5.5&rsquo;s arrival doesn&rsquo;t displace Haiku; it sharpens the line between &ldquo;cheap and enough&rdquo; and &ldquo;agentic and reliable.&rdquo;</li>
         </ul>
-        <p>The model cards also signal a broader trend: Sonnet 5.5, Opus 5.5, and Opus 4.6 all <strong>remove the extended-thinking parameter</strong> and standardize a <em>thinking effort</em> dial from <em>low</em> to <em>max</em>, while adaptive thinking on 5.5-series models lets the model allocate reasoning automatically. For anyone integrating across the line, that&rsquo;s a real API-surface change to note &mdash; not just a model swap.</p>
+        <p>Sonnet 5.5 uses adaptive thinking by default and an <em>effort</em> control to tune reasoning depth. Manual thinking budgets are not accepted. Turning off up-front thinking also changes: integrations use <code>thinking: {&quot;type&quot;: &quot;between_tools&quot;}</code> at high effort or below rather than <code>disabled</code>. Anthropic documents several additional migration changes, including restrictions on forced tool choice and model-bound thinking blocks.</p>
 
         <h2>What it&rsquo;s good for</h2>
         <ul>
           <li><strong>Long-horizon agentic coding</strong> &mdash; sustained planning and execution loops at tool-using cost, the workload Anthropic explicitly targets.</li>
-          <li><strong>Context-heavy retrieval</strong> &mdash; the 1M-token window (beta) makes deep document or repository context a first-class budget line.</li>
+          <li><strong>Context-heavy retrieval</strong> &mdash; the 1M-token window makes deep document or repository context a first-class budget line, though retrieval quality still needs workload-specific testing.</li>
           <li><strong>Batch workloads</strong> &mdash; the 50%-off batch API turns large backfills into a cost line item rather than a fire drill.</li>
           <li><strong>Production agent traffic</strong>, where Opus-class reliability was previously priced out of high-volume use.</li>
         </ul>
@@ -208,14 +209,14 @@
         <div class="callout">
           <span class="eyebrow">Where it falls short</span>
           <p><strong>Not a general-purpose &ldquo;best model.&rdquo;</strong> The model card&rsquo;s benchmark emphasis skews to agentic coding. It is no claim of top-of-category performance across every task, and the cards are self-reported &mdash; expect third-party harnesses to re-verify the delta.</p>
-          <p><strong>1M context is still beta.</strong> The largest window is a beta feature, not a GA guarantee. Teams that rely on maximum context should test the beta surface before building on it.</p>
-          <p><strong>Extended-thinking parameter removal is a migration task.</strong> If your integration assumes explicit extended-thinking control, the 5.5-series shift to automatic / effort-based reasoning changes the integration surface, not just the model name.</p>
+          <p><strong>Large context still needs evaluation.</strong> The 1M window is documented as standard, but fitting a prompt does not guarantee equally strong retrieval or reasoning across its full length.</p>
+          <p><strong>Thinking and tool use are migration tasks.</strong> Existing integrations should test <code>between_tools</code>, effort settings, forced-tool behavior, and preservation of thinking blocks before changing the production model ID.</p>
         </div>
 
         <div class="callout">
           <span class="eyebrow">Pricing</span>
           <p><strong>List:</strong> $2 / M input, $10 / M output via <a href="https://platform.claude.com/docs/en/models/claude-sonnet-5-5" rel="noopener">Sonnet 5.5 on the Claude platform</a>; the batch API runs at 50% off list. For agent workloads that are output-heavy &mdash; where the $10/M output rate is the line item that hurts &mdash; the batch discount is the lever.</p>
-          <p><strong>Effective cost</strong> for high-volume agentic traffic is best estimated against Sonnet 5&rsquo;s rate at roughly double the per-second throughput, which is the comparison Anthropic&rsquo;s own chart frames.</p>
+          <p><strong>Effective cost</strong> depends on output length, cache reuse, tool-loop count, and retries. Benchmark your real traffic rather than converting a vendor latency label into a fixed throughput multiplier.</p>
         </div>
 
       </div>

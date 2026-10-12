@@ -155,19 +155,22 @@
 
           <p>Strip the paint away and it&#8217;s three numbers and an operation. Alice and Bob agree on two <strong>public</strong> values first: a large prime <span class="hl">p</span> and a base <span class="hl">g</span>. These are not secret &#8212; publishing them is the point. Then each picks a <strong>private</strong> number that never leaves their hands: Alice&#8217;s is <span class="n">a</span>, Bob&#8217;s is <span class="n">b</span>. Each then computes <span class="n">g</span> raised to their private number, <em>mod</em> <span class="n">p</span>, and sends that result to the other.</p>
 
-                    <div class="code"><span class="c">&mdash; public, agreed openly &mdash;</span>
+          <div class="code"><span class="c">&mdash; public, agreed openly &mdash;</span>
 p = <span class="k">23</span>   (a prime)
 g = <span class="k">5</span>    (a base)
 
-<span class="c">&mdash; secret, stays with each side &mdash;</nAlice&#8217;s secret  a = <span class="n">6</span>
+<span class="c">&mdash; secret, stays with each side &mdash;</span>
+Alice&#8217;s secret  a = <span class="n">6</span>
 Bob&#8217;s secret    b = <span class="n">15</span>
 
-<span class="c">&mdash; exchanged openly (all Eve sees) &mdash;</nA &rarr; B :  g<sup>a</sup> mod p = 5<sup>6</sup> mod 23  = <span class="hl">8</span>
+<span class="c">&mdash; exchanged openly (all Eve sees) &mdash;</span>
+A &rarr; B :  5<sup>6</sup> mod 23  = <span class="hl">8</span>
 B &rarr; A :  g<sup>b</sup> mod p = 5<sup>15</sup> mod 23 = <span class="hl">19</span>
 
-<span class="c">&mdash; both sides compute the same shared secret &mdash;</nAlice: 19<sup>6</sup> mod 23 = <span class="hl">2</span>   ( = g<sup>ab</sup> mod p )
-Bob:   8<sup>15</sup> mod 23 = <span class="hl">2</span>   ( = g<sup>ab</sup> mod p )</div>
-          <p>Both of them now hold the number <span class="hl">2</span>. Alice raised Bob&#8217;s public value to her secret; Bob raised Alice&#8217;s public value to his. Because of how exponents work, <span class="n">g<sup>a</sup>&#772;g<sup>b</sup></span> comes out the same either way, and the &#8216;mod p&#8217; keeps everything on a finite loop. That common value <span class="n">g<sup>ab</sup> mod p</span> is the shared key. What actually traveled is only <span class="n">g<sup>a</sup></span> and <span class="n">g<sup>b</sup></span> &#8212; <em>partial</em> keys. Neither one, alone, reveals the final key.</p>
+<span class="c">&mdash; both sides compute the same result &mdash;</span>
+Alice: 19<sup>6</sup> mod 23 = <span class="hl">2</span>
+Bob:   8<sup>15</sup> mod 23 = <span class="hl">2</span></div>
+          <p>Both now hold <span class="hl">2</span>. Alice combines Bob&#8217;s public value with her secret; Bob does the mirror image. The exponent rules make both calculations equal <span class="n">g<sup>ab</sup> mod p</span>. Only the public values <span class="n">g<sup>a</sup></span> and <span class="n">g<sup>b</sup></span> crossed the wire; the private exponents did not. Real protocols use vastly larger, carefully selected groups and feed the resulting shared secret into a key-derivation function rather than using the small number directly.</p>
 
           <div class="callout">
             <span class="callout__label">The one catch</span>
@@ -178,17 +181,14 @@ Bob:   8<sup>15</sup> mod 23 = <span class="hl">2</span>   ( = g<sup>ab</sup> mo
 
           <p>Eve caught everything: she saw <span class="n">g<sup>a</sup> = 8</span> and <span class="n">g<sup>b</sup> = 19</span>, and she knows <span class="n">p</span> and <span class="n">g</span>. If she can find the secret <span class="n">a</span> from <span class="n">g<sup>a</sup> mod p</span>, she can rebuild the key. But that requires solving the <strong>discrete logarithm problem</strong>: given <span class="n">g</span> and <span class="n">g<sup>a</sup> mod p</span>, find the exponent <span class="n">a</span>.</p>
 
-          <div class="code"><span class="c">small p (23):  Eve just tries a = 1,2,3&hellip;</span>
-5<sup>6</sup> mod 23 = 8   &rarr;  finds a = 6 in one pass   <span class="c">&larr; trivial</span>
+          <div class="code"><span class="c">toy group: small enough to search by hand</span>
+5<sup>6</sup> mod 23 = 8   &rarr; Eve can simply try the possible exponents
 
-<span class="c">real p (~2048 bits): no shortcut exists</span>
-g<sup>a</sup> mod p = 8421&hellip;9137   <span class="c">&rarr;  need ~2<sup>1024</sup> work to find a  <span class="c">&larr; infeasible</span></span>
+<span class="c">real standardized group: too large for known attacks in practice</span>
+g<sup>a</sup> mod p = a very large public value
+finding a from that value = the discrete-logarithm problem</div>
 
-<span class="c">a = 2048-bit random value &rarr; a &asymp; 10<sup>616</sup;</span>
-<span class="c">g<sup>a</sup> = 5<sup>a</sup> mod p &rarr; 617-digit number, no usable structure</span>
-<span class="c">&rarr; finding a from g<sup>a</sup> = brute force 10<sup>616</sup> tries  <span class="hl">&rarr; infeasible</span></span></div>
-
-          <p>The core reason: <strong>exponentiation is fast, the log is slow.</strong> Computing <span class="n">5<sup>a</sup> mod p</span> takes a handful of modular multiplications (the square-and-multiply method). But going <em>backwards</em> &#8212; finding which exponent produced a given result &#8212; has no known shortcut for a prime <span class="n">p</span> large enough. In a prime field, that one-way gap is your entire shield.</p>
+          <p>The core reason: <strong>exponentiation is fast, the discrete log is hard.</strong> Efficient algorithms compute <span class="n">g<sup>a</sup> mod p</span> quickly, while recovering <span class="n">a</span> from the public result is infeasible for properly chosen parameters. The exact security level depends on the group and implementation, not just on writing down a very large exponent.</p>
 
           <p>The shield has a size. The best known classical attacks on the discrete log (the Number Field Sieve) are sub-exponential, which means you can&#8217;t just grow <span class="n">a</span> arbitrarily cheaply. This is why the <em>prime field</em> DH variant is gradually being phased out in favor of <strong>elliptic-curve key agreement (ECDH / Curve25519)</strong>, where the same one-way gap holds in a smaller group &#8212; 256-bit curves give roughly 128-bit security, versus 3072-bit primes for the same. The math is deeper, but the principle is identical: pick a group where the forward direction is cheap and the reverse direction is astronomical. TLS 1.3 now requires <strong>forward-secret</strong> group choices by default, which steers you straight at curves.</p>
 
@@ -196,7 +196,7 @@ g<sup>a</sup> mod p = 8421&hellip;9137   <span class="c">&rarr;  need ~2<sup>102
 
           <p>Because Diffie&#8211;Hellman is pure arithmetic on public values, <strong>the shared key proves nothing about identity.</strong> That opens the door to a <strong>man-in-the-middle</strong>: an attacker who intercepts the channel doesn&#8217;t need to break the discrete log at all. She runs one exchange with Alice using her own secret, and a second with Bob, forwarding each side&#8217;s public values, and now she holds both halves of a conversation she never intended to decrypt.</p>
 
-          <p>The fix isn&#8217;t more exponent math &#8212; it&#8217;s an <strong>identity layer</strong>. In TLS, the server presents a certificate; its public key is bound to an identity by a signature from a certifying authority. Alice verifies the signature before she trusts the DH value she just received. A static DH server key (or, in TLS 1.3, an ephemeral key signed by the server&#8217;s long-lived key) lets Alice tell &ldquo;Bob&rdquo; from &ldquo;Eve pretending to be Bob.&rdquo;</p>
+          <p>The fix isn&#8217;t more exponent math &#8212; it&#8217;s an <strong>identity layer</strong>. In certificate-authenticated TLS 1.3, the server presents a certificate and proves possession of its private key by signing the handshake transcript, which includes the negotiated ephemeral key exchange. Verifying that proof lets the client distinguish the intended server from an attacker running a separate exchange.</p>
 
           <p>That static-vs-ephemeral choice is where <strong>forward secrecy</strong> lives, and it&#8217;s the detail most people miss. If the server uses the <em>same</em> key for every session, then an attacker who records traffic today can decrypt <em>all</em> of it the day a better discrete-log machine shows up. <strong>Forward secrecy</strong> flips that: each session uses a fresh keypair that is thrown away after the handshake, so the shared key exists only for that one session. A long-lived private key is still used &#8212; but only to <em>sign</em> the ephemeral key, proving it came from the real server. That&#8217;s the exact shape of TLS 1.3&#8217;s key-exchange design, and it&#8217;s why &ldquo;forward-secret DH&rdquo; is the default assumption.</p>
 
@@ -214,7 +214,7 @@ g<sup>a</sup> mod p = 8421&hellip;9137   <span class="c">&rarr;  need ~2<sup>102
             </ul>
           </div>
 
-          <div class="sources"><div class="sources__label">References</div><a class="source" href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange" target="_blank" rel="nofollow noopener">Diffie–Hellman key exchange — Wikipedia</a><a class="source" href="https://csrc.nist.gov/pubs/sp/800/56a/r3/final" target="_blank" rel="nofollow noopener">NIST SP 800-56A Rev. 3 — Recommendation for Key Derivation Methods</a><a class="source" href="https://tools.ietf.org/html/rfc8439" target="_blank" rel="nofollow noopener">RFC 9369 — HKDF and its use in key derivation</a></div>
+          <div class="sources"><div class="sources__label">References</div><a class="source" href="https://www.rfc-editor.org/rfc/rfc8446.html" target="_blank" rel="nofollow noopener">RFC 8446 — TLS 1.3</a><a class="source" href="https://csrc.nist.gov/pubs/sp/800/56/a/r3/final" target="_blank" rel="nofollow noopener">NIST SP 800-56A Rev. 3 — Discrete-logarithm key establishment</a><a class="source" href="https://www.rfc-editor.org/rfc/rfc5869.html" target="_blank" rel="nofollow noopener">RFC 5869 — HKDF</a></div>
 
           <div class="more"><div class="more__label">More from the wire</div><div class="more__cards" id="more-cards"><p class="more__empty" style="color:var(--dim);font-size:.85rem">More on the way.</p></div></div>
         </div>

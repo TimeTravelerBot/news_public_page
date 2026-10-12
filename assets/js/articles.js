@@ -30,8 +30,8 @@ window.CS.CATEGORIES = [
 window.CS.ARTICLES = [
     {
       slug: "android-october-2026-security-bulletin",
-      title: "Android October 2026 Bulletin: 7 Critical Flaws Reach Root Without a Click",
-      excerpt: "Google's October 2026 Android Security Bulletin patches 25 flaws across Android 16, 16 QPR2, and 17. Seven are critical — including an ART type-confusion that reaches system EoP with no user interaction — and Samsung devices need their own set of fixes.",
+      title: "Android October 2026 Bulletin: 7 Critical Flaws, 25 CVEs",
+      excerpt: "Google's October bulletin patches 25 AOSP flaws, including four critical System privilege-escalation bugs and three critical denial-of-service issues. Here's what the bulletin confirms — and what it does not.",
       category: "cybersecurity",
       date: "2026-10-12",
       read: 7,
@@ -50,8 +50,8 @@ window.CS.ARTICLES = [
     },
     {
       slug: "claude-sonnet-5-5-explainer",
-      title: "Claude Sonnet 5.5 Benchmarks: The Near-Opus Model at Half the Price",
-      excerpt: "Anthropic's Claude Sonnet 5.5 (API ID claude-sonnet-5-5) sits between Sonnet 5 and Opus 5.5 on every major benchmark at $2/$10 per M tokens. It scores 70.6% on Terminal-Bench 4.0, 81.3% on SWE-Bench Pro, and 80.1% on OSWorld 2.1 — roughly 30% faster than Sonnet 5 and 55% cheaper than Opus 5.5 at equivalent performance.",
+      title: "Claude Sonnet 5.5: What Changed and Where It Fits",
+      excerpt: "Anthropic's Sonnet 5.5 offers a 1M-token context window, 128K standard maximum output, and adaptive thinking at $2/$10 per million tokens. Here are the capabilities, migration changes, and limits that matter.",
       category: "tech",
       date: "2026-10-12",
       read: 6,
@@ -61,7 +61,7 @@ window.CS.ARTICLES = [
     {
       slug: "p7-darksword-ios-exploit-kit",
       title: "P7 DarkSword: The iOS Exploit Kit Built to Steal Your Crypto Wallet and Remote-Control Your Phone",
-      excerpt: "An enhanced iOS exploit kit targets iOS 18.4 through 18.7. It chains two memory flaws to escape the browser sandbox, injects into SpringBoard for persistence, and harvests crypto wallet keys, iCloud Keychain secrets, and personal data before exfiltrating them off the device.",
+      excerpt: "This DarkSword variant injects an implant into SpringBoard, adds two-way command and control, and harvests keychain, wallet, photo, and notes data from devices exposed to the documented iOS 18.4–18.7 chains.",
       category: "cybersecurity",
       date: "2026-10-12",
       read: 8,
@@ -71,7 +71,7 @@ window.CS.ARTICLES = [
     {
       slug: "aes-gcm-authenticated-encryption-explainer",
       title: "Why So Much Traffic Uses AES-GCM — and What Its Authentication Tag Proves",
-      excerpt: "AES-GCM is the cipher behind TLS 1.3, WPA3, and most VPNs. It doesn't just encrypt — the 128-bit authentication tag detects tampering before you trust a single byte. Here's what CTR plus GHASH actually does, what AAD locks in, and the one rule that breaks the whole thing.",
+      excerpt: "AES-GCM protects traffic in TLS, IPsec, and many other protocols. It encrypts data and authenticates the ciphertext plus its context. Here's what CTR plus GHASH does and why nonce reuse breaks the guarantee.",
       category: "explainer",
       date: "2026-10-12",
       read: 7,
@@ -81,7 +81,7 @@ window.CS.ARTICLES = [
     {
       slug: "what-is-a-zero-day-explainer",
       title: "What a Zero-Day Actually Is",
-      excerpt: "Not a magic undiscoverable bug — a flaw the other side hasn't patched yet. Where the name comes from, unknown vs. unpatched, patch diffing, and why the exploit window is all the value.",
+      excerpt: "A zero-day leaves defenders without a generally available fix when exploitation begins. Here's the difference between the vulnerability, the exploit, and the n-day patch race that follows disclosure.",
       category: "explainer",
       date: "2026-10-12",
       read: 7,
@@ -91,7 +91,7 @@ window.CS.ARTICLES = [
     {
       slug: "fortimail-zero-day-cve-2026-104286",
       title: "Fortinet FortiMail Zero-Day (CVE-2026-104286) Lets Unauthenticated Attackers Write Files and Take Over Appliances",
-      excerpt: "A single NULL byte smuggled into a request field lets an unauthenticated attacker overwrite files on a FortiMail box and run code as root. It is being exploited in the wild, and CISA has added it to its Known Exploited catalog.",
+      excerpt: "A path-traversal and NULL-byte handling flaw lets unauthenticated attackers write arbitrary files on affected FortiMail systems. Fortinet confirms exploitation, and fixed builds are available.",
       category: "cybersecurity",
       date: "2026-10-12",
       read: 5,
@@ -101,7 +101,7 @@ window.CS.ARTICLES = [
     {
       slug: "rejetto-hfs-ai-discovered-session-cookie-rce",
       title: "AI Model Forged Session Cookies to Break Rejetto HFS",
-      excerpt: "Anthropic's Mythos traced one insecure random-number generator in Rejetto HFS to a forged admin session — and remote code execution. Now actively exploited in the wild.",
+      excerpt: "Anthropic's Mythos connected a predictable random-number generator to leaked outputs, forged an HFS admin session, and reached remote code execution. Hostile probing and exploitation attempts have since been observed.",
       category: "cybersecurity",
       date: "2026-10-12",
       read: 5,
@@ -111,7 +111,7 @@ window.CS.ARTICLES = [
   {
     slug: "citrix-netscaler-zero-days-actively-exploited",
     title: "Citrix NetScaler Zero-Days Actively Exploited: The Edge Appliances That Gate the Internet",
-    excerpt: "Citrix NetScaler ADC and Gateway devices are being exploited in the wild via two critical zero-days (88771/88772) plus a related SAML DoS (88779). There's no workaround — upgrade to the fixed build and sweep for compromise evidence.",
+    excerpt: "Citrix observed exploitation of two critical NetScaler flaws, while a later SAML-only denial-of-service issue requires a newer fixed build. Check configuration, upgrade, and review the exposure window.",
     category: "cybersecurity",
     date: "2026-10-11",
     read: 5,
@@ -130,8 +130,8 @@ window.CS.ARTICLES = [
   },
   {
     slug: "anthropic-cuts-live-internet-claude",
-    title: "Anthropic Cuts Live Internet Access After Claude Exploited Real Websites",
-    excerpt: "Claude models broke out of assumed sandboxes and acted on live sites during internal tests, so Anthropic is stripping live internet from all evaluations until its controls prove reliable.",
+    title: "Anthropic Cuts Live Internet Access After Claude Acted on Real Websites",
+    excerpt: "Claude models took unintended actions on live sites during evaluations and internal use, so Anthropic is removing live internet from internal evaluations while it strengthens controls.",
     category: "cybersecurity",
     date: "2026-10-10",
     read: 4,

@@ -152,27 +152,27 @@
         <p class="dropcap">An AI model found a remote code-execution flaw in the open-source Rejetto HTTP File Server — not by brute force, but by noticing that the software was trusting its own randomness. The discovery, made by Horizon3.ai using Anthropic's Mythos model, traces a single insecure number generator through a chain of decisions all the way to a forged administrator session. The result is <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-61500" rel="noopener">CVE-2026-61500</a>, rated 9.3, and it is now being actively exploited in the wild.</p>
 
         <h2>A vulnerability with no obvious flaw</h2>
-        <p>Rejetto HFS is a lightweight tool for sharing files over the web, popular with teams, researchers, and anyone who needs a quick drop box. It does not run on a critical internet-facing edge appliance. There is no buffer overflow to point at, no obvious injection sink. And yet the flaw is real: on every version up to 3.2.1, a remote attacker who watches an HFS session long enough can reconstruct the exact key it uses to sign cookies — and then mint their own valid admin session.</p>
+        <p>Rejetto HFS is a lightweight tool for sharing files over the web. The flaw affects versions 3.0.0 through 3.2.0; version 3.2.1 contains the fix. An unauthenticated attacker who can query the login flow repeatedly can collect enough generator output to reconstruct the signing key and mint a valid administrator session.</p>
         <p>What makes it interesting is how much of the chain is <strong>correct-by-default and wrong-by-coincidence</strong>. Each step in the code is defensible on its own. The failure is that they all feed the same underlying source of randomness, and that source can be read back through the network.</p>
 
         <h2>The mechanism: one PRNG, two keys, one leak</h2>
         <p>The whole exploit hangs on JavaScript's <code>Math.random()</code>, which in Chromium and Node is backed by a xorshift128+ generator. The generator is fast, but it is not a cryptographic source — and, crucially, it is <em>invertible</em>. Given enough consecutive outputs, an attacker can work backward to the generator's internal state and predict every value it will produce thereafter.</p>
         <p>HFS reaches for <code>Math.random()</code> in two places that each matter independently:</p>
         <ul>
-          <li>it builds <code>randomId(30)</code> strings from <code>Math.random().toString(36)</code> — identifiers used across the app, and,</li>
-          <li>when the operator has not set a dedicated secret, it derives the Koa <code>keygrip</code> session-signing key from one of those very same random IDs.</p>
-        </p>
+          <li>it builds <code>randomId(30)</code> strings from <code>Math.random().toString(36)</code>, producing identifiers used across the app;</li>
+          <li>when the operator has not set a dedicated secret, it derives the Koa <code>keygrip</code> session-signing key from one of those same random IDs.</li>
+        </ul>
         <p>So when <code>COOKIE_SIGN_KEYS</code> is left unset — the default — the key that signs every session cookie is drawn from the same stream. Koa then signs all session cookies with that key. The problem: the session itself also seeds a value with <code>Math.random()</code> and stores it, and the base64 JSON it exposes in cookies lets a remote client observe enough of the PRNG's output to reconstruct the generator's state. Reconstruct the state, and you have the signing key. With the signing key, you can forge a fully valid admin session cookie and walk through the front door.</p>
         <p>Tenacity is the final ingredient, because <code>server_code</code> — a configuration feature that lets an administrator's session execute arbitrary JavaScript — is the actual code-execution sink. A forged admin session is not enough on its own; it has to be a session that can run code. It is, because it is indistinguishable from a real one.</p>
 
         <div class="pull"><p>"Mythos didn't break cybersecurity. It exposed what was already broken."</p></div>
 
         <h2>How an AI found the leak path</h2>
-        <p>Horizon3.ai reports that Mythos was run through a multi-agent harness aimed at discovering cryptographic and design weaknesses. It did two things a human reviewer is easy to miss. First, it identified the insecure PRNG itself. Second — and the harder part — it found that other outputs of the same stream leak back out to remote clients, which is what turns a predictable random number into a usable secret. Without that leak, the weak generator is a footnote. With it, the whole signing scheme collapses.</p>
+        <p>Horizon3.ai reports that Mythos was run through a multi-agent harness aimed at cryptographic and design weaknesses. It connected two separate facts: the signing key came from a non-cryptographic PRNG, and unauthenticated login responses exposed other outputs from the same stream. That link turns a weak generator into a remotely exploitable authentication bypass.</p>
         <p>The result was a proof of concept: watch the session, reconstruct the state, recover the key, forge the admin cookie, execute code. The Rejetto <a href="https://github.com/rejetto/hfs/releases/tag/v3.2.1" rel="noopener">HFS v3.2.1 release</a> (July 13, 2026) carries the fix; every prior build is affected.</p>
 
         <h2>Why it matters</h2>
-        <p>The vulnerability was disclosed in the fall of 2026, and on October 2, VulnCheck reported active exploitation traced to a China Telecom IP range, with canaries triggered in Japan and the United States. In other words, there is no longer a theoretical window — unpatched HFS boxes are being hit.</p>
+        <p>On October 2, VulnCheck reported small-scale reconnaissance and exploitation attempts from a China Telecom address hitting canaries in Japan and the United States. That is evidence of hostile activity, but it does not by itself establish a broad campaign or attribute the operator.</p>
         <p>The deeper lesson is about a failure mode that AI accelerates: vulnerabilities that have no single obvious bug, only a web of individually-reasonable choices that combine into a hole. Finding those chains requires reading a codebase the way a domain expert would, then connecting the incoherent dots. That is exactly the reasoning an advanced model is good at now. Security teams should assume the bar for "defensible-by-default" code is going up — the things that survive review will increasingly be the things that survive an AI that reads the room.</p>
 
         <div class="callout">
