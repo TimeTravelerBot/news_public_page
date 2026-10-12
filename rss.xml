@@ -7,9 +7,20 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
 
+
+    <item>
+      <title>What a Zero-Day Actually Is</title>
+      <link>https://wireshaman.com/articles/what-is-a-zero-day-explainer.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/what-is-a-zero-day-explainer.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Explainer</category>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Not a magic undiscoverable bug &#8212; a flaw the affected team has not patched yet. Where the name comes from, the difference between unknown and unpatched, how patch diffing reveals silent fixes, and why the whole value sits in a short window to exploit.</description>
+
+    </item>
     <item>
       <title>Fortinet FortiMail Zero-Day (CVE-2026-104286) Lets Unauthenticated Attackers Write Files and Take Over Appliances</title>
       <link>https://wireshaman.com/articles/fortimail-zero-day-cve-2026-104286.html</link>

@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "what-is-a-zero-day-explainer",
+      title: "What a Zero-Day Actually Is",
+      excerpt: "Not a magic undiscoverable bug — a flaw the other side hasn't patched yet. Where the name comes from, unknown vs. unpatched, patch diffing, and why the exploit window is all the value.",
+      category: "explainer",
+      date: "2026-10-12",
+      read: 7,
+      art: "linear-gradient(135deg, #120a20 0%, #16102e 45%, #070a12 100%)",
+      img: "assets/images/what-is-a-zero-day-explainer.jpg"
+    },
+    {
       slug: "fortimail-zero-day-cve-2026-104286",
       title: "Fortinet FortiMail Zero-Day (CVE-2026-104286) Lets Unauthenticated Attackers Write Files and Take Over Appliances",
       excerpt: "A single NULL byte smuggled into a request field lets an unauthenticated attacker overwrite files on a FortiMail box and run code as root. It is being exploited in the wild, and CISA has added it to its Known Exploited catalog.",
