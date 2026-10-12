@@ -213,7 +213,7 @@ g<sup>a</sup> mod p = 8421&hellip;9137   <span class="c">&rarr;  need ~2<sup>102
 
           <div class="sources"><div class="sources__label">References</div><a class="source" href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange" target="_blank" rel="nofollow noopener">Diffie–Hellman key exchange — Wikipedia</a><a class="source" href="https://csrc.nist.gov/pubs/sp/800/56a/r3/final" target="_blank" rel="nofollow noopener">NIST SP 800-56A Rev. 3 — Recommendation for Key Derivation Methods</a><a class="source" href="https://tools.ietf.org/html/rfc8439" target="_blank" rel="nofollow noopener">RFC 9369 — HKDF and its use in key derivation</a></div>
 
-          <div class="more"><div class="more__label">More from WireShaman</div><div class="more__cards" id="moreCards"><p class="more__empty" style="color:var(--dim);font-size:.85rem">Loading&hellip;</p></div></div>
+          <div class="more"><div class="more__label">More from the wire</div><div class="more__cards" id="more-cards"><p class="more__empty" style="color:var(--dim);font-size:.85rem">More on the way.</p></div></div>
         </div>
       </div>
     </div>
@@ -221,19 +221,17 @@ g<sup>a</sup> mod p = 8421&hellip;9137   <span class="c">&rarr;  need ~2<sup>102
 
   <script src="../assets/js/articles.js"></script>
   <script>
-    (function(){
-      const cur = 'diffie-hellman-symmetric-keys-explainer';
-      const el = document.getElementById('more-cards');
-      if (!el) return;
-      const others = (window.CS && window.CS.ARTICLES || []).filter(a => a.slug !== cur).slice(0,3);
-      if (!others.length) { el.innerHTML = '<p class="more__empty" style="color:var(--dim);font-size:.85rem">More on the way.</p>'; return; }
-      el.innerHTML = others.map(a => {
-        var artStyle = a.art ? '\"--art:' + a.art + '\"' : '';
-        if (a.img) artStyle = '\"--art:' + (a.art||'') + ';background-image:url(../' + a.img + ');background-size:cover;background-position:center\"';
-        return '<div class="card"><span class="card__art" style=' + artStyle + '></span><span class="tag tag--'+a.category+'">'+a.category.toUpperCase()+'</span>'
-        +'<h2 class="card__title"><a href="./'+a.slug+'.html">'+a.title+'</a></h2>'
-        +'<span class="card__date" style="color:var(--dim);font-size:.72rem">'+a.read+' MIN READ</span></div>';
-      }).join('');
+    (function () {
+      var slug = "diffie-hellman-symmetric-keys-explainer";
+      var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+      var others = ((window.CS && window.CS.ARTICLES) || []).filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+      var wrap = document.getElementById("more-cards");
+      if (!wrap) return;
+      wrap.innerHTML = others.map(function (a) {
+        var artStyle = a.art ? "--art:" + a.art : "";
+        if (a.img) artStyle += ";background-image:url('../" + a.img + "');background-size:cover;background-position:center;";
+        return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+      }).join("");
     })();
   </script>
 </body>
