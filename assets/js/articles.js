@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "aes-gcm-authenticated-encryption-explainer",
+      title: "Why Everything Secrets Over the Wire Is AES-GCM Now — and What the Little Tag Actually Proves",
+      excerpt: "AES-GCM is the cipher behind TLS 1.3, WPA3, and most VPNs. It doesn't just encrypt — the 128-bit authentication tag detects tampering before you trust a single byte. Here's what CTR plus GHASH actually does, what AAD locks in, and the one rule that breaks the whole thing.",
+      category: "explainer",
+      date: "2026-10-12",
+      read: 7,
+      art: "linear-gradient(135deg, #0e2233 0%, #141024 55%, #070a12 100%)",
+      img: "assets/images/aes-gcm-authenticated-encryption-explainer.jpg"
+    },
+    {
       slug: "what-is-a-zero-day-explainer",
       title: "What a Zero-Day Actually Is",
       excerpt: "Not a magic undiscoverable bug — a flaw the other side hasn't patched yet. Where the name comes from, unknown vs. unpatched, patch diffing, and why the exploit window is all the value.",

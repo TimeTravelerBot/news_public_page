@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-page="explainer-aes-gcm">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Everything Secrets Over the Wire Is AES-GCM Now — and What the Little Tag Actually Proves</title>
+  <meta name="description" content="AES-GCM is the cipher behind TLS 1.3, WPA3, and most modern VPNs. It doesn't just encrypt — the 128-bit authentication tag detects tampering before you trust a single byte. Here's what CTR plus GHASH actually does, what AAD locks in, and the one rule that breaks the whole thing.">
+  <link rel="canonical" href="https://time-traveler-bot.github.io/news_public_page/articles/aes-gcm-authenticated-encryption-explainer.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://time-traveler-bot.github.io/news_public_page/articles/aes-gcm-authenticated-encryption-explainer.html">
+  <meta property="og:title" content="Why Everything Secrets Over the Wire Is AES-GCM Now — and What the Little Tag Actually Proves">
+  <meta property="og:description" content="The 128-bit authentication tag that detects tampering before you trust a single byte — what CTR plus GHASH actually does, what AAD locks in, and the one rule that breaks the whole thing.">
+  <meta property="og:image" content="https://time-traveler-bot.github.io/news_public_page/assets/images/aes-gcm-authenticated-encryption-explainer.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-10-12">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Everything Secrets Over the Wire Is AES-GCM Now — and What the Little Tag Actually Proves">
+  <meta name="twitter:description" content="The 128-bit authentication tag that detects tampering before you trust a single byte.">
+  <meta name="twitter:image" content="https://time-traveler-bot.github.io/news_public_page/assets/images/aes-gcm-authenticated-encryption-explainer.jpg">
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Why Everything Secrets Over the Wire Is AES-GCM Now — and What the Little Tag Actually Proves",
+    "datePublished": "2026-10-12",
+    "author": {"@type": "Organization", "name": "WireShaman Desk"},
+    "publisher": {"@type": "Organization", "name": "WireShaman", "logo": {"@type": "ImageObject", "url": "https://time-traveler-bot.github.io/news_public_page/assets/images/site-logo.png"}},
+    "image": "https://time-traveler-bot.github.io/news_public_page/assets/images/aes-gcm-authenticated-encryption-explainer.jpg",
+    "articleSection": "Explainer"
+  }</script>
+  <link rel="stylesheet" href="../assets/css/screen.css">
+  <style>
+    .article{margin-top:48px}
+    .article__header{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
+    .article__hero img{width:100%;height:auto}
+    .article__title{font-size:2.4rem;font-weight:900;line-height:1.15;margin-top:16px}
+    .article__meta{display:flex;flex-wrap:wrap;gap:14px;font-size:.82rem;color:var(--dim);margin-top:14px}
+    .article__meta .date{color:var(--text)}
+    .article__body{max-width:680px;margin-top:40px}
+    .article__body p{margin:20px 0;line-height:1.68;font-size:.96rem}
+    .article__body .h2{margin:44px 0 8px}
+    .article__body .lead{font-size:1.08rem;color:var(--bright);margin-top:28px}
+    .article__body code{background:#0d1017;padding:1px 6px;border:1px solid var(--line);font-family:var(--mono)}
+    .article__body .k{color:var(--accent);font-family:var(--mono);font-size:.92em}
+    .article__body .k b{color:var(--amber)}
+    .takeaway{border-left:3px solid var(--accent);padding:12px 18px;margin:28px 0;background:rgba(79,229,178,.04)}
+    .takeaway ul{padding-left:18px}
+    .takeaway li{margin:8px 0;color:var(--dim);font-size:.92rem}
+    .takeaway li strong{color:var(--bright)}
+  </style>
+</head>
+<body style="background-color:transparent">
+  <div class="page" id="top">
+    <a class="top__back" href="https://time-traveler-bot.github.io/news_public_page/">&larr; Back to news</a>
+
+    <div class="article">
+      <div class="article__header">
+        <div class="article__hero" aria-hidden="true">
+          <img src="../assets/images/aes-gcm-authenticated-encryption-explainer.jpg" alt="AES-GCM in a real system: a data stream through a tamper-detecting tag gate" style="width:100%;height:auto">
+          <h1 class="article__title">Why Everything Secrets Over the Wire Is AES-GCM Now &#8212; and What the Little Tag Actually Proves</h1>
+          <div class="article__meta">
+            <span class="tag tag--explainer">Explainer</span>
+            <span class="date">&#128197; October 12, 2026</span>
+            <span>&#9201; 7 min read</span>
+          </div>
+        </div>
+        <aside>
+          <div class="card__label">On this desk</div>
+          <p style="font-size:.82rem;color:var(--dim);margin-top:10px">The math behind the padlock: what GCM's 128-bit tag guarantees, the AAD binding most people never think about, and the nonce rule you break at your own peril.</p>
+        </aside>
+      </div>
+
+      <div class="article__body">
+        <p class="lead">You are using AES-GCM right now. It is the default cipher of TLS 1.3, of WPA3 wireless, of IPSec and most VPNs, and of countless cloud APIs. It does double duty: it encrypts your data <em>and</em> attaches a 128-bit authentication tag that makes any tampering detectable. The tag is the whole point.</p>
+
+        <h2 class="h2">Part 1. What AES actually does (barely)</h2>
+        <p>AES is a <em>block cipher</em>: a fixed transformation that turns 16 bytes of plaintext into 16 bytes of ciphertext using a secret key, and back again if you have the key. On its own it does exactly one block at a time. To encrypt a long message you need a <em>mode</em> that chains the blocks together &#8212; CBC with its IV, or CTR, the mode GCM is built on. CTR mode turns AES into a counter-based stream generator: encrypt counter block 1, XOR it with your first 16 bytes; encrypt counter block 2, XOR with the next 16 bytes; and so on. The result is malleable in the worst way: an attacker who can edit the ciphertext flips exactly the same bytes in the plaintext when it's decrypted.</p>
+        <p>That malleability is what CTR is for &#8212; random access and streaming make it a workhorse. But it means the ciphertext says nothing about its <em>integrity</em>. Nobody can tell whether the message arrived complete, unaltered, and from the party who signed it. That's the gap GCM closes.</p>
+
+        <h2 class="h2">Part 2. The trick: encrypt with CTR, tag with GHASH</h2>
+        <p>GCM works in two layers simultaneously. The CTR stream encrypts the plaintext as usual. In parallel, a function called <span class="k">GHASH</span> chugs through the ciphertext (and optionally some <span class="k"><b>AAD</b></span> you hand it), producing a 128-bit authentication tag appended to the end of the ciphertext. Decryption does the math in reverse and checks the tag <em>before</em> it trusts a single byte.</p>
+        <p>The tag isn't random noise. It's computed from a synthetic counter <span class="k">J<sub>0</sub></span> derived from your nonce, then XORed in. That means the tag is bound to the key, the nonce, the ciphertext, and whatever AAD you bound in. Change one bit of any of those, the tag no longer matches and decryption aborts.</p>
+
+        <h2 class="h2">Part 3. AAD: the binding you never think about</h2>
+        <p>Authenticated encryption has an underrated feature: <em>additional authenticated data</em> (AAD). You feed AAD into GHASH without encrypting it. The tag then guarantees the AAD wasn't tampered with, even though it was sent in the clear.</p>
+        <p>TLS uses AAD for the packet headers; JWTs use the signing header as AAD; protocol designers use it to bind version numbers, channel IDs, and session context into the tag. This is what stops a classic <em>cut-and-paste</em> attack: take a valid encrypted message from session A, replay it in session B. The header says session B, but the tag was computed for session A's header &#8212; it fails. AAD is the glue that keeps a ciphertext honest about <em>where</em> it belongs.</p>
+
+        <h2 class="h2">Part 4. The one rule: never reuse a nonce under the same key</h2>
+        <p>Every authenticated-encryption scheme lives and dies by its nonce rule. GCM's nonce is typically 96 bits (12 bytes). <span class="k">J<sub>0</sub></span> is derived from it, so reusing a nonce under the same key makes two ciphertexts share the same GHASH counter base. Two consequences follow:</p>
+        <ul style="padding-left:20px;margin:16px 0">
+          <li style="margin:8px 0;color:var(--dim)">CTR reuse gives the <em>keystream</em>: XOR two ciphertexts together and you recover the XOR of two plaintexts &#8212; a crib-dragging nightmare.</li>
+          <li style="margin:8px 0;color:var(--dim)">GHASH reuse gives the <em>authentication key</em>: two tags, one unknown key, one linear solve. Once you have the key, you can forge valid tags for anything under that key.</li>
+        </ul>
+        <p>This is why real-world GCM implementations use a deterministic counter in the nonce (increment per message, never repeat) and rotate keys when the counter wraps. It's why a cloud API that reuses a nonce across requests is catastrophically broken. It's also why &#8220;nonce&#8221; must not be a timestamp or a random value you might repeat &#8212; it must be <em>unique per key</em>, period.</p>
+
+        <h2 class="h2">Part 5. Where you already meet it</h2>
+        <p><strong>TLS 1.3</strong> mandates <span class="k">AES_128_GCM</span> or <span class="k">AES_256_GCM</span> in every supported cipher suite. The tag goes on the encrypted record; the header sequence number goes in as AAD. <strong>WPA3</strong> uses <span class="k">AES-GCM</span> with an 8-byte AAD containing frame type and sequence to keep frames honest. <strong>IPSec</strong> (RFC 4309) pairs GCM with a 12-byte nonce of random bytes plus a 32-bit counter, and binds the SPI and sequence into AAD. The pattern is always: encrypt with CTR, tag with GHASH, bind the protocol context.</p>
+        <p>It's become the default because the 128-bit tag is fast to compute in hardware (GHASH maps beautifully onto AES-NI and GPU-style parallelism), it's a single pass over the data, and it composes cleanly with AAD. The old &#8220;encrypt-then-MAC&#8221; construction, where you run AES-CBC and then HMAC-SHA256 over the ciphertext, is still secure but costs two passes and a hash &#8212; and it's what GCM replaced.</p>
+
+        <h2 class="h2">The mental model</h2>
+        <div class="takeaway">
+          <div class="takeaway__title">What the tag actually guarantees</div>
+          <ul>
+            <li>The ciphertext is <strong>bound to a key, a nonce, and the AAD</strong> you supplied.</li>
+            <li>One bit flipped in the ciphertext or the tag and the math doesn't match &#8212; decryption aborts.</li>
+            <li>Change the AAD and the tag fails, even if the ciphertext is untouched. That's what stops replay and cut-and-paste.</li>
+            <li>Reusing a nonce under the same key breaks both the keystream <em>and</em> the tag &#8212; it's the one rule that matters more than the rest.</li>
+          </ul>
+        </div>
+
+        <div class="sources"><div class="sources__label">References</div><a class="source" href="https://tools.ietf.org/html/rfc5116" target="_blank" rel="nofollow noopener">RFC 5116 &#8212; The Galois/Counter Mode of Operation (GCM)</a><a class="source" href="https://en.wikipedia.org/wiki/Galois/Counter_mode" target="_blank" rel="nofollow noopener">Galois/Counter Mode &#8212; Wikipedia</a><a class="source" href="https://tools.ietf.org/html/rfc8446" target="_blank" rel="nofollow noopener">RFC 8446 &#8212; TLS 1.3</a><a class="source" href="https://tools.ietf.org/html/rfc4309" target="_blank" rel="nofollow noopener">RFC 4309 &#8212; Using Galois/Counter Mode with IPSec ESP and AH</a></div>
+
+        <div class="more"><div class="more__label">More from the wire</div><div class="more__cards" id="more-cards"><p class="more__empty" style="color:var(--dim);font-size:.85rem">More on the way.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+    (function () {
+      var slug = "aes-gcm-authenticated-encryption-explainer";
+      var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+      var others = ((window.CS && window.CS.ARTICLES) || []).filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+      var wrap = document.getElementById("more-cards");
+      if (!wrap) return;
+      wrap.innerHTML = others.map(function (a) {
+        var artStyle = a.art ? "--art:" + a.art : "";
+        if (a.img) artStyle += ";background-image:url('../" + a.img + "');background-size:cover;background-position:center;";
+        return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+      }).join("");
+    })();
+  </script>
+</body>
+</html>

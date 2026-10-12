@@ -7,9 +7,19 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 14:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
 
+
+    <item>
+      <title>Why Everything Secrets Over the Wire Is AES-GCM Now &#8212; and What the Little Tag Actually Proves</title>
+      <link>https://wireshaman.com/articles/aes-gcm-authenticated-encryption-explainer.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/aes-gcm-authenticated-encryption-explainer.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Explainer</category>
+      <pubDate>Mon, 12 Oct 2026 14:00:00 +0000</pubDate>
+      <description>AES-GCM is the cipher behind TLS 1.3, WPA3, and most VPNs. It doesn&#8217;t just encrypt &#8212; the 128-bit authentication tag detects tampering before you trust a single byte. Here&#8217;s what CTR plus GHASH actually does, what AAD locks in, and the one rule that breaks the whole thing.</description>
+    </item>
 
     <item>
       <title>What a Zero-Day Actually Is</title>
