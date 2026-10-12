@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-page="news-asos-data-breach-snowflake-customer-details">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASOS Data Breach: Customer Details, Search History and a &ldquo;Snowflake&rdquo; Access Claim Explained — WireShaman</title>
+  <meta name="description" content="Asos has confirmed a data breach that exposed millions of customers' search history and personal details after employees were social-engineered. What was actually taken, what was not, and why the shopping data makes it dangerous." />
+  <meta name="author" content="WireShaman Editorial" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wireshaman.com/articles/asos-data-breach-snowflake-customer-details.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WireShaman" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://wireshaman.com/articles/asos-data-breach-snowflake-customer-details.html" />
+  <meta property="og:title" content="ASOS Data Breach: Customer Details, Search History and a &ldquo;Snowflake&rdquo; Access Claim Explained" />
+  <meta property="og:description" content="Employees were social-engineered and customer details plus shopping-search history were exposed. What was taken, what was not, and why it matters." />
+  <meta property="og:image" content="https://wireshaman.com/assets/images/asos-data-breach-snowflake-customer-details.jpg" />
+  <meta property="og:image:alt" content="A glowing storefront with data records spilling out of a broken window" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-10-12" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@wireshaman" />
+  <meta name="twitter:creator" content="@wireshaman" />
+  <meta name="twitter:title" content="ASOS Data Breach: Customer Details, Search History and a &ldquo;Snowflake&rdquo; Access Claim" />
+  <meta name="twitter:description" content="Social-engineered employees, exposed search history, and a claimed data-broker handoff. Here's what is confirmed and what is not." />
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/asos-data-breach-snowflake-customer-details.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": "https://wireshaman.com/articles/asos-data-breach-snowflake-customer-details.html",
+    "headline": "ASOS Data Breach: Customer Details, Search History and a Snowflake Access Claim Explained",
+    "description": "Asos has confirmed a data breach that exposed customers' personal details and search history after employees were social-engineered. What was taken, what was not, and why it matters.",
+    "datePublished": "2026-10-12",
+    "dateModified": "2026-10-12",
+    "author": { "@type": "Organization", "name": "WireShaman" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "WireShaman",
+      "url": "https://wireshaman.com/",
+      "logo": { "@type": "ImageObject", "url": "https://wireshaman.com/assets/favicon.svg" }
+    },
+    "image": ["https://wireshaman.com/assets/images/asos-data-breach-snowflake-customer-details.jpg"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .article{margin-top:2.4rem;padding-bottom:3rem}
+    .article__hero{
+      position:relative;height:280px;border-radius:var(--radius);overflow:hidden;
+      border:1px solid var(--line);box-shadow:var(--shadow);
+      background:radial-gradient(120% 140% at 20% 10%, #17202c 0%, #0a0e18 55%, #07090d 100%);
+    }
+    .article__hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+    .back{
+      display:inline-flex;align-items:center;gap:.55em;color:var(--muted);
+      font:600 .8rem/1 var(--font-head);letter-spacing:.06em;text-transform:uppercase;
+      margin-bottom:1.4rem;transition:color .25s
+    }
+    .back:hover{color:var(--accent)}
+    .back span{color:var(--accent)}
+    .article__title{
+      font-family:var(--font-head);font-weight:700;line-height:1.08;
+      font-size:clamp(1.9rem,4.2vw,3rem);letter-spacing:-.02em;margin:.6rem 0 1rem
+    }
+    .article__sub{color:var(--muted);font-size:1.05rem;max-width:64ch}
+    .article__meta{
+      display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem;
+      margin:1.2rem 0 2rem;color:var(--dim);font-size:.86rem
+    }
+    .article__meta b{color:var(--text);font-weight:600}
+    .article__meta time{color:var(--muted)}
+    .prose{max-width:70ch}
+    .prose p{margin:1.35rem 0;color:#c7d1df}
+    .prose p:first-of-type{margin-top:0}
+    .dropcap::first-letter{
+      float:left;font-family:var(--font-head);font-size:3.4em;line-height:.82;
+      font-weight:700;color:var(--accent);padding-right:.14em;padding-top:.06em
+    }
+    .prose h2{
+      font-family:var(--font-head);font-size:1.3rem;font-weight:600;
+      margin:2.2rem 0 .9rem;letter-spacing:-.01em
+    }
+    .prose ul{margin:1.2rem 0 1.2rem 1.1rem;display:grid;gap:.6rem}
+    .prose li{color:#c7d1df;padding-left:.2rem}
+    .prose li::marker{color:var(--accent)}
+    .prose code{
+      font:.9em/1.5 ui-monospace,"SFMono-Regular",Menlo,monospace;
+      color:var(--accent-2);background:var(--bg-3);padding:.15em .4em;border-radius:.3em
+    }
+    .pull{
+      position:relative;border:1px solid var(--line-2);border-left:3px solid var(--accent);
+      background:var(--bg-2);border-radius:var(--radius-sm);padding:1.4rem 1.6rem;margin:1.8rem 0
+    }
+    .pull p{margin:0;color:var(--text);font-family:var(--font-head);font-weight:500;
+      font-size:1.12rem;line-height:1.5}
+    .callout{
+      margin:2.4rem 0;border:1px solid var(--line);border-radius:var(--radius);
+      background:var(--bg-3);padding:1.8rem
+    }
+    .callout .eyebrow{margin-bottom:1rem;color:var(--accent-3)}
+    .callout p{margin:0;color:#c7d1df}
+    .callout a{color:var(--accent-2);text-decoration:underline;text-underline-offset:3px}
+    .source{
+      margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--line);
+      color:var(--dim);font-size:.85rem
+    }
+    .source a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    .source a:hover{color:var(--accent)}
+    .more{
+      display:flex;flex-wrap:wrap;gap:1rem;margin-top:3rem;
+      border-top:1px solid var(--line);padding-top:2rem
+    }
+    .more h2{width:100%;font-family:var(--font-head);font-size:1.05rem;
+      text-transform:uppercase;letter-spacing:.14em;margin-bottom:.3rem}
+    .more__cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;flex:1 1 600px}
+    @media (max-width:960px){.more__cards{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.more__cards{grid-template-columns:1fr}
+      .article__hero{height:200px}}
+    @media (prefers-reduced-motion:reduce){.back{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#trending">Trending</a>
+        <a href="../index.html#cyber">Cybersecurity</a>
+        <a href="../index.html#ai">AI &amp; Tech</a>
+        <a href="../index.html#hardware">Hardware</a>
+        <a class="nav__btn" href="../index.html#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container article">
+      <a class="back" href="../index.html"><span>&larr;</span> Back to the wire</a>
+
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/asos-data-breach-snowflake-customer-details.jpg" width="1200" height="630" alt="" loading="eager" fetchpriority="high" />
+      </section>
+
+      <span class="eyebrow">Cybersecurity</span>
+      <h1 class="article__title">ASOS Data Breach: Customer Details, Search History and a &ldquo;Snowflake&rdquo; Access Claim Explained</h1>
+      <p class="article__sub">Employees of the online fashion retailer were social-engineered and customer records leaked. Here&rsquo;s what was taken, what was not, and why the leaked shopping data makes the breach worth more than a headline.</p>
+      <div class="article__meta">
+        <span class="tag">Breach</span>
+        <b>WireShaman News Desk</b>
+        <time datetime="2026-10-12">Oct 12, 2026</time> · 7 min read
+      </div>
+
+      <div class="prose">
+        <p class="dropcap">Online fashion retailer <strong>Asos</strong> has confirmed a data breach that exposed a large collection of customer and staff records after a group of attackers <em>social-engineered its employees</em>, tricking them into handing over access to the company&rsquo;s systems. The leak includes far more than names and emails &mdash; and one of the most dangerous parts of the dataset is what customers <strong>searched for</strong> on the site.</p>
+
+        <h2>What was actually in the leak</h2>
+        <p>According to reports from security researchers, the disclosed data spans an estimated <strong>2&ndash;5 million customers</strong> plus staff, and includes a stack of personal fields that, on its own, is already enough to build a compelling impersonation:</p>
+        <ul>
+          <li><strong>Identity and contact details:</strong> customer and account names, dates of birth, billing, shipping and home addresses, phone and mobile numbers, email addresses, and customer or account numbers.</li>
+          <li><strong>Relationship data:</strong> the date customers first ordered from the site, and the number of items purchased.</li>
+          <li><strong>Search history:</strong> terms customers typed into the site&rsquo;s search box &mdash; samples in the leaked data include niche and lifestyle queries such as &ldquo;reclaimed vintage,&rdquo; &ldquo;glamorous wide fit,&rdquo; and &ldquo;Asos petite.&rdquo;</li>
+        </ul>
+        <p>What was <strong>not</strong> accessed, the researchers said, was payment-card data and password hashes. That distinction matters: this is an identity-and-intent breach, not a stolen-credentials-and-bank-data breach. The risk is not &ldquo;your card was cloned&rdquo; but &ldquo;someone now knows a great deal about you.&rdquo;</p>
+
+        <div class="pull"><p>A shopping-search log is a portrait: it captures intent, preference, and detail at a granularity that makes convincing impersonation unusually easy.</p></div>
+
+        <h2>Why the search history changes the risk</h2>
+        <p>Names, addresses and phone numbers are common in most retail breaches. <strong>Search terms are not.</strong> A list of the specific things a person has looked for &mdash; down to niche styles and brand variants &mdash; gives an attacker material for highly targeted, contextual social engineering: fake messages and pages that reference exactly what the victim cares about or is looking for. It is the kind of detail that turns a generic phishing email into something a victim trusts.</p>
+        <p>The researchers reported that the leaked data was shared with several <strong>data brokers</strong> &mdash; the same brokers whose records are already aggregated on the dark web. Once the data sits in that ecosystem, the practical question is no longer whether it can be found, but how and by whom.</p>
+
+        <h2>The &ldquo;Snowflake&rdquo; access claim</h2>
+        <p>One element of the breach is worth treating with an appropriately skeptical eye. Some reports and leaked documentation suggest the attackers also gained access to a company instance of <strong>Snowflake</strong>, the data-warehouse platform Asos has reportedly used, in an effort to steal additional data. Because that specific claim is less well-established than the leaked file itself, it belongs in the &ldquo;reported, not fully confirmed&rdquo; category &mdash; worth watching, not to be treated as settled fact yet.</p>
+
+        <h2>How the attack happened</h2>
+        <p>The breach is a classic <strong>social-engineering</strong> play: rather than breaking through technical controls, the attackers got a human to hand over access. For a retailer, that means the failure is often less about a patched-out-of-date system and more about people being convinced to share credentials, approve prompts, or open doors in internal tools. Once inside, the attackers gathered whatever was reachable &mdash; here, a broad customer-relationship and behavioural dataset.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p><strong>Expect very specific phishing.</strong> If you shopped with Asos, be wary of messages that reference products, styles, or searches only you would have looked for.</p>
+          <p><strong>The threat is identity, not your bank.</strong> With no card data or passwords involved, the primary risk is impersonation and targeted social engineering &mdash; not immediate financial fraud.</p>
+          <p><strong>Treat vendor claims carefully.</strong> Distinguish confirmed leaked content from reported claims about what systems were reached, and watch for follow-up confirmation.</p>
+          <p><strong>Search and behavioural data is the new crown jewel.</strong> As retail and service platforms accumulate intent data, it becomes one of the most valuable things for an attacker to exfiltrate.</p>
+        </div>
+
+      </div>
+
+      <p class="source">
+        Reporting based on statements following Asos&rsquo;s confirmation of the breach and security-researcher analysis of the disclosed data.
+        <a href="https://www.malwarebytes.com/blog/threat-intelligence/2026/10/09/asos-breaches-and-leaks-huge-amount-of-customer-data" rel="noopener">Malwarebytes: Asos breach &rarr;</a>
+        <a href="https://www.bbc.co/news/articles/c6282j1e4xjo" rel="noopener">BBC: ASOS data breach &rarr;</a>
+        <a href="https://www.asos.com/cyber-security-update/" rel="noopener">Asos security update &rarr;</a>
+      </p>
+
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = { cybersecurity: "Security", tech: "AI & Tech", hardware: "Hardware", explainer: "Explainer" };
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "asos-data-breach-snowflake-customer-details";
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    var wrap = document.getElementById("more-cards");
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (a.img) artStyle += ";background-image:url('../" + a.img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) +
+        '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") +
+        '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>

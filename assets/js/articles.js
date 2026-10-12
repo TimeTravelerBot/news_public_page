@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "asos-data-breach-snowflake-customer-details",
+      title: "ASOS Data Breach: Customer Details, Search History and a \u201cSnowflake\u201d Access Claim Explained",
+      excerpt: "Employees of the online fashion retailer were social-engineered and customer records leaked — including search history. Here's what was taken, what was not, and why it matters.",
+      category: "cybersecurity",
+      date: "2026-10-12",
+      read: 7,
+      art: "linear-gradient(135deg, #061820 0%, #0e3a40 45%, #7c1a2f 100%)",
+      img: "assets/images/asos-data-breach-snowflake-customer-details.jpg"
+    },
+    {
       slug: "android-october-2026-security-bulletin",
       title: "Android October 2026 Bulletin: 7 Critical Flaws, 25 CVEs",
       excerpt: "Google's October bulletin patches 25 AOSP flaws, including four critical System privilege-escalation bugs and three critical denial-of-service issues. Here's what the bulletin confirms — and what it does not.",

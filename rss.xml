@@ -7,8 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 18:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 19:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>ASOS Data Breach: Customer Details, Search History and a &#8220;Snowflake&#8221; Access Claim</title>
+      <link>https://wireshaman.com/articles/asos-data-breach-snowflake-customer-details.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/asos-data-breach-snowflake-customer-details.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Cybersecurity</category>
+      <pubDate>Mon, 12 Oct 2026 19:00:00 +0000</pubDate>
+      <description>Employees of the online fashion retailer ASOS were social-engineered and customer records were leaked, including names, contact details, and search-history terms. Researchers estimate 2&#8211;5 million customers affected. Here&#8217;s what was actually taken and how a leaked internal account, not a code patch, is the fix.</description>
+    </item>
 
     <item>
       <title>Android October 2026 Security Update Ships 25 Vulnerability Fixes Across 7 Critical CVEs</title>
