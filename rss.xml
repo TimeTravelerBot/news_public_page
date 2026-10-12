@@ -12,7 +12,7 @@
 
 
     <item>
-      <title>Why Everything Secrets Over the Wire Is AES-GCM Now &#8212; and What the Little Tag Actually Proves</title>
+      <title>Why So Much Traffic Uses AES-GCM &#8212; and What Its Authentication Tag Proves</title>
       <link>https://wireshaman.com/articles/aes-gcm-authenticated-encryption-explainer.html</link>
       <guid isPermaLink="true">https://wireshaman.com/articles/aes-gcm-authenticated-encryption-explainer.html</guid>
       <dc:creator>WireShaman</dc:creator>

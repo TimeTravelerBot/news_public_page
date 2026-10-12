@@ -39,9 +39,13 @@
     var tag = '<span class="tag tag--' + esc(a.category) + '">' + esc(CAT_LABEL[a.category] || a.category) + "</span>";
     var cls = "card" + (feature ? " card--feature" : "");
     var excerpt = feature ? "" : '<p class="card__excerpt">' + esc(a.excerpt) + "</p>";
+    var artStyle = a.art ? ' style="--art:' + esc(a.art) + '"' : "";
+    var artImage = a.img
+      ? '<img src="' + esc(a.img) + '" alt="" loading="lazy" decoding="async">'
+      : "";
     return (
       '<a class="' + cls + '" href="articles/' + esc(a.slug) + '.html" data-category="' + esc(a.category) + '">' +
-      '<span class="card__art" style="--art:' + esc(a.art) + (a.img ? "';background-image:url('" + a.img + "');background-size:cover;background-position:center" : "") + '></span>' +
+      '<span class="card__art"' + artStyle + ">" + artImage + "</span>" +
       tag +
       '<h3 class="card__title">' + esc(a.title) + "</h3>" +
       (feature ? '<p class="card__excerpt">' + esc(a.excerpt) + "</p>" : excerpt) +
