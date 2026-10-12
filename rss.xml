@@ -7,8 +7,38 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 15:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 18:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Android October 2026 Security Update Ships 25 Vulnerability Fixes Across 7 Critical CVEs</title>
+      <link>https://wireshaman.com/articles/android-october-2026-security-bulletin.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/android-october-2026-security-bulletin.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Cybersecurity</category>
+      <pubDate>Mon, 12 Oct 2026 18:00:00 +0000</pubDate>
+      <description>Google&#8217;s October 2026 Android Security Bulletin (patch level 2026-10-01) covers 25 CVEs across the Android Open Source Project, of which 7 are Critical. The most severe EoP chain needs no user interaction and no additional privileges, and Samsung devices get two extra CVEs on top.</description>
+    </item>
+
+    <item>
+      <title>Nvidia RTX Spark N1X Hits the Dell XPS 16: 128 GB of Unified Memory, 1 PetaFLOP FP4</title>
+      <link>https://wireshaman.com/articles/nvidia-rtx-spark-n1x-dell-xps-16.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/nvidia-rtx-spark-n1x-dell-xps-16.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Hardware</category>
+      <pubDate>Mon, 12 Oct 2026 17:00:00 +0000</pubDate>
+      <description>Dell&#8217;s XPS 16 Creator Edition (DX16263) is the first laptop built around Nvidia&#8217;s new N1X: a 20-core Grace CPU plus 6,144-CUDA-core Blackwell GPU sharing 128 GB of unified LPDDR5X, hitting 1 petaFLOP FP4, arriving October 16 at $3,799.99. It&#8217;s a Mac Studio in a laptop and Windows ARM&#8217;s best excuse, at once.</description>
+    </item>
+
+    <item>
+      <title>Anthropic Ships Claude Sonnet 5.5: Sonnet-Level Speed, Opus-Level Coding, Half the Price</title>
+      <link>https://wireshaman.com/articles/claude-sonnet-5-5-explainer.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/claude-sonnet-5-5-explainer.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>AI &amp; Tech</category>
+      <pubDate>Mon, 12 Oct 2026 16:00:00 +0000</pubDate>
+      <description>Released September 28, 2026, Claude Sonnet 5.5 lands at $2/$10 per million tokens, roughly 50% lower unit cost than Opus 5.5 at the same performance level, and runs ~30% faster than Sonnet 5. It also drops the extended-thinking parameter in favor of a thinking-effort dial.</description>
+    </item>
 
     <item>
       <title>P7 DarkSword: The iOS Exploit Kit Built to Steal Your Crypto Wallet and Remote-Control Your Phone</title>

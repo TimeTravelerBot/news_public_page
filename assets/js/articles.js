@@ -29,6 +29,36 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "android-october-2026-security-bulletin",
+      title: "Android October 2026 Bulletin: 7 Critical Flaws Reach Root Without a Click",
+      excerpt: "Google's October 2026 Android Security Bulletin patches 25 flaws across Android 16, 16 QPR2, and 17. Seven are critical — including an ART type-confusion that reaches system EoP with no user interaction — and Samsung devices need their own set of fixes.",
+      category: "cybersecurity",
+      date: "2026-10-12",
+      read: 7,
+      art: "linear-gradient(135deg, #061820 0%, #0e3a40 45%, #7a0a1f 100%)",
+      img: "assets/images/android-october-2026-security-bulletin.jpg"
+    },
+    {
+      slug: "nvidia-rtx-spark-n1x-dell-xps-16",
+      title: "Dell Ships the First Dell XPS 16 on Nvidia's RTX Spark — 128 GB, 1 Petaflop, $3,799",
+      excerpt: "The Dell XPS 16 Creator Edition (DX16263) is the first Dell XPS laptop built around NVIDIA's new RTX Spark N1X superchip: a 20-core Grace CPU, a 6,144-CUDA-core Blackwell GPU, 128 GB of unified LPDDR5X-9400 memory, and Windows ARM. Preorders open October 7, shipping October 16.",
+      category: "hardware",
+      date: "2026-10-12",
+      read: 8,
+      art: "linear-gradient(135deg, #06181f 0%, #0a3540 45%, #7c1aff 100%)",
+      img: "assets/images/nvidia-rtx-spark-n1x-dell-xps-16.jpg"
+    },
+    {
+      slug: "claude-sonnet-5-5-explainer",
+      title: "Claude Sonnet 5.5 Benchmarks: The Near-Opus Model at Half the Price",
+      excerpt: "Anthropic's Claude Sonnet 5.5 (API ID claude-sonnet-5-5) sits between Sonnet 5 and Opus 5.5 on every major benchmark at $2/$10 per M tokens. It scores 70.6% on Terminal-Bench 4.0, 81.3% on SWE-Bench Pro, and 80.1% on OSWorld 2.1 — roughly 30% faster than Sonnet 5 and 55% cheaper than Opus 5.5 at equivalent performance.",
+      category: "tech",
+      date: "2026-10-12",
+      read: 6,
+      art: "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+      img: "assets/images/claude-sonnet-5-5-explainer.jpg"
+    },
+    {
       slug: "p7-darksword-ios-exploit-kit",
       title: "P7 DarkSword: The iOS Exploit Kit Built to Steal Your Crypto Wallet and Remote-Control Your Phone",
       excerpt: "An enhanced iOS exploit kit targets iOS 18.4 through 18.7. It chains two memory flaws to escape the browser sandbox, injects into SpringBoard for persistence, and harvests crypto wallet keys, iCloud Keychain secrets, and personal data before exfiltrating them off the device.",
