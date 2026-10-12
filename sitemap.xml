@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://wireshaman.com/</loc>
-  <url>
-  <loc>https://wireshaman.com/articles/nvidia-rtx-spark-laptops-surface-laptop-ultra.html</loc>
-  </url>
-  <url>
-  <loc>https://wireshaman.com/articles/fips-140-2-sunset-explainer.html</loc>
-  </url><lastmod>2026-10-12</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://wireshaman.com/</loc><lastmod>2026-10-13</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://wireshaman.com/categories/cybersecurity.html</loc><lastmod>2026-10-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wireshaman.com/categories/tech.html</loc><lastmod>2026-10-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wireshaman.com/categories/hardware.html</loc><lastmod>2026-10-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wireshaman.com/categories/explainer.html</loc><lastmod>2026-10-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wireshaman.com/articles/nvidia-rtx-spark-laptops-surface-laptop-ultra.html</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://wireshaman.com/articles/fips-140-2-sunset-explainer.html</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://wireshaman.com/articles/cisco-catalyst-sd-wan-manager-auth-bypass-cve-2026-76504.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://wireshaman.com/articles/asos-data-breach-snowflake-customer-details.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://wireshaman.com/articles/android-october-2026-security-bulletin.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>

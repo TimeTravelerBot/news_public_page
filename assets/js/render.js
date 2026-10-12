@@ -60,20 +60,20 @@
     return out;
   }
 
-  // ---- trending grid: first is the big feature, rest are tiles ----
+  // ---- latest grid: honor the configured limit; feature layout is optional ----
   var gridEl = document.getElementById("trending-grid");
   if (gridEl) {
     var n = parseInt(gridEl.dataset.limit || "6", 10);
     var feature = gridEl.dataset.feature !== "false";
     var list = take(articles, n);
     if (list.length === 0) list = [null, null, null];
-    var html = cardMarkup(list[0], feature);
-    for (var i = 1; i < 3; i++) html += cardMarkup(list[i], false);
-    gridEl.innerHTML = html;
+    gridEl.innerHTML = list.map(function (a, i) {
+      return cardMarkup(a, feature && i === 0);
+    }).join("");
   }
 
   // ---- per-category rows (data-category) ----
-  document.querySelectorAll("[data-category]").forEach(function (row) {
+  document.querySelectorAll(".row[data-category]").forEach(function (row) {
     var cat = row.dataset.category;
     var items = articles.filter(function (a) { return a.category === cat; });
     var slots = take(items, 3);
@@ -96,7 +96,7 @@
       var countLabel = count === 1 ? "1 story" : (count + " stories");
       var icon = COV_ICON[c.id] || COV_ICON.explainers;
       return (
-        '<a class="cov__card" href="' + (c.anchor || "#trending") + '">' +
+        '<a class="cov__card" href="' + (c.href || "#trending") + '">' +
           '<span class="cov__icon">' + icon + '</span>' +
           '<h3 class="cov__title">' + esc(c.label) + '</h3>' +
           '<p class="cov__blurb">' + esc(c.blurb) + '</p>' +
