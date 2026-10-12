@@ -17,12 +17,16 @@
   <meta property="og:url" content="https://wireshaman.com/articles/diffie-hellman-symmetric-keys-explainer.html" />
   <meta property="og:title" content="How Diffie–Hellman Gets Two Strangers the Same Key" />
   <meta property="og:description" content="No key ever crosses the wire. Both sides do arithmetic a wiretapper can watch but cannot reverse. The modular math behind key exchange, forward secrecy, and the man-in-the-middle catch." />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/diffie-hellman-symmetric-keys-explainer.jpg" />
+  <meta property="og:image" content="https://wireshaman.com/assets/images/diffie-hellman-symmetric-keys-explainer.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:site" content="@wireshaman" />
   <meta name="twitter:creator" content="@wireshaman" />
   <meta name="twitter:title" content="How Diffie–Hellman Gets Two Strangers the Same Key" />
   <meta name="twitter:description" content="The modular math behind key exchange, forward secrecy, and the man-in-the-middle catch." />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":"https://wireshaman.com/articles/diffie-hellman-symmetric-keys-explainer.html","headline":"How Diffie–Hellman Gets Two Strangers the Same Key","description":"The modular math behind key exchange, forward secrecy, and the man-in-the-middle catch.","datePublished":"2026-10-11","dateModified":"2026-10-11","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com/","logo":{"@type":"ImageObject","url":"https://wireshaman.com/assets/favicon.svg"}}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":"https://wireshaman.com/articles/diffie-hellman-symmetric-keys-explainer.html","headline":"How Diffie–Hellman Gets Two Strangers the Same Key","description":"The modular math behind key exchange, forward secrecy, and the man-in-the-middle catch.","datePublished":"2026-10-11","dateModified":"2026-10-11","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com/","logo":{"@type":"ImageObject","url":"https://wireshaman.com/assets/favicon.svg"}},"image":["https://wireshaman.com/assets/images/diffie-hellman-symmetric-keys-explainer.jpg"]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -73,7 +77,14 @@
     @media (max-width:820px){.more__cards{grid-template-columns:1fr 1fr}.article__hero{height:260px}}
     @media (max-width:540px){.more__cards{grid-template-columns:1fr}.article__hero{height:220px}}
     @media (prefers-reduced-motion:reduce){.back{transition:none}}
+
+    .card__art{height:110px;border-radius:var(--radius-sm);position:relative;overflow:hidden;
+      background:linear-gradient(135deg,color-mix(in srgb,var(--art,#4e5564) 18%,transparent),color-mix(in srgb,var(--art,#4e5564) 6%,transparent));
+      background-size:cover;background-position:center}
+    .card__art::after{content:"";position:absolute;inset:0;
+      background:linear-gradient(120deg,color-mix(in srgb,var(--bg) 0%,transparent) 0%,color-mix(in srgb,var(--bg) 80%,transparent) 100%)}
   </style>
+
 </head>
 <body>
   <header class="site-header" id="top">
@@ -105,37 +116,7 @@
       </a>
 
       <section class="article__hero" aria-hidden="true">
-        <svg viewBox="0 0 800 340" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <radialGradient id="dhGlow" cx="50%" cy="62%" r="55%">
-              <stop offset="0%" stop-color="rgba(53,242,255,0.16)" />
-              <stop offset="100%" stop-color="rgba(53,242,255,0)" />
-            </radialGradient>
-            <linearGradient id="dhWire" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#35f2ff" />
-              <stop offset="100%" stop-color="#9d6bff" />
-            </linearGradient>
-          </defs>
-          <rect width="800" height="340" fill="#080c14" />
-          <path d="M60 260 L740 260" stroke="url(#dhWire)" stroke-width="2" opacity="0.7" />
-          <path d="M60 253 L740 253" stroke="url(#dhWire)" stroke-width="1" opacity="0.3" />
-          <path d="M60 267 L740 267" stroke="url(#dhWire)" stroke-width="1" opacity="0.3" />
-          <circle cx="140" cy="260" r="48" fill="url(#dhGlow)" />
-          <circle cx="660" cy="260" r="48" fill="url(#dhGlow)" />
-          <circle cx="140" cy="260" r="28" fill="none" stroke="#35f2ff" stroke-width="2" />
-          <circle cx="660" cy="260" r="28" fill="none" stroke="#9d6bff" stroke-width="2" />
-          <text x="140" y="266" text-anchor="middle" font-size="16" fill="#35f2ff" font-weight="700" letter-spacing="2">g&#8314;</text>
-          <text x="660" y="266" text-anchor="middle" font-size="16" fill="#9d6bff" font-weight="700" letter-spacing="2">g&#8311;</text>
-          <text x="140" y="300" text-anchor="middle" font-size="13" fill="#c9d6e8">Alice &#183; secret a</text>
-          <text x="660" y="300" text-anchor="middle" font-size="13" fill="#c9d6e8">Bob &#183; secret b</text>
-          <rect x="350" y="170" width="60" height="60" rx="10" fill="rgba(255,47,85,0.06)" stroke="rgba(255,47,85,0.5)" stroke-width="1.5" />
-          <text x="380" y="208" text-anchor="middle" font-size="20" fill="#ff2f55" font-weight="700">E</text>
-          <text x="380" y="252" text-anchor="middle" font-size="12" fill="rgba(255,47,85,0.7)" letter-spacing="1">EVE &#183; wiretapper</text>
-          <text x="400" y="322" text-anchor="middle" font-size="15" fill="#c9d6e8" opacity="0.75">both derive g<sup>a&#183;b</sup> &#183; Eve sees only partial keys</text>
-          <circle cx="380" cy="200" r="3" fill="#ff2f55" opacity="0.7">
-            <animate attributeName="opacity" values="0.2;1;0.2" dur="2.4s" repeatCount="indefinite" />
-          </circle>
-        </svg>
+        <img src="../assets/images/diffie-hellman-symmetric-keys-explainer.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block" />
       </section>
 
       <div class="article__body">
@@ -242,15 +223,17 @@ g<sup>a</sup> mod p = 8421&hellip;9137   <span class="c">&rarr;  need ~2<sup>102
   <script>
     (function(){
       const cur = 'diffie-hellman-symmetric-keys-explainer';
-      const el = document.getElementById('moreCards');
+      const el = document.getElementById('more-cards');
       if (!el) return;
       const others = (window.CS && window.CS.ARTICLES || []).filter(a => a.slug !== cur).slice(0,3);
       if (!others.length) { el.innerHTML = '<p class="more__empty" style="color:var(--dim);font-size:.85rem">More on the way.</p>'; return; }
-      el.innerHTML = others.map(a =>
-        '<div class="card"><span class="tag tag--'+a.category+'">'+a.category.toUpperCase()+'</span>'
+      el.innerHTML = others.map(a => {
+        var artStyle = a.art ? '\"--art:' + a.art + '\"' : '';
+        if (a.img) artStyle = '\"--art:' + (a.art||'') + ';background-image:url(../' + a.img + ');background-size:cover;background-position:center\"';
+        return '<div class="card"><span class="card__art" style=' + artStyle + '></span><span class="tag tag--'+a.category+'">'+a.category.toUpperCase()+'</span>'
         +'<h2 class="card__title"><a href="./'+a.slug+'.html">'+a.title+'</a></h2>'
-        +'<span class="card__date" style="color:var(--dim);font-size:.72rem">'+a.read+' MIN READ</span></div>'
-      ).join('');
+        +'<span class="card__date" style="color:var(--dim);font-size:.72rem">'+a.read+' MIN READ</span></div>';
+      }).join('');
     })();
   </script>
 </body>

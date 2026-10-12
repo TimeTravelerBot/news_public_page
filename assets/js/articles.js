@@ -45,7 +45,8 @@ window.CS.ARTICLES = [
     category: "explainer",
     date: "2026-10-11",
     read: 8,
-    art: "linear-gradient(135deg,#0e2233,#1a1129)"
+    art: "linear-gradient(135deg,#0e2233,#1a1129)",
+    img: "assets/images/diffie-hellman-symmetric-keys-explainer.jpg"
   },
   {
     slug: "anthropic-cuts-live-internet-claude",
