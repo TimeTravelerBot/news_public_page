@@ -6,9 +6,9 @@
    the site updates itself automatically.
 
    Each article:
-   { slug, title, excerpt, category, date, read (minutes), art }
+   { slug, title, excerpt, category, date, read (minutes), art, img }
    category: cybersecurity | tech | hardware | explainer
-   art: CSS gradient used for the card art (no images needed)
+   art: fallback CSS gradient; img: article-specific raster cover image
 
    NOTE: only REAL, published articles belong in this list.
    ============================================================ */
@@ -36,7 +36,7 @@ window.CS.ARTICLES = [
       date: "2026-10-12",
       read: 8,
       art: "linear-gradient(135deg, #0d2530 0%, #35f2ff 55%, #9d6bff 100%)",
-      img: "assets/og/p7-darksword-ios-exploit-kit-b2230869.png"
+      img: "assets/images/p7-darksword-ios-exploit-kit.jpg"
     },
     {
       slug: "aes-gcm-authenticated-encryption-explainer",
