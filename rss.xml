@@ -7,8 +7,22 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 20:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Nvidia RTX Spark Laptops Arrive October 16: Surface Laptop Ultra, Full Lineup with Specs and Pricing</title>
+    <link>https://wireshaman.com/articles/nvidia-rtx-spark-laptops-surface-laptop-ultra.html</link>
+    <guid>https://wireshaman.com/articles/nvidia-rtx-spark-laptops-surface-laptop-ultra.html</guid>
+    <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
+    <description>Nvidia's RTX Spark superchip goes on sale across six brands starting October 16, 2026. Microsoft's Surface Laptop Ultra starts at $2,599, the Surface RTX Spark Dev Box at $5,999.99. Here's every model, price, and what the unified-memory Arm chip actually changes.</description>
+  </item>
+  <item>
+    <title>FIPS 140-2 Sunsetting Sept 21 2026: What "Historical" Status Means for Your Stack</title>
+    <link>https://wireshaman.com/articles/fips-140-2-sunset-explainer.html</link>
+    <guid>https://wireshaman.com/articles/fips-140-2-sunset-explainer.html</guid>
+    <pubDate>Mon, 12 Oct 2026 23:00:00 +0000</pubDate>
+    <description>On September 21, 2026, every remaining active FIPS 140-2 certificate moves to the NIST Historical list. A procurement change, not a vulnerability. Here's what to verify in your security stack.</description>
+  </item>
 
     <item>
       <title>Cisco Catalyst SD-WAN Manager Auth Bypass (CVE-2026-76504) Explained</title>

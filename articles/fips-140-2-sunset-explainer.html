@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-page="news-fips-140-2-sunset-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FIPS 140-2 Sunsetting Sept 21 2026: What Historical Status Means for Your Stack - WireShaman</title>
+  <meta name="description" content="On September 21, 2026, every remaining active FIPS 140-2 certificate moves to the NIST Historical list. What it actually breaks, why FIPS 140-3 and post-quantum overlays matter, and what to check in your stack.">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta property="og:title" content="FIPS 140-2 Sunsetting Sept 21 2026: What Historical Status Means for Your Stack">
+  <meta property="og:description" content="The FIPS 140-2 sunset arrived. Certificates now sit on the Historical list. They are not insecure, but they no longer count for new federal procurement. Here's what to verify.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://wireshaman.com/articles/fips-140-2-sunset-explainer.html">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/fips-140-2-sunset-explainer.jpg">
+  <meta property="og:site_name" content="WireShaman">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="FIPS 140-2 Sunsetting Sept 21 2026: What Historical Status Means for Your Stack">
+  <meta name="twitter:description" content="FIPS 140-2 certificates flip to Historical status on September 21, 2026. What breaks, what doesn't, and how the FIPS 140-3 + post-quantum overlay reshapes compliance.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/fips-140-2-sunset-explainer.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"FIPS 140-2 Sunsetting September 21, 2026: What \"Historical\" Status Means for Your Stack","description":"The FIPS 140-2 sunset arrived on September 21, 2026. Remaining certificates flip to Historical status — a procurement change, not a vulnerability. What to verify in your security stack.","author":{"@type":"Person","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/fips-140-2-sunset-explainer.html","datePublished":"2026-10-12","image":"https://wireshaman.com/assets/images/fips-140-2-sunset-explainer.jpg"}
+  </script>
+  <style>
+    .article-body { margin: 0; padding: 0; max-width: 700px; }
+    .article-body h2 { font-size: 1.5em; margin: 1.8em 0 0.6em; font-weight: 700; }
+    .article-body p { line-height: 1.7; margin: 0 0 1.2em; color: #2d3142; }
+    .article-body ul { margin: 0 0 1.2em; padding-left: 1.4em; }
+    .article-body li { line-height: 1.7; color: #2d3142; margin-bottom: 0.4em; }
+    .article-body code { background: #eef1f6; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+    .article-body strong { color: #1a1d27; }
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5em 0; }
+    .article-body th { text-align: left; padding: 0.6em 0.8em; background: #1b1f2e; color: #eaecef; font-size: 0.85em; }
+    .article-body td { padding: 0.6em 0.8em; border-bottom: 1px solid #d9dce5; font-size: 0.95em; color: #2d3142; }
+    .article-body .sources { margin-top: 2em; padding-top: 1.5em; border-top: 1px solid #d9dce5; }
+    .article-body .sources p { color: #5a6172; font-size: 0.9em; }
+    .article-body .article-hero { width: 100%; border-radius: 8px; display: block; margin: 0 0 2em; }
+    .more-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+    @media (max-width: 640px) { .more-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      Home &middot; <a href="/index.html#cybersecurity">Security</a> &middot; <a href="/index.html#technology">AI / Technology</a> &middot; <a href="/index.html#hardware">Hardware</a> &middot; <a href="/index.html#explainers">Explainers</a>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="brand">WireShaman</div>
+    <nav class="nav">
+      <a href="/index.html#cybersecurity">Security</a>
+      <a href="/index.html#technology">AI / Technology</a>
+      <a href="/index.html#hardware">Hardware</a>
+      <a href="/index.html#explainers">Explainers</a>
+    </nav>
+  </header>
+  <div class="card article-page">
+    <div class="card-body">
+      <span class="tag explainer">Explainer</span>
+      <h2 class="title">FIPS 140-2 Sunsetting Sept 21 2026: What Historical Status Means for Your Stack</h2>
+      <div class="date">Oct 12, 2026 &middot; 6 min read</div>
+      <figure class="article-hero">
+        <img class="hero-img" src="/assets/images/fips-140-2-sunset-explainer.jpg" alt="FIPS 140-2 sunset — cryptographic validation certificates moving to Historical status on September 21, 2026" loading="lazy" width="1200" height="630" style="width:100%;height:auto;border-radius:8px;display:block;margin-bottom:1.5rem;max-width:700px;">
+      </figure>
+      <div class="article-body">
+        <p>On <strong>September 21, 2026</strong>, the U.S. National Institute of Standards and Technology (NIST) moved every remaining active FIPS 140-2 validation to the <strong>Historical list</strong> in its Cryptographic Module Validation Program (CMVP). It is not an emergency — the date had been on the calendar for seven years ever since FIPS 140-3 was approved in March 2019 — but it quietly reshapes compliance in a way most security teams haven't fully absorbed yet. Here's what actually changed and what to do about it.</p>
+        <h2>What FIPS 140-2 is</h2>
+        <p>FIPS 140-2 is NIST's standard defining minimum cryptographic security requirements for federal deployments. Products — operating systems, cryptography libraries, HSMs, payment modules — earn a FIPS 140-2 <em>validation</em> by passing laboratory testing of their cryptographic module. A valid certificate has historically been the proof-of-compliance token that federal buyers, FedRAMP assessors, CMMC auditors, and CJIS and payment-card auditors check. FIPS 140-3 is its successor, tightening security-level definitions and adding a cleaner post-quantum path.</p>
+        <h2>What "Historical" actually means — and doesn't</h2>
+        <p>Historical status does <strong>not</strong> mean the product is insecure or defective. The cryptography still works; a SHA-256 or AES module isn't suddenly broken on September 22. What changes is <strong>standing in the procurement and audit world</strong>:</p>
+        <ul>
+          <li><strong>New federal acquisitions</strong> can no longer be supported with an old FIPS 140-2 certificate — vendors need a FIPS 140-3 validation going forward.</li>
+          <li><strong>Compliance frameworks that reference an "Active" FIPS validation</strong> (FedRAMP, CMMC, CJIS, payment HSMs) begin receiving questions from assessors. Legacy contracts that only reference "FIPS 140-2" without specifying active versus historical are the risk zone — those often need legal counsel.</li>
+          <li><strong>New procurements</strong> should require FIPS 140-3 validation from here on out.</li>
+        </ul>
+        <p>The practical rule: a certificate on the Historical list is a <em>past</em> validation, not an <em>active</em> one.</p>
+        <h2>The post-quantum overlay</h2>
+        <p>The sunset matters most as a launch-ramp into the post-quantum era. In the same window, the first <strong>validated post-quantum cryptography modules</strong> are landing under FIPS 140-3 — at least five active FIPS 140-3 certificates already list post-quantum algorithms as approved services, and more can appear on any given CMVP search. And the whole push arrives just 102 days before the <strong>CNSA 2.0 acquisition gate on January 1, 2027</strong>. In other words: the FIPS 140-2 sunset and the move to FIPS 140-3-validated, post-quantum-capable modules are the same transition, seen from two dates.</p>
+        <h2>What to check in your stack</h2>
+        <ul>
+          <li><strong>Audit every FIPS-validated module</strong> you ship or depend on, and confirm its exact CMVP status (active 140-3, active 140-2 legacy, or Historical) — not just "FIPS compliant" on a vendor's marketing page.</li>
+          <li><strong>Map compliance frameworks you're held to</strong> (FedRAMP, CMMC, CJIS, PCI) against whether they call for an Active validation or merely a FIPS 140-2 mention, and flag the ambiguous ones for legal review.</li>
+          <li><strong>Plan the FIPS 140-3 swap</strong> for any product line sold into federal, defense, or critical-infrastructure customers — including embedded systems and cloud containers, where the multi-year lab queues bite hardest.</li>
+          <li><strong>Watch the PQC gap:</strong> if your federal path requires CNSA 2.0 readiness, you may need FIPS 140-3 validated modules with post-quantum approved services by the January 1, 2027 gate — a schedule that will not move.</li>
+        </ul>
+        <p>If you've built a FIPS 140-2 compliance claim into a product or a report, today is the day that claim starts aging. The cryptography did not break on September 21 — your ability to <em>prove</em> it for a new buyer is what changed. Confirm your modules' status, close the gap to FIPS 140-3, and get the post-quantum overlay into the roadmap before the CNSA 2.0 gate does the deciding for you.</p>
+        <div class="sources">
+          <p>Sources: postquantum.com FIPS 140-2 sunset overview (Sept 21, 2026), SafeLogic "What Happens on September 21, 2026" CMVP transition analysis, Secure Controls Framework FIPS 140-2 historical-status FAQ, NIST Cryptographic Module Validation Program (CMVP) transition schedule and validated-modules search.</p>
+        </div>
+      </div>
+      <div class="article-nav">
+        <a class="article-nav-link" href="/index.html">&#8592; Back to all articles</a>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div>WireShaman &middot; Security &amp; AI news, analysis, and explainers. Built with <a href="https://adsgpt.io" rel="noofollow" target="_blank">ADS-GPT</a>.</div>
+  </footer>
+  <div class="card" style="margin-top:20px;">
+    <div class="card-body">
+      <h2 class="card-title">More on WireShaman</h2>
+      <div id="more-grid" class="more-grid"></div>
+    </div>
+  </div>
+  <script src="/assets/js/articles.js"></script>
+  <script>
+    var slug = "fips-140-2-sunset-explainer";
+    var grid = document.getElementById("more-grid");
+    var others = CS.ARTICLES.filter(function(a){return a.slug!==slug;}).slice(0,4);
+    grid.innerHTML = others.map(function(a){return '<a class="card" href="/articles/'+a.slug+'.html"><div class="card-body"><span class="tag '+a.category+'">'+a.category+'</span><div class="title">'+a.title+'</div><div class="excerpt">'+a.excerpt+'</div><div class="date">'+a.date+'</div></div></a>';}).join('');
+  </script>
+</body>
+</html>

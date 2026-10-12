@@ -29,6 +29,26 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "nvidia-rtx-spark-laptops-surface-laptop-ultra",
+      title: "Nvidia RTX Spark Laptops Arrive October 16: Surface Laptop Ultra, Full Lineup with Specs and Pricing",
+      excerpt: "Nvidia's RTX Spark superchip goes on sale across six brands starting October 16, 2026. Microsoft's Surface Laptop Ultra starts at $2,599, the Surface RTX Spark Dev Box at $5,999.99. Here's every model, price, and what the unified-memory Arm chip actually changes.",
+      category: "hardware",
+      date: "Oct 12, 2026",
+      read: "7 min read",
+      art: "linear-gradient(135deg, #090b18 0%, #1a2a52 45%, #00d9ff 100%)",
+      img: "/assets/images/nvidia-rtx-spark-laptops-surface-laptop-ultra.jpg"
+    },
+    {
+      slug: "fips-140-2-sunset-explainer",
+      title: "FIPS 140-2 Sunsetting Sept 21 2026: What \"Historical\" Status Means for Your Stack",
+      excerpt: "On September 21, 2026, every remaining active FIPS 140-2 certificate moves to the NIST Historical list. A procurement change, not a vulnerability — and a launch-ramp into FIPS 140-3 and post-quantum crypto. Here's what to verify in your security stack.",
+      category: "explainer",
+      date: "Oct 12, 2026",
+      read: "6 min read",
+      art: "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+      img: "/assets/images/fips-140-2-sunset-explainer.jpg"
+    },
+    {
       slug: "cisco-catalyst-sd-wan-manager-auth-bypass-cve-2026-76504",
       title: "Cisco Catalyst SD-WAN Manager Auth Bypass (CVE-2026-76504) Explained",
       excerpt: "A critical, unauthenticated authentication bypass in the SD-WAN Manager API is under active attack. One crafted request, full admin access, no workaround — and the vManage is the crown jewel of the edge. Here's what's exposed, what's patched, and what to do now.",
