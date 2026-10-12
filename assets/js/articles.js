@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "p7-darksword-ios-exploit-kit",
+      title: "P7 DarkSword: The iOS Exploit Kit Built to Steal Your Crypto Wallet and Remote-Control Your Phone",
+      excerpt: "An enhanced iOS exploit kit targets iOS 18.4 through 18.7. It chains two memory flaws to escape the browser sandbox, injects into SpringBoard for persistence, and harvests crypto wallet keys, iCloud Keychain secrets, and personal data before exfiltrating them off the device.",
+      category: "cybersecurity",
+      date: "2026-10-12",
+      read: 8,
+      art: "linear-gradient(135deg, #0d2530 0%, #35f2ff 55%, #9d6bff 100%)",
+      img: "assets/og/p7-darksword-ios-exploit-kit-b2230869.png"
+    },
+    {
       slug: "aes-gcm-authenticated-encryption-explainer",
       title: "Why So Much Traffic Uses AES-GCM — and What Its Authentication Tag Proves",
       excerpt: "AES-GCM is the cipher behind TLS 1.3, WPA3, and most VPNs. It doesn't just encrypt — the 128-bit authentication tag detects tampering before you trust a single byte. Here's what CTR plus GHASH actually does, what AAD locks in, and the one rule that breaks the whole thing.",

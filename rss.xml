@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 14:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 15:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>P7 DarkSword: The iOS Exploit Kit Built to Steal Your Crypto Wallet and Remote-Control Your Phone</title>
+      <link>https://wireshaman.com/articles/p7-darksword-ios-exploit-kit.html</link>
+      <guid isPermaLink="true">https://wireshaman.com/articles/p7-darksword-ios-exploit-kit.html</guid>
+      <dc:creator>WireShaman</dc:creator>
+      <category>Cybersecurity</category>
+      <pubDate>Mon, 12 Oct 2026 15:00:00 +0000</pubDate>
+      <description>Researchers from PARS Defense, iVerify, and Lookout have detailed an enhanced iOS exploit kit that targets iOS 18.4 through 18.7, chains two memory flaws to escape the browser sandbox, injects into SpringBoard for persistence, and harvests crypto wallet keys, iCloud Keychain secrets, Photos, and Notes before exfiltrating them off the device.</description>
+    </item>
 
     <item>
       <title>Why So Much Traffic Uses AES-GCM &#8212; and What Its Authentication Tag Proves</title>
