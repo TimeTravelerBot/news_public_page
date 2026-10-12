@@ -86,7 +86,7 @@ window.CS.ARTICLES = [
     date: "2026-10-11",
     read: 8,
     art: "linear-gradient(135deg,#0e2233,#1a1129)",
-    img: "assets/images/diffie-hellman-symmetric-keys-explainer.jpg"
+    img: "assets/og/diffie-hellman-symmetric-keys-explainer-9f125d46.png"
   },
   {
     slug: "anthropic-cuts-live-internet-claude",
