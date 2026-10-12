@@ -39,6 +39,7 @@
     .back:hover{color:var(--accent)}
     .article__hero{position:relative;height:340px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow),0 0 60px -10px var(--glow-cyan)}
     .article__hero svg{width:100%;height:100%;display:block}
+    .article__hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
     .article__body{margin-top:2.4rem}
     .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-head);font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
     .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
@@ -116,7 +117,7 @@
       </a>
 
       <section class="article__hero" aria-hidden="true">
-        <img src="../assets/images/diffie-hellman-symmetric-keys-explainer.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block" />
+        <img src="../assets/images/diffie-hellman-symmetric-keys-explainer.jpg" width="1200" height="630" alt="" />
       </section>
 
       <div class="article__body">
