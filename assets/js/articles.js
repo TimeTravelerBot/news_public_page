@@ -36,7 +36,7 @@ window.CS.ARTICLES = [
       date: "2026-10-12",
       read: 7,
       art: "linear-gradient(135deg, #0e2233 0%, #141024 55%, #070a12 100%)",
-      img: "assets/images/aes-gcm-authenticated-encryption-explainer.jpg"
+      img: "assets/og/aes-gcm-authenticated-encryption-explainer-a807a8fa.png"
     },
     {
       slug: "what-is-a-zero-day-explainer",
@@ -46,7 +46,7 @@ window.CS.ARTICLES = [
       date: "2026-10-12",
       read: 7,
       art: "linear-gradient(135deg, #120a20 0%, #16102e 45%, #070a12 100%)",
-      img: "assets/images/what-is-a-zero-day-explainer.jpg"
+      img: "assets/og/what-is-a-zero-day-explainer-50fe41c0.png"
     },
     {
       slug: "fortimail-zero-day-cve-2026-104286",
@@ -56,7 +56,7 @@ window.CS.ARTICLES = [
       date: "2026-10-12",
       read: 5,
       art: "linear-gradient(135deg, #0a2030 0%, #0e3340 45%, #070a12 100%)",
-      img: "assets/images/fortimail-zero-day-cve-2026-104286.jpg"
+      img: "assets/og/fortimail-zero-day-cve-2026-104286-96b6c80c.png"
     },
     {
       slug: "rejetto-hfs-ai-discovered-session-cookie-rce",
@@ -66,7 +66,7 @@ window.CS.ARTICLES = [
       date: "2026-10-12",
       read: 5,
       art: "linear-gradient(135deg, #06281f 0%, #0a3b2e 45%, #06121f 100%)",
-      img: "assets/images/rejetto-hfs-session-forgery-ai-exploited.jpg"
+      img: "assets/og/rejetto-hfs-ai-discovered-session-cookie-rce-cb82320a.png"
     },
   {
     slug: "citrix-netscaler-zero-days-actively-exploited",
@@ -76,7 +76,7 @@ window.CS.ARTICLES = [
     date: "2026-10-11",
     read: 5,
     art: "linear-gradient(135deg,#0c2a3f,#141024)",
-    img: "assets/images/3a33efd01a6c22c5d65cdfeb825eef984fd39399d86dd4bbbf61e52ce5104c39.jpg"
+    img: "assets/og/citrix-netscaler-zero-days-actively-exploited-1b295be9.png"
   },
   {
     slug: "diffie-hellman-symmetric-keys-explainer",
@@ -86,7 +86,7 @@ window.CS.ARTICLES = [
     date: "2026-10-11",
     read: 8,
     art: "linear-gradient(135deg,#0e2233,#1a1129)",
-    img: "assets/images/diffie-hellman-symmetric-keys-explainer.jpg"
+    img: "assets/og/diffie-hellman-symmetric-keys-explainer-9f125d46.png"
   },
   {
     slug: "anthropic-cuts-live-internet-claude",
@@ -96,7 +96,7 @@ window.CS.ARTICLES = [
     date: "2026-10-10",
     read: 4,
     art: "linear-gradient(135deg,#1b0f2e,#0e1a2e)",
-    img: "assets/images/c00dfffdb074ec6712e0832218f39d73.jpg"
+    img: "assets/og/anthropic-cuts-live-internet-claude-af7b05a6.png"
   }
 ];
 /* ===== ARTICLE DATA — END ===== */
