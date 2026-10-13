@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 12:57:02 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 14:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                            <item>
+                              <item>
+    <title>Mistral launches Large 4 (Le Chonk), a 1-trillion-parameter open-weight model</title>
+    <link>https://wireshaman.com/articles/mistral-large-4-le-chonk-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/mistral-large-4-le-chonk-2026.html</guid>
+    <dc:creator>WireShaman Newsroom</dc:creator>
+    <category>AI &amp; Tech</category>
+    <pubDate>Tue, 06 Oct 2026 14:00:00 +0000</pubDate>
+    <description>Mistral unveiled Mistral Large 4, a natively multimodal 1T-parameter MoE model with 52B active parameters, now in public preview on Mistral Studio with open weights due at the end of the month.</description>
+  </item>
+<item>
     <title>GitLab fixes critical remote-code-execution flaw (CVE-2026-97229) in versions 19.4.2, 19.3.4 and 19.2.8</title>
     <link>https://wireshaman.com/articles/gitlab-1942-critical-remote-code-execution-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/gitlab-1942-critical-remote-code-execution-2026.html</guid>

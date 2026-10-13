@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "mistral-large-4-le-chonk-2026",
+    "title": "Mistral launches Large 4 (Le Chonk), a 1-trillion-parameter open-weight model",
+    "excerpt": "Mistral unveiled Mistral Large 4, a natively multimodal 1T-parameter MoE model with 52B active parameters, now in public preview on Mistral Studio with open weights due at the end of the month.",
+    "category": "tech",
+    "date": "2026-10-06",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/mistral-large-4-le-chonk-2026.jpg"
+  },
+  {
     "slug": "gitlab-1942-critical-remote-code-execution-2026",
     "title": "GitLab fixes critical remote-code-execution flaw (CVE-2026-97229) in versions 19.4.2, 19.3.4 and 19.2.8",
     "excerpt": "GitLab shipped a critical patch set on 12 October 2026 that closes an unauthenticated remote-code-execution bug in the CI/CD regular-expression compiler alongside 23 other issues.",
