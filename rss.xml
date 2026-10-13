@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 17:05:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 17:35:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-            <item>
+              <item>
+    <title>FBI Arrests Canadian Ransomware Negotiator in ShinyHunters Crackdown</title>
+    <link>https://wireshaman.com/articles/shinyhunters-canadian-exec-arrested.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/shinyhunters-canadian-exec-arrested.html</guid>
+    <dc:creator>WireShaman News Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 13 Oct 2026 17:35:00 +0000</pubDate>
+    <description>A 54-year-old Canadian cybersecurity executive who helps victims negotiate ransomware extortion was arrested in Pennsylvania and moved to the Eastern District of Texas, the center of the FBI's ShinyHunters investigation.</description>
+  </item>
+<item>
     <title>Pwn2Own Ireland 2026: Researchers Remotely Crack the Pixel 10 Three Times</title>
     <link>https://wireshaman.com/articles/pixel-10-pwn2own-android-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/pixel-10-pwn2own-android-2026.html</guid>

@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "shinyhunters-canadian-exec-arrested",
+    "title": "FBI Arrests Canadian Ransomware Negotiator in ShinyHunters Crackdown",
+    "excerpt": "A 54-year-old Canadian cybersecurity executive who helps victims negotiate ransomware extortion was arrested in Pennsylvania and moved to the Eastern District of Texas, the center of the FBI's ShinyHunters investigation.",
+    "category": "cybersecurity",
+    "date": "2026-10-13",
+    "read": 7,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/shinyhunters-canadian-exec-arrested.jpg"
+  },
+  {
     "slug": "pixel-10-pwn2own-android-2026",
     "title": "Pwn2Own Ireland 2026: Researchers Remotely Crack the Pixel 10 Three Times",
     "excerpt": "Pwn2Own Ireland 2026 ended with a record payout, and the Google Pixel 10 drew the largest single share after three teams each proved remote, unpatched exploits.",
