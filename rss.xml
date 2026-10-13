@@ -10,6 +10,15 @@
     <lastBuildDate>Tue, 13 Oct 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
+    <title>CISA Warns of Active Zero-Day Exploits in Citrix NetScaler &mdash; New CVE Added</title>
+    <link>https://wireshaman.com/articles/citrix-netscaler-zero-day-alert.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/citrix-netscaler-zero-day-alert.html</guid>
+    <dc:creator>WireShaman</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 13 Oct 2026 12:00:00 +0000</pubDate>
+    <description>CISA expanded its Citrix NetScaler alert on October 9, adding CVE-2026-107406 and clarifying the relationship between two more CVEs. Patch the full set and review your compromise-response posture.</description>
+  </item>
+  <item>
     <title>What Is a TLS Handshake? How HTTPS Proves It&rsquo;s Safe to Talk</title>
     <link>https://wireshaman.com/articles/what-is-tls-handshake-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/what-is-tls-handshake-explainer.html</guid>

@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "citrix-netscaler-zero-day-alert",
+      title: "CISA Warns of Active Zero-Day Exploits in Citrix NetScaler — New CVE Added",
+      excerpt: "CISA expanded its Citrix NetScaler alert on October 9, adding CVE-2026-107406 and clarifying the relationship between two more CVEs. Patch the full set and review your compromise-response posture.",
+      category: "cybersecurity",
+      date: "2026-10-13",
+      read: 6,
+      art: "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+      img: "assets/images/citrix-netscaler-zero-day-alert.jpg"
+    },
+    {
       slug: "what-is-tls-handshake-explainer",
       title: "What Is a TLS Handshake? How HTTPS Proves It\u2019s Safe to Talk",
       excerpt: "A plain-English walkthrough of the TLS handshake \u2014 ClientHello to Finished, and what RFC 8446 (TLS 1.3) actually changed in 2018. Why it matters, step by step, no jargon.",
