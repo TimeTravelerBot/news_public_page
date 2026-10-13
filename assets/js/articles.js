@@ -28,6 +28,16 @@ window.CS.CATEGORIES = [
 
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
+  {
+    "slug": "amd-ryzen-ai-400-gorgon-laptop-2026",
+    "title": "AMD's 192GB Ryzen AI Halo Pushes Local AI Beyond Laptop Memory Limits",
+    "excerpt": "AMD's new Ryzen AI Halo developer platform combines a Ryzen AI Max+ PRO 495 with up to 192GB of unified memory for large local AI workloads.",
+    "category": "hardware",
+    "date": "2026-10-13",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/amd-ryzen-ai-400-gorgon-laptop-2026.jpg"
+  },
     {
       slug: "oneplus-16-china-launch",
       title: "OnePlus 16 launches in China with a 3,840Hz \"Oriental\" LTPO display, 200MP camera, and 9,000mAh battery",

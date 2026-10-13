@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 13:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 15:02:04 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-  <item>
+    <item>
+    <title>AMD's 192GB Ryzen AI Halo Pushes Local AI Beyond Laptop Memory Limits</title>
+    <link>https://wireshaman.com/articles/amd-ryzen-ai-400-gorgon-laptop-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/amd-ryzen-ai-400-gorgon-laptop-2026.html</guid>
+    <dc:creator>WireShaman News Desk</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Tue, 13 Oct 2026 15:02:04 +0000</pubDate>
+    <description>AMD's new Ryzen AI Halo developer platform combines a Ryzen AI Max+ PRO 495 with up to 192GB of unified memory for large local AI workloads.</description>
+  </item>
+<item>
     <title>OnePlus 16 Launches in China: 3,840Hz “Oriental” LTPO Display, 200MP Camera, 9,000mAh Battery</title>
     <link>https://wireshaman.com/articles/oneplus-16-china-launch.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/oneplus-16-china-launch.html</guid>
