@@ -220,7 +220,14 @@ body::before{
   .cards .card{padding-top:.55rem}
   #trending-grid .card__art,
   .row .card__art,
-  .cards .card__art{height:auto;aspect-ratio:1/1}
+  .cards .card__art{height:auto;aspect-ratio:16/9}
+  #trending-grid .card__art img,
+  .row .card__art img,
+  .cards .card__art img{
+    object-position:center top;
+    transform:scale(1.06);
+    transform-origin:center top
+  }
 }
 
 /* ---------- promo / subscribe ---------- */
