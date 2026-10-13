@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 16:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 17:05:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-          <item>
+            <item>
+    <title>Pwn2Own Ireland 2026: Researchers Remotely Crack the Pixel 10 Three Times</title>
+    <link>https://wireshaman.com/articles/pixel-10-pwn2own-android-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/pixel-10-pwn2own-android-2026.html</guid>
+    <dc:creator>WireShaman News Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 13 Oct 2026 17:05:00 +0000</pubDate>
+    <description>Pwn2Own Ireland 2026 ended with a record payout, and the Google Pixel 10 drew the largest single share after three teams each proved remote, unpatched exploits.</description>
+  </item>
+<item>
     <title>MediaTek's October 2026 bulletin silences 31 flaws, led by two critical modem bugs</title>
     <link>https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html</guid>
