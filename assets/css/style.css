@@ -218,6 +218,9 @@ body::before{
   #trending-grid .card,
   .row .card,
   .cards .card{padding-top:.55rem}
+  #trending-grid .card__art,
+  .row .card__art,
+  .cards .card__art{height:auto;aspect-ratio:16/9}
 }
 
 /* ---------- promo / subscribe ---------- */
