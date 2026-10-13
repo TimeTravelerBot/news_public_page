@@ -215,9 +215,9 @@ body::before{
   padding-top:.5rem;border-top:1px solid var(--line);margin-top:.2rem}
 .card__meta time{color:var(--muted)}
 @media (max-width:640px){
-  #trending-grid .card__art img,
-  .row .card__art img,
-  .cards .card__art img{object-position:center 56%}
+  #trending-grid .card,
+  .row .card,
+  .cards .card{padding-top:.55rem}
 }
 
 /* ---------- promo / subscribe ---------- */
