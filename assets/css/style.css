@@ -306,6 +306,8 @@ body::before{
 .consent-banner__copy a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
 .consent-banner__actions{display:flex;gap:.65rem;flex:none}
 .consent-banner .btn{white-space:nowrap;padding:.7rem 1rem}
+.consent-banner .btn--ghost{background:transparent;color:var(--text)}
+.consent-banner .btn--ghost:hover,.consent-banner .btn--ghost:focus-visible{background:rgba(255,255,255,.06);color:var(--accent)}
 .privacy-settings{position:fixed;z-index:90;left:.75rem;bottom:.75rem;padding:.42rem .65rem;
   border:1px solid var(--line-2);border-radius:999px;background:var(--bg-2);color:var(--muted);
   font:600 .7rem/1 var(--font-head);cursor:pointer}
