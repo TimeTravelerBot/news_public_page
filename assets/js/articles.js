@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "gpt-6-intelligent-ui-2026",
+    "title": "OpenAI rolls out GPT-6 with Intelligent UI: answers that build calculators, charts and interactive tools",
+    "excerpt": "OpenAI began rolling out GPT-6 in ChatGPT on October 7, 2026, paired with a new capability called Intelligent UI that lets the model answer questions with charts, calculators, forms and interactive tools built on the spot.",
+    "category": "tech",
+    "date": "2026-10-07",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/gpt-6-intelligent-ui-2026.jpg"
+  },
+  {
     "slug": "windows-11-24h2-end-of-updates-2026",
     "title": "Windows 11 24H2 and Windows 10 LTSB 2016 just hit end of updates — here's what you should do now",
     "excerpt": "Microsoft's October 2026 security release is the final update for Windows 11 24H2 (Home and Pro) and Windows 10 Enterprise LTSB 2016. The last patch also flips the Active Directory Federation Services Distributed Key Manager container ACL hardening into Enforcement mode.",
