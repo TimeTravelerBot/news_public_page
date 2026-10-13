@@ -193,7 +193,7 @@ body::before{
   transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;overflow:hidden}
 .card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:var(--shadow)}
 .card:hover .card__title{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--accent)}
-.card__art{height:120px;border-radius:var(--radius-sm);position:relative;
+.card__art{width:100%;height:120px;flex:none;border-radius:var(--radius-sm);position:relative;
   display:grid;place-items:center;font:700 1.8rem var(--font-head);color:rgba(255,255,255,.25);
   background:var(--art,linear-gradient(135deg,#13202e,#0e1420));overflow:hidden}
 .card__art img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
@@ -214,6 +214,11 @@ body::before{
 .card__meta{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;color:var(--dim);font-size:.8rem;
   padding-top:.5rem;border-top:1px solid var(--line);margin-top:.2rem}
 .card__meta time{color:var(--muted)}
+@media (max-width:640px){
+  #trending-grid .card__art img,
+  .row .card__art img,
+  .cards .card__art img{object-position:center 56%}
+}
 
 /* ---------- promo / subscribe ---------- */
 .promo{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;
