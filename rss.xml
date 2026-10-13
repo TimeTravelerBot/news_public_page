@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 15:03:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 15:32:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-      <item>
+        <item>
+    <title>Microsoft Debuts Maia 300 Chip and Pledges Multi-Gigawatt Inference Fleet</title>
+    <link>https://wireshaman.com/articles/microsoft-maia-300-ai-chip-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/microsoft-maia-300-ai-chip-2026.html</guid>
+    <dc:creator>WireShaman News Desk</dc:creator>
+    <category>AI &amp; Tech</category>
+    <pubDate>Tue, 13 Oct 2026 15:32:00 +0000</pubDate>
+    <description>Microsoft's third-generation Maia 300 AI accelerator, unveiled on 12 October 2026, is aimed squarely at AI inference and is planned for multi-gigawatt Azure deployments beginning in 2027.</description>
+  </item>
+<item>
     <title>What Is OAuth? Authorization, Tokens and PKCE Explained</title>
     <link>https://wireshaman.com/articles/what-is-oauth-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/what-is-oauth-explainer.html</guid>
