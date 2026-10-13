@@ -220,7 +220,7 @@ body::before{
   .cards .card{padding-top:.55rem}
   #trending-grid .card__art,
   .row .card__art,
-  .cards .card__art{height:auto;aspect-ratio:16/9}
+  .cards .card__art{height:auto;aspect-ratio:1/1}
 }
 
 /* ---------- promo / subscribe ---------- */
