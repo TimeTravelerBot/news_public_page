@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "killsec-ransomware-teen-takedown-2026",
+    "title": "Police Shutter KillSec Ransomware and Arrest a 16-Year-Old Suspected Operator",
+    "excerpt": "A coordinated European operation seized the KillSec ransomware infrastructure and identified a teenage suspect alleged to have run the group's attack campaign.",
+    "category": "cybersecurity",
+    "date": "2026-10-13",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/killsec-ransomware-teen-takedown-2026.jpg"
+  },
+  {
     "slug": "midnight-mimosa-android-firmware-malware",
     "title": "“Midnight Mimosa”: Cheap Android Phones Ship With Malware You Can’t Uninstall",
     "excerpt": "A new preinstalled firmware-root malware named Midnight Mimosa was found on low-cost MediaTek Android phones sold across more than 150 countries, enabling ad fraud and turning victims into residential proxies.",
