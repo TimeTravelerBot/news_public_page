@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "ram-crisis-ddr4-price-surge-2026",
+    "title": "The RAM crisis has no end in sight: DDR4 prices jumped 24% in a quarter and even the old standard is now scarce",
+    "excerpt": "Memory is getting pricier than ever. DDR4 is up roughly 24% in a single quarter, and Intel's CEO says consumers face one to three more years of the AI-driven shortage.",
+    "category": "hardware",
+    "date": "2026-10-13",
+    "read": 7,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/ram-crisis-ddr4-price-surge-2026.jpg"
+  },
+  {
     "slug": "mistral-large-4-le-chonk-2026",
     "title": "Mistral launches Large 4 (Le Chonk), a 1-trillion-parameter open-weight model",
     "excerpt": "Mistral unveiled Mistral Large 4, a natively multimodal 1T-parameter MoE model with 52B active parameters, now in public preview on Mistral Studio with open weights due at the end of the month.",
