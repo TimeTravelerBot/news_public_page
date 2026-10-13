@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "windows-11-24h2-end-of-updates-2026",
+    "title": "Windows 11 24H2 and Windows 10 LTSB 2016 just hit end of updates — here's what you should do now",
+    "excerpt": "Microsoft's October 2026 security release is the final update for Windows 11 24H2 (Home and Pro) and Windows 10 Enterprise LTSB 2016. The last patch also flips the Active Directory Federation Services Distributed Key Manager container ACL hardening into Enforcement mode.",
+    "category": "cybersecurity",
+    "date": "2026-10-13",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/windows-11-24h2-end-of-updates-2026.jpg"
+  },
+  {
     "slug": "surface-laptop-ultra-rtx-spark-2026",
     "title": "Microsoft and Nvidia unveil the Surface Laptop Ultra and the RTX Spark superchip",
     "excerpt": "Microsoft's Surface Laptop Ultra ships on the new Nvidia RTX Spark superchip, starting at $2,600, alongside a $6,000 Dev Box workstation and a revamped Windows 11 built to run AI locally.",
