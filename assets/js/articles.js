@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "docker-hub-ghostpat-cve-2026-105445-2026",
+    "title": "Docker Hub’s GhostPat Flaw Let One User Push Images as Another — For Two Years",
+    "excerpt": "Docker fixed a critical Docker Hub flaw, tracked as CVE-2026-105445, that let any user transfer a personal access token to another account and act as that user in the registry.",
+    "category": "cybersecurity",
+    "date": "2026-10-13",
+    "read": 7,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/docker-hub-ghostpat-cve-2026-105445-2026.jpg"
+  },
+  {
     "slug": "ram-crisis-ddr4-price-surge-2026",
     "title": "The RAM crisis has no end in sight: DDR4 prices jumped 24% in a quarter and even the old standard is now scarce",
     "excerpt": "Memory is getting pricier than ever. DDR4 is up roughly 24% in a single quarter, and Intel's CEO says consumers face one to three more years of the AI-driven shortage.",

@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 14:21:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 15:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                <item>
+                                  <item>
+    <title>Docker Hub’s GhostPat Flaw Let One User Push Images as Another — For Two Years</title>
+    <link>https://wireshaman.com/articles/docker-hub-ghostpat-cve-2026-105445-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/docker-hub-ghostpat-cve-2026-105445-2026.html</guid>
+    <dc:creator>WireShaman Editorial</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 13 Oct 2026 15:30:00 +0000</pubDate>
+    <description>Docker fixed a critical Docker Hub flaw, tracked as CVE-2026-105445, that let any user transfer a personal access token to another account and act as that user in the registry.</description>
+  </item>
+<item>
     <title>The RAM crisis has no end in sight: DDR4 prices jumped 24% in a quarter and even the old standard is now scarce</title>
     <link>https://wireshaman.com/articles/ram-crisis-ddr4-price-surge-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/ram-crisis-ddr4-price-surge-2026.html</guid>
