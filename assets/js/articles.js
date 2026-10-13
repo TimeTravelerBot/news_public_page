@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "midnight-mimosa-android-firmware-malware",
+    "title": "“Midnight Mimosa”: Cheap Android Phones Ship With Malware You Can’t Uninstall",
+    "excerpt": "A new preinstalled firmware-root malware named Midnight Mimosa was found on low-cost MediaTek Android phones sold across more than 150 countries, enabling ad fraud and turning victims into residential proxies.",
+    "category": "cybersecurity",
+    "date": "2026-10-13",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/midnight-mimosa-android-firmware-malware.jpg"
+  },
+  {
     "slug": "shinyhunters-canadian-exec-arrested",
     "title": "FBI Arrests Canadian Ransomware Negotiator in ShinyHunters Crackdown",
     "excerpt": "A 54-year-old Canadian cybersecurity executive who helps victims negotiate ransomware extortion was arrested in Pennsylvania and moved to the Eastern District of Texas, the center of the FBI's ShinyHunters investigation.",

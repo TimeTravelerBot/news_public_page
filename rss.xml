@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 17:35:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 17:15:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-              <item>
+                <item>
+    <title>“Midnight Mimosa”: Cheap Android Phones Ship With Malware You Can’t Uninstall</title>
+    <link>https://wireshaman.com/articles/midnight-mimosa-android-firmware-malware.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/midnight-mimosa-android-firmware-malware.html</guid>
+    <dc:creator>WireShaman News Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 13 Oct 2026 17:15:00 +0000</pubDate>
+    <description>A new preinstalled firmware-root malware named Midnight Mimosa was found on low-cost MediaTek Android phones sold across more than 150 countries, enabling ad fraud and turning victims into residential proxies.</description>
+  </item>
+<item>
     <title>FBI Arrests Canadian Ransomware Negotiator in ShinyHunters Crackdown</title>
     <link>https://wireshaman.com/articles/shinyhunters-canadian-exec-arrested.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/shinyhunters-canadian-exec-arrested.html</guid>
