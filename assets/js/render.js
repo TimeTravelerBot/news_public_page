@@ -123,6 +123,10 @@
   }
   var yr = document.getElementById("copyright-year");
   if (yr) yr.textContent = d.getFullYear();
+  var storyCount = document.getElementById("published-story-count");
+  if (storyCount) storyCount.textContent = articles.length;
+  var deskCount = document.getElementById("coverage-desk-count");
+  if (deskCount) deskCount.textContent = cats.length;
 
   // ---- mobile nav toggle ----
   var header = document.querySelector(".site-header");
