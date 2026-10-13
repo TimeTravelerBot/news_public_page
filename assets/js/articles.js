@@ -320,3 +320,13 @@ window.CS.ARTICLES = [
   }
 ];
 /* ===== ARTICLE DATA — END ===== */
+
+/* Shared privacy notice loader. Kept outside the publisher-managed article data block. */
+(function () {
+  if (document.querySelector("script[data-wireshaman-consent]")) return;
+  var nested = /^\/(?:articles|categories)\//.test(window.location.pathname);
+  var script = document.createElement("script");
+  script.src = (nested ? "../" : "") + "assets/js/consent.js";
+  script.dataset.wireshamanConsent = "";
+  document.head.appendChild(script);
+})();
