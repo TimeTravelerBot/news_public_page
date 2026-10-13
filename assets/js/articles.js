@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "gitlab-1942-critical-remote-code-execution-2026",
+    "title": "GitLab fixes critical remote-code-execution flaw (CVE-2026-97229) in versions 19.4.2, 19.3.4 and 19.2.8",
+    "excerpt": "GitLab shipped a critical patch set on 12 October 2026 that closes an unauthenticated remote-code-execution bug in the CI/CD regular-expression compiler alongside 23 other issues.",
+    "category": "cybersecurity",
+    "date": "2026-10-12",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/gitlab-1942-critical-remote-code-execution-2026.jpg"
+  },
+  {
     "slug": "gpt-6-intelligent-ui-2026",
     "title": "OpenAI rolls out GPT-6 with Intelligent UI: answers that build calculators, charts and interactive tools",
     "excerpt": "OpenAI began rolling out GPT-6 in ChatGPT on October 7, 2026, paired with a new capability called Intelligent UI that lets the model answer questions with charts, calculators, forms and interactive tools built on the spot.",
