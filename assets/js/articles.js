@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "surface-laptop-ultra-rtx-spark-2026",
+    "title": "Microsoft and Nvidia unveil the Surface Laptop Ultra and the RTX Spark superchip",
+    "excerpt": "Microsoft's Surface Laptop Ultra ships on the new Nvidia RTX Spark superchip, starting at $2,600, alongside a $6,000 Dev Box workstation and a revamped Windows 11 built to run AI locally.",
+    "category": "hardware",
+    "date": "2026-10-07",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/surface-laptop-ultra-rtx-spark-2026.jpg"
+  },
+  {
     "slug": "anthropic-cyber-mission-oss-scanner-2026",
     "title": "Anthropic unveils the 'Cyber Mission' and a free AI scanner for open-source software",
     "excerpt": "Anthropic launched a new long-term 'Cyber Mission' built around a free OSS Scanner that runs its strongest models over open-source projects, a Critical Infrastructure Defense Program backed by major security firms, and an expanded Cyber Verification Program that opens its most capable models to more defenders.",
