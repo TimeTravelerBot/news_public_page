@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "anthropic-cyber-mission-oss-scanner-2026",
+    "title": "Anthropic unveils the 'Cyber Mission' and a free AI scanner for open-source software",
+    "excerpt": "Anthropic launched a new long-term 'Cyber Mission' built around a free OSS Scanner that runs its strongest models over open-source projects, a Critical Infrastructure Defense Program backed by major security firms, and an expanded Cyber Verification Program that opens its most capable models to more defenders.",
+    "category": "tech",
+    "date": "2026-10-08",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/anthropic-cyber-mission-oss-scanner-2026.jpg"
+  },
+  {
     "slug": "killsec-ransomware-teen-takedown-2026",
     "title": "Police Shutter KillSec Ransomware and Arrest a 16-Year-Old Suspected Operator",
     "excerpt": "A coordinated European operation seized the KillSec ransomware infrastructure and identified a teenage suspect alleged to have run the group's attack campaign.",
