@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 15:32:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 16:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <item>
+          <item>
+    <title>MediaTek's October 2026 bulletin silences 31 flaws, led by two critical modem bugs</title>
+    <link>https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html</guid>
+    <dc:creator>WireShaman Research Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 13 Oct 2026 16:30:00 +0000</pubDate>
+    <description>MediaTek's October 2026 security bulletin addresses 31 chipset vulnerabilities, including two critical out-of-bounds write flaws in its modem stack that can be triggered from a rogue base station with no user interaction.</description>
+  </item>
+<item>
     <title>Microsoft Debuts Maia 300 Chip and Pledges Multi-Gigawatt Inference Fleet</title>
     <link>https://wireshaman.com/articles/microsoft-maia-300-ai-chip-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/microsoft-maia-300-ai-chip-2026.html</guid>

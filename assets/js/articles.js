@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "mediatek-october-2026-security-bulletin",
+    "title": "MediaTek's October 2026 bulletin silences 31 flaws, led by two critical modem bugs",
+    "excerpt": "MediaTek's October 2026 security bulletin addresses 31 chipset vulnerabilities, including two critical out-of-bounds write flaws in its modem stack that can be triggered from a rogue base station with no user interaction.",
+    "category": "cybersecurity",
+    "date": "2026-10-13",
+    "read": 4,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/mediatek-october-2026-security-bulletin.jpg"
+  },
+  {
     "slug": "microsoft-maia-300-ai-chip-2026",
     "title": "Microsoft Debuts Maia 300 Chip and Pledges Multi-Gigawatt Inference Fleet",
     "excerpt": "Microsoft's third-generation Maia 300 AI accelerator, unveiled on 12 October 2026, is aimed squarely at AI inference and is planned for multi-gigawatt Azure deployments beginning in 2027.",

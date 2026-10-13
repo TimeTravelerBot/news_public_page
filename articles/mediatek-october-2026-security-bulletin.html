@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-mediatek-october-2026-security-bulletin">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediaTek&#x27;s October 2026 bulletin silences 31 flaws, led by two critical modem bugs — WireShaman</title>
+  <meta name="description" content="MediaTek&#x27;s October 2026 security bulletin addresses 31 chipset vulnerabilities, including two critical out-of-bounds write flaws in its modem stack that can be triggered from a rogue base station with no user interaction.">
+  <meta name="author" content="WireShaman Research Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html">
+  <meta property="og:title" content="MediaTek&#x27;s October 2026 bulletin silences 31 flaws, led by two critical modem bugs">
+  <meta property="og:description" content="MediaTek&#x27;s October 2026 security bulletin addresses 31 chipset vulnerabilities, including two critical out-of-bounds write flaws in its modem stack that can be triggered from a rogue base station with no user interaction.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/mediatek-october-2026-security-bulletin.jpg">
+  <meta property="og:image:alt" content="A smartphone in front of a cellular base station tower against a dusk sky, editorial illustration">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-13">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="MediaTek&#x27;s October 2026 bulletin silences 31 flaws, led by two critical modem bugs">
+  <meta name="twitter:description" content="MediaTek&#x27;s October 2026 security bulletin addresses 31 chipset vulnerabilities, including two critical out-of-bounds write flaws in its modem stack that can be triggered from a rogue base station with no user interaction.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/mediatek-october-2026-security-bulletin.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"MediaTek's October 2026 bulletin silences 31 flaws, led by two critical modem bugs","description":"MediaTek's October 2026 security bulletin addresses 31 chipset vulnerabilities, including two critical out-of-bounds write flaws in its modem stack that can be triggered from a rogue base station with no user interaction.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html","datePublished":"2026-10-13","image":"https://wireshaman.com/assets/images/mediatek-october-2026-security-bulletin.jpg","articleSection":"Cybersecurity"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/cybersecurity.html"><span>&larr;</span> Back to Cybersecurity</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/mediatek-october-2026-security-bulletin.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Cybersecurity</span>
+      <h1 class="article__title">MediaTek&#x27;s October 2026 bulletin silences 31 flaws, led by two critical modem bugs</h1>
+      <p class="article__sub">MediaTek&#x27;s October 2026 security bulletin addresses 31 vulnerabilities in its chipsets, two of them critical modem bugs that a rogue base station can exploit without the user doing anything.</p>
+      <div class="article__meta">
+        <span class="tag tag--cybersecurity">Cybersecurity</span>
+        <b>WireShaman Research Desk</b>
+        <time datetime="2026-10-13">Oct 13, 2026</time> · 4 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">MediaTek has released its <strong>October 2026 security bulletin</strong>, published on 5 October, addressing 31 vulnerabilities across its smartphone, automotive, tablet and IoT platforms. Two of the flaws are rated critical: <em>CVE-2026-20519</em> and <em>CVE-2026-20520</em>, both in the modem. The company says device makers received the fixes at least two months before public disclosure, and that it is "not aware of any active exploitation of these vulnerabilities in the wild." No public proof-of-concept has been confirmed either.</p>
+
+        <h2>Two critical bugs, one attack model</h2>
+
+        <p>Both critical flaws are <strong>out-of-bounds writes caused by missing bounds checks</strong> in MediaTek's modem stack, classified under CWE-787. The National Vulnerability Database scores the lead bug at CVSS 7.5 high (AV:A/AC:H/PR:N/UI:N), and describes the exploit chain the way every carrier in the list does it: if a device connects to a <strong>rogue base station controlled by the attacker</strong>, the modem can be pushed into writing out of bounds, enabling remote privilege escalation — with no user interaction and no additional privileges required. The attack window is the adjacent-network range, which makes café-side coffee-shop Wi-Fi the wrong setting but makes a phone parked inside a city the right one.</p>
+
+        <p>The reach of the two critical flaws is the headline. They cover a long slate of chipsets, spanning the <strong>MT6833, MT6853, MT6877 and MT6893</strong> smartphone families, the <strong>MT6983, MT6985, MT6989, MT6991 and MT6993</strong> flagship parts, the <em>MT87xx</em> and <em>MT88xx</em> tablet and Chromebook lines, and the <em>MT2735</em> and <em>MT2737</em> automotive and IoT modems. That is more than 50 distinct chipsets across the phone, automotive and consumer lines combined.</p>
+
+        <h2>The rest of the bulletin</h2>
+
+        <ul>
+          <li>CVE-2026-20526 — another modem flaw that reaches a similar impact but requires user interaction.</li>
+          <li>CVE-2026-20586 — an out-of-bounds write in the video decoder (vdec) that can lead to remote privilege escalation when a user opens crafted content.</li>
+          <li>CVE-2026-20525 and CVE-2026-20527 — modem bugs that let a rogue base station crash the device, a remote denial-of-service path.</li>
+          <li>Remaining high-severity flaws in the NeuroPilot AI framework, APU driver and video HAL, each giving a local attacker a privilege-escalation foothold.</li>
+          <li>20 medium-severity flaws that mostly require system privileges and span mtee, aidl, display, battery and ccci; several of these also allow a remote denial of service via a rogue base station.</li>
+        </ul>
+
+        <h2>What this means for you</h2>
+
+        <p>The critical pair is the one to focus on because it removes the usual user-interaction requirement: a phone parked inside a city, on its normal cell connection, is inside the attacker's window. There is no active exploitation yet, but a rogue-base-station attack is a low-cost, high-reach vector if the target is a device whose software has not been updated — and MediaTek's two-month OEM lead time is the mitigation, not anything a user can do directly. The practical takeaway for device owners is a familiar one: <strong>install your phone maker's monthly or bi-monthly security update</strong> and watch for a security-patch-level jump. Devices that ship on older firmware or that stop shipping updates are the exposure surface this bulletin is most likely to matter for.</p>
+
+        <p>The broader read is that modem-stack memory corruption is still one of the most durable remote-attack vectors in mobile security, and vendors like MediaTek are the ones closing the most of it. The question going into the next cycle is not whether the criticals will be exploited, but whether any OEM will be slow enough to be caught.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.mediatek.com/product-security-bulletin/october-2026" target="_blank" rel="noopener">MediaTek Product Security Bulletin: October 2026</a>; <a href="https://securityonline.info/mediatek-security-bulletin-october-2026/" target="_blank" rel="noopener">MediaTek October 2026 bulletin fixes 31 flaws (SecurityOnline)</a>; <a href="https://cyberpress.org/mediatek-fixes-31-chipset-vulnerabilities/" target="_blank" rel="noopener">MediaTek fixes 31 chipset vulnerabilities (CyberPress)</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "mediatek-october-2026-security-bulletin";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
