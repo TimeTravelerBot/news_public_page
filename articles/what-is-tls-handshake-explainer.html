@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-page="news-what-is-tls-handshake-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Is a TLS Handshake? How HTTPS Proves It's Safe to Talk — WireShaman</title>
+  <meta name="description" content="Before any HTTPS traffic flows, a TLS handshake negotiates the encryption and proves the server's identity. Here's the exact sequence — ClientHello to Finished — and what changed in TLS 1.3.">
+  <meta name="author" content="WireShaman Editorial">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/what-is-tls-handshake-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="What Is a TLS Handshake? How HTTPS Proves It's Safe to Talk">
+  <meta property="og:description" content="The TLS handshake negotiates the session keys and proves the server's identity before any data flows. ClientHello, HelloRetryRequest, certificates, and what TLS 1.3 changed.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" href="https://wireshaman.com/articles/what-is-tls-handshake-explainer.html">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/what-is-tls-handshake-explainer.jpg">
+  <meta property="og:image:alt" content="An editorial illustration of two systems completing a handshake over an encrypted channel">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-10-13">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="What Is a TLS Handshake? How HTTPS Proves It's Safe to Talk">
+  <meta name="twitter:description" content="How the TLS handshake negotiates session keys, proves identity, and gets a 1.3-RTT connection to first byte.">
+  <meta name="twitter:image" href="https://wireshaman.com/assets/images/what-is-tls-handshake-explainer.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"What Is a TLS Handshake? How HTTPS Proves It's Safe to Talk","description":"Before any HTTPS traffic flows, a TLS handshake negotiates the session keys and proves the server's identity. Here's the exact message sequence, why certificates matter, and what TLS 1.3 changed.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/what-is-tls-handshake-explainer.html","datePublished":"2026-10-13","image":"https://wireshaman.com/assets/images/what-is-tls-handshake-explainer.jpg"}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainers</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/what-is-tls-handshake-explainer.jpg" width="1200" height="630" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">What Is a TLS Handshake? How HTTPS Proves It's Safe to Talk</h1>
+      <p class="article__sub">Before a single byte of your request goes over the wire in clear text, the client and server run a short negotiation — the TLS handshake — that decides how they'll encrypt everything and proves who is who.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>WireShaman Editorial</b>
+        <time datetime="2026-10-13">Oct 13, 2026</time> · 6 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">Type a URL, hit enter, and within a few hundred milliseconds your browser is exchanging encrypted data with a server it has never met. What makes that safe is a short exchange that runs <em>before</em> any real traffic: the <strong>TLS handshake</strong>. It negotiates the encryption parameters, generates the session keys, and — crucially — gives the client proof that the server is actually who it claims to be. Get it wrong and every other security guarantee in the stack quietly evaporates.</p>
+
+        <h2>What problem the handshake solves</h2>
+        <p>The internet doesn't have a built-in notion of "safe to talk to." Three things go wrong if you just send data over the network:</p>
+        <ul>
+          <li><strong>Eavesdropping.</strong> Anyone on the path — an ISP, a café's Wi-Fi, a compromised router — can read plaintext traffic.</li>
+          <li><strong>Impersonation.</strong> An attacker can stand up a fake server for <code>yoursite.com</code> and intercept what you send.</li>
+          <li><strong>Tampering.</strong> Even if nobody reads your traffic, a man-in-the-middle can rewrite it in flight.</li>
+        </ul>
+        <p>The handshake is the mechanism that turns a dumb network into a channel that is <strong>confidential</strong> (only the two ends can read it), <strong>authentic</strong> (the client knows who the server is), and <strong>integrity-protected</strong> (any tampering is detectable). Everything after the handshake is encrypted with symmetric keys generated <em>during</em> it.</p>
+
+        <h2>The handshake, step by step</h2>
+        <p>TLS 1.3 (RFC 8446) is the current version of the protocol, and its handshake is deliberately short — one round trip in the common case. Here is the normal server-authentication flow:</p>
+        <p><strong>1. ClientHello.</strong> The client opens the conversation with a message containing its supported protocol versions, a list of candidate cipher suites, and one or more <code>KeyShare</code> entries — half of a key-exchange computation (typically X25519, Curve25519, or similar). This is the client's first contribution to the shared secret.</p>
+        <p><strong>2. ServerHello.</strong> The server picks a version and cipher suite, and responds with its own <code>KeyShare</code> for an agreed key-exchange group. The moment both sides hold matching KeyShares, each can independently derive the session keys — no further messages needed to encrypt the rest of the handshake itself.</p>
+        <p><strong>3. Server authentication.</strong> The server then sends, in encrypted form: <em>EncryptedExtensions</em> (its chosen parameters), its <strong>Certificate</strong> (an X.509 certificate issued by a trusted CA, binding its public key to a domain name), a <strong>CertificateVerify</strong> signature proving it holds the private key behind that certificate, and a <strong>Finished</strong> message that both sides can use to detect tampering of everything sent so far.</p>
+        <p><strong>4. Client confirms.</strong> The client validates the certificate chain, checks the domain name, verifies the signature, and sends its own <code>Finished</code>. Now both sides have session keys, and both sides know the transcript wasn't altered. Application data can flow.</p>
+        <p>A notable variant: if the server can't use the client's KeyShare (say, it doesn't support the client's preferred key-exchange group), it replies with a <strong>HelloRetryRequest</strong> instead of a normal ServerHello, forcing the client to send a fresh ClientHello with an acceptable group. It costs one extra round trip, which is why it's rare on well-tuned servers.</p>
+
+        <h2>Why the certificate matters</h2>
+        <p>Key exchange gives you a shared secret that even the server can't derive from the wire alone. But a shared secret alone doesn't stop impersonation: an attacker could run their own handshake with you using a different key pair. The certificate is what binds the server's public key to <code>yoursite.com</code>.</p>
+        <p>Under the hood, that binding is a <strong>Public Key Infrastructure</strong> (PKI) trust chain: the server's certificate is signed by a certificate authority (CA) whose root certificate your browser or OS trusts, and every step in the chain must verify cryptographically. Your client checks the signature, validity dates, revocation status, and the domain name in the certificate. The browser's padlock is the UI layer on top of this verification — not a signal that the server is safe, just that the identity check passed.</p>
+
+        <h2>Mutual TLS: when the client proves itself too</h2>
+        <p>In the standard flow, only the server is authenticated. But TLS can require the <em>reverse</em>: the server requests a client certificate, and the handshake won't complete until the client presents one that the server trusts. This is <strong>mutual TLS (mTLS)</strong>, and it's the backbone of API-to-API authentication, device fleets, and zero-trust mesh networks. Instead of sharing an API key, the client proves it by holding a private key whose certificate the server trusts.</p>
+
+        <h2>What TLS 1.3 actually changed</h2>
+        <p>TLS 1.3 (mandated in 2018) was a cleanup of TLS 1.2. The changes that matter in practice:</p>
+        <ul>
+          <li><strong>Faster to first byte.</strong> The client sends its KeyShare up front in the ClientHello, so the keys are ready by the time the server's flight arrives. One less round trip than TLS 1.2 in the common case.</li>
+          <li><strong>0-RTT.</strong> With session resumption, a returning client can send data in its very first flight — at the cost of a replay window that requires careful application design.</li>
+          <li><strong>Legacy suites removed.</strong> Weak ciphers, static RSA key exchange, and MD5-based MACs are gone. What remains is a small set of AEAD ciphers (AES-GCM, ChaCha20-Poly1305) that provide both confidentiality and integrity.</li>
+          <li><strong>A cleaner state machine.</strong> Messages are ordered and encrypted earlier, which shrinks the surface area for downgrade and middlebox attacks.</li>
+        </ul>
+        <p>If you're still seeing TLS 1.0 or 1.1 handshakes in your traffic, those clients or servers are running obsolete protocol versions and should be treated as a review item, not a legacy oddity.</p>
+
+        <h2>How to see a handshake yourself</h2>
+        <p>You don't need a packet capture to inspect what just happened — your browser does it for you. Click the padlock, expand the certificate and connection details, and you'll see the negotiated protocol version, the cipher suite, and the certificate chain your client actually validated. For a full wire-level view, <code>openssl s_client -connect host:443</code> prints the handshake as it runs; Wireshark decodes the individual ClientHello, ServerHello, and Certificate messages.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>If you run a server: modern cipher suites, a valid certificate, and TLS 1.3 aren't optional niceties — they're the baseline of a channel users (and auditors) can trust. If you consume one: the padlock means the identity check passed, not that the site is safe; verify the domain the certificate actually covers, and treat any connection that downgrades to TLS 1.2-or-older as something worth asking about.</p>
+        </div>
+
+        <p class="source">Sources: RFC 8446 (The TLS Protocol Version 1.3) and the TLS specification history, plus published TLS protocol guides.</p>
+      </div>
+
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "what-is-tls-handshake-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>

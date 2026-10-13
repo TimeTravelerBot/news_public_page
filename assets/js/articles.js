@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "what-is-tls-handshake-explainer",
+      title: "What Is a TLS Handshake? How HTTPS Proves It\u2019s Safe to Talk",
+      excerpt: "A plain-English walkthrough of the TLS handshake \u2014 ClientHello to Finished, and what RFC 8446 (TLS 1.3) actually changed in 2018. Why it matters, step by step, no jargon.",
+      category: "explainer",
+      date: "2026-10-13",
+      read: 6,
+      art: "linear-gradient(135deg, #0a2a3a 0%, #1a3a5a 100%)",
+      img: "assets/images/what-is-tls-handshake-explainer.jpg"
+    },
+    {
       slug: "nvidia-rtx-spark-laptops-surface-laptop-ultra",
       title: "Nvidia RTX Spark Laptops Arrive October 16: Surface Laptop Ultra, Full Lineup with Specs and Pricing",
       excerpt: "Nvidia's RTX Spark superchip goes on sale across six brands starting October 16, 2026. Microsoft's Surface Laptop Ultra starts at $2,599, the Surface RTX Spark Dev Box at $5,999.99. Here's every model, price, and what the unified-memory Arm chip actually changes.",
