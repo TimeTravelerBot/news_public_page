@@ -69,7 +69,7 @@ body::before{
   backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .site-header__inner{display:flex;align-items:center;gap:1.5rem;min-height:70px;padding-block:8px}
 .brand{display:flex;align-items:center;gap:.5rem;font:700 1.35rem/1 var(--font-head);letter-spacing:-.01em}
-.brand__accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand__accent{margin-left:-.5rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brand__glyph{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;
   background:rgba(53,242,255,.08);border:1px solid rgba(53,242,255,.25)}
 .nav{margin-left:auto;display:flex;align-items:center;gap:1.4rem;font-size:.92rem;color:var(--muted)}
