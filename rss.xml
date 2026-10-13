@@ -7,10 +7,19 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 13:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
   <item>
-    <title>CISA Warns of Active Zero-Day Exploits in Citrix NetScaler &mdash; New CVE Added</title>
+    <title>OnePlus 16 Launches in China: 3,840Hz “Oriental” LTPO Display, 200MP Camera, 9,000mAh Battery</title>
+    <link>https://wireshaman.com/articles/oneplus-16-china-launch.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/oneplus-16-china-launch.html</guid>
+    <dc:creator>WireShaman</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Tue, 13 Oct 2026 13:00:00 +0000</pubDate>
+    <description>OnePlus announced the OnePlus 16 in China on October 12, headlined by its 4th Gen Oriental display, Snapdragon 8 Elite Extreme Gen 6, and 9,000mAh battery. What we know, what is confirmed, and what is still unverified.</description>
+  </item>
+  <item>
+    <title>CISA Warns of Active Zero-Day Exploits in Citrix NetScaler — New CVE Added</title>
     <link>https://wireshaman.com/articles/citrix-netscaler-zero-day-alert.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/citrix-netscaler-zero-day-alert.html</guid>
     <dc:creator>WireShaman</dc:creator>
@@ -19,11 +28,11 @@
     <description>CISA expanded its Citrix NetScaler alert on October 9, adding CVE-2026-107406 and clarifying the relationship between two more CVEs. Patch the full set and review your compromise-response posture.</description>
   </item>
   <item>
-    <title>What Is a TLS Handshake? How HTTPS Proves It&rsquo;s Safe to Talk</title>
+    <title>What Is a TLS Handshake? How HTTPS Proves It’s Safe to Talk</title>
     <link>https://wireshaman.com/articles/what-is-tls-handshake-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/what-is-tls-handshake-explainer.html</guid>
     <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
-    <description>A plain-English walkthrough of the TLS handshake &mdash; ClientHello to Finished, and what RFC 8446 (TLS 1.3) actually changed in 2018. Why it matters, step by step, no jargon.</description>
+    <description>A plain-English walkthrough of the TLS handshake — ClientHello to Finished, and what RFC 8446 (TLS 1.3) actually changed in 2018. Why it matters, step by step, no jargon.</description>
   </item>
   <item>
     <title>Nvidia RTX Spark Laptops Arrive October 16: Surface Laptop Ultra, Full Lineup with Specs and Pricing</title>

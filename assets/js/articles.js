@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
     {
+      slug: "oneplus-16-china-launch",
+      title: "OnePlus 16 launches in China with a 3,840Hz \"Oriental\" LTPO display, 200MP camera, and 9,000mAh battery",
+      excerpt: "OnePlus announced the OnePlus 16 in China on October 12, 2026, headlined by its 4th Gen Oriental display (3,840Hz PWM), Snapdragon 8 Elite Extreme Gen 6, and 9,000mAh battery, with a global event reported for November 5.",
+      category: "hardware",
+      date: "2026-10-13",
+      read: 8,
+      art: "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+      img: "assets/images/oneplus-16-china-launch.jpg"
+    },
+    {
       slug: "citrix-netscaler-zero-day-alert",
       title: "CISA Warns of Active Zero-Day Exploits in Citrix NetScaler — New CVE Added",
       excerpt: "CISA expanded its Citrix NetScaler alert on October 9, adding CVE-2026-107406 and clarifying the relationship between two more CVEs. Patch the full set and review your compromise-response posture.",
