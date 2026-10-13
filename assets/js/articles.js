@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "what-is-oauth-explainer",
+    "title": "What Is OAuth? Authorization, Tokens and PKCE Explained",
+    "excerpt": "OAuth lets an application receive limited access to another service without receiving the user's password. Here is how roles, tokens, scopes and PKCE fit together.",
+    "category": "explainer",
+    "date": "2026-10-13",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/what-is-oauth-explainer.jpg"
+  },
+  {
     "slug": "amd-ryzen-ai-400-gorgon-laptop-2026",
     "title": "AMD's 192GB Ryzen AI Halo Pushes Local AI Beyond Laptop Memory Limits",
     "excerpt": "AMD's new Ryzen AI Halo developer platform combines a Ryzen AI Max+ PRO 495 with up to 192GB of unified memory for large local AI workloads.",

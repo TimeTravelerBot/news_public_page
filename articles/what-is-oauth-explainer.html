@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-what-is-oauth-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Is OAuth? Authorization, Tokens and PKCE Explained — WireShaman</title>
+  <meta name="description" content="OAuth lets an application receive limited access to another service without receiving the user&#x27;s password. Here is how roles, tokens, scopes and PKCE fit together.">
+  <meta name="author" content="WireShaman News Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/what-is-oauth-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/what-is-oauth-explainer.html">
+  <meta property="og:title" content="What Is OAuth? Authorization, Tokens and PKCE Explained">
+  <meta property="og:description" content="OAuth lets an application receive limited access to another service without receiving the user&#x27;s password. Here is how roles, tokens, scopes and PKCE fit together.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/what-is-oauth-explainer.jpg">
+  <meta property="og:image:alt" content="Editorial illustration of a glowing access token passing securely between two abstract computer systems">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-13">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="What Is OAuth? Authorization, Tokens and PKCE Explained">
+  <meta name="twitter:description" content="OAuth lets an application receive limited access to another service without receiving the user&#x27;s password. Here is how roles, tokens, scopes and PKCE fit together.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/what-is-oauth-explainer.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"What Is OAuth? Authorization, Tokens and PKCE Explained","description":"OAuth lets an application receive limited access to another service without receiving the user's password. Here is how roles, tokens, scopes and PKCE fit together.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/what-is-oauth-explainer.html","datePublished":"2026-10-13","image":"https://wireshaman.com/assets/images/what-is-oauth-explainer.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/what-is-oauth-explainer.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">What Is OAuth? Authorization, Tokens and PKCE Explained</h1>
+      <p class="article__sub">OAuth is the protocol behind many “connect your account” experiences, but it is frequently mistaken for a login protocol. Its actual job is delegated authorization: giving one application limited permission to use another service on your behalf.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>WireShaman News Desk</b>
+        <time datetime="2026-10-13">Oct 13, 2026</time> · 7 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">OAuth is a framework for <strong>delegated authorization</strong>. It allows an application to obtain limited access to an HTTP service without asking the resource owner to hand over a password. A calendar tool, for example, can receive permission to read selected events without gaining the ability to sign in as the user everywhere. The permission is represented by an access token rather than by the user's primary credential.</p>
+
+        <h2>Authorization is not authentication</h2>
+
+        <p>Authentication answers <em>who are you?</em> Authorization answers <em>what may you do?</em> OAuth 2.0 was designed for the second question. A service can use OAuth during a sign-in experience, but OAuth alone does not define a standard identity claim about the person. Services that need interoperable login commonly add <strong>OpenID Connect</strong>, an identity layer built on top of OAuth 2.0. This distinction matters because accepting an access token as proof of identity can create subtle security errors.</p>
+
+        <h2>The four roles in the basic model</h2>
+
+        <ul>
+          <li>The <strong>resource owner</strong> is the party that can grant access, often the user.</li>
+          <li>The <strong>client</strong> is the application requesting permission. In OAuth terminology, client does not necessarily mean a browser or end-user device.</li>
+          <li>The <strong>authorization server</strong> authenticates the resource owner as needed, records consent and issues tokens.</li>
+          <li>The <strong>resource server</strong> hosts the protected API and decides whether a presented token permits the requested operation.</li>
+        </ul>
+
+        <p>These roles may be operated by the same company, but they remain logically separate. The authorization server creates the credential; the resource server enforces it. Keeping that boundary clear helps explain why an API must validate a token's issuer, audience, lifetime and permitted scope instead of merely checking that a token-shaped string exists.</p>
+
+        <h2>What happens in an authorization-code flow</h2>
+
+        <p>In a common browser flow, the client redirects the user to the authorization server. The user signs in there and reviews the requested permissions. The authorization server redirects the browser back with a short-lived authorization code. The client then exchanges that code at the token endpoint for an access token. The client presents the access token to the resource server on later API requests. A refresh token may also be issued so the client can obtain a new access token without repeating the complete user interaction.</p>
+
+        <h2>Why PKCE is now part of the normal design</h2>
+
+        <p>A stolen authorization code could otherwise be exchanged by the wrong application. <strong>PKCE</strong> addresses that risk by having the client create a secret verifier and send a derived challenge with the authorization request. The token endpoint releases tokens only when the later verifier matches the earlier challenge. Current OAuth security guidance requires PKCE for public clients and recommends it for confidential clients as well. PKCE protects the code exchange; it does not replace redirect validation, client authentication where applicable, or protection against cross-site request forgery.</p>
+
+        <h2>Scopes, lifetimes and bearer-token risk</h2>
+
+        <p>Scopes describe requested permissions, but their exact meaning is defined by each service. Good scopes are narrow enough for users and resource servers to understand. Access tokens should also be short-lived because many deployments use bearer tokens: possession is enough to use them. Refresh tokens deserve stronger storage and rotation controls because they can extend access beyond one access token's lifetime. Revocation behavior, token format and consent screens vary between implementations, so OAuth does not make an integration safe automatically.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>As a user, review what an application requests and remove integrations you no longer use. As a developer, use the authorization-code flow with PKCE, validate redirect URIs exactly, request the smallest practical scopes and never treat an access token as identity proof. Use OpenID Connect when the requirement is authentication.</p>
+        </div>
+
+        <p>The durable mental model is simple: OAuth gives software a constrained capability, not a copy of the user's master key. The security of the result depends on how narrowly that capability is defined, how safely tokens are handled and whether every participant validates the properties it is responsible for.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.rfc-editor.org/info/rfc6749/" target="_blank" rel="noopener">IETF RFC 6749: The OAuth 2.0 Authorization Framework</a>; <a href="https://www.rfc-editor.org/rfc/rfc9700.html" target="_blank" rel="noopener">IETF RFC 9700: Best Current Practice for OAuth 2.0 Security</a>; <a href="https://openid.net/specs/openid-connect-core-1_0.html" target="_blank" rel="noopener">OpenID Connect Core 1.0 specification</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "what-is-oauth-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
