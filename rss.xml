@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 11:06:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 11:14:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                <item>
+                                                                                  <item>
+    <title>Splunk Ships Hardening Release Fixing Five Internally Found Flaws, Top One CVSS 9.8</title>
+    <link>https://wireshaman.com/articles/splunk-enterprise-hardening-svd-2026-1002.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/splunk-enterprise-hardening-svd-2026-1002.html</guid>
+    <dc:creator>ADS News Cybersecurity Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Wed, 14 Oct 2026 11:14:00 +0000</pubDate>
+    <description>Splunk released SVD-2026-1002 on 2026-10-07, fixing five internally identified flaws across Splunk Enterprise whose highest-scored finding, CVE-2026-76281, rates 9.8 Critical as improper access control. Admins should upgrade to 10.4.3, 10.2.7, 10.0.10, or 9.4.15.</description>
+  </item>
+<item>
     <title>NVIDIA's Third GPU Price Hike of 2026 Pushes RTX 50-Series Cards to New Highs</title>
     <link>https://wireshaman.com/articles/nvidia-rtx-50-series-price-hike-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/nvidia-rtx-50-series-price-hike-2026.html</guid>

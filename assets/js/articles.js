@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "splunk-enterprise-hardening-svd-2026-1002",
+    "title": "Splunk Ships Hardening Release Fixing Five Internally Found Flaws, Top One CVSS 9.8",
+    "excerpt": "Splunk released SVD-2026-1002 on 2026-10-07, fixing five internally identified flaws across Splunk Enterprise whose highest-scored finding, CVE-2026-76281, rates 9.8 Critical as improper access control. Admins should upgrade to 10.4.3, 10.2.7, 10.0.10, or 9.4.15.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/e2a6f14ee10cbe769fcddf6efd49d1ab88ce2ec54820ef87fc83ee78bcda626d.jpg"
+  },
+  {
     "slug": "nvidia-rtx-50-series-price-hike-2026",
     "title": "NVIDIA's Third GPU Price Hike of 2026 Pushes RTX 50-Series Cards to New Highs",
     "excerpt": "NVIDIA is implementing its third consumer GPU price hike this year, raising RTX 50-series graphics card costs by 20 to 30 percent as the AI-driven memory crunch reshapes the entire GPU market.",
