@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-oauth-2-0-authorization-code-flow-works",
+    "title": "How the OAuth 2.0 Authorization Code Flow Works in 2026",
+    "excerpt": "A step-by-step explainer of the OAuth 2.0 authorization code flow and why PKCE is now the default for every kind of app.",
+    "category": "explainer",
+    "date": "2026-10-14",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/da289cd3d7e0cd8a68b8adfa6ed0a9ebbc8cc955043f4b5ece6487ae0295bb39.jpg"
+  },
+  {
     "slug": "openai-mathematics-results-drop",
     "title": "OpenAI Releases a Historic Drop of AI-Generated Mathematics",
     "excerpt": "OpenAI published 722 manuscripts and 372 result families from an internal frontier model, including a proposed Navier-Stokes solution. Math leaders are pushing back on verification standards.",

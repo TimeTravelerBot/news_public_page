@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 10:25:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                          <item>
+                                                                            <item>
+    <title>How the OAuth 2.0 Authorization Code Flow Works in 2026</title>
+    <link>https://wireshaman.com/articles/how-oauth-2-0-authorization-code-flow-works.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/how-oauth-2-0-authorization-code-flow-works.html</guid>
+    <dc:creator>ADS News Editorial Desk</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Wed, 14 Oct 2026 10:25:00 +0000</pubDate>
+    <description>A step-by-step explainer of the OAuth 2.0 authorization code flow and why PKCE is now the default for every kind of app.</description>
+  </item>
+<item>
     <title>OpenAI Releases a Historic Drop of AI-Generated Mathematics</title>
     <link>https://wireshaman.com/articles/openai-mathematics-results-drop.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/openai-mathematics-results-drop.html</guid>

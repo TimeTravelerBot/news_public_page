@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-oauth-2-0-authorization-code-flow-works">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How the OAuth 2.0 Authorization Code Flow Works in 2026 — WireShaman</title>
+  <meta name="description" content="A step-by-step explainer of the OAuth 2.0 authorization code flow and why PKCE is now the default for every kind of app.">
+  <meta name="author" content="ADS News Editorial Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-oauth-2-0-authorization-code-flow-works.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-oauth-2-0-authorization-code-flow-works.html">
+  <meta property="og:title" content="How the OAuth 2.0 Authorization Code Flow Works in 2026">
+  <meta property="og:description" content="A step-by-step explainer of the OAuth 2.0 authorization code flow and why PKCE is now the default for every kind of app.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/da289cd3d7e0cd8a68b8adfa6ed0a9ebbc8cc955043f4b5ece6487ae0295bb39.jpg">
+  <meta property="og:image:alt" content="Editorial illustration of an app receiving a single-use authorization code from a vaulted authorization server before exchanging it for a glowing access token.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-14">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How the OAuth 2.0 Authorization Code Flow Works in 2026">
+  <meta name="twitter:description" content="A step-by-step explainer of the OAuth 2.0 authorization code flow and why PKCE is now the default for every kind of app.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/da289cd3d7e0cd8a68b8adfa6ed0a9ebbc8cc955043f4b5ece6487ae0295bb39.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How the OAuth 2.0 Authorization Code Flow Works in 2026","description":"A step-by-step explainer of the OAuth 2.0 authorization code flow and why PKCE is now the default for every kind of app.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-oauth-2-0-authorization-code-flow-works.html","datePublished":"2026-10-14","image":"https://wireshaman.com/assets/images/da289cd3d7e0cd8a68b8adfa6ed0a9ebbc8cc955043f4b5ece6487ae0295bb39.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/da289cd3d7e0cd8a68b8adfa6ed0a9ebbc8cc955043f4b5ece6487ae0295bb39.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How the OAuth 2.0 Authorization Code Flow Works in 2026</h1>
+      <p class="article__sub">Authorization code plus PKCE is the 2026 default for user-facing apps. Here is exactly what happens when you click Login with Google, and why a single-use code plus a hashed proof beats sharing a password.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>ADS News Editorial Desk</b>
+        <time datetime="2026-10-14">Oct 14, 2026</time> · 7 min read
+      </div>
+      <div class="prose">
+        <h2>One account, many apps, no password sharing</h2>
+
+        <p class="dropcap">The next time you click <code>Login with Google</code> on a third-party site, a quiet protocol is doing a lot of work. <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0</a> is the industry-standard framework that lets an app access your data on another service <strong>without ever seeing your password</strong>. In 2026 the correct implementation for nearly every user-facing app is the <strong>authorization code flow</strong>, paired with <strong>PKCE</strong> (Proof Key for Code Exchange).</p>
+
+        <p>OAuth handles <em>authorization</em> (you, granting an app permission to act on your behalf). If the same protocol also needs to answer <em>authentication</em> — who are you? — developers layer on OpenID Connect by adding an <code>openid</code> scope. A common confusion: <a href="https://auth0.com/intro-to-iam/what-is-oauth-2" target="_blank" rel="noopener">JWTs are a token format, not a replacement for OAuth</a>; the tokens the flow returns are frequently JWTs, but the flow itself is what grants them.</p>
+
+        <h2>The four roles</h2>
+
+        <ul>
+          <li><strong>Resource owner</strong> — you, the human whose data is protected.</li>
+          <li><strong>Client</strong> — the app you are using (web site, mobile app, desktop tool).</li>
+          <li><strong>Authorization server</strong> — the identity provider (for example, the Google <code>/authorize</code> endpoint) that asks for your consent and issues tokens.</li>
+          <li><strong>Resource server</strong> — the API that actually serves your data and accepts the access token.</li>
+        </ul>
+
+        <h2>The six steps of the code flow</h2>
+
+        <ul>
+          <li>The app redirects you to the authorization server's <code>/authorize</code> endpoint with its <code>client_id</code> and the scopes it wants.</li>
+          <li>The authorization server shows a login and consent screen; you approve.</li>
+          <li>The server issues a <strong>single-use authorization code</strong> and redirects it back to your app's redirect URI.</li>
+          <li>Your app exchanges the code at the <code>/token</code> endpoint — for server-side apps, along with a <code>client_secret</code>.</li>
+          <li>The server returns short-lived <strong>access tokens</strong> (and usually a longer-lived <strong>refresh token</strong> for silent renewals).</li>
+          <li>Your app attaches the access token to API requests; the resource server validates it and serves your data.</li>
+        </ul>
+
+        <p>The indirection is the point. The authorization code is a short-lived, single-use ticket: nobody who intercepts your browser redirect gets a usable credential. The real exchange happens server-to-server, where a <a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow" target="_blank" rel="noopener">confidential backend</a> can present its secret, so tokens never touch the browser at all. When access tokens expire, the refresh token quietly mints new ones without re-prompting you.</p>
+
+        <h2>PKCE: proof that you started the flow</h2>
+
+        <p>Single-page apps, mobile apps, and public desktop clients cannot keep a <code>client_secret</code> safely. That is where <strong>PKCE</strong> comes in: before the redirect, the app generates a random <code>code_verifier</code> and sends only its hash — the <code>code_challenge</code> — to the authorization server. Later, when exchanging the code for tokens, it presents the original verifier. The server checks that <code>hash(verifier)</code> matches the challenge. If someone steals the authorization code off your device or an open Wi-Fi network, the code is <strong>useless without the verifier</strong> that only the original client holds. PKCE is now mandatory for SPAs and strongly recommended everywhere, and the in-progress <strong>OAuth 2.1</strong> effort is consolidating this de-facto standard into the spec.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>Every time you <code>Login with</code> a third party, you should see a clear consent screen naming exactly what scopes are requested — and you can deny them. If an app asks for far more access than its features need, decline it: scopes are the whole permission model. And when a site's session quietly stays logged in for months, that is a refresh token doing its job — revoking it in your account's connected-apps settings breaks the chain, not just the current browser session.</p>
+        </div>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth 2.0 (oauth.net, IETF OAuth Working Group)</a>; <a href="https://auth0.com/intro-to-iam/what-is-oauth-2" target="_blank" rel="noopener">Auth0 — What is OAuth 2.0?</a>; <a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow" target="_blank" rel="noopener">Microsoft Learn — OAuth 2.0 authorization code flow</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-oauth-2-0-authorization-code-flow-works";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
