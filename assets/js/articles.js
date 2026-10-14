@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "android-security-bulletin-october-2026",
+    "title": "Android's October 2026 update patches 25 vulnerabilities, including seven critical flaws",
+    "excerpt": "Google's October 2026 Android security update resolves 25 vulnerabilities, including seven critical bugs.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/c0004049887f75e15ed0a5fc0c7796ccb495931fba1d37ff0c77f403b7f0c70f.jpg"
+  },
+  {
     "slug": "liquid-ai-lfm2-5-24b-a2b-open-weight-on-device",
     "title": "Liquid AI's LFM2.5-24B-A2B: an open-weight 24B reasoning model built for on-device agents",
     "excerpt": "Liquid AI released LFM2.5-24B-A2B on October 13, 2026, a 24B-parameter open-weight model with just 2B active parameters designed to run local agents on laptops and phones. We cover its architecture, benchmark results, and what the design tradeoffs mean for you.",
