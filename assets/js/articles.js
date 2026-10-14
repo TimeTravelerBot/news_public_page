@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "atlassian-data-center-cve-2026-21589",
+    "title": "Atlassian's Critical CVE-2026-21589 Lets Attackers Steal Files from Self-Hosted Jira, Confluence, and Bitbucket Without Logging In",
+    "excerpt": "A critical path-traversal flaw scored 9.3 lets unauthenticated attackers read files from the web root of eight Atlassian Data Center products, and automated scanning already began within two hours.",
+    "category": "cybersecurity",
+    "date": "2026-10-07",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/692fd898981fec2b55c29abdc9715bf8d7f1006b431aee5682146f5bf0cf3670.jpg"
+  },
+  {
     "slug": "amd-epyc-venice-zen-6-2nm",
     "title": "AMD's EPYC Venice lands: Zen 6 on TSMC 2nm, 256 cores, and a record server share",
     "excerpt": "AMD unveiled its EPYC Venice (Zen 6) family at its July 2026 Advancing AI event, building both high-performance and dense server chips on TSMC's 2nm node.",
