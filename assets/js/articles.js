@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "mistral-large-4-le-chonk",
+    "title": "Mistral's 'Le Chonk' lands: a 1-trillion-parameter multimodal model with open weights promised within the month",
+    "excerpt": "Mistral Large 4 enters public preview as the company's largest model yet — a granular mixture-of-experts with roughly a trillion parameters, a 1M-token context window, and open weights due by the end of October.",
+    "category": "tech",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/6bee66f816912276fed0571e2f27598f4e1216feecf76871433dfb41648f87bd.jpg"
+  },
+  {
     "slug": "splunk-enterprise-hardening-svd-2026-1002",
     "title": "Splunk Ships Hardening Release Fixing Five Internally Found Flaws, Top One CVSS 9.8",
     "excerpt": "Splunk released SVD-2026-1002 on 2026-10-07, fixing five internally identified flaws across Splunk Enterprise whose highest-scored finding, CVE-2026-76281, rates 9.8 Critical as improper access control. Admins should upgrade to 10.4.3, 10.2.7, 10.0.10, or 9.4.15.",

@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 11:14:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                  <item>
+                                                                                    <item>
+    <title>Mistral's 'Le Chonk' lands: a 1-trillion-parameter multimodal model with open weights promised within the month</title>
+    <link>https://wireshaman.com/articles/mistral-large-4-le-chonk.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/mistral-large-4-le-chonk.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>AI &amp; Tech</category>
+    <pubDate>Wed, 14 Oct 2026 06:00:00 +0000</pubDate>
+    <description>Mistral Large 4 enters public preview as the company's largest model yet — a granular mixture-of-experts with roughly a trillion parameters, a 1M-token context window, and open weights due by the end of October.</description>
+  </item>
+<item>
     <title>Splunk Ships Hardening Release Fixing Five Internally Found Flaws, Top One CVSS 9.8</title>
     <link>https://wireshaman.com/articles/splunk-enterprise-hardening-svd-2026-1002.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/splunk-enterprise-hardening-svd-2026-1002.html</guid>
