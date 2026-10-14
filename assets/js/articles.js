@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "microsoft-decision-1-model-2026",
+    "title": "Microsoft Unveils Decision-1, a New Thinking Model Built to Make Fast Decisions",
+    "excerpt": "Microsoft launched Decision-1, a new model that scores options and judges the next move instead of generating long text, alongside faster transcription and video models.",
+    "category": "tech",
+    "date": "2026-10-09",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/e279aa24351d6b264100cdded40baaed4dc46449f78ec3cd44dc3c9aa7418a6b.jpg"
+  },
+  {
     "slug": "docker-hub-ghostpat-cve-2026-105445-2026",
     "title": "Docker Hub’s GhostPat Flaw Let One User Push Images as Another — For Two Years",
     "excerpt": "Docker fixed a critical Docker Hub flaw, tracked as CVE-2026-105445, that let any user transfer a personal access token to another account and act as that user in the registry.",
