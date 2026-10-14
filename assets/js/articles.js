@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-dns-resolution-works-explainer",
+    "title": "How DNS Resolution Works: From Typing a URL to an IP Address",
+    "excerpt": "A step-by-step explainer of the Domain Name System: recursive resolvers, root and TLD servers, caching, and why DNS failures look the way they do.",
+    "category": "explainer",
+    "date": "2026-10-14",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/19da0d4ca78bc731a51b0475edf3a01fc40aab2c3a397fc056b92b9ed72aa9f9.jpg"
+  },
+  {
     "slug": "anthropic-claude-haiku-5-5-price-cut",
     "title": "Anthropic Shaves Claude Haiku 5.5 Prices by Up to 90%",
     "excerpt": "Released October 7, Claude Haiku 5.5 costs $0.10 per million input tokens and matches OpenAI's GPT-6 Luna on price while adding a 1-million-token context window.",

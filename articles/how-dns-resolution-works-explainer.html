@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-dns-resolution-works-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How DNS Resolution Works: From Typing a URL to an IP Address — WireShaman</title>
+  <meta name="description" content="A step-by-step explainer of the Domain Name System: recursive resolvers, root and TLD servers, caching, and why DNS failures look the way they do.">
+  <meta name="author" content="ADS News Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-dns-resolution-works-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-dns-resolution-works-explainer.html">
+  <meta property="og:title" content="How DNS Resolution Works: From Typing a URL to an IP Address">
+  <meta property="og:description" content="A step-by-step explainer of the Domain Name System: recursive resolvers, root and TLD servers, caching, and why DNS failures look the way they do.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/19da0d4ca78bc731a51b0475edf3a01fc40aab2c3a397fc056b92b9ed72aa9f9.jpg">
+  <meta property="og:image:alt" content="Editorial illustration of a glowing internet phonebook with domain labels resolving into IP addresses, cascading from a browser to a server rack on a navy background.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-14">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How DNS Resolution Works: From Typing a URL to an IP Address">
+  <meta name="twitter:description" content="A step-by-step explainer of the Domain Name System: recursive resolvers, root and TLD servers, caching, and why DNS failures look the way they do.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/19da0d4ca78bc731a51b0475edf3a01fc40aab2c3a397fc056b92b9ed72aa9f9.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How DNS Resolution Works: From Typing a URL to an IP Address","description":"A step-by-step explainer of the Domain Name System: recursive resolvers, root and TLD servers, caching, and why DNS failures look the way they do.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-dns-resolution-works-explainer.html","datePublished":"2026-10-14","image":"https://wireshaman.com/assets/images/19da0d4ca78bc731a51b0475edf3a01fc40aab2c3a397fc056b92b9ed72aa9f9.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/19da0d4ca78bc731a51b0475edf3a01fc40aab2c3a397fc056b92b9ed72aa9f9.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How DNS Resolution Works: From Typing a URL to an IP Address</h1>
+      <p class="article__sub">Every site you visit starts with a quiet global phonebook lookup. Here is the full resolution path, and why it usually takes a few milliseconds.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>ADS News Desk</b>
+        <time datetime="2026-10-14">Oct 14, 2026</time> · 7 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">Type a web address and a page loads, but between your keystroke and the server there is a lookup almost no one sees. The Domain Name System, or <strong>DNS</strong>, translates names like <code>example.com</code> into the numeric <strong>IP addresses</strong> that routers actually use. It is one of the oldest and most load-bearing systems on the internet, holding more than 342 million registered domains in a distributed, hierarchical directory.</p>
+
+        <h2>The four layers of the DNS hierarchy</h2>
+
+        <p>DNS is organized into four layers. The <strong>root servers</strong> sit at the top and know where each top-level domain lives. <strong>TLD servers</strong> manage extensions like <code>.com</code> or <code>.org</code> and point to the authoritative nameservers for a specific domain. Those <strong>authoritative servers</strong> hold the actual records. And a <strong>recursive resolver</strong> — usually run by your ISP or a provider like Cloudflare or Google — does the walking for you, starting from your question and working down the chain.</p>
+
+        <ul>
+          <li>The browser first checks its own cache, then the operating system's resolver cache.</li>
+          <li>A miss sends the query to the recursive resolver, which also checks its cache.</li>
+          <li>The resolver asks a root server, which refers it to the correct TLD servers.</li>
+          <li>The TLD server points to the domain's authoritative nameservers.</li>
+          <li>The authoritative server returns the IP address, and every hop caches the answer.</li>
+        </ul>
+
+        <h2>Why it is usually milliseconds, not minutes</h2>
+
+        <p>The full walk from root to authoritative server can take a dozen round trips, but in practice most lookups are far cheaper. Resolvers cache names with a <strong>time-to-live</strong> value set by the authoritative record, and popular domains are so frequently queried that even TLD answers are often already cached. This is why DNS resolution typically lands in a handful of milliseconds even for a cold query. The distributed design also means no single machine can be a point of failure.</p>
+
+        <div class="callout">
+          <span class="eyebrow">Troubleshooting</span>
+          <p>When a site fails to load, the DNS phase is the first thing to check: a stale public resolver cache, an expired record, or a hijacked authoritative nameserver can all break resolution for thousands of users on the same domain at once. <a href="https://www.networkworld.com/article/965540/what-is-dns-and-how-does-it-work.html" target="_blank" rel="noopener">Network World's DNS explainer</a> walks through how the hierarchy routes queries in detail.</p>
+        </div>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>DNS is one of the most load-bearing systems on the modern internet, and its health shows up directly in your page load times. When a site fails to load for everyone on a domain at once, the cause is often in the lookup itself: a hijacked authoritative nameserver, an expired record, or a poisoned public resolver cache. Understanding the four layers above is the fastest way to tell a genuine outage from a resolver problem.</p>
+        </div>
+
+        <p>For readers, DNS is mostly invisible, and its reliability is a big part of the speed you feel. In 2026, faster and more dependable DNS infrastructure directly affects user experience and search rankings, which is why major providers treat resolution latency as a first-class metric.</p>
+
+        <p>For builders, the takeaway is practical. <a href="https://newrelic.com/blog/apm/dns-resolution-a-comprehensive-guide" target="_blank" rel="noopener">New Relic's comprehensive guide</a> covers how to set sensible TTL values, monitor resolution latency in production, and avoid the caching footguns that surprise teams when they change names. And because the hierarchy is distributed, domain owners can update their own records without touching anyone else's servers: a 40-year-old design that still scales to hundreds of millions of domains.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.logicmonitor.com/blog/how-dns-works" target="_blank" rel="noopener">LogicMonitor: How DNS Works</a>; <a href="https://newrelic.com/blog/apm/dns-resolution-a-comprehensive-guide" target="_blank" rel="noopener">New Relic: DNS Resolution Guide</a>; <a href="https://www.networkworld.com/article/965540/what-is-dns-and-how-does-it-work.html" target="_blank" rel="noopener">Network World: How DNS works</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-dns-resolution-works-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
