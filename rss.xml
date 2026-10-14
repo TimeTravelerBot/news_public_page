@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 15:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 15:52:31 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                    <item>
+                                                                                                      <item>
+    <title>CISA re-warns NetScaler customers: actively exploited zero-day needs immediate patch</title>
+    <link>https://wireshaman.com/articles/citrix-netscaler-cve-2026-88771-cisa-alert.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/citrix-netscaler-cve-2026-88771-cisa-alert.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Wed, 14 Oct 2026 15:52:31 +0000</pubDate>
+    <description>CISA is actively urging Citrix NetScaler ADC and Gateway administrators to apply vendor guidance for a remote code execution flaw under active exploitation.</description>
+  </item>
+<item>
     <title>How Hypervisors Virtualize Hardware and Keep Virtual Machines Isolated</title>
     <link>https://wireshaman.com/articles/hypervisor-virtual-machine-isolation-explained.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/hypervisor-virtual-machine-isolation-explained.html</guid>

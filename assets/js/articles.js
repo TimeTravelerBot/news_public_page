@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "citrix-netscaler-cve-2026-88771-cisa-alert",
+    "title": "CISA re-warns NetScaler customers: actively exploited zero-day needs immediate patch",
+    "excerpt": "CISA is actively urging Citrix NetScaler ADC and Gateway administrators to apply vendor guidance for a remote code execution flaw under active exploitation.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/0ebc744a1d33c68937b5063041220766ae0ac40e93e586714899842645abd61f.jpg"
+  },
+  {
     "slug": "hypervisor-virtual-machine-isolation-explained",
     "title": "How Hypervisors Virtualize Hardware and Keep Virtual Machines Isolated",
     "excerpt": "A clear, technical plain-language explanation of what hypervisors actually do, the difference between Type 1 and Type 2 architectures, the security model, and why hardware virtualization support matters.",
