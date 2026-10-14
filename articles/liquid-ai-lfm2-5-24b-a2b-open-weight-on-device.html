@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-liquid-ai-lfm2-5-24b-a2b-open-weight-on-device">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liquid AI&#x27;s LFM2.5-24B-A2B: an open-weight 24B reasoning model built for on-device agents — WireShaman</title>
+  <meta name="description" content="Liquid AI released LFM2.5-24B-A2B on October 13, 2026, a 24B-parameter open-weight model with just 2B active parameters designed to run local agents on laptops and phones. We cover its architecture, benchmark results, and what the design tradeoffs mean for you.">
+  <meta name="author" content="ADS News">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/liquid-ai-lfm2-5-24b-a2b-open-weight-on-device.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/liquid-ai-lfm2-5-24b-a2b-open-weight-on-device.html">
+  <meta property="og:title" content="Liquid AI&#x27;s LFM2.5-24B-A2B: an open-weight 24B reasoning model built for on-device agents">
+  <meta property="og:description" content="Liquid AI released LFM2.5-24B-A2B on October 13, 2026, a 24B-parameter open-weight model with just 2B active parameters designed to run local agents on laptops and phones. We cover its architecture, benchmark results, and what the design tradeoffs mean for you.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/9e35303e0992f75c0492307f43116a2016fc6333d55c706c76f8c9174141d8d2.jpg">
+  <meta property="og:image:alt" content="An abstract sparse mixture-of-experts neural network with a handful of brightly lit active blocks running locally on a laptop and smartphone.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-13">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="Liquid AI&#x27;s LFM2.5-24B-A2B: an open-weight 24B reasoning model built for on-device agents">
+  <meta name="twitter:description" content="Liquid AI released LFM2.5-24B-A2B on October 13, 2026, a 24B-parameter open-weight model with just 2B active parameters designed to run local agents on laptops and phones. We cover its architecture, benchmark results, and what the design tradeoffs mean for you.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/9e35303e0992f75c0492307f43116a2016fc6333d55c706c76f8c9174141d8d2.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Liquid AI's LFM2.5-24B-A2B: an open-weight 24B reasoning model built for on-device agents","description":"Liquid AI released LFM2.5-24B-A2B on October 13, 2026, a 24B-parameter open-weight model with just 2B active parameters designed to run local agents on laptops and phones. We cover its architecture, benchmark results, and what the design tradeoffs mean for you.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/liquid-ai-lfm2-5-24b-a2b-open-weight-on-device.html","datePublished":"2026-10-13","image":"https://wireshaman.com/assets/images/9e35303e0992f75c0492307f43116a2016fc6333d55c706c76f8c9174141d8d2.jpg","articleSection":"AI & Tech"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/tech.html"><span>&larr;</span> Back to AI &amp; Tech</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/9e35303e0992f75c0492307f43116a2016fc6333d55c706c76f8c9174141d8d2.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">AI &amp; Tech</span>
+      <h1 class="article__title">Liquid AI&#x27;s LFM2.5-24B-A2B: an open-weight 24B reasoning model built for on-device agents</h1>
+      <p class="article__sub">A huge model made tiny: 24B total parameters, 2B active, day-one local inference support, and benchmarks focused on tool use and on-device agent workflows.</p>
+      <div class="article__meta">
+        <span class="tag tag--tech">AI &amp; Tech</span>
+        <b>ADS News</b>
+        <time datetime="2026-10-13">Oct 13, 2026</time> · 6 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">Liquid AI announced on October 13, 2026, the release of <strong>LFM2.5-24B-A2B</strong>, the largest model in its LFM2.5 family and a clear sign of where the on-device AI race is heading. Rather than chasing raw benchmark bragging rights, it is a <strong>reasoning model</strong> deliberately designed to fit on the hardware you already have. That makes it a genuinely interesting release for anyone watching the open-weight space.</p>
+
+        <h2>A 24B model built to run on your laptop</h2>
+
+        <p>The model carries <code>24.0B</code> total parameters but activates only <code>2.45B</code> of them at a time, a mixture-of-experts design with 40 layers, 64 experts per block, and top-4 routing. In practical terms, it is a large knowledge-bearing model that costs like a much smaller one to run. It supports a <strong>131,072-token context</strong>, 16 languages, and ships as a reasoning-only model that emits an explicit chain of thought before each answer. Checkpoints are published as <strong>open weights</strong> on Hugging Face, with FP8, GGUF, ONNX, and MLX-4bit formats and day-one support for llama.cpp, MLX, vLLM, and SGLang, so the whole point is local, hands-on inference.</p>
+
+        <h2>What this means for you</h2>
+
+        <p>If you build local agents, LFM2.5-24B-A2B is a strong option: Liquid AI reports <strong>184 tokens per second on an Apple M5 Max</strong> and <strong>114 on an AMD Ryzen AI Max+</strong> with Q4 quantization, at just 15 GB on the M5 Max, which it claims is the least memory of the compared group. Its benchmarks lean hard into tool use and agentic workflows, where it claims a standout 27.69 on AutomationBench, more than three times the next best. The honest tradeoff is knowledge and coding, the larger comparison models still edge it on GPQA Diamond, HLE, and SWE-Bench, and Liquid AI itself recommends pairing it with retrieval or web search for knowledge-heavy work.</p>
+
+        <ul>
+          <li>It runs on-device: 24B total but only about 2B active parameters, with llama.cpp and MLX support and roughly 15 GB of memory on high-end silicon</li>
+          <li>It is open-weight and local-first: checkpoints in native, FP8, GGUF, ONNX, and MLX-4bit, plus a 131,072-token context and 16-language support</li>
+          <li>It is tuned for agent tool use rather than raw knowledge: strong reported scores on tool-use and instruction-following benchmarks, with a chain-of-thought reasoning mode</li>
+          <li>The tradeoff is knowledge-heavy and some coding benchmarks, where larger models still lead, and it is best paired with retrieval or web search</li>
+        </ul>
+
+        <div class="callout">
+          <span class="eyebrow">The on-device agent wave is real</span>
+          <p>LFM2.5-24B-A2B is the latest proof point that the frontier is shifting from cloud-only giants to capable, open-weight models you can run on your own machine. If you are building local agents, the gap between cloud and on-device is closing fast</p>
+        </div>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.unite.ai/liquid-ai-releases-open-weight-lfm2-5-24b-a2b-for-on-device-agents" target="_blank" rel="noopener">Unite AI - Liquid AI Releases Open-Weight LFM2.5-24B-A2B for On-Device Agents</a>; <a href="https://huggingface.co/LiquidAI/LFM2.5-24B-A2B" target="_blank" rel="noopener">Hugging Face - LFM2.5-24B-A2B model card</a>; <a href="https://liquid.ai/blog/lfm2-5-24b-a2b" target="_blank" rel="noopener">Liquid AI - LFM2.5-24B-A2B release blog</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "liquid-ai-lfm2-5-24b-a2b-open-weight-on-device";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>

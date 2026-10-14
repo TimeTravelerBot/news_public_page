@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "liquid-ai-lfm2-5-24b-a2b-open-weight-on-device",
+    "title": "Liquid AI's LFM2.5-24B-A2B: an open-weight 24B reasoning model built for on-device agents",
+    "excerpt": "Liquid AI released LFM2.5-24B-A2B on October 13, 2026, a 24B-parameter open-weight model with just 2B active parameters designed to run local agents on laptops and phones. We cover its architecture, benchmark results, and what the design tradeoffs mean for you.",
+    "category": "tech",
+    "date": "2026-10-13",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/9e35303e0992f75c0492307f43116a2016fc6333d55c706c76f8c9174141d8d2.jpg"
+  },
+  {
     "slug": "branch-prediction-speculative-execution-explained",
     "title": "How branch prediction and speculative execution work — the trick that makes fast CPUs fast (and leaks your secrets)",
     "excerpt": "Speculative execution is one of computer science's most important performance tricks — and the reason Spectre-class hardware leaks are possible.",
