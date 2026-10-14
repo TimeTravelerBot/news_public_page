@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 12:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 12:45:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                      <item>
+                                                                                        <item>
+    <title>AMD's EPYC Venice lands: Zen 6 on TSMC 2nm, 256 cores, and a record server share</title>
+    <link>https://wireshaman.com/articles/amd-epyc-venice-zen-6-2nm.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/amd-epyc-venice-zen-6-2nm.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Wed, 14 Oct 2026 12:45:00 +0000</pubDate>
+    <description>AMD unveiled its EPYC Venice (Zen 6) family at its July 2026 Advancing AI event, building both high-performance and dense server chips on TSMC's 2nm node.</description>
+  </item>
+<item>
     <title>How certificate authorities and browser trust anchors actually work</title>
     <link>https://wireshaman.com/articles/how-certificate-authorities-trust-anchors-work-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-certificate-authorities-trust-anchors-work-explainer.html</guid>

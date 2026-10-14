@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "amd-epyc-venice-zen-6-2nm",
+    "title": "AMD's EPYC Venice lands: Zen 6 on TSMC 2nm, 256 cores, and a record server share",
+    "excerpt": "AMD unveiled its EPYC Venice (Zen 6) family at its July 2026 Advancing AI event, building both high-performance and dense server chips on TSMC's 2nm node.",
+    "category": "hardware",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/e9bc4f739aeb42160d28cd0d3145aeec2ed80936b0fe7c62848b238aab48db16.jpg"
+  },
+  {
     "slug": "how-certificate-authorities-trust-anchors-work-explainer",
     "title": "How certificate authorities and browser trust anchors actually work",
     "excerpt": "Why typing https is never a coincidence: the root certificates your device ships with, the chain of trust beneath every padlock, and what breaks when one link fails.",
