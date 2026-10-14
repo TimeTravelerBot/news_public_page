@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-certificate-authorities-trust-anchors-work-explainer",
+    "title": "How certificate authorities and browser trust anchors actually work",
+    "excerpt": "Why typing https is never a coincidence: the root certificates your device ships with, the chain of trust beneath every padlock, and what breaks when one link fails.",
+    "category": "explainer",
+    "date": "2026-10-14",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/793c1c03dbb811d954c9e3efeadb3e94d11aa7e7ea4a7b503d73a251b3ee6c2b.jpg"
+  },
+  {
     "slug": "mistral-large-4-le-chonk",
     "title": "Mistral's 'Le Chonk' lands: a 1-trillion-parameter multimodal model with open weights promised within the month",
     "excerpt": "Mistral Large 4 enters public preview as the company's largest model yet — a granular mixture-of-experts with roughly a trillion parameters, a 1M-token context window, and open weights due by the end of October.",
