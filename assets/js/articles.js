@@ -36,7 +36,7 @@ window.CS.ARTICLES = [
     "date": "2026-08-10",
     "read": 4,
     "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
-    "img": "assets/images/kaspersky-q2-2026-android-threat-landscape.png"
+    "img": "assets/images/0b1007e99de979f800bdcf968ea43ee35fc92e111eec82f7845883bf580fbf87.jpg"
   },
   {
     "slug": "ledger-nano-x-spy-chip-implant",
@@ -46,7 +46,7 @@ window.CS.ARTICLES = [
     "date": "2026-10-14",
     "read": 9,
     "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
-    "img": "assets/images/ledger-nano-x-spy-chip-implant.png"
+    "img": "assets/images/70b8b7a7fc875243afaefbf6e87e4e3c0de29e2bd0a8d33a418ccbfb06ac9e1c.jpg"
   },
   {
     "slug": "how-jwt-tokens-work-explainer",
@@ -56,7 +56,7 @@ window.CS.ARTICLES = [
     "date": "2026-10-14",
     "read": 6,
     "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
-    "img": "assets/images/how-jwt-tokens-work-explainer.png"
+    "img": "assets/images/156dd160c162194598fed2ef63e4cfb6060aae6b1c5ec9732cf18c316bbab5d3.jpg"
   },
   {
     "slug": "ivanti-connect-secure-root-zero-day-chain",
@@ -66,7 +66,7 @@ window.CS.ARTICLES = [
     "date": "2026-10-14",
     "read": 6,
     "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
-    "img": "assets/images/ivanti-connect-secure-root-zero-day-chain.png"
+    "img": "assets/images/6a6876df77a9ba7af1c32b1a84e0a41f63663c1d46c59fe89296cfcd047f5c4a.jpg"
   },
   {
     "slug": "torvalds-llm-kernel-noref-filemap",
@@ -76,7 +76,7 @@ window.CS.ARTICLES = [
     "date": "2026-10-12",
     "read": 4,
     "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
-    "img": "assets/images/torvalds-llm-kernel-noref-filemap.png"
+    "img": "assets/images/d624708ac52c159299d8241657d5abc4d845b46e8aa2a83760edc9e743d0df9f.jpg"
   },
   {
     "slug": "what-is-dram-explainer",
