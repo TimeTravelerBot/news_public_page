@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 04:12:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                <item>
+                                                  <item>
+    <title>Kaspersky says Android attackers are shifting to app-store loaders as on-device malware falls</title>
+    <link>https://wireshaman.com/articles/kaspersky-q2-2026-android-threat-landscape.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/kaspersky-q2-2026-android-threat-landscape.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Mon, 10 Aug 2026 09:00:00 +0000</pubDate>
+    <description>Kaspersky's Q2 2026 mobile threat report found 1.99 million mobile malware attacks and a pivot toward dropper-based banking Trojans delivered through Google Play.</description>
+  </item>
+<item>
     <title>Ledger Nano X spy-chip implant steals recovery phrases pixel by pixel</title>
     <link>https://wireshaman.com/articles/ledger-nano-x-spy-chip-implant.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/ledger-nano-x-spy-chip-implant.html</guid>

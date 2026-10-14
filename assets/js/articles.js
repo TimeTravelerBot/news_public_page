@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "kaspersky-q2-2026-android-threat-landscape",
+    "title": "Kaspersky says Android attackers are shifting to app-store loaders as on-device malware falls",
+    "excerpt": "Kaspersky's Q2 2026 mobile threat report found 1.99 million mobile malware attacks and a pivot toward dropper-based banking Trojans delivered through Google Play.",
+    "category": "cybersecurity",
+    "date": "2026-08-10",
+    "read": 4,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/kaspersky-q2-2026-android-threat-landscape.png"
+  },
+  {
     "slug": "ledger-nano-x-spy-chip-implant",
     "title": "Ledger Nano X spy-chip implant steals recovery phrases pixel by pixel",
     "excerpt": "Tibane Labs and Grand Idea Studio document a tampered Ledger Nano X with a soldered-on second computer and cellular modem that captures the on-screen 24-word seed and exfiltrates it while passing genuine-device checks.",
