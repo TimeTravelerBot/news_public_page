@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 15:15:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 15:20:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                  <item>
+                                                                                                    <item>
+    <title>How Hypervisors Virtualize Hardware and Keep Virtual Machines Isolated</title>
+    <link>https://wireshaman.com/articles/hypervisor-virtual-machine-isolation-explained.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/hypervisor-virtual-machine-isolation-explained.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Wed, 14 Oct 2026 15:20:00 +0000</pubDate>
+    <description>A clear, technical plain-language explanation of what hypervisors actually do, the difference between Type 1 and Type 2 architectures, the security model, and why hardware virtualization support matters.</description>
+  </item>
+<item>
     <title>Microsoft's Surface Laptop Ultra and RTX Spark Dev Box arrive — Windows PCs built for local AI agents</title>
     <link>https://wireshaman.com/articles/surface-laptop-ultra-nvidia-rtx-spark.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/surface-laptop-ultra-nvidia-rtx-spark.html</guid>

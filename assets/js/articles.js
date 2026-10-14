@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "hypervisor-virtual-machine-isolation-explained",
+    "title": "How Hypervisors Virtualize Hardware and Keep Virtual Machines Isolated",
+    "excerpt": "A clear, technical plain-language explanation of what hypervisors actually do, the difference between Type 1 and Type 2 architectures, the security model, and why hardware virtualization support matters.",
+    "category": "explainer",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/132636c9e8ee7b821417d5a298cb9b30747e4b33fc54abdccc31c45b7f6e97ff.jpg"
+  },
+  {
     "slug": "surface-laptop-ultra-nvidia-rtx-spark",
     "title": "Microsoft's Surface Laptop Ultra and RTX Spark Dev Box arrive — Windows PCs built for local AI agents",
     "excerpt": "At a San Francisco event, Microsoft and Nvidia opened pre-orders for the Surface Laptop Ultra and a compact RTX Spark Dev Box, running a new superchip with 1 petaflop of AI compute and up to 128GB of unified memory.",
