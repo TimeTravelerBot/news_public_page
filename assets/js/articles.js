@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "anthropic-claude-haiku-5-5-price-cut",
+    "title": "Anthropic Shaves Claude Haiku 5.5 Prices by Up to 90%",
+    "excerpt": "Released October 7, Claude Haiku 5.5 costs $0.10 per million input tokens and matches OpenAI's GPT-6 Luna on price while adding a 1-million-token context window.",
+    "category": "tech",
+    "date": "2026-10-08",
+    "read": 4,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/576883d615b6dfa8fe1eb9a36edb531d85f2d765c84e7edee13e5d9c50cd21b4.jpg"
+  },
+  {
     "slug": "midnight-mimosa-firmware-android-malware",
     "title": "Midnight Mimosa: Budget Android phones ship with malware baked into the firmware",
     "excerpt": "Bitdefender says a firmware-level campaign called Midnight Mimosa is preinstalled on cheap Android devices across 150+ countries, giving attackers system-level control that owners cannot uninstall.",
