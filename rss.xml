@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Sep 2026 09:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 10:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                        <item>
+                                                                          <item>
+    <title>OpenAI Releases a Historic Drop of AI-Generated Mathematics</title>
+    <link>https://wireshaman.com/articles/openai-mathematics-results-drop.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/openai-mathematics-results-drop.html</guid>
+    <dc:creator>WireShaman</dc:creator>
+    <category>AI &amp; Tech</category>
+    <pubDate>Wed, 14 Oct 2026 10:00:00 +0000</pubDate>
+    <description>OpenAI published 722 manuscripts and 372 result families from an internal frontier model, including a proposed Navier-Stokes solution. Math leaders are pushing back on verification standards.</description>
+  </item>
+<item>
     <title>Google's Pixel Modem Zero-Day (CVE-2026-58704): A Proximity Threat That Needs No Tap</title>
     <link>https://wireshaman.com/articles/pixel-modem-zero-day-cve-2026-58704.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/pixel-modem-zero-day-cve-2026-58704.html</guid>

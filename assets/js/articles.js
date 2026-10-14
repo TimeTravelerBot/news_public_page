@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "openai-mathematics-results-drop",
+    "title": "OpenAI Releases a Historic Drop of AI-Generated Mathematics",
+    "excerpt": "OpenAI published 722 manuscripts and 372 result families from an internal frontier model, including a proposed Navier-Stokes solution. Math leaders are pushing back on verification standards.",
+    "category": "tech",
+    "date": "2026-10-14",
+    "read": 4,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/f33f73b10d5a097945c24a032416cee20f530d968594493052876f0c48d735c5.jpg"
+  },
+  {
     "slug": "pixel-modem-zero-day-cve-2026-58704",
     "title": "Google's Pixel Modem Zero-Day (CVE-2026-58704): A Proximity Threat That Needs No Tap",
     "excerpt": "CVE-2026-58704 is a high-severity privilege-escalation flaw in the Pixel cellular modem, patched in the September 2026 Pixel Update Bulletin and added to CISA's KEV catalog for active, targeted exploitation.",
