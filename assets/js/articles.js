@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "ivanti-connect-secure-cve-2026-104935-zero-day",
+    "title": "CISA forces a same-week Ivanti patch: the Connect Secure authentication-bypass zero-day is already moving",
+    "excerpt": "A remote, no-click authentication-bypass flaw in Ivanti Connect Secure has been exploited as a zero-day since October 1, and CISA has now given admins a three-day deadline to patch.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/dffb51186283dacea46a9da17db91bff68539b12f1e936393e244a3029e364a4.jpg"
+  },
+  {
     "slug": "how-rsa-encryption-actually-works",
     "title": "How RSA encryption actually works (and why its whole security rests on one stubborn math step)",
     "excerpt": "RSA secures the web by turning a simple math step into a one-way trapdoor. Here is how it really works, why the trapdoor holds, and why a quantum computer could erase it.",
