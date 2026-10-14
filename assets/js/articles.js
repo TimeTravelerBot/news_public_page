@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "sk-hynix-custom-ssd-controller-cpu-cores",
+    "title": "SK hynix builds its own tiny CPU cores for SSD controllers to cut dependence on Arm",
+    "excerpt": "SK hynix plans to design its own small in-house CPU cores for next-generation SSD controllers, reducing reliance on Arm licensing and giving the memory maker more control over drive-level intelligence.",
+    "category": "hardware",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/28d93e5f488266d83dc7fb5c1fd0c83424d61ab1a5f18566125b28d9c571b360.jpg"
+  },
+  {
     "slug": "science-corp-prima-stargardt-first-patient",
     "title": "Science Corp implants its PRIMA vision chip in a first Stargardt patient",
     "excerpt": "Science Corporation said its tiny PRIMA retinal implant let a patient with the incurable inherited eye disease Stargardt disease read letters and words, a step in Max Hodak's push to turn retinal prostheses and other implants into a general brain-computer interface.",

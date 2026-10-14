@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 16:15:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 14:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                        <item>
+                                                                                                          <item>
+    <title>SK hynix builds its own tiny CPU cores for SSD controllers to cut dependence on Arm</title>
+    <link>https://wireshaman.com/articles/sk-hynix-custom-ssd-controller-cpu-cores.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/sk-hynix-custom-ssd-controller-cpu-cores.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Wed, 14 Oct 2026 14:00:00 +0000</pubDate>
+    <description>SK hynix plans to design its own small in-house CPU cores for next-generation SSD controllers, reducing reliance on Arm licensing and giving the memory maker more control over drive-level intelligence.</description>
+  </item>
+<item>
     <title>Science Corp implants its PRIMA vision chip in a first Stargardt patient</title>
     <link>https://wireshaman.com/articles/science-corp-prima-stargardt-first-patient.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/science-corp-prima-stargardt-first-patient.html</guid>
