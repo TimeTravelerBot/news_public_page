@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 08:56:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 09:10:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                  <item>
+                                                                    <item>
+    <title>Windows Shell Zero-Day CVE-2026-96951 Added to CISA's KEV Amid a Record Patch Tuesday</title>
+    <link>https://wireshaman.com/articles/windows-shell-cve-2026-96951-cisa-kev.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/windows-shell-cve-2026-96951-cisa-kev.html</guid>
+    <dc:creator>WireShaman Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Wed, 14 Oct 2026 09:10:00 +0000</pubDate>
+    <description>A Windows Shell command-injection flaw actively exploited in the wild is now on CISA's Known Exploited catalog.</description>
+  </item>
+<item>
     <title>Intel's Crescent Island GPU, now the "GPU D-Series", aims at cheap, dense AI inference</title>
     <link>https://wireshaman.com/articles/intel-crescent-island-gpu-d-series.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/intel-crescent-island-gpu-d-series.html</guid>

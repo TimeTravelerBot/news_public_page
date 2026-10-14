@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "windows-shell-cve-2026-96951-cisa-kev",
+    "title": "Windows Shell Zero-Day CVE-2026-96951 Added to CISA's KEV Amid a Record Patch Tuesday",
+    "excerpt": "A Windows Shell command-injection flaw actively exploited in the wild is now on CISA's Known Exploited catalog.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 5,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/859c0c8c4519fe51a16399439cef91a356fb91b4cc7cf3616fe59225c23cbdc5.jpg"
+  },
+  {
     "slug": "intel-crescent-island-gpu-d-series",
     "title": "Intel's Crescent Island GPU, now the \"GPU D-Series\", aims at cheap, dense AI inference",
     "excerpt": "At OCP 2026 Intel formally named its Crescent Island AI-inference accelerator \"Intel GPU D-Series\" (Intel GDDR D), delivering up to 1.3 PFLOPS FP8 from an air-cooled, PCIe card that scales to 480 GB of integrated memory.",
