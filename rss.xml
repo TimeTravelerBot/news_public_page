@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 18:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 15:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                    <item>
+                                      <item>
+    <title>NVIDIA Reports a 24 GB RTX 5080 for Early 2027 as the RTX 5090 Fades From the Roadmap</title>
+    <link>https://wireshaman.com/articles/nvidia-rtx-5080-24gb-q1-2027.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/nvidia-rtx-5080-24gb-q1-2027.html</guid>
+    <dc:creator>WireShaman Editorial</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Mon, 12 Oct 2026 15:00:00 +0000</pubDate>
+    <description>A new 24 GB RTX 5080 is reportedly slated for Q1 2027 after NVIDIA begins winding down RTX 5090 production. What is verified and what is not.</description>
+  </item>
+<item>
     <title>Microsoft Unveils Decision-1, a New Thinking Model Built to Make Fast Decisions</title>
     <link>https://wireshaman.com/articles/microsoft-decision-1-model-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/microsoft-decision-1-model-2026.html</guid>

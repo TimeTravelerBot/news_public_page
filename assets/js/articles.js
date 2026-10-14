@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "nvidia-rtx-5080-24gb-q1-2027",
+    "title": "NVIDIA Reports a 24 GB RTX 5080 for Early 2027 as the RTX 5090 Fades From the Roadmap",
+    "excerpt": "A new 24 GB RTX 5080 is reportedly slated for Q1 2027 after NVIDIA begins winding down RTX 5090 production. What is verified and what is not.",
+    "category": "hardware",
+    "date": "2026-10-12",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/fde7d65b6308014dea96f657c4d4581308b15f39c1172781c51d10e809ef6251.jpg"
+  },
+  {
     "slug": "microsoft-decision-1-model-2026",
     "title": "Microsoft Unveils Decision-1, a New Thinking Model Built to Make Fast Decisions",
     "excerpt": "Microsoft launched Decision-1, a new model that scores options and judges the next move instead of generating long text, alongside faster transcription and video models.",
