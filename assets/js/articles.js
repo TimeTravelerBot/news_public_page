@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "sharepoint-cve-2026-65660-cisa-kev",
+    "title": "CISA Adds SharePoint Code Injection CVE-2026-65660 to KEV, Setting a Sept 28 Federal Patch Deadline",
+    "excerpt": "An authenticated, low-privileged attacker can execute arbitrary code on supported Microsoft SharePoint Server versions via crafted POST requests, and CISA confirmed in-the-wild exploitation before the federal remediation deadline.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 5,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/79423d7905b18850cdf43dea16bbc2ba1feaaa33fb65e563bb685805c7b37c02.jpg"
+  },
+  {
     "slug": "how-oauth-2-0-authorization-code-flow-works",
     "title": "How the OAuth 2.0 Authorization Code Flow Works in 2026",
     "excerpt": "A step-by-step explainer of the OAuth 2.0 authorization code flow and why PKCE is now the default for every kind of app.",
