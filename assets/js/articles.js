@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "openai-gpt-5-5-retirement-gpt-5-6-sol",
+    "title": "OpenAI Retires GPT-5.5 from ChatGPT as Users Migrate to the GPT-5.6 Family",
+    "excerpt": "OpenAI has removed GPT-5.5 from ChatGPT, Work, and Codex beginning October 14, 2026, steering users to the newly launched GPT-5.6 lineup. Your API access to gpt-5.5 is unaffected.",
+    "category": "tech",
+    "date": "2026-10-14",
+    "read": 5,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/7070a438910ad25f78c1957900e04ed590e0a4d70831799ec04fc533e65e0a23.jpg"
+  },
+  {
     "slug": "windows-shell-cve-2026-96951-cisa-kev",
     "title": "Windows Shell Zero-Day CVE-2026-96951 Added to CISA's KEV Amid a Record Patch Tuesday",
     "excerpt": "A Windows Shell command-injection flaw actively exploited in the wild is now on CISA's Known Exploited catalog.",
