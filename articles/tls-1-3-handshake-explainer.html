@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-tls-1-3-handshake-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The TLS 1.3 handshake: why secure connections got faster and more private — WireShaman</title>
+  <meta name="description" content="TLS 1.3, finalized in 2018, cut the secure handshake from two round trips to one, made forward secrecy mandatory, and dropped insecure legacy ciphers such as RC4 and static RSA.">
+  <meta name="author" content="By the ADS News technology desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/tls-1-3-handshake-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/tls-1-3-handshake-explainer.html">
+  <meta property="og:title" content="The TLS 1.3 handshake: why secure connections got faster and more private">
+  <meta property="og:description" content="TLS 1.3, finalized in 2018, cut the secure handshake from two round trips to one, made forward secrecy mandatory, and dropped insecure legacy ciphers such as RC4 and static RSA.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/a5a89f5dd212be9b36374b2e661b5a804c4e28b3d9fc344024947d24f913a3bd.jpg">
+  <meta property="og:image:alt" content="A simplified diagram of a TLS 1.3 handshake between a browser and a server with a single fast round trip and a lock icon">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-14">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="The TLS 1.3 handshake: why secure connections got faster and more private">
+  <meta name="twitter:description" content="TLS 1.3, finalized in 2018, cut the secure handshake from two round trips to one, made forward secrecy mandatory, and dropped insecure legacy ciphers such as RC4 and static RSA.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/a5a89f5dd212be9b36374b2e661b5a804c4e28b3d9fc344024947d24f913a3bd.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The TLS 1.3 handshake: why secure connections got faster and more private","description":"TLS 1.3, finalized in 2018, cut the secure handshake from two round trips to one, made forward secrecy mandatory, and dropped insecure legacy ciphers such as RC4 and static RSA.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/tls-1-3-handshake-explainer.html","datePublished":"2026-10-14","image":"https://wireshaman.com/assets/images/a5a89f5dd212be9b36374b2e661b5a804c4e28b3d9fc344024947d24f913a3bd.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/a5a89f5dd212be9b36374b2e661b5a804c4e28b3d9fc344024947d24f913a3bd.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">The TLS 1.3 handshake: why secure connections got faster and more private</h1>
+      <p class="article__sub">A plain-English explainer of how the modern TLS 1.3 handshake works: one round trip, optional zero-round-trip resumption, only strong AEAD cipher suites, and stronger protection of sensitive connection details.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>By the ADS News technology desk</b>
+        <time datetime="2026-10-14">Oct 14, 2026</time> · 7 min read
+      </div>
+      <div class="prose">
+        <h2>What is the TLS 1.3 handshake</h2>
+
+        <p class="dropcap">TLS (Transport Layer Security) is the protocol that puts a padlock on your browser: it encrypts the conversation between you and a server and proves the server is who it claims to be. <strong>TLS 1.3</strong>, finalized in 2018 as <a href="https://datatracker.ietf.org/doc/html/rfc8446" target="_blank" rel="noopener">RFC 8446</a>, is the fourth major version and is now the default on modern browsers and servers. The headline change is the handshake—the few messages of exchange the two sides complete before any real data flows—and 1.3 made it noticeably faster and more private while keeping the same security guarantees.</p>
+
+        <p>The speed win first: under 1.3, most connections complete in <strong>one round trip (1-RTT)</strong> instead of the <strong>two round trips</strong> that TLS 1.2 needs. That matters most for latency-sensitive sites, streaming, and mobile connections on high-latency links, because there is less back-and-forth before the first byte of page content. Even better, a returning client can often skip the round trip entirely with <strong>0-RTT resumption</strong>, reusing a previous session so the very first data can be sent immediately. The trade-off is that 0-RTT data is replayable, so applications must treat it specially.</p>
+
+        <p>Security in 1.3 is also tightened at the core. <strong>Forward secrecy is mandatory</strong>: every connection uses ephemeral key exchange (ECDHE with curves such as X25519, P-256, or P-384), so a future break of a long-term private key cannot reveal past traffic. The allowed crypto is limited to strong <strong>AEAD cipher suites</strong>—AES-128-GCM, AES-256-GCM, and ChaCha20-Poly1305—while the legacy options that made TLS 1.2 vulnerable, such as RC4, SHA-1-based signatures, block ciphers in insecure modes, and static RSA key exchange, were removed entirely. A smaller, modernized cipher list means fewer weak corners for attackers to poke.</p>
+
+        <p>TLS 1.3 also improves privacy on the wire. The handshake no longer broadcasts a full ciphersuite preference or a certificate signature algorithm the way 1.2 did, and it uses a simplified message set with built-in downgrade protection that resists a middlebox or attacker trying to coerce your connection back to an older protocol. Together these changes mean an observer on your path learns less about what you are doing and has fewer levers to degrade your security, even when you are not running a TLS 1.3-only server.</p>
+
+        <h2>What this means for you</h2>
+
+        <div class="callout">
+          <span class="eyebrow">In practice</span>
+          <p>Most people experience TLS 1.3 as a faster, quieter load, not a visible feature: modern browsers and major CDNs have enabled 1.3 by default for years. If you run a server or app, confirm your stack negotiates TLS 1.3 and that a TLS 1.2 fallback remains for older clients, then disable the legacy ciphers 1.3 dropped. If you are debugging a slow secure connection, watch for whether it is actually completing in 1-RTT (or 0-RTT) rather than silently falling back to a slower older handshake.</p>
+        </div>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.cloudflare.com/learning/ssl/why-use-tls-1-3/" target="_blank" rel="noopener">Cloudflare—Why Use TLS 1.3?</a>; <a href="https://www.sslstore.com/what-is/tls-1-3-handshake" target="_blank" rel="noopener">SSL Store—TLS 1.3 Handshake</a>; <a href="https://www.ssls.com/blog/tls-1-3-handshake" target="_blank" rel="noopener">SSLs.com—TLS 1.3 Handshake (2026)</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "tls-1-3-handshake-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>

@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "tls-1-3-handshake-explainer",
+    "title": "The TLS 1.3 handshake: why secure connections got faster and more private",
+    "excerpt": "TLS 1.3, finalized in 2018, cut the secure handshake from two round trips to one, made forward secrecy mandatory, and dropped insecure legacy ciphers such as RC4 and static RSA.",
+    "category": "explainer",
+    "date": "2026-10-14",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/a5a89f5dd212be9b36374b2e661b5a804c4e28b3d9fc344024947d24f913a3bd.jpg"
+  },
+  {
     "slug": "meta-muse-wonder-frontier-model-2026",
     "title": "Meta ships its first frontier model with Muse Wonder, betting on agents and active memory",
     "excerpt": "Meta Superintelligence Labs has released Muse Wonder and Muse Wonder Full, its first frontier model pair, with agentic tool calling, active memory, and a cheaper per-token price than its rivals.",
