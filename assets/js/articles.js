@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-jwt-tokens-work-explainer",
+    "title": "How JWT tokens work: the three-part string behind most logins",
+    "excerpt": "A JSON Web Token is a compact, signed string — header, payload, signature — that lets a server trust a request without keeping a session. Here is what each part does and where it leaks.",
+    "category": "explainer",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/how-jwt-tokens-work-explainer.png"
+  },
+  {
     "slug": "ivanti-connect-secure-root-zero-day-chain",
     "title": "Attacker Chains Three Ivanti Connect Secure Zero-Days for Root Access — Only Two Are Patched",
     "excerpt": "Volexity says attacker UTA0576 broke through a fully patched Ivanti Connect Secure appliance via a triple zero-day chain, stealing LDAP and Active Directory credentials while evading the Integrity Checker Tool.",

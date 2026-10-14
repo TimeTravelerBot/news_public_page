@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-jwt-tokens-work-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How JWT tokens work: the three-part string behind most logins — WireShaman</title>
+  <meta name="description" content="A JSON Web Token is a compact, signed string — header, payload, signature — that lets a server trust a request without keeping a session. Here is what each part does and where it leaks.">
+  <meta name="author" content="ADS News Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-jwt-tokens-work-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-jwt-tokens-work-explainer.html">
+  <meta property="og:title" content="How JWT tokens work: the three-part string behind most logins">
+  <meta property="og:description" content="A JSON Web Token is a compact, signed string — header, payload, signature — that lets a server trust a request without keeping a session. Here is what each part does and where it leaks.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/how-jwt-tokens-work-explainer.png">
+  <meta property="og:image:alt" content="A signed token band glows across a teal field, labelled header.payload.signature">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-10-14">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How JWT tokens work: the three-part string behind most logins">
+  <meta name="twitter:description" content="A JSON Web Token is a compact, signed string — header, payload, signature — that lets a server trust a request without keeping a session. Here is what each part does and where it leaks.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/how-jwt-tokens-work-explainer.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How JWT tokens work: the three-part string behind most logins","description":"A JSON Web Token is a compact, signed string — header, payload, signature — that lets a server trust a request without keeping a session. Here is what each part does and where it leaks.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-jwt-tokens-work-explainer.html","datePublished":"2026-10-14","image":"https://wireshaman.com/assets/images/how-jwt-tokens-work-explainer.png","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/how-jwt-tokens-work-explainer.png" width="1200" height="630" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How JWT tokens work: the three-part string behind most logins</h1>
+      <p class="article__sub">JWTs power stateless auth across web apps, APIs and single sign-on. They are compact, self-contained and cryptographically signed, so the server stores nothing. But that same design is exactly what attackers target when tokens are misused or leaked.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>ADS News Desk</b>
+        <time datetime="2026-10-14">Oct 14, 2026</time> · 6 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">A <strong>JSON Web Token</strong> — usually just called a <em>JWT</em> and pronounced “jot” — is an open standard (RFC 7519) for passing a compact, self-contained bit of information between two parties in a way that a receiver can trust. It shows up everywhere: when you log in to a web app, when one microservice calls another, and often as the access token inside single sign-on. The short version is that a JWT is <strong>encoded, not encrypted</strong>, and it is <code>header.payload.signature</code>.</p>
+
+        <h2>The three parts, in order</h2>
+
+        <ul>
+          <li>Header — declares the token type (<code>typ: JWT</code>) and the signing algorithm (for example <code>HS256</code> or <code>RS256</code>). Base64URL-encoded.</li>
+          <li>Payload — carries the <code>claims</code>: who the token is about (often a <code>sub</code> identifier), who issued it (<code>iss</code>), when it expires (<code>exp</code>) and anything else the issuer wants to attach.</li>
+          <li>Signature — a cryptographic proof over the header and payload. If any character above it changes, verification fails, so the receiver knows the content was not tampered with.</li>
+        </ul>
+
+        <p>Every part is encoded with <strong>Base64URL</strong> for safe transport, not for secrecy — decode the middle section and it is plain JSON. That is the part people misread most often: a JWT is a <em>signed ticket</em>, not a <em>locked box</em>. Nothing stops a client from reading what it carries; what it cannot do is alter it without breaking the signature.</p>
+
+        <div class="callout">
+          <span class="eyebrow">Why it matters</span>
+          <p>Because the token itself carries the user's identity and permissions, the server can stay <strong>stateless</strong>. There is no database row to look up on every request — just a fast signature check. That is a win for scale and for mobile, where a phone can be offline or flaky and a session store would be painful. The flip side: the token is the bearer's identity, whichever device holds it can act as that user, and if it leaks, the blast radius is real.</p>
+        </div>
+
+        <p>The signature is what makes it <em>trustworthy</em>, and the algorithm choice decides how. With <code>HS256</code> (HMAC) the issuer and verifier share one secret key — simple, but the secret must stay secret. With <code>RS256</code> (RSA) or ECDSA the issuer signs with a <em>private</em> key and everyone else verifies with a <em>public</em> key, which is how one identity provider can issue tokens that many independent services accept. Get the algorithm wrong — for example trusting a key that matches an <code>HS256</code> token as if it were an RSA public key — and the verification becomes trivially bypassable.</p>
+
+        <h2>What breaks when done wrong</h2>
+
+        <div class="callout">
+          <span class="eyebrow">Common failure modes</span>
+          <p>Storing a long-lived JWT in an accessible localStorage or a log; trusting a payload field as a <code>role</code> or <code>admin</code> flag without re-checking it server-side; missing or mis-parsing <code>exp</code> so tokens never actually expire; and accepting any <code>kid</code> or <code>alg</code> a client offers. None of these require a new vulnerability to exploit — they are misconfigurations of a token that is, by design, fully readable.</p>
+        </div>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>If you <em>use</em> JWTs: keep them short-lived, sign with a proper algorithm, treat every claim as untrusted input, and give your token a way out (revocation or a short <code>exp</code>) because once it is signed it is valid until it is not. If you're <em>on the receiving end</em> of a login that hands you a token, understand that the token <em>is</em> your session — protect it the way you protect a password: over encrypted connections, out of logs, and out of anyone else's reach.</p>
+        </div>
+
+        <p>Read the raw token in a client and you can see the <code>iss</code>, <code>sub</code> and <code>exp</code> claims on your own. That visibility is what makes JWTs so easy to reason about — and it is also why the security contract is carried almost entirely by the signature and the claims you choose to check.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://jwt.io/introduction" target="_blank" rel="noopener">jwt.io — Introduction to JSON Web Tokens</a>; <a href="https://datatracker.ietf.org/doc/html/rfc7519" target="_blank" rel="noopener">RFC 7519: JSON Web Token (IETF)</a>; <a href="https://auth0.com/docs/secure/tokens/json-web-tokens" target="_blank" rel="noopener">Auth0 — What is a JWT?</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-jwt-tokens-work-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
