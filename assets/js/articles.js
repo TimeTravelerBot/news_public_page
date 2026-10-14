@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "what-is-dram-explainer",
+    "title": "What Is DRAM? The Memory Your Computer Runs On, Explained",
+    "excerpt": "DRAM is the RAM in your computer. It stores each bit in a tiny capacitor held by one transistor, and it leaks, so it must be refreshed. Here is how it works and why it matters.",
+    "category": "explainer",
+    "date": "2026-10-14",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/775e21c2b377b2a6d40c1cdaa8db447ad74abb594a54cbdf671c34d8a2c01fa0.jpg"
+  },
+  {
     "slug": "nvidia-rtx-5080-24gb-q1-2027",
     "title": "NVIDIA Reports a 24 GB RTX 5080 for Early 2027 as the RTX 5090 Fades From the Roadmap",
     "excerpt": "A new 24 GB RTX 5080 is reportedly slated for Q1 2027 after NVIDIA begins winding down RTX 5090 production. What is verified and what is not.",

@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 15:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 01:12:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                      <item>
+                                        <item>
+    <title>What Is DRAM? The Memory Your Computer Runs On, Explained</title>
+    <link>https://wireshaman.com/articles/what-is-dram-explainer.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/what-is-dram-explainer.html</guid>
+    <dc:creator>WireShaman Editorial</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Wed, 14 Oct 2026 01:12:00 +0000</pubDate>
+    <description>DRAM is the RAM in your computer. It stores each bit in a tiny capacitor held by one transistor, and it leaks, so it must be refreshed. Here is how it works and why it matters.</description>
+  </item>
+<item>
     <title>NVIDIA Reports a 24 GB RTX 5080 for Early 2027 as the RTX 5090 Fades From the Roadmap</title>
     <link>https://wireshaman.com/articles/nvidia-rtx-5080-24gb-q1-2027.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/nvidia-rtx-5080-24gb-q1-2027.html</guid>
