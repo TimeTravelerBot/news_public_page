@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "meta-muse-wonder-frontier-model-2026",
+    "title": "Meta ships its first frontier model with Muse Wonder, betting on agents and active memory",
+    "excerpt": "Meta Superintelligence Labs has released Muse Wonder and Muse Wonder Full, its first frontier model pair, with agentic tool calling, active memory, and a cheaper per-token price than its rivals.",
+    "category": "tech",
+    "date": "2026-10-12",
+    "read": 5,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/fd080341b5a70258f439537f438c48dffd2792a942e982f6d24913200ea07951.jpg"
+  },
+  {
     "slug": "kaspersky-q2-2026-android-threat-landscape",
     "title": "Kaspersky says Android attackers are shifting to app-store loaders as on-device malware falls",
     "excerpt": "Kaspersky's Q2 2026 mobile threat report found 1.99 million mobile malware attacks and a pivot toward dropper-based banking Trojans delivered through Google Play.",
