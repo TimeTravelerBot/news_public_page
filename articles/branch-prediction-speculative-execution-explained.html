@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-branch-prediction-speculative-execution-explained">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How branch prediction and speculative execution work — the trick that makes fast CPUs fast (and leaks your secrets) — WireShaman</title>
+  <meta name="description" content="Speculative execution is one of computer science&#x27;s most important performance tricks — and the reason Spectre-class hardware leaks are possible.">
+  <meta name="author" content="By Wireshaman Editorial">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/branch-prediction-speculative-execution-explained.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/branch-prediction-speculative-execution-explained.html">
+  <meta property="og:title" content="How branch prediction and speculative execution work — the trick that makes fast CPUs fast (and leaks your secrets)">
+  <meta property="og:description" content="Speculative execution is one of computer science&#x27;s most important performance tricks — and the reason Spectre-class hardware leaks are possible.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/25db082152eab5d44b2ad1ad5ce88842bb11e1f919a4e8309efc1eaf89eebf37.jpg">
+  <meta property="og:image:alt" content="Branch predictor fork with speculative path diverging from committed path, circuit aesthetic, no text">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-09-01">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How branch prediction and speculative execution work — the trick that makes fast CPUs fast (and leaks your secrets)">
+  <meta name="twitter:description" content="Speculative execution is one of computer science&#x27;s most important performance tricks — and the reason Spectre-class hardware leaks are possible.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/25db082152eab5d44b2ad1ad5ce88842bb11e1f919a4e8309efc1eaf89eebf37.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How branch prediction and speculative execution work — the trick that makes fast CPUs fast (and leaks your secrets)","description":"Speculative execution is one of computer science's most important performance tricks — and the reason Spectre-class hardware leaks are possible.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/branch-prediction-speculative-execution-explained.html","datePublished":"2026-09-01","image":"https://wireshaman.com/assets/images/25db082152eab5d44b2ad1ad5ce88842bb11e1f919a4e8309efc1eaf89eebf37.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/25db082152eab5d44b2ad1ad5ce88842bb11e1f919a4e8309efc1eaf89eebf37.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How branch prediction and speculative execution work — the trick that makes fast CPUs fast (and leaks your secrets)</h1>
+      <p class="article__sub">Your CPU guesses what you are going to do before it knows whether that guess is right. This is why modern processors are fast — and why one of the worst hardware leak classes in the last decade became possible at all.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>By Wireshaman Editorial</b>
+        <time datetime="2026-09-01">Sep 1, 2026</time> · 9 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">Speculative execution is one of the most consequential ideas in modern computer architecture: the CPU does work it has not yet been allowed to do, on the assumption that it will be allowed to keep it a few cycles later. The trick buys enormous performance — a typical core would otherwise sit idle for many cycles waiting on memory or branch outcomes — but it also leaves behind physical side effects that are not fully rolled back when the guess turns out to be wrong. Those side effects are the entire foundation of the Spectre and Meltdown hardware leak families.</p>
+
+        <p>The heart of the trick is <strong>branch prediction</strong>, which exists because a huge fraction of every program is conditional branches — instructions that say <code>if x, do this, otherwise do that</code>. The CPU cannot know which path to take until it finishes the dependent load or comparison, but it has to keep issuing instructions every cycle. So the core runs a dedicated <strong>branch predictor</strong>: a small hardware table that remembers, per branch instruction, which way the branch usually went, and guesses the next outcome using that history. Most modern predictors are a blend of a <strong>taken / not-taken history</strong> and a <strong>branch target buffer</strong> that predicts the destination of indirect jumps (function calls through a pointer, <code>switch</code> vtables, and so on) — the same mechanism Spectre variant 2 exploits.</p>
+
+        <h2>How the pipeline works — and where the guess leaks</h2>
+
+        <ul>
+          <li><strong>Fetch and decode</strong> the next instruction stream; the branch predictor guesses where the next fetch should come from</li>
+          <li><strong>Speculatively execute</strong> the guessed path ahead of the dependent check — cache lines get touched, store buffer slots get filled, microarchitectural state gets set</li>
+          <li><strong>Commit</strong> (retire) in program order only once the real result is known and no exception fires; a wrong guess triggers a <em>pipeline flush</em> that discards the committed state</li>
+          <li><strong>Side effects that survive the flush</strong> — cache residency, translation buffer entries, port contention — are what an attacker can read, and they are the actual leak channel</li>
+        </ul>
+
+        <p>Spectre, the 2018 class of vulnerabilities, works by <strong>training</strong> the branch target buffer into a specific mispredict, then running an <em>out-of-bounds</em> or <em>out-of-access</em> read while the CPU has not yet validated the bounds check. The read never commits — but it loads a cache line that encodes whatever the secret was, giving the attacker a <strong>cache side-channel</strong> to read it back byte by byte. The deeper structural insight — that any mispredict can leave physically observable state behind — is what makes the <em>entire family</em> of <a href="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)" target="_blank" rel="noopener">Spectre-class leaks</a> possible, from <strong>Bounds Check Bypass</strong> through <strong>Branch Target Injection</strong> through <strong>GhostWrite</strong> and <strong>QEMU TSS</strong> leak variants. Meltdown is the sibling mechanism: <strong>speculative</strong> user-mode reads of kernel memory commit the secret into L1 before the <strong>page-table permission</strong> check fires.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>If you run modern code on commodity hardware, your processor is always guessing. <strong>Performance-critical workloads</strong> (databases, JITs, browsers) rely on this trick working well, and the entire ecosystem of speculative execution — out-of-order pipelines, branch target buffers, memory disambiguation — exists because it delivers 2x to 4x throughput relative to an in-order core. <strong>Security-critical workloads</strong> (crypto, secrets handling, kernel boundary code) live with a permanent tax: <strong>mitigation</strong> code (retpolines, L1D flushes, <strong>Speculative Store Bypass</strong> disables) that exists only to keep the guess from leaking. Neither side is optional.</p>
+        </div>
+
+        <h2>The three big lessons</h2>
+
+        <ul>
+          <li><strong>Performance and security are in fundamental tension here</strong> — the very hardware that makes a core fast also creates a channel that the ISA did not intend to expose, and closing that channel costs real cycles</li>
+          <li><strong>Any state that survives a mispredict flush is a side channel</strong> — cache, TLB, store buffer, port contention, <em>everything</em> is a potential leak channel, and new variants keep being discovered decades in by researchers</li>
+          <li><strong>The trick will not go away</strong> — every next-gen CPU from <a href="https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor" target="_blank" rel="noopener">KVM-era</a> cores through <a href="https://www.lenovo.com/us/en/glossary/speculative-execution" target="_blank" rel="noopener">speculative execution</a> in 2026 runs deeper branch predictors and deeper out-of-order pipelines; the mitigation stack is the only line of defense</li>
+        </ul>
+
+        <div class="callout">
+          <span class="eyebrow">Why this matters in 2026</span>
+          <p>Speculative execution is not a 2018 problem that was solved and archived. It is a <strong>fundamental property of high-performance processor design</strong>. Any workload that handles secrets — session keys, tokens, crypto material — on commodity hardware must assume the microarchitectural state of that secret is observable by another tenant on the same core. The Spectre and Meltdown families have been <em>cementing</em> ever since 2018, and the research field continues to push into new <em>microarchitectural</em> side channels that the original 2018 patch set did not cover.</p>
+        </div>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://cacm.acm.org/research/spectre-attacks" target="_blank" rel="noopener">Communications of the ACM — Spectre Attacks (2023)</a>; <a href="https://spectrum.ieee.org/how-the-spectre-and-meltdown-hacks-really-worked" target="_blank" rel="noopener">IEEE Spectrum — How the Spectre and Meltdown Hacks Really Worked</a>; <a href="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)" target="_blank" rel="noopener">Wikipedia — Spectre (security vulnerability)</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "branch-prediction-speculative-execution-explained";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>

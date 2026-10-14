@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2026 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 10:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                          <item>
+                                                                                            <item>
+    <title>How branch prediction and speculative execution work — the trick that makes fast CPUs fast (and leaks your secrets)</title>
+    <link>https://wireshaman.com/articles/branch-prediction-speculative-execution-explained.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/branch-prediction-speculative-execution-explained.html</guid>
+    <dc:creator>By Wireshaman Editorial</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Tue, 01 Sep 2026 10:00:00 +0000</pubDate>
+    <description>Speculative execution is one of computer science's most important performance tricks — and the reason Spectre-class hardware leaks are possible.</description>
+  </item>
+<item>
     <title>Atlassian's Critical CVE-2026-21589 Lets Attackers Steal Files from Self-Hosted Jira, Confluence, and Bitbucket Without Logging In</title>
     <link>https://wireshaman.com/articles/atlassian-data-center-cve-2026-21589.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/atlassian-data-center-cve-2026-21589.html</guid>

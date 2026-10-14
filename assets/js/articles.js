@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "branch-prediction-speculative-execution-explained",
+    "title": "How branch prediction and speculative execution work — the trick that makes fast CPUs fast (and leaks your secrets)",
+    "excerpt": "Speculative execution is one of computer science's most important performance tricks — and the reason Spectre-class hardware leaks are possible.",
+    "category": "explainer",
+    "date": "2026-09-01",
+    "read": 9,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/25db082152eab5d44b2ad1ad5ce88842bb11e1f919a4e8309efc1eaf89eebf37.jpg"
+  },
+  {
     "slug": "atlassian-data-center-cve-2026-21589",
     "title": "Atlassian's Critical CVE-2026-21589 Lets Attackers Steal Files from Self-Hosted Jira, Confluence, and Bitbucket Without Logging In",
     "excerpt": "A critical path-traversal flaw scored 9.3 lets unauthenticated attackers read files from the web root of eight Atlassian Data Center products, and automated scanning already began within two hours.",
