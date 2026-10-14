@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "nvidia-rtx-50-series-price-hike-2026",
+    "title": "NVIDIA's Third GPU Price Hike of 2026 Pushes RTX 50-Series Cards to New Highs",
+    "excerpt": "NVIDIA is implementing its third consumer GPU price hike this year, raising RTX 50-series graphics card costs by 20 to 30 percent as the AI-driven memory crunch reshapes the entire GPU market.",
+    "category": "hardware",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/09f5576036342d37877625cf23e17a83f809587a0ffed18b44fe7a72a47f6eb7.jpg"
+  },
+  {
     "slug": "sharepoint-cve-2026-65660-cisa-kev",
     "title": "CISA Adds SharePoint Code Injection CVE-2026-65660 to KEV, Setting a Sept 28 Federal Patch Deadline",
     "excerpt": "An authenticated, low-privileged attacker can execute arbitrary code on supported Microsoft SharePoint Server versions via crafted POST requests, and CISA confirmed in-the-wild exploitation before the federal remediation deadline.",

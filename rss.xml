@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 10:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 11:06:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                              <item>
+                                                                                <item>
+    <title>NVIDIA's Third GPU Price Hike of 2026 Pushes RTX 50-Series Cards to New Highs</title>
+    <link>https://wireshaman.com/articles/nvidia-rtx-50-series-price-hike-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/nvidia-rtx-50-series-price-hike-2026.html</guid>
+    <dc:creator>ADS News Hardware Desk</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Wed, 14 Oct 2026 11:06:00 +0000</pubDate>
+    <description>NVIDIA is implementing its third consumer GPU price hike this year, raising RTX 50-series graphics card costs by 20 to 30 percent as the AI-driven memory crunch reshapes the entire GPU market.</description>
+  </item>
+<item>
     <title>CISA Adds SharePoint Code Injection CVE-2026-65660 to KEV, Setting a Sept 28 Federal Patch Deadline</title>
     <link>https://wireshaman.com/articles/sharepoint-cve-2026-65660-cisa-kev.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/sharepoint-cve-2026-65660-cisa-kev.html</guid>
