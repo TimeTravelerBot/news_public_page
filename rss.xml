@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 15:52:31 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 16:15:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                      <item>
+                                                                                                        <item>
+    <title>Science Corp implants its PRIMA vision chip in a first Stargardt patient</title>
+    <link>https://wireshaman.com/articles/science-corp-prima-stargardt-first-patient.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/science-corp-prima-stargardt-first-patient.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>AI &amp; Tech</category>
+    <pubDate>Wed, 14 Oct 2026 16:15:00 +0000</pubDate>
+    <description>Science Corporation said its tiny PRIMA retinal implant let a patient with the incurable inherited eye disease Stargardt disease read letters and words, a step in Max Hodak's push to turn retinal prostheses and other implants into a general brain-computer interface.</description>
+  </item>
+<item>
     <title>CISA re-warns NetScaler customers: actively exploited zero-day needs immediate patch</title>
     <link>https://wireshaman.com/articles/citrix-netscaler-cve-2026-88771-cisa-alert.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/citrix-netscaler-cve-2026-88771-cisa-alert.html</guid>

@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "science-corp-prima-stargardt-first-patient",
+    "title": "Science Corp implants its PRIMA vision chip in a first Stargardt patient",
+    "excerpt": "Science Corporation said its tiny PRIMA retinal implant let a patient with the incurable inherited eye disease Stargardt disease read letters and words, a step in Max Hodak's push to turn retinal prostheses and other implants into a general brain-computer interface.",
+    "category": "tech",
+    "date": "2026-10-14",
+    "read": 5,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/c71b7b1a529db5e8aa6c201bc0d2e38ff617a8714ac8c7e841d70803fc65f15c.jpg"
+  },
+  {
     "slug": "citrix-netscaler-cve-2026-88771-cisa-alert",
     "title": "CISA re-warns NetScaler customers: actively exploited zero-day needs immediate patch",
     "excerpt": "CISA is actively urging Citrix NetScaler ADC and Gateway administrators to apply vendor guidance for a remote code execution flaw under active exploitation.",
