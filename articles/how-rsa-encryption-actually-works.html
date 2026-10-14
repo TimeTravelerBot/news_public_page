@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-rsa-encryption-actually-works">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How RSA encryption actually works (and why its whole security rests on one stubborn math step) — WireShaman</title>
+  <meta name="description" content="RSA secures the web by turning a simple math step into a one-way trapdoor. Here is how it really works, why the trapdoor holds, and why a quantum computer could erase it.">
+  <meta name="author" content="ADS News Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-rsa-encryption-actually-works.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-rsa-encryption-actually-works.html">
+  <meta property="og:title" content="How RSA encryption actually works (and why its whole security rests on one stubborn math step)">
+  <meta property="og:description" content="RSA secures the web by turning a simple math step into a one-way trapdoor. Here is how it really works, why the trapdoor holds, and why a quantum computer could erase it.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/47547b590f0cadcf4e5bccde0f043b47180d714cbd1f17651ea20db935c78da3.jpg">
+  <meta property="og:image:alt" content="Abstract visual of a glowing padlock formed from two streams of flowing digits and gears, teal and amber on deep navy.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-14">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How RSA encryption actually works (and why its whole security rests on one stubborn math step)">
+  <meta name="twitter:description" content="RSA secures the web by turning a simple math step into a one-way trapdoor. Here is how it really works, why the trapdoor holds, and why a quantum computer could erase it.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/47547b590f0cadcf4e5bccde0f043b47180d714cbd1f17651ea20db935c78da3.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How RSA encryption actually works (and why its whole security rests on one stubborn math step)","description":"RSA secures the web by turning a simple math step into a one-way trapdoor. Here is how it really works, why the trapdoor holds, and why a quantum computer could erase it.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-rsa-encryption-actually-works.html","datePublished":"2026-10-14","image":"https://wireshaman.com/assets/images/47547b590f0cadcf4e5bccde0f043b47180d714cbd1f17651ea20db935c78da3.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/47547b590f0cadcf4e5bccde0f043b47180d714cbd1f17651ea20db935c78da3.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How RSA encryption actually works (and why its whole security rests on one stubborn math step)</h1>
+      <p class="article__sub">RSA is easy to lock and hard to pick. The trick is not hiding the key, it is making the key itself a dead-end for anyone without the private half. A plain-English look at the math that protects the web - and the clock already ticking on it.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>ADS News Team</b>
+        <time datetime="2026-10-14">Oct 14, 2026</time> · 7 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">Every time you log into a bank, check out with a card, or open a site that starts with <code>https</code>, a system called <strong>RSA</strong> is quietly doing the locking. It has been a pillar of the internet since the 1980s. The thing that makes RSA remarkable is how little it looks to need: the entire scheme hangs on one operation that is easy to do and - as far as anyone can tell - impossible to reverse without the secret ingredient.</p>
+
+        <h2>The one-way trapdoor</h2>
+
+        <p>RSA rests on <strong>modular exponentiation</strong>, an operation that is fast to compute and believed to have no shortcut to undo. In plain terms: pick two very large prime numbers, multiply them together, and publish the result. Anyone can take the product, but to find the original two primes you would have to <strong>factor</strong> a huge number - a job that takes classical computers an impractical amount of time. That gap, between easy-to-make and hard-to-undo, is the trapdoor the whole cryptosystem is built on.</p>
+
+        <p>The magic is in what you can do with that prime pair. Because of a result from number theory, you can craft two special numbers so that one <em>scrambles</em> a message and only its partner <em>unscrambles</em> it. The scrambling number is the <strong>public key</strong>; the unscrambling number is the <strong>private key</strong>. You can hand out the public version by the truckload - everyone can use it - and the private one still stays yours.</p>
+
+        <h2>How you lock and unlock without a shared secret</h2>
+
+        <p>Here is the part that makes RSA worth more than a simple cipher. Suppose Alice wants to send Bob a secret. She uses Bob's public key to lock it into a jumble; only Bob's private key can turn that jumble back into readable text. No one who intercepted it can read it, because reading it is the same as factoring the giant number. And because the trapdoor works in both directions, RSA can be flipped around for <strong>digital signatures</strong>: Bob signs with his private key, and anyone can verify with his public key. That is how a certificate, a software update, or a block on a ledger can be proven genuine.</p>
+
+        <p>In practice, RSA is almost never the only thing at work, and that is a good sign of maturity. For bulk data it is too slow, so protocols like <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank" rel="noopener">TLS</a> use RSA to protect a short shared secret, then hand the heavy lifting to a faster symmetric cipher. And modern browsers lean heavily on <a href="https://en.wikipedia.org/wiki/Elliptic_Curve_Cryptography" target="_blank" rel="noopener">elliptic-curve</a> schemes that do the same job with much smaller numbers. RSA is the load-bearing wall in many places, but rarely the whole house.</p>
+
+        <div class="callout">
+          <span class="eyebrow">Why the clock is already turning</span>
+          <p>The trapdoor RSA depends on can be erased, not by a bigger classical computer, but by a quantum one. <strong>Shor's algorithm</strong> finds the hidden primes in polynomial time, collapsing the hard direction. On that threat, <strong>NIST</strong> has already put dates on the calendar: its draft guidance (NIST IR 8547) deprecates 112-bit-strength algorithms like RSA-2048 by <strong>2030</strong> and disallows them by <strong>2035</strong>, pushing organizations toward post-quantum standards such as ML-KEM and ML-DSA.</p>
+        </div>
+
+        <ul>
+          <li>Easy to compute, hard to reverse: RSA's whole strength is one-way modular exponentiation.</li>
+          <li>Public key locks, private key unlocks, and factoring is the missing shortcut.</li>
+          <li>RSA also signs - private key signs, public key verifies.</li>
+          <li>Real systems pair it with fast symmetric ciphers, not use it alone.</li>
+          <li>Quantum Shor's algorithm breaks the trapdoor, so NIST is sunsetting RSA-2048 by 2030.</li>
+          <li>Harvest-now-decrypt-later means today's encrypted traffic can be stolen for a later reveal.</li>
+        </ul>
+
+        <h2>What this means for you</h2>
+
+        <p>For most users the takeaway is simple: the <code>https</code> padlock you trust is doing something genuinely clever, and it deserves your confidence today. The one long shadow to know about is <strong>harvest-now, decrypt-later</strong> - attackers can record your encrypted traffic now and crack it years from now once a quantum machine exists. If you protect data that must stay secret for decades, RSA alone is no longer a safe long-term bet, and the quiet migration to post-quantum cryptography is already underway.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://en.wikipedia.org/wiki/Modular_exponentiation" target="_blank" rel="noopener">Modular exponentiation - Wikipedia</a>; <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="_blank" rel="noopener">RSA - Wikipedia</a>; <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547 - Transition to Post-Quantum Cryptography</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-rsa-encryption-actually-works";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>

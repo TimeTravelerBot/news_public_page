@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-rsa-encryption-actually-works",
+    "title": "How RSA encryption actually works (and why its whole security rests on one stubborn math step)",
+    "excerpt": "RSA secures the web by turning a simple math step into a one-way trapdoor. Here is how it really works, why the trapdoor holds, and why a quantum computer could erase it.",
+    "category": "explainer",
+    "date": "2026-10-14",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/47547b590f0cadcf4e5bccde0f043b47180d714cbd1f17651ea20db935c78da3.jpg"
+  },
+  {
     "slug": "sk-hynix-custom-ssd-controller-cpu-cores",
     "title": "SK hynix builds its own tiny CPU cores for SSD controllers to cut dependence on Arm",
     "excerpt": "SK hynix plans to design its own small in-house CPU cores for next-generation SSD controllers, reducing reliance on Arm licensing and giving the memory maker more control over drive-level intelligence.",
