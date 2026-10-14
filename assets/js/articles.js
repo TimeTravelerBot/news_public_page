@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "surface-laptop-ultra-nvidia-rtx-spark",
+    "title": "Microsoft's Surface Laptop Ultra and RTX Spark Dev Box arrive — Windows PCs built for local AI agents",
+    "excerpt": "At a San Francisco event, Microsoft and Nvidia opened pre-orders for the Surface Laptop Ultra and a compact RTX Spark Dev Box, running a new superchip with 1 petaflop of AI compute and up to 128GB of unified memory.",
+    "category": "hardware",
+    "date": "2026-10-14",
+    "read": 5,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/49b79221471f56050b5a4e9ee052fe2f36d1943f0b52284e854f46f922f1bb62.jpg"
+  },
+  {
     "slug": "android-security-bulletin-october-2026",
     "title": "Android's October 2026 update patches 25 vulnerabilities, including seven critical flaws",
     "excerpt": "Google's October 2026 Android security update resolves 25 vulnerabilities, including seven critical bugs.",

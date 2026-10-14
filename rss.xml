@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 08:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 15:15:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                <item>
+                                                                                                  <item>
+    <title>Microsoft's Surface Laptop Ultra and RTX Spark Dev Box arrive — Windows PCs built for local AI agents</title>
+    <link>https://wireshaman.com/articles/surface-laptop-ultra-nvidia-rtx-spark.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/surface-laptop-ultra-nvidia-rtx-spark.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Wed, 14 Oct 2026 15:15:00 +0000</pubDate>
+    <description>At a San Francisco event, Microsoft and Nvidia opened pre-orders for the Surface Laptop Ultra and a compact RTX Spark Dev Box, running a new superchip with 1 petaflop of AI compute and up to 128GB of unified memory.</description>
+  </item>
+<item>
     <title>Android's October 2026 update patches 25 vulnerabilities, including seven critical flaws</title>
     <link>https://wireshaman.com/articles/android-security-bulletin-october-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/android-security-bulletin-october-2026.html</guid>
