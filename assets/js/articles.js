@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "ledger-nano-x-spy-chip-implant",
+    "title": "Ledger Nano X spy-chip implant steals recovery phrases pixel by pixel",
+    "excerpt": "Tibane Labs and Grand Idea Studio document a tampered Ledger Nano X with a soldered-on second computer and cellular modem that captures the on-screen 24-word seed and exfiltrates it while passing genuine-device checks.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 9,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/ledger-nano-x-spy-chip-implant.png"
+  },
+  {
     "slug": "how-jwt-tokens-work-explainer",
     "title": "How JWT tokens work: the three-part string behind most logins",
     "excerpt": "A JSON Web Token is a compact, signed string — header, payload, signature — that lets a server trust a request without keeping a session. Here is what each part does and where it leaks.",
