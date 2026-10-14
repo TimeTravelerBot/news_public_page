@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "google-gemini-4-argon-frontier-model",
+    "title": "Google's Gemini 4 Argon lands in limited release — and retakes the frontier benchmarks lead",
+    "excerpt": "Google DeepMind's Gemini 4 Argon targets long-horizon software engineering, enterprise knowledge work and defensive cybersecurity. It opens at half its standard price, is gated to trusted cyber defenders first, and scores level with GPT-6 Astra on independent intelligence index.",
+    "category": "tech",
+    "date": "2026-10-14",
+    "read": 8,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/86df2069c06c366437debe89f5fee967e89a64d3a58c7acc51defce2cf82d863.jpg"
+  },
+  {
     "slug": "microsoft-azure-maia-300-ai-chip",
     "title": "Microsoft's Azure Maia 300 targets cloud AI inference",
     "excerpt": "Microsoft announced its third-generation Maia AI chip, built to deliver up to 40 percent more tokens per megawatt than leading GPU systems.",

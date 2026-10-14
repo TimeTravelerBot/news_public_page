@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 06:58:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 07:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                        <item>
+                                                          <item>
+    <title>Google's Gemini 4 Argon lands in limited release — and retakes the frontier benchmarks lead</title>
+    <link>https://wireshaman.com/articles/google-gemini-4-argon-frontier-model.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/google-gemini-4-argon-frontier-model.html</guid>
+    <dc:creator>By the ADS News technology desk</dc:creator>
+    <category>AI &amp; Tech</category>
+    <pubDate>Wed, 14 Oct 2026 07:30:00 +0000</pubDate>
+    <description>Google DeepMind's Gemini 4 Argon targets long-horizon software engineering, enterprise knowledge work and defensive cybersecurity. It opens at half its standard price, is gated to trusted cyber defenders first, and scores level with GPT-6 Astra on independent intelligence index.</description>
+  </item>
+<item>
     <title>Microsoft's Azure Maia 300 targets cloud AI inference</title>
     <link>https://wireshaman.com/articles/microsoft-azure-maia-300-ai-chip.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/microsoft-azure-maia-300-ai-chip.html</guid>
