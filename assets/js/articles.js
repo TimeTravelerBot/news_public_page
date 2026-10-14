@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "intel-crescent-island-gpu-d-series",
+    "title": "Intel's Crescent Island GPU, now the \"GPU D-Series\", aims at cheap, dense AI inference",
+    "excerpt": "At OCP 2026 Intel formally named its Crescent Island AI-inference accelerator \"Intel GPU D-Series\" (Intel GDDR D), delivering up to 1.3 PFLOPS FP8 from an air-cooled, PCIe card that scales to 480 GB of integrated memory.",
+    "category": "hardware",
+    "date": "2026-10-14",
+    "read": 4,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/c84e1572f3dedc614d4c9b9359bcea3092f46d27ab4324a7f03d706d727b2733.jpg"
+  },
+  {
     "slug": "how-dns-resolution-works-explainer",
     "title": "How DNS Resolution Works: From Typing a URL to an IP Address",
     "excerpt": "A step-by-step explainer of the Domain Name System: recursive resolvers, root and TLD servers, caching, and why DNS failures look the way they do.",

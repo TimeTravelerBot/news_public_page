@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 08:35:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 08:56:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                <item>
+                                                                  <item>
+    <title>Intel's Crescent Island GPU, now the "GPU D-Series", aims at cheap, dense AI inference</title>
+    <link>https://wireshaman.com/articles/intel-crescent-island-gpu-d-series.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/intel-crescent-island-gpu-d-series.html</guid>
+    <dc:creator>ADS Technical Desk</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Wed, 14 Oct 2026 08:56:00 +0000</pubDate>
+    <description>At OCP 2026 Intel formally named its Crescent Island AI-inference accelerator "Intel GPU D-Series" (Intel GDDR D), delivering up to 1.3 PFLOPS FP8 from an air-cooled, PCIe card that scales to 480 GB of integrated memory.</description>
+  </item>
+<item>
     <title>How DNS Resolution Works: From Typing a URL to an IP Address</title>
     <link>https://wireshaman.com/articles/how-dns-resolution-works-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-dns-resolution-works-explainer.html</guid>
