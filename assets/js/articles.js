@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "microsoft-azure-maia-300-ai-chip",
+    "title": "Microsoft's Azure Maia 300 targets cloud AI inference",
+    "excerpt": "Microsoft announced its third-generation Maia AI chip, built to deliver up to 40 percent more tokens per megawatt than leading GPU systems.",
+    "category": "hardware",
+    "date": "2026-10-14",
+    "read": 4,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/6dc68cc0ddfd107f9a9b28975f81268bdbe75393bd3df2d400aafbef31050d28.jpg"
+  },
+  {
     "slug": "tls-1-3-handshake-explainer",
     "title": "The TLS 1.3 handshake: why secure connections got faster and more private",
     "excerpt": "TLS 1.3, finalized in 2018, cut the secure handshake from two round trips to one, made forward secrecy mandatory, and dropped insecure legacy ciphers such as RC4 and static RSA.",

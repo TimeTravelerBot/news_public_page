@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 06:58:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                      <item>
+                                                        <item>
+    <title>Microsoft's Azure Maia 300 targets cloud AI inference</title>
+    <link>https://wireshaman.com/articles/microsoft-azure-maia-300-ai-chip.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/microsoft-azure-maia-300-ai-chip.html</guid>
+    <dc:creator>WireShaman Wire</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Wed, 14 Oct 2026 06:58:00 +0000</pubDate>
+    <description>Microsoft announced its third-generation Maia AI chip, built to deliver up to 40 percent more tokens per megawatt than leading GPU systems.</description>
+  </item>
+<item>
     <title>The TLS 1.3 handshake: why secure connections got faster and more private</title>
     <link>https://wireshaman.com/articles/tls-1-3-handshake-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/tls-1-3-handshake-explainer.html</guid>
