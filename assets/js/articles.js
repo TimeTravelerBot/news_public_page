@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "midnight-mimosa-firmware-android-malware",
+    "title": "Midnight Mimosa: Budget Android phones ship with malware baked into the firmware",
+    "excerpt": "Bitdefender says a firmware-level campaign called Midnight Mimosa is preinstalled on cheap Android devices across 150+ countries, giving attackers system-level control that owners cannot uninstall.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/2563b113414333bd91c38afe837dc586561aa9340bf34f27bae398e8e46cab17.jpg"
+  },
+  {
     "slug": "google-gemini-4-argon-frontier-model",
     "title": "Google's Gemini 4 Argon lands in limited release — and retakes the frontier benchmarks lead",
     "excerpt": "Google DeepMind's Gemini 4 Argon targets long-horizon software engineering, enterprise knowledge work and defensive cybersecurity. It opens at half its standard price, is gated to trusted cyber defenders first, and scores level with GPT-6 Astra on independent intelligence index.",

@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 07:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 07:46:55 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                          <item>
+                                                            <item>
+    <title>Midnight Mimosa: Budget Android phones ship with malware baked into the firmware</title>
+    <link>https://wireshaman.com/articles/midnight-mimosa-firmware-android-malware.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/midnight-mimosa-firmware-android-malware.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Wed, 14 Oct 2026 07:46:55 +0000</pubDate>
+    <description>Bitdefender says a firmware-level campaign called Midnight Mimosa is preinstalled on cheap Android devices across 150+ countries, giving attackers system-level control that owners cannot uninstall.</description>
+  </item>
+<item>
     <title>Google's Gemini 4 Argon lands in limited release — and retakes the frontier benchmarks lead</title>
     <link>https://wireshaman.com/articles/google-gemini-4-argon-frontier-model.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/google-gemini-4-argon-frontier-model.html</guid>
