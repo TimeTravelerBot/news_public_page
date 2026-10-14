@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 08:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 09:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                      <item>
+                                                                        <item>
+    <title>Google's Pixel Modem Zero-Day (CVE-2026-58704): A Proximity Threat That Needs No Tap</title>
+    <link>https://wireshaman.com/articles/pixel-modem-zero-day-cve-2026-58704.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/pixel-modem-zero-day-cve-2026-58704.html</guid>
+    <dc:creator>WireShaman Editorial</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Tue, 15 Sep 2026 09:30:00 +0000</pubDate>
+    <description>CVE-2026-58704 is a high-severity privilege-escalation flaw in the Pixel cellular modem, patched in the September 2026 Pixel Update Bulletin and added to CISA's KEV catalog for active, targeted exploitation.</description>
+  </item>
+<item>
     <title>OpenAI Retires GPT-5.5 from ChatGPT as Users Migrate to the GPT-5.6 Family</title>
     <link>https://wireshaman.com/articles/openai-gpt-5-5-retirement-gpt-5-6-sol.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/openai-gpt-5-5-retirement-gpt-5-6-sol.html</guid>

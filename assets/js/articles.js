@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "pixel-modem-zero-day-cve-2026-58704",
+    "title": "Google's Pixel Modem Zero-Day (CVE-2026-58704): A Proximity Threat That Needs No Tap",
+    "excerpt": "CVE-2026-58704 is a high-severity privilege-escalation flaw in the Pixel cellular modem, patched in the September 2026 Pixel Update Bulletin and added to CISA's KEV catalog for active, targeted exploitation.",
+    "category": "cybersecurity",
+    "date": "2026-09-15",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/67bfcb4ab3fe19dc41270c2c0a647eaa73d0341b86c575384732fa6c7b7ab62f.jpg"
+  },
+  {
     "slug": "openai-gpt-5-5-retirement-gpt-5-6-sol",
     "title": "OpenAI Retires GPT-5.5 from ChatGPT as Users Migrate to the GPT-5.6 Family",
     "excerpt": "OpenAI has removed GPT-5.5 from ChatGPT, Work, and Codex beginning October 14, 2026, steering users to the newly launched GPT-5.6 lineup. Your API access to gpt-5.5 is unaffected.",
