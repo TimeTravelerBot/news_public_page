@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "torvalds-llm-kernel-noref-filemap",
+    "title": "Linus Torvalds Wrote an Experimental Linux Kernel Series With Claude Code",
+    "excerpt": "Torvalds pushed an eight-patch noref-filemap branch that triples small-read throughput on his laptop and credits Anthropic Claude Code with the code, tests, and review draft.",
+    "category": "tech",
+    "date": "2026-10-12",
+    "read": 4,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/torvalds-llm-kernel-noref-filemap.png"
+  },
+  {
     "slug": "what-is-dram-explainer",
     "title": "What Is DRAM? The Memory Your Computer Runs On, Explained",
     "excerpt": "DRAM is the RAM in your computer. It stores each bit in a tiny capacitor held by one transistor, and it leaks, so it must be refreshed. Here is how it works and why it matters.",

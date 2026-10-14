@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-torvalds-llm-kernel-noref-filemap">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linus Torvalds Wrote an Experimental Linux Kernel Series With Claude Code — WireShaman</title>
+  <meta name="description" content="Torvalds pushed an eight-patch noref-filemap branch that triples small-read throughput on his laptop and credits Anthropic Claude Code with the code, tests, and review draft.">
+  <meta name="author" content="Wireshaman Editorial Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/torvalds-llm-kernel-noref-filemap.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/torvalds-llm-kernel-noref-filemap.html">
+  <meta property="og:title" content="Linus Torvalds Wrote an Experimental Linux Kernel Series With Claude Code">
+  <meta property="og:description" content="Torvalds pushed an eight-patch noref-filemap branch that triples small-read throughput on his laptop and credits Anthropic Claude Code with the code, tests, and review draft.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/torvalds-llm-kernel-noref-filemap.png">
+  <meta property="og:image:alt" content="Linux page cache without folio references, kernel cycles per read falling from about 2,950 to 725">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="article:published_time" content="2026-10-12">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="Linus Torvalds Wrote an Experimental Linux Kernel Series With Claude Code">
+  <meta name="twitter:description" content="Torvalds pushed an eight-patch noref-filemap branch that triples small-read throughput on his laptop and credits Anthropic Claude Code with the code, tests, and review draft.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/torvalds-llm-kernel-noref-filemap.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"Linus Torvalds Wrote an Experimental Linux Kernel Series With Claude Code","description":"Torvalds pushed an eight-patch noref-filemap branch that triples small-read throughput on his laptop and credits Anthropic Claude Code with the code, tests, and review draft.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/torvalds-llm-kernel-noref-filemap.html","datePublished":"2026-10-12","image":"https://wireshaman.com/assets/images/torvalds-llm-kernel-noref-filemap.png","articleSection":"AI & Tech"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/tech.html"><span>&larr;</span> Back to AI &amp; Tech</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/torvalds-llm-kernel-noref-filemap.png" width="1200" height="630" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">AI &amp; Tech</span>
+      <h1 class="article__title">Linus Torvalds Wrote an Experimental Linux Kernel Series With Claude Code</h1>
+      <p class="article__sub">With eight threads hammering one file, reads climb from about 10 million per second to 33 million after Torvalds replaced reference counting with RCU grace periods and let an AI coding agent do the heavy lifting.</p>
+      <div class="article__meta">
+        <span class="tag tag--tech">AI &amp; Tech</span>
+        <b>Wireshaman Editorial Desk</b>
+        <time datetime="2026-10-12">Oct 12, 2026</time> · 4 min read
+      </div>
+      <div class="prose">
+        <h2>A branch literally named for the LLM</h2>
+
+        <p class="dropcap">Linus Torvalds has pushed an experimental branch to his own Linux repository called <code>noref-filemap-read-with-llm</code>, and the suffix is no joke. In the cover letter of the eight-patch series, he states that <strong>Claude Code</strong>, Anthropic's command-line coding agent, produced the code, the test programs, the review behind the patch list, and the first draft of the cover text itself, all under his direction. The measurements, he adds, were run on his own machine.</p>
+
+        <h2>The problem: atomic reference counts on one cache line</h2>
+
+        <p>The page cache holds file data in memory so reads never hit storage. Each read takes a reference on the folio that holds the data and releases it afterwards. When many threads make small reads of the same file at once, every thread bumps the same atomic counter and the threads trip over each other on a single cache line. Matthew Wilcox first flagged the contention in 2024 from a customer workload, and earlier fixes that copied data into a stack buffer and validated afterwards stalled on races they could not see, such as a page freed and reinserted at the same index.</p>
+
+        <h2>Remove the race instead of detecting it</h2>
+
+        <p>Torvalds takes the opposite route. A folio leaving the page cache is returned to the page allocator only after an <strong>RCU grace period</strong>, so a reader inside an RCU read-side section can copy straight from the page into the user buffer. No reference, no bounce buffer, no limit on the size of the read. The trade-off is that freed pages sit briefly unavailable, which Torvalds calls the <em>least solved</em> part of the series, alongside possible performance regressions that still need addressing.</p>
+
+        <h2>Roughly triple the throughput on one laptop</h2>
+
+        <p>All numbers come from that single 4-core, 8-thread laptop with mitigations disabled. With eight threads hammering one file, small reads complete around <strong>33 million per second</strong> versus <strong>10 million</strong> on the unpatched kernel, and per-read cost drops from about 2,950 to 725 kernel cycles. The series is based on Linux 7.3-rc6 with additional fixes and names no kernel release target, so it is an experiment, not a merge.</p>
+
+        <h2>What this means for you</h2>
+
+        <p>This is the strongest evidence yet that an AI coding agent can contribute real performance work at the very bottom of the kernel, not just glue code. The caveats are equally clear: one benchmark, one machine, and open questions about memory reclamation and compatibility must be resolved before this becomes production code. Torvalds' position is consistent either way, he likes using AI, and the branch shows what happens when a top kernel maintainer points it at an eight-year-old scalability problem.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.zdnet.com/innovation/linus-torvalds-uses-ai-to-write-linux-kernel-patch" target="_blank" rel="noopener">ZDNET</a>; <a href="https://www.phoronix.com/news/Linus-Torvalds-Claude-Code" target="_blank" rel="noopener">Linus Torvalds Working On A Hefty Linux Kernel Improvement With Claude Code</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "torvalds-llm-kernel-noref-filemap";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
