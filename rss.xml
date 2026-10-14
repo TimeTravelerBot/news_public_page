@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Oct 2026 14:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 03:20:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                          <item>
+                                            <item>
+    <title>Attacker Chains Three Ivanti Connect Secure Zero-Days for Root Access — Only Two Are Patched</title>
+    <link>https://wireshaman.com/articles/ivanti-connect-secure-root-zero-day-chain.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/ivanti-connect-secure-root-zero-day-chain.html</guid>
+    <dc:creator>ADS News Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Wed, 14 Oct 2026 03:20:00 +0000</pubDate>
+    <description>Volexity says attacker UTA0576 broke through a fully patched Ivanti Connect Secure appliance via a triple zero-day chain, stealing LDAP and Active Directory credentials while evading the Integrity Checker Tool.</description>
+  </item>
+<item>
     <title>Linus Torvalds Wrote an Experimental Linux Kernel Series With Claude Code</title>
     <link>https://wireshaman.com/articles/torvalds-llm-kernel-noref-filemap.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/torvalds-llm-kernel-noref-filemap.html</guid>

@@ -29,6 +29,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "ivanti-connect-secure-root-zero-day-chain",
+    "title": "Attacker Chains Three Ivanti Connect Secure Zero-Days for Root Access — Only Two Are Patched",
+    "excerpt": "Volexity says attacker UTA0576 broke through a fully patched Ivanti Connect Secure appliance via a triple zero-day chain, stealing LDAP and Active Directory credentials while evading the Integrity Checker Tool.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/ivanti-connect-secure-root-zero-day-chain.png"
+  },
+  {
     "slug": "torvalds-llm-kernel-noref-filemap",
     "title": "Linus Torvalds Wrote an Experimental Linux Kernel Series With Claude Code",
     "excerpt": "Torvalds pushed an eight-patch noref-filemap branch that triples small-read throughput on his laptop and credits Anthropic Claude Code with the code, tests, and review draft.",
