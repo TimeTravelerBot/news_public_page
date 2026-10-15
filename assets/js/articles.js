@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "adfection-zero-click-ad-spyware-2026",
+    "title": "AdFection: how an ad platform became a zero-click spyware delivery pipeline",
+    "excerpt": "Citizen Lab's AdFection report finds the Israeli ad firm Discover-Tech funneled device traffic through its ads to infect and profile targets for mercenary spyware vendors Candiru, Bindecy, and Intelos.",
+    "category": "cybersecurity",
+    "date": "2026-10-15",
+    "read": 7,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/62503235f9fea5f08050d2f8366f9250fa815233715e5e8e09b4eb38ed74ee06.jpg"
+  },
+  {
     "slug": "anthropic-q3-2026-revenue-ipo-stretch",
     "title": "Anthropic Reports $16.8 Billion Third-Quarter Revenue as It Prepares an IPO",
     "excerpt": "Anthropic told pre-IPO investors its third-quarter revenue grew roughly 45% from a second quarter of $11.5 billion to about $16.8 billion and that it turned a quarterly profit, days before a possible market debut.",

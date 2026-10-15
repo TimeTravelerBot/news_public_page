@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 14:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                  <item>
+                                                                                                                    <item>
+    <title>AdFection: how an ad platform became a zero-click spyware delivery pipeline</title>
+    <link>https://wireshaman.com/articles/adfection-zero-click-ad-spyware-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/adfection-zero-click-ad-spyware-2026.html</guid>
+    <dc:creator>WireShaman News Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Thu, 15 Oct 2026 14:00:00 +0000</pubDate>
+    <description>Citizen Lab's AdFection report finds the Israeli ad firm Discover-Tech funneled device traffic through its ads to infect and profile targets for mercenary spyware vendors Candiru, Bindecy, and Intelos.</description>
+  </item>
+<item>
     <title>Anthropic Reports $16.8 Billion Third-Quarter Revenue as It Prepares an IPO</title>
     <link>https://wireshaman.com/articles/anthropic-q3-2026-revenue-ipo-stretch.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/anthropic-q3-2026-revenue-ipo-stretch.html</guid>
