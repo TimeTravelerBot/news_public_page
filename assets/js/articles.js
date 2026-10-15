@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "palo-alto-pan-os-cve-2026-0322-rce-kev",
+    "title": "Palo Alto PAN-OS Remote Code Execution (CVE-2026-0322) Lands in the CISA Known Exploited Catalog",
+    "excerpt": "Palo Alto Networks disclosed a root-level remote code execution flaw in PAN-OS's management interface, added to the CISA Known Exploited Vulnerabilities catalog on 2026-10-14 with a 2026-10-17 remediation due date.",
+    "category": "cybersecurity",
+    "date": "2026-10-15",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/503f12d71eb986c7c6bf93df9786ddecac46e65b65d21cfdc28e46c83f6127f4.jpg"
+  },
+  {
     "slug": "how-quic-http-3-works-explainer",
     "title": "How QUIC and HTTP/3 work — the protocol that quietly replaced much of the web's transport layer",
     "excerpt": "QUIC is a UDP-based transport that folds TLS 1.3, flow control, and stream multiplexing into a single protocol. Here is how it eliminates head-of-line blocking, survives network changes, and why the web now runs on it by default.",
