@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 15:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 10:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                <item>
+                                                                                                                  <item>
+    <title>Anthropic Reports $16.8 Billion Third-Quarter Revenue as It Prepares an IPO</title>
+    <link>https://wireshaman.com/articles/anthropic-q3-2026-revenue-ipo-stretch.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/anthropic-q3-2026-revenue-ipo-stretch.html</guid>
+    <dc:creator>WireShaman News Desk</dc:creator>
+    <category>AI &amp; Tech</category>
+    <pubDate>Wed, 14 Oct 2026 10:00:00 +0000</pubDate>
+    <description>Anthropic told pre-IPO investors its third-quarter revenue grew roughly 45% from a second quarter of $11.5 billion to about $16.8 billion and that it turned a quarterly profit, days before a possible market debut.</description>
+  </item>
+<item>
     <title>Hirudo: Android malware that swaps in a patched copy of your banking app to dodge its own security checks</title>
     <link>https://wireshaman.com/articles/hirudo-android-banking-malware-hooking-engine.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/hirudo-android-banking-malware-hooking-engine.html</guid>

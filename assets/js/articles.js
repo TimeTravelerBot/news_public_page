@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "anthropic-q3-2026-revenue-ipo-stretch",
+    "title": "Anthropic Reports $16.8 Billion Third-Quarter Revenue as It Prepares an IPO",
+    "excerpt": "Anthropic told pre-IPO investors its third-quarter revenue grew roughly 45% from a second quarter of $11.5 billion to about $16.8 billion and that it turned a quarterly profit, days before a possible market debut.",
+    "category": "tech",
+    "date": "2026-10-14",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/16f490f2e2ad925ff38deaea1e554265af304e178e3bd8899c08adc0fc042a96.jpg"
+  },
+  {
     "slug": "hirudo-android-banking-malware-hooking-engine",
     "title": "Hirudo: Android malware that swaps in a patched copy of your banking app to dodge its own security checks",
     "excerpt": "ThreatFabric finds Hirudo banking malware installing patched clones of eight banking apps that hook signature, Accessibility, and Play Integrity checks from inside the app process.",
