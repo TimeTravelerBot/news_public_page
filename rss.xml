@@ -76,8 +76,8 @@
     <title>Android's October 2026 update patches 25 vulnerabilities, including seven critical flaws</title>
     <link>https://wireshaman.com/articles/android-security-bulletin-october-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/android-security-bulletin-october-2026.html</guid>
-    <dc:creator>ADS News Cybersecurity Desk</dc:creator>
-    <category>Cybersecurity</category>
+    <dc:creator>WireShaman Android Security Desk</dc:creator>
+    <category>Android Security</category>
     <pubDate>Wed, 14 Oct 2026 08:30:00 +0000</pubDate>
     <description>Google's October 2026 Android security update resolves 25 vulnerabilities, including seven critical bugs.</description>
   </item>
@@ -185,7 +185,7 @@
     <link>https://wireshaman.com/articles/pixel-modem-zero-day-cve-2026-58704.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/pixel-modem-zero-day-cve-2026-58704.html</guid>
     <dc:creator>WireShaman Editorial</dc:creator>
-    <category>Cybersecurity</category>
+    <category>Android Security</category>
     <pubDate>Tue, 15 Sep 2026 09:30:00 +0000</pubDate>
     <description>CVE-2026-58704 is a high-severity privilege-escalation flaw in the Pixel cellular modem, patched in the September 2026 Pixel Update Bulletin and added to CISA's KEV catalog for active, targeted exploitation.</description>
   </item>
@@ -239,7 +239,7 @@
     <link>https://wireshaman.com/articles/midnight-mimosa-firmware-android-malware.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/midnight-mimosa-firmware-android-malware.html</guid>
     <dc:creator>ADS News Desk</dc:creator>
-    <category>Cybersecurity</category>
+    <category>Android Security</category>
     <pubDate>Wed, 14 Oct 2026 07:46:55 +0000</pubDate>
     <description>Bitdefender says a firmware-level campaign called Midnight Mimosa is preinstalled on cheap Android devices across 150+ countries, giving attackers system-level control that owners cannot uninstall.</description>
   </item>
@@ -284,7 +284,7 @@
     <link>https://wireshaman.com/articles/kaspersky-q2-2026-android-threat-landscape.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/kaspersky-q2-2026-android-threat-landscape.html</guid>
     <dc:creator>ADS News Desk</dc:creator>
-    <category>Cybersecurity</category>
+    <category>Android Security</category>
     <pubDate>Mon, 10 Aug 2026 09:00:00 +0000</pubDate>
     <description>Kaspersky's Q2 2026 mobile threat report found 1.99 million mobile malware attacks and a pivot toward dropper-based banking Trojans delivered through Google Play.</description>
   </item>
@@ -437,7 +437,7 @@
     <link>https://wireshaman.com/articles/midnight-mimosa-android-firmware-malware.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/midnight-mimosa-android-firmware-malware.html</guid>
     <dc:creator>WireShaman News Desk</dc:creator>
-    <category>Cybersecurity</category>
+    <category>Android Security</category>
     <pubDate>Tue, 13 Oct 2026 17:15:00 +0000</pubDate>
     <description>A new preinstalled firmware-root malware named Midnight Mimosa was found on low-cost MediaTek Android phones sold across more than 150 countries, enabling ad fraud and turning victims into residential proxies.</description>
   </item>
@@ -455,7 +455,7 @@
     <link>https://wireshaman.com/articles/pixel-10-pwn2own-android-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/pixel-10-pwn2own-android-2026.html</guid>
     <dc:creator>WireShaman News Desk</dc:creator>
-    <category>Cybersecurity</category>
+    <category>Android Security</category>
     <pubDate>Tue, 13 Oct 2026 17:05:00 +0000</pubDate>
     <description>Pwn2Own Ireland 2026 ended with a record payout, and the Google Pixel 10 drew the largest single share after three teams each proved remote, unpatched exploits.</description>
   </item>
@@ -464,7 +464,7 @@
     <link>https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/mediatek-october-2026-security-bulletin.html</guid>
     <dc:creator>WireShaman Research Desk</dc:creator>
-    <category>Cybersecurity</category>
+    <category>Android Security</category>
     <pubDate>Tue, 13 Oct 2026 16:30:00 +0000</pubDate>
     <description>MediaTek's October 2026 security bulletin addresses 31 chipset vulnerabilities, including two critical out-of-bounds write flaws in its modem stack that can be triggered from a rogue base station with no user interaction.</description>
   </item>
@@ -560,7 +560,7 @@
       <link>https://wireshaman.com/articles/android-october-2026-security-bulletin.html</link>
       <guid isPermaLink="true">https://wireshaman.com/articles/android-october-2026-security-bulletin.html</guid>
       <dc:creator>WireShaman</dc:creator>
-      <category>Cybersecurity</category>
+      <category>Android Security</category>
       <pubDate>Mon, 12 Oct 2026 18:00:00 +0000</pubDate>
       <description>Google&#8217;s October 2026 Android Security Bulletin (patch level 2026-10-01) covers 25 CVEs across the Android Open Source Project, of which 7 are Critical. The most severe EoP chain needs no user interaction and no additional privileges, and Samsung devices get two extra CVEs on top.</description>
     </item>

@@ -5,7 +5,7 @@
   var root = document.getElementById("category-grid");
   var category = document.body.getAttribute("data-archive-category");
   var articles = (window.CS && window.CS.ARTICLES) || [];
-  var labels = {cybersecurity:"Security",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+  var labels = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
 
   function esc(value) {
     return String(value == null ? "" : value)

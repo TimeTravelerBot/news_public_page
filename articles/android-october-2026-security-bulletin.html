@@ -40,7 +40,8 @@
       "url": "https://wireshaman.com/",
       "logo": { "@type": "ImageObject", "url": "https://wireshaman.com/assets/favicon.svg" }
     },
-    "image": ["https://wireshaman.com/assets/images/android-october-2026-security-bulletin.jpg"]
+    "image": "https://wireshaman.com/assets/images/android-october-2026-security-bulletin.jpg",
+    "articleSection": "Android Security"
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -139,7 +140,7 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="../index.html#trending">Trending</a>
-        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/cybersecurity.html">Cybersecurity</a><a href="../categories/android-security.html">Android Sec</a>
         <a href="../categories/tech.html">AI &amp; Tech</a>
         <a href="../categories/hardware.html">Hardware</a>
         <a class="nav__btn" href="../index.html#subscribe">Subscribe</a>
@@ -149,17 +150,17 @@
 
   <main>
     <div class="container article">
-      <a class="back" href="../index.html"><span>&larr;</span> Back to the wire</a>
+      <a class="back" href="../categories/android-security.html"><span>&larr;</span> Back to Android Security</a>
 
       <section class="article__hero" aria-hidden="true">
         <img src="../assets/images/android-october-2026-security-bulletin.jpg" width="1200" height="630" alt="" loading="eager" fetchpriority="high" />
       </section>
 
-      <span class="eyebrow">Cybersecurity</span>
+      <span class="eyebrow">Android Security</span>
       <h1 class="article__title">Android October 2026 Security Bulletin: 7 Critical Flaws, 25 CVEs</h1>
       <p class="article__sub">Google&rsquo;s monthly AOSP patch closes 25 flaws, seven rated critical. Here&rsquo;s what the bulletin confirms, what it does not, and what the &ldquo;2026-10-01&rdquo; patch level gets you.</p>
       <div class="article__meta">
-        <span class="tag">Android</span>
+        <span class="tag tag--android-security">Android Sec</span>
         <b>WireShaman News Desk</b>
         <time datetime="2026-10-12">Oct 12, 2026</time> · 7 min read
       </div>
@@ -216,7 +217,7 @@
   <script src="../assets/js/articles.js"></script>
   <script>
   (function () {
-    var CAT = { cybersecurity: "Security", tech: "AI & Tech", hardware: "Hardware", explainer: "Explainer" };
+    var CAT = { cybersecurity: "Security", "android-security": "Android Sec", tech: "AI & Tech", hardware: "Hardware", explainer: "Explainer" };
     var articles = (window.CS && window.CS.ARTICLES) || [];
     var slug = "android-october-2026-security-bulletin";
     var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);

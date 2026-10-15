@@ -10,6 +10,7 @@
   var articles = (window.CS && window.CS.ARTICLES) || [];
   var CAT_LABEL = {
     cybersecurity: "Security",
+    "android-security": "Android Sec",
     tech: "AI & Tech",
     hardware: "Hardware",
     explainer: "Explainer"
@@ -86,6 +87,7 @@
   var cats = (window.CS && window.CS.CATEGORIES) || [];
   var COV_ICON = {
     cyber: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.3-3 7.8-7 9-4-1.2-7-4.7-7-9V6l7-3z"/></svg>',
+    android: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h10v8.5A1.5 1.5 0 0 1 15.5 20h-7A1.5 1.5 0 0 1 7 18.5V10Z"/><path d="M8 10a4 4 0 0 1 8 0M9 5.5 7.5 3.5M15 5.5l1.5-2M10 13h.01M14 13h.01M5 11v5M19 11v5"/></svg>',
     ai:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg>',
     hardware: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5" rx="0.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>',
     explainers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/><path d="M11 8.2v5.6M8.2 11h5.6"/></svg>'

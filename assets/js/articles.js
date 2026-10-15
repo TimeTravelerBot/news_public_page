@@ -7,7 +7,7 @@
 
    Each article:
    { slug, title, excerpt, category, date, read (minutes), art, img }
-   category: cybersecurity | tech | hardware | explainer
+   category: cybersecurity | android-security | tech | hardware | explainer
    art: fallback CSS gradient; img: article-specific raster cover image
 
    NOTE: only REAL, published articles belong in this list.
@@ -18,6 +18,8 @@ window.CS = window.CS || {};
 window.CS.CATEGORIES = [
   { id: "cyber",    label: "Cybersecurity", slug: "cybersecurity", href: "categories/cybersecurity.html",
     blurb: "Breaches, malware, zero-days, and the attack-chain news that hits real systems — and what to do about it." },
+  { id: "android",  label: "Android Security", slug: "android-security", href: "categories/android-security.html",
+    blurb: "Fresh Android CVEs, exploit chains, patches, proof-of-concept releases, and mobile threat research." },
   { id: "ai",       label: "AI & Technology", slug: "tech", href: "categories/tech.html",
     blurb: "How new models and tools actually work, what they can and can't do, and where they quietly go wrong." },
   { id: "hardware", label: "Hardware", slug: "hardware", href: "categories/hardware.html",
@@ -102,10 +104,10 @@ window.CS.ARTICLES = [
     "slug": "android-security-bulletin-october-2026",
     "title": "Android's October 2026 update patches 25 vulnerabilities, including seven critical flaws",
     "excerpt": "Google's October 2026 Android security update resolves 25 vulnerabilities, including seven critical bugs.",
-    "category": "cybersecurity",
+    "category": "android-security",
     "date": "2026-10-14",
     "read": 6,
-    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "art": "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
     "img": "assets/images/c0004049887f75e15ed0a5fc0c7796ccb495931fba1d37ff0c77f403b7f0c70f.jpg"
   },
   {
@@ -222,10 +224,10 @@ window.CS.ARTICLES = [
     "slug": "pixel-modem-zero-day-cve-2026-58704",
     "title": "Google's Pixel Modem Zero-Day (CVE-2026-58704): A Proximity Threat That Needs No Tap",
     "excerpt": "CVE-2026-58704 is a high-severity privilege-escalation flaw in the Pixel cellular modem, patched in the September 2026 Pixel Update Bulletin and added to CISA's KEV catalog for active, targeted exploitation.",
-    "category": "cybersecurity",
+    "category": "android-security",
     "date": "2026-09-15",
     "read": 6,
-    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "art": "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
     "img": "assets/images/67bfcb4ab3fe19dc41270c2c0a647eaa73d0341b86c575384732fa6c7b7ab62f.jpg"
   },
   {
@@ -282,10 +284,10 @@ window.CS.ARTICLES = [
     "slug": "midnight-mimosa-firmware-android-malware",
     "title": "Midnight Mimosa: Budget Android phones ship with malware baked into the firmware",
     "excerpt": "Bitdefender says a firmware-level campaign called Midnight Mimosa is preinstalled on cheap Android devices across 150+ countries, giving attackers system-level control that owners cannot uninstall.",
-    "category": "cybersecurity",
+    "category": "android-security",
     "date": "2026-10-14",
     "read": 6,
-    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "art": "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
     "img": "assets/images/2563b113414333bd91c38afe837dc586561aa9340bf34f27bae398e8e46cab17.jpg"
   },
   {
@@ -332,10 +334,10 @@ window.CS.ARTICLES = [
     "slug": "kaspersky-q2-2026-android-threat-landscape",
     "title": "Kaspersky says Android attackers are shifting to app-store loaders as on-device malware falls",
     "excerpt": "Kaspersky's Q2 2026 mobile threat report found 1.99 million mobile malware attacks and a pivot toward dropper-based banking Trojans delivered through Google Play.",
-    "category": "cybersecurity",
+    "category": "android-security",
     "date": "2026-08-10",
     "read": 4,
-    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "art": "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
     "img": "assets/images/0b1007e99de979f800bdcf968ea43ee35fc92e111eec82f7845883bf580fbf87.jpg"
   },
   {
@@ -502,10 +504,10 @@ window.CS.ARTICLES = [
     "slug": "midnight-mimosa-android-firmware-malware",
     "title": "“Midnight Mimosa”: Cheap Android Phones Ship With Malware You Can’t Uninstall",
     "excerpt": "A new preinstalled firmware-root malware named Midnight Mimosa was found on low-cost MediaTek Android phones sold across more than 150 countries, enabling ad fraud and turning victims into residential proxies.",
-    "category": "cybersecurity",
+    "category": "android-security",
     "date": "2026-10-13",
     "read": 6,
-    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "art": "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
     "img": "assets/images/midnight-mimosa-android-firmware-malware.jpg"
   },
   {
@@ -522,20 +524,20 @@ window.CS.ARTICLES = [
     "slug": "pixel-10-pwn2own-android-2026",
     "title": "Pwn2Own Ireland 2026: Researchers Remotely Crack the Pixel 10 Three Times",
     "excerpt": "Pwn2Own Ireland 2026 ended with a record payout, and the Google Pixel 10 drew the largest single share after three teams each proved remote, unpatched exploits.",
-    "category": "cybersecurity",
+    "category": "android-security",
     "date": "2026-10-13",
     "read": 6,
-    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "art": "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
     "img": "assets/images/pixel-10-pwn2own-android-2026.jpg"
   },
   {
     "slug": "mediatek-october-2026-security-bulletin",
     "title": "MediaTek's October 2026 bulletin silences 31 flaws, led by two critical modem bugs",
     "excerpt": "MediaTek's October 2026 security bulletin addresses 31 chipset vulnerabilities, including two critical out-of-bounds write flaws in its modem stack that can be triggered from a rogue base station with no user interaction.",
-    "category": "cybersecurity",
+    "category": "android-security",
     "date": "2026-10-13",
     "read": 4,
-    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "art": "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
     "img": "assets/images/mediatek-october-2026-security-bulletin.jpg"
   },
   {
@@ -642,10 +644,10 @@ window.CS.ARTICLES = [
       slug: "android-october-2026-security-bulletin",
       title: "Android October 2026 Bulletin: 7 Critical Flaws, 25 CVEs",
       excerpt: "Google's October bulletin patches 25 AOSP flaws, including four critical System privilege-escalation bugs and three critical denial-of-service issues. Here's what the bulletin confirms — and what it does not.",
-      category: "cybersecurity",
+      category: "android-security",
       date: "2026-10-12",
       read: 7,
-      art: "linear-gradient(135deg, #061820 0%, #0e3a40 45%, #7a0a1f 100%)",
+      art: "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
       img: "assets/images/android-october-2026-security-bulletin.jpg"
     },
     {
