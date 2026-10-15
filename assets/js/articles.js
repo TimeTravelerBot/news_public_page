@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "hirudo-android-banking-malware-hooking-engine",
+    "title": "Hirudo: Android malware that swaps in a patched copy of your banking app to dodge its own security checks",
+    "excerpt": "ThreatFabric finds Hirudo banking malware installing patched clones of eight banking apps that hook signature, Accessibility, and Play Integrity checks from inside the app process.",
+    "category": "cybersecurity",
+    "date": "2026-10-14",
+    "read": 7,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/1042bcb95bcff09dbaf83a0a95125a691f46e0891544cc0234e2ad5843b038f7.jpg"
+  },
+  {
     "slug": "ivanti-connect-secure-cve-2026-104935-zero-day",
     "title": "CISA forces a same-week Ivanti patch: the Connect Secure authentication-bypass zero-day is already moving",
     "excerpt": "A remote, no-click authentication-bypass flaw in Ivanti Connect Secure has been exploited as a zero-day since October 1, and CISA has now given admins a three-day deadline to patch.",
