@@ -110,7 +110,17 @@ body::before{
 .hero__inner{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;position:relative;z-index:1}
 .hero__title{font:700 clamp(2.6rem,6vw,4.4rem)/1.02 var(--font-head);letter-spacing:-.02em;margin-bottom:1.1rem}
 .hero__sub{color:var(--muted);font-size:1.08rem;max-width:34rem;margin-bottom:1.8rem}
-.hero__cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.hero__cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.solar-badge{display:inline-flex;align-items:center;gap:.75rem;max-width:100%;margin-bottom:2.2rem;
+  padding:.65rem .9rem .65rem .7rem;border:1px solid rgba(164,240,59,.28);border-radius:12px;
+  background:linear-gradient(120deg,rgba(164,240,59,.09),rgba(43,240,166,.035));
+  color:#baff62;box-shadow:0 12px 34px -26px rgba(164,240,59,.85)}
+.solar-badge__icon{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:10px;
+  background:rgba(164,240,59,.08)}
+.solar-badge__icon svg{display:block}
+.solar-badge__copy{display:grid;gap:.12rem;min-width:0}
+.solar-badge__copy strong{font:600 .78rem/1.25 var(--font-head);letter-spacing:.08em;text-transform:uppercase}
+.solar-badge__copy span{color:var(--muted);font-size:.78rem;line-height:1.35}
 .hero__stats{list-style:none;display:flex;gap:2.2rem;flex-wrap:wrap}
 .hero__stats strong{display:block;font:700 1.6rem/1 var(--font-head);background:var(--grad);
   -webkit-background-clip:text;background-clip:text;color:transparent}
@@ -155,6 +165,9 @@ body::before{
 @media (max-width:860px){
   .hero__inner{grid-template-columns:1fr}
   .hero__panel{display:none}
+}
+@media (max-width:480px){
+  .solar-badge{width:100%;align-items:flex-start}
 }
 
 /* ---------- sections ---------- */
