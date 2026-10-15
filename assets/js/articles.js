@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "openai-engineer-arrested-spying-recorder-2026",
+    "title": "OpenAI engineer arrested for planting a spy recorder in an executive conference room",
+    "excerpt": "DOJ has charged Abdulrahman Alfozan, an OpenAI engineer, with installing a covert audio recorder in an executive conference room and facing up to five years in prison under the federal wiretap law.",
+    "category": "tech",
+    "date": "2026-10-14",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/ee20b787abf5f2e26927bab49e83073351a15b96bcc6d3434ea52fb91c7ad982.jpg"
+  },
+  {
     "slug": "palo-alto-pan-os-cve-2026-0322-rce-kev",
     "title": "Palo Alto PAN-OS Remote Code Execution (CVE-2026-0322) Lands in the CISA Known Exploited Catalog",
     "excerpt": "Palo Alto Networks disclosed a root-level remote code execution flaw in PAN-OS's management interface, added to the CISA Known Exploited Vulnerabilities catalog on 2026-10-14 with a 2026-10-17 remediation due date.",
