@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "adobe-october-2026-commerce-coldfusion-patches",
+    "title": "Adobe Patches CVSS 10.0 Template Injection in Commerce and Critical ColdFusion Flaws",
+    "excerpt": "Adobe's October 13, 2026 security updates fix an unauthenticated CVSS 10.0 template injection flaw in Adobe Commerce, Adobe Commerce B2B, and Magento Open Source (CVE-2026-103849), alongside critical server-side request forgery and file-upload flaws in Adobe ColdFusion.",
+    "category": "cybersecurity",
+    "date": "2026-10-15",
+    "read": 4,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/9607b64318210dadd62a0f4c6fe469d62962df0ebd8f986b117002bfdacec261.jpg"
+  },
+  {
     "slug": "ahold-delhaize-usa-cyber-incident-outage-2026",
     "title": "Ahold Delhaize takes Food Lion, Stop & Shop, Hannaford sites offline after cybersecurity incident",
     "excerpt": "The Dutch supermarket giant shut down its US and European banner websites and suspended online grocery ordering after a network security issue, with physical stores remaining open and no confirmed data theft.",

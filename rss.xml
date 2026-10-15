@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 18:48:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 19:40:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                  <item>
+                                                                                                                                    <item>
+    <title>Adobe Patches CVSS 10.0 Template Injection in Commerce and Critical ColdFusion Flaws</title>
+    <link>https://wireshaman.com/articles/adobe-october-2026-commerce-coldfusion-patches.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/adobe-october-2026-commerce-coldfusion-patches.html</guid>
+    <dc:creator>WireShaman Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Thu, 15 Oct 2026 19:40:00 +0000</pubDate>
+    <description>Adobe's October 13, 2026 security updates fix an unauthenticated CVSS 10.0 template injection flaw in Adobe Commerce, Adobe Commerce B2B, and Magento Open Source (CVE-2026-103849), alongside critical server-side request forgery and file-upload flaws in Adobe ColdFusion.</description>
+  </item>
+<item>
     <title>Ahold Delhaize takes Food Lion, Stop &amp; Shop, Hannaford sites offline after cybersecurity incident</title>
     <link>https://wireshaman.com/articles/ahold-delhaize-usa-cyber-incident-outage-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/ahold-delhaize-usa-cyber-incident-outage-2026.html</guid>
