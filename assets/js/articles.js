@@ -64,7 +64,7 @@ window.CS.ARTICLES = [
     "slug": "hirudo-android-banking-malware-hooking-engine",
     "title": "Hirudo: Android malware that swaps in a patched copy of your banking app to dodge its own security checks",
     "excerpt": "ThreatFabric finds Hirudo banking malware installing patched clones of eight banking apps that hook signature, Accessibility, and Play Integrity checks from inside the app process.",
-    "category": "cybersecurity",
+    "category": "android-security",
     "date": "2026-10-14",
     "read": 7,
     "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
