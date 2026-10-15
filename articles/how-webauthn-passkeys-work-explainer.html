@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-webauthn-passkeys-work-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How WebAuthn and Passkeys Actually Work: The Cryptography That Makes Phishing Obsolete — WireShaman</title>
+  <meta name="description" content="WebAuthn passkeys look like magic login buttons, but they are a well-understood cryptographic protocol. This explainer breaks down public key credentials, attestation, challenge-based signatures, and the FIDO2 trust chain that lets your face or a hardware key sign you in without handing a phisher a password.">
+  <meta name="author" content="Wireshaman editorial team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-webauthn-passkeys-work-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-webauthn-passkeys-work-explainer.html">
+  <meta property="og:title" content="How WebAuthn and Passkeys Actually Work: The Cryptography That Makes Phishing Obsolete">
+  <meta property="og:description" content="WebAuthn passkeys look like magic login buttons, but they are a well-understood cryptographic protocol. This explainer breaks down public key credentials, attestation, challenge-based signatures, and the FIDO2 trust chain that lets your face or a hardware key sign you in without handing a phisher a password.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/a8ab12b1041fa610741e51e242942129df52f87dc3cbc6ba6a29fb7243443a13.jpg">
+  <meta property="og:image:alt" content="Editorial illustration of a glowing passkey dissolving into cryptographic key pairs beside a biometric padlock and an identity vault.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-15">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How WebAuthn and Passkeys Actually Work: The Cryptography That Makes Phishing Obsolete">
+  <meta name="twitter:description" content="WebAuthn passkeys look like magic login buttons, but they are a well-understood cryptographic protocol. This explainer breaks down public key credentials, attestation, challenge-based signatures, and the FIDO2 trust chain that lets your face or a hardware key sign you in without handing a phisher a password.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/a8ab12b1041fa610741e51e242942129df52f87dc3cbc6ba6a29fb7243443a13.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How WebAuthn and Passkeys Actually Work: The Cryptography That Makes Phishing Obsolete","description":"WebAuthn passkeys look like magic login buttons, but they are a well-understood cryptographic protocol. This explainer breaks down public key credentials, attestation, challenge-based signatures, and the FIDO2 trust chain that lets your face or a hardware key sign you in without handing a phisher a password.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-webauthn-passkeys-work-explainer.html","datePublished":"2026-10-15","image":"https://wireshaman.com/assets/images/a8ab12b1041fa610741e51e242942129df52f87dc3cbc6ba6a29fb7243443a13.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/android-security.html">Android Sec</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/a8ab12b1041fa610741e51e242942129df52f87dc3cbc6ba6a29fb7243443a13.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How WebAuthn and Passkeys Actually Work: The Cryptography That Makes Phishing Obsolete</h1>
+      <p class="article__sub">Passkeys are a public key credential tied to a single account, plus a challenge signature that only a matched private key can produce and a specific origin can accept. Here is the cryptography and the FIDO2 trust chain behind the magic login button, and where the model still has real limits.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>Wireshaman editorial team</b>
+        <time datetime="2026-10-15">Oct 15, 2026</time> · 9 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">Passwords carry decades of accumulated problems. Every one of them is either stored in a database that can be stolen, reused across sites so one breach leaks many, or guessed and intercepted along the way. Phishing works because it asks for the same thing every time: what the password is. If you can drop passwords and ask for a signature that only works for a specific site and a specific moment instead, the whole attack surface changes. That is exactly what WebAuthn, the standard behind modern passkeys, was designed to do.</p>
+
+        <p>A passkey is simply a public key credential you own, created for one specific site or account. When your phone mints one, it stores the private key locally and shares the public key with the server, optionally wrapped in attestation that says which device made it. Because each passkey is scoped to a single account on a single origin, there is no universal password to leak. If one site is breached, it learns a public key that proves nothing on its own, which cannot log you in without the matching private key that lives on your device. That scoping is what makes passkeys different from a master password that quietly rides along behind every login.</p>
+
+        <h2>Public keys, kept private</h2>
+
+        <p>The foundation is a cryptographic idea that has been around for decades: asymmetric, or public key, cryptography. An authenticator such as your phone, a laptop with a fingerprint reader, or a dedicated hardware key generates a pair of keys. The private key stays inside the authenticator and is never sent anywhere. The matching public key is small, and it is fine to hand it to anyone, including the website you are signing into. A signature made with the private key can be verified against the public key, but the public key reveals nothing useful about the private key. You can think of the public key as a lock and the private key as the only copy of the key that turns it.</p>
+
+        <h2>How a passkey login actually runs</h2>
+
+        <p>A passkey login is a challenge and response. When you tap a passkey button on a site, the server generates a fresh random value called a challenge and sends it back. The server also identifies itself, essentially by the exact domain you are visiting. Your authenticator signs that challenge with its private key and returns the signature, plus the public key. The server verifies that the signature matches the public key and that the challenge is one it just issued. Because the challenge is random and short lived, a replayed signature from another session is useless, and because it is bound to a specific server, the signature will not verify on a different site.</p>
+
+        <ul>
+          <li>The server sends a fresh one time random challenge and identifies the domain it represents.</li>
+          <li>The authenticator signs the challenge with a local private key that never leaves the device.</li>
+          <li>The signature and the matching public key are returned and verified on the server.</li>
+          <li>The result is bound to that specific origin and that specific moment, so it cannot be replayed or moved.</li>
+        </ul>
+
+        <h2>Attestation and the FIDO2 trust chain</h2>
+
+        <p>Public key pairs by themselves do not stop a determined attacker from minting fake ones at will. So WebAuthn adds a second kind of trust: attestation. When you first register a new passkey, the authenticator can attach evidence about which device created the key, often a certificate from the device maker or a hardware module. Servers can weigh that evidence to distinguish a real, tamper resistant device from a software fake. Behind it all sits the FIDO2 trust chain: FIDO is the standards body that defines WebAuthn and the companion protocol CTAP that drives the physical or virtual authenticator. Registration and authentication each have well defined formats, and the trust anchors tie a device's proof of origin back to a chain of signed certificates that lets a server assess how much to trust the result.</p>
+
+        <h2>Why phishing stops working</h2>
+
+        <p>This is the part that makes phishing collapse. A phishing page runs on a different domain, so a signature it captures is bound to the phisher's origin, not the real one, and it will not be accepted. A stolen password is still useful, but a captured signature is useless outside its exact site and its exact time window. The private key never travels over the network at all, so there is no secret to intercept. Most passkeys are also tied to a specific account, which means there is no single reusable secret to leak from a data breach. You are no longer proving what a password is; you are proving that a particular device, bound to a particular site, signed for you right now. None of that can be faked by sending you to a lookalike page.</p>
+
+        <h2>What this means for you</h2>
+
+        <div class="callout">
+          <span class="eyebrow">The practical picture</span>
+          <p>If you can turn passkeys on, do it for your email and anything sensitive. A passkey for your email account is the single lever that turns a whole cascade of account takeovers into a non event, because the login that unlocks the rest can no longer be phished. Pair one passkey with a recovery path and you have a strong, defensible default that costs nothing to switch to.</p>
+        </div>
+
+        <p>Nothing cryptographic is magic, and passkeys have limits. The authenticator still has to be protected from a thief with your phone or hardware key in hand, which is why biometric or PIN prompts sit in front of the signature. Cross device recovery, when your primary device is lost or broken, is the part of the ecosystem still maturing, and it is where most of the remaining design work lives. Adoption is now broad. Major browsers ship passkey support, major platforms from phone makers to cloud providers issue their own passkeys, and an increasing number of large services offer them at login. The security payoff is real: phishing is not gone, but for the largest accounts the most common and profitable version of it no longer works.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.miniorange.com/blog/what-is-webauthn" target="_blank" rel="noopener">MiniOrange — What is WebAuthn and How Does it Work? (2026-10-05)</a>; <a href="https://www.descope.com/learn/post/webauthn" target="_blank" rel="noopener">Descope — WebAuthn: How it Works &amp; Example Flows</a>; <a href="https://www.dashlane.com/blog/what-is-a-passkey-and-how-does-it-work" target="_blank" rel="noopener">Dashlane — What Is a Passkey and How Do Passkeys Work?</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-webauthn-passkeys-work-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>

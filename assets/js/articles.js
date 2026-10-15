@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-webauthn-passkeys-work-explainer",
+    "title": "How WebAuthn and Passkeys Actually Work: The Cryptography That Makes Phishing Obsolete",
+    "excerpt": "WebAuthn passkeys look like magic login buttons, but they are a well-understood cryptographic protocol. This explainer breaks down public key credentials, attestation, challenge-based signatures, and the FIDO2 trust chain that lets your face or a hardware key sign you in without handing a phisher a password.",
+    "category": "explainer",
+    "date": "2026-10-15",
+    "read": 9,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/a8ab12b1041fa610741e51e242942129df52f87dc3cbc6ba6a29fb7243443a13.jpg"
+  },
+  {
     "slug": "adobe-october-2026-commerce-coldfusion-patches",
     "title": "Adobe Patches CVSS 10.0 Template Injection in Commerce and Critical ColdFusion Flaws",
     "excerpt": "Adobe's October 13, 2026 security updates fix an unauthenticated CVSS 10.0 template injection flaw in Adobe Commerce, Adobe Commerce B2B, and Magento Open Source (CVE-2026-103849), alongside critical server-side request forgery and file-upload flaws in Adobe ColdFusion.",

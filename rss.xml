@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 19:40:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 20:20:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                    <item>
+                                                                                                                                      <item>
+    <title>How WebAuthn and Passkeys Actually Work: The Cryptography That Makes Phishing Obsolete</title>
+    <link>https://wireshaman.com/articles/how-webauthn-passkeys-work-explainer.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/how-webauthn-passkeys-work-explainer.html</guid>
+    <dc:creator>Wireshaman editorial team</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Thu, 15 Oct 2026 20:20:00 +0000</pubDate>
+    <description>WebAuthn passkeys look like magic login buttons, but they are a well-understood cryptographic protocol. This explainer breaks down public key credentials, attestation, challenge-based signatures, and the FIDO2 trust chain that lets your face or a hardware key sign you in without handing a phisher a password.</description>
+  </item>
+<item>
     <title>Adobe Patches CVSS 10.0 Template Injection in Commerce and Critical ColdFusion Flaws</title>
     <link>https://wireshaman.com/articles/adobe-october-2026-commerce-coldfusion-patches.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/adobe-october-2026-commerce-coldfusion-patches.html</guid>
