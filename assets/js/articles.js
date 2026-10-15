@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-quic-http-3-works-explainer",
+    "title": "How QUIC and HTTP/3 work — the protocol that quietly replaced much of the web's transport layer",
+    "excerpt": "QUIC is a UDP-based transport that folds TLS 1.3, flow control, and stream multiplexing into a single protocol. Here is how it eliminates head-of-line blocking, survives network changes, and why the web now runs on it by default.",
+    "category": "explainer",
+    "date": "2026-10-15",
+    "read": 9,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/7235d7eda7550795c0c1c7f6e23bc3f790b84f24a88452ad0ba3f2a393c1779c.jpg"
+  },
+  {
     "slug": "adfection-zero-click-ad-spyware-2026",
     "title": "AdFection: how an ad platform became a zero-click spyware delivery pipeline",
     "excerpt": "Citizen Lab's AdFection report finds the Israeli ad firm Discover-Tech funneled device traffic through its ads to infect and profile targets for mercenary spyware vendors Candiru, Bindecy, and Intelos.",

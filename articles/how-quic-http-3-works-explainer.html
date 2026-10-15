@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-quic-http-3-works-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How QUIC and HTTP/3 work — the protocol that quietly replaced much of the web&#x27;s transport layer — WireShaman</title>
+  <meta name="description" content="QUIC is a UDP-based transport that folds TLS 1.3, flow control, and stream multiplexing into a single protocol. Here is how it eliminates head-of-line blocking, survives network changes, and why the web now runs on it by default.">
+  <meta name="author" content="By Wireshaman Editorial">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-quic-http-3-works-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-quic-http-3-works-explainer.html">
+  <meta property="og:title" content="How QUIC and HTTP/3 work — the protocol that quietly replaced much of the web&#x27;s transport layer">
+  <meta property="og:description" content="QUIC is a UDP-based transport that folds TLS 1.3, flow control, and stream multiplexing into a single protocol. Here is how it eliminates head-of-line blocking, survives network changes, and why the web now runs on it by default.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/7235d7eda7550795c0c1c7f6e23bc3f790b84f24a88452ad0ba3f2a393c1779c.jpg">
+  <meta property="og:image:alt" content="Two devices exchanging glowing encrypted data streams across a network landscape, with a secure tunnel of light connecting them">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-15">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How QUIC and HTTP/3 work — the protocol that quietly replaced much of the web&#x27;s transport layer">
+  <meta name="twitter:description" content="QUIC is a UDP-based transport that folds TLS 1.3, flow control, and stream multiplexing into a single protocol. Here is how it eliminates head-of-line blocking, survives network changes, and why the web now runs on it by default.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/7235d7eda7550795c0c1c7f6e23bc3f790b84f24a88452ad0ba3f2a393c1779c.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How QUIC and HTTP/3 work — the protocol that quietly replaced much of the web's transport layer","description":"QUIC is a UDP-based transport that folds TLS 1.3, flow control, and stream multiplexing into a single protocol. Here is how it eliminates head-of-line blocking, survives network changes, and why the web now runs on it by default.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-quic-http-3-works-explainer.html","datePublished":"2026-10-15","image":"https://wireshaman.com/assets/images/7235d7eda7550795c0c1c7f6e23bc3f790b84f24a88452ad0ba3f2a393c1779c.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/android-security.html">Android Sec</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/7235d7eda7550795c0c1c7f6e23bc3f790b84f24a88452ad0ba3f2a393c1779c.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How QUIC and HTTP/3 work — the protocol that quietly replaced much of the web&#x27;s transport layer</h1>
+      <p class="article__sub">TLS took over the network with a wrapper around TCP. QUIC went further — it replaced TCP, TLS, and HTTP framing with one protocol designed from the start, and it is now the default transport for most of the major sites.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>By Wireshaman Editorial</b>
+        <time datetime="2026-10-15">Oct 15, 2026</time> · 9 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">For nearly four decades, almost everything on the internet traveled over TCP — a reliable, byte-oriented stream that guarantees packets arrive in order, with exactly no losses and no duplicates. HTTP was layered on top, and when encryption became mandatory, TLS became a separate wrapper around the whole stack. QUIC, standardized as <a href="https://datatracker.ietf.org/doc/html/rfc9000" target="_blank" rel="noopener">RFC 9000</a> and HTTP/3 in RFC 9114, collapses that layered stack into a single protocol: an encrypted, stream-oriented transport built on top of <strong>UDP</strong>. It is not a replacement for HTTP — it is a replacement for everything <em>under</em> HTTP.</p>
+
+        <p>The motivation is a specific failure mode of TCP that TLS and HTTP never got to fix: <strong>head-of-line blocking</strong>. TCP presents one ordered byte stream. If one packet is lost, every later packet — even ones for unrelated requests — must wait for the retried segment before the receiver can hand <em>anything</em> to the application. On a lossy cellular downlink, one dropped packet stalls every open request on that connection. Layered solutions helped but could not fully escape the problem, because every layer above inherited TCP's single-stream, all-or-nothing ordering discipline.</p>
+
+        <h2>The stack, collapsed</h2>
+
+        <p>QUIC is a deliberately single-layer protocol. It bundles what previously took three protocol layers into one: <strong>reliable transport</strong> (an ACK-based retransmission mechanism similar in result to TCP's), <strong>security</strong> (TLS 1.3 cryptography applied to <em>every</em> packet, including the handshake itself), and <strong>streams</strong> (multiple interleaved, individually ordered byte streams over the one connection). Because all of these live inside one protocol, the sender and receiver have a single set of state, a single packet format, and a single congestion control feedback loop. There is no TLS record layered onto a TCP segment layered onto an IP datagram — there is a QUIC packet, and everything else is a field inside it.</p>
+
+        <ul>
+          <li><strong>Streams instead of one byte stream</strong> — a QUIC connection carries many independently ordered streams; a loss on one stream with data still in flight no longer blocks delivery of already-arrived data on other streams. This is the structural fix for HTTP head-of-line blocking</li>
+          <li><strong>TLS 1.3 encryption from packet one</strong> — the original TLS handshake is folded into the transport; data can even be sent inside the first flight (0-RTT). There is no unencrypted preamble, which removes an entire class of middlebox interference and snoopable pre-handshake traffic</li>
+          <li><strong>Connection migration</strong> — a TCP connection is identified by a four-tuple (addresses plus ports); change the Wi-Fi-to-cellular handoff and the connection is destroyed. QUIC identifies connections by a key-encrypted <em>connection ID</em>, so a device can move networks and the session simply continues</li>
+          <li><strong>Modern congestion control</strong> — the loss and congestion algorithms ride in the transport itself, not bolted onto a shared TCP socket, making it practical for each deployment to run current algorithms (CUBIC, BBR and successors) uniformly</li>
+          <li><strong>Header protection</strong> — QUIC applies per-packet cryptographic protection to its own header fields, throttling a middlebox's ability to inspect traffic patterns even without inspecting payloads</li>
+        </ul>
+
+        <p>Building all of it on UDP was load-bearing. UDP is a bare service: send and receive datagrams, no ordering guarantee, no state in the network. That freedom is what lets QUIC evolve. TCP changes are painful because every change has to pass through a stack of interoperability requirements with two decades of middleboxes, NATs, and firewall code that makes fixed assumptions about it. A new UDP-based protocol is invisible to most of that infrastructure — UDP packets pass through — and because the payload is encrypted end-to-end, the middlebox cannot even reliably identify it. Protocols riding UDP have historically (and, on some networks, still do) suffered deprioritization or blocking; QUIC's answer is header protection plus an extension that lets a QUIC client <a href="https://datatracker.ietf.org/doc/html/rfc9204" target="_blank" rel="noopener">masquerade as video traffic</a> (RFC 9204) when it detects a hostile network.</p>
+
+        <h2>What this means for you</h2>
+
+        <div class="callout">
+          <span class="eyebrow">The practical picture</span>
+          <p>If your site or app ships to the public internet, HTTP/3 is now the default transport the major browsers negotiate with your server — Chrome, Firefox, Safari and Edge all support it, and major CDNs enable it by default. The practical consequences: <strong>lower latency on lossy mobile networks</strong>, because a lost packet no longer jams unrelated streams; <strong>resilient sessions</strong> that survive Wi-Fi-to-cellular handoffs without a visible reconnect; <strong>faster first-byte</strong> through TLS integration and 0-RTT reuse. The operational cost: packet loss and congestion are now <em>your</em> problem, not the transport's default behavior — QUIC tuning, congestion control selection, and middlebox detection are on the app side, and older monitoring and logging tooling may not parse QUIC traffic at all.</p>
+        </div>
+
+        <p>One more design point deserves emphasis: QUIC's security was designed <em>in from the start</em>, rather than wrapped on later. That single decision cascades through everything else. The handshake is TLS; the loss recovery rides on the same keys; stream multiplexing is inside the encryption boundary; connection identity survives network changes because the connection ID is bound to the session keys. The layered alternative — "just put TLS around TCP and do multiplexing on top" — can get most of the way there, but each layer boundary remains a place where assumptions disagree and middleboxes can still reach in. QUIC's bet was that a smaller, single-layer, encrypted-by-default protocol would age better than a stack of patched-together layers, and a decade of production traffic at major web properties has vindicated the bet.</p>
+
+        <ul>
+          <li><strong>Head-of-line blocking is a structural property</strong> — it lives in single-stream ordering, not in HTTP, so the fix has to come from the transport layer, which is exactly what QUIC's multiplexed streams provide</li>
+          <li><strong>One encrypted protocol ages better than a transparent wrapper</strong> — because every field is under the same keys, there is no unencrypted seam for middleboxes to probe, and the protocol can evolve behind an opaque payload</li>
+          <li><strong>Connection identity surviving network changes is a transport feature</strong> — key-bound connection IDs make the Wi-Fi-to-cellular handoff transparent to the session, something the TCP four-tuple cannot do</li>
+        </ul>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://http.dev/3" target="_blank" rel="noopener">HTTP Developer — HTTP/3</a>; <a href="https://datatracker.ietf.org/doc/html/rfc9000" target="_blank" rel="noopener">RFC 9000 — QUIC: A UDP-Based Multiplexed Transport</a>; <a href="https://datatracker.ietf.org/doc/html/rfc9204" target="_blank" rel="noopener">RFC 9204 — Avoiding Blocking of QUIC (Packing QUIC Packets Inside UDP Fragments)</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-quic-http-3-works-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
