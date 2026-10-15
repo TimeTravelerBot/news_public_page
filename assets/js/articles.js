@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "lg-webos-preauth-root-takeover-2026",
+    "title": "LG webOS smart TVs exposed to pre-auth root takeover from the local network",
+    "excerpt": "Researchers chained a client-key bypass, service-level access, and a command-injection flaw to execute commands as root on LG webOS TVs from the same local network, requiring no pairing.",
+    "category": "cybersecurity",
+    "date": "2026-10-15",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/c6bfdb09edff52bff12535c383ce7c051a9c60b06fd84587853fb583baaf9051.jpg"
+  },
+  {
     "slug": "apple-home-view-home-launch-2026",
     "title": "Apple launches HomeView smart hub, new Apple TV 4K, and HomePod mini 2 at its October event",
     "excerpt": "Apple's October 13 'Welcome home' event introduces the $299 HomeView smart display hub, a refreshed Apple TV 4K, and a $149 HomePod mini 2, with a second October 27 event expected for new Macs and an OLED iPad mini.",

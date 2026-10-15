@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 16:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 16:55:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                            <item>
+                                                                                                                              <item>
+    <title>LG webOS smart TVs exposed to pre-auth root takeover from the local network</title>
+    <link>https://wireshaman.com/articles/lg-webos-preauth-root-takeover-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/lg-webos-preauth-root-takeover-2026.html</guid>
+    <dc:creator>WireShaman Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Thu, 15 Oct 2026 16:55:00 +0000</pubDate>
+    <description>Researchers chained a client-key bypass, service-level access, and a command-injection flaw to execute commands as root on LG webOS TVs from the same local network, requiring no pairing.</description>
+  </item>
+<item>
     <title>Apple launches HomeView smart hub, new Apple TV 4K, and HomePod mini 2 at its October event</title>
     <link>https://wireshaman.com/articles/apple-home-view-home-launch-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/apple-home-view-home-launch-2026.html</guid>

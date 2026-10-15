@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-lg-webos-preauth-root-takeover-2026">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LG webOS smart TVs exposed to pre-auth root takeover from the local network — WireShaman</title>
+  <meta name="description" content="Researchers chained a client-key bypass, service-level access, and a command-injection flaw to execute commands as root on LG webOS TVs from the same local network, requiring no pairing.">
+  <meta name="author" content="WireShaman Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/lg-webos-preauth-root-takeover-2026.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/lg-webos-preauth-root-takeover-2026.html">
+  <meta property="og:title" content="LG webOS smart TVs exposed to pre-auth root takeover from the local network">
+  <meta property="og:description" content="Researchers chained a client-key bypass, service-level access, and a command-injection flaw to execute commands as root on LG webOS TVs from the same local network, requiring no pairing.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/c6bfdb09edff52bff12535c383ce7c051a9c60b06fd84587853fb583baaf9051.jpg">
+  <meta property="og:image:alt" content="A dark living room with a smart TV screen showing abstract terminal glyphs and a faint red breach glow">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-15">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="LG webOS smart TVs exposed to pre-auth root takeover from the local network">
+  <meta name="twitter:description" content="Researchers chained a client-key bypass, service-level access, and a command-injection flaw to execute commands as root on LG webOS TVs from the same local network, requiring no pairing.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/c6bfdb09edff52bff12535c383ce7c051a9c60b06fd84587853fb583baaf9051.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"LG webOS smart TVs exposed to pre-auth root takeover from the local network","description":"Researchers chained a client-key bypass, service-level access, and a command-injection flaw to execute commands as root on LG webOS TVs from the same local network, requiring no pairing.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/lg-webos-preauth-root-takeover-2026.html","datePublished":"2026-10-15","image":"https://wireshaman.com/assets/images/c6bfdb09edff52bff12535c383ce7c051a9c60b06fd84587853fb583baaf9051.jpg","articleSection":"Cybersecurity"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/android-security.html">Android Sec</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/cybersecurity.html"><span>&larr;</span> Back to Cybersecurity</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/c6bfdb09edff52bff12535c383ce7c051a9c60b06fd84587853fb583baaf9051.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Cybersecurity</span>
+      <h1 class="article__title">LG webOS smart TVs exposed to pre-auth root takeover from the local network</h1>
+      <p class="article__sub">On the same network, an unauthenticated attacker can become root on webOS TVs and point them at attacker-controlled servers.</p>
+      <div class="article__meta">
+        <span class="tag tag--cybersecurity">Cybersecurity</span>
+        <b>WireShaman Desk</b>
+        <time datetime="2026-10-15">Oct 15, 2026</time> · 6 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">A security researcher published a detailed write-up on October 13 describing how to turn a mainstream LG smart TV into a remote, root-level shell without ever pairing with it. The work, shared by SSD Secure Disclosure and covered by multiple outlets including Cybernews and The Hacker News, traces a three-stage exploit chain that lets an attacker on the same local network execute arbitrary commands as the root user on LG webOS devices, then redirect the device's built-in synchronization service to servers of the attacker's choice. Because no pairing, user interaction, or internet exposure is needed, the chain is especially relevant to household and small-business networks where the TV shares a LAN with many other, frequently less-secure, devices.</p>
+
+        <h2>How the three-stage chain works</h2>
+
+        <p>The write-up breaks the takeover into three steps. First, the researcher bypasses the device's client credential requirements so an arbitrary device can connect directly to the TV's service interfaces, sidestepping the pairing handshake that is supposed to gate access. In effect, the TV is coaxed into accepting a connection it should normally have rejected. Second, that access is used to reach an interactive shell by triggering an embedded command-execution flaw, which grants full root privileges because the affected services run on the device's main control board rather than inside a sandboxed, restricted context. Third, with root control in hand, the researcher exploits the TV's built-in synchronization service, changing its configured sync endpoint to a server controlled by the attacker. The synchronization process then downloads a script from the attacker's server and, with elevated privileges, executes it on the device.</p>
+
+        <h2>Why the result matters</h2>
+
+        <p>The payoff is effectively a remote, root-level backdoor: rather than merely taking a screenshot or grabbing streaming credentials, an attacker can run the webOS shell as root and install persistent payloads on the TV. The write-up documents an 'LG-Sync-Demo' payload that launches a simple terminal window bearing a fake LG sync banner, demonstrating that arbitrary commands can run on the device and that the synchronization feature can be repurposed as a delivery channel for follow-on code. Because the chain reaches root on the main control board, it is a serious building block for deeper compromise, including lateral network pivoting, persistence across reboots, and the deployment of additional payloads targeted at other devices on the same network. The author frames the result as a proof of concept, but each of the primitives required for a real, weaponized exploit is already present and has been demonstrated end to end.</p>
+
+        <h2>Affected devices and scope</h2>
+
+        <p>The demonstration was run against an LG 32LQ636BPSA, a webOS smart TV from around 2017, and a second LG device, the 27TQ600SW, running firmware 04.54.40 on webOS 7.5.7-2, an early-2022 release. The author notes that the same techniques are expected to work on other LG webOS TVs and could even extend to other devices in the household, though newer firmware revisions may introduce mitigations that narrow the attack surface. The work won third place in a TyphoonPWN competition hosted by SSD Secure Disclosure, and the author plans to make the findings public as a full presentation, with a video to follow. It is an early-stage disclosure, so the exact breadth of affected models and the timing of any vendor patches were not fully resolved at the time of reporting.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>If you run an LG webOS TV, the practical risk is network-scope rather than internet-scope: an attacker generally needs to be on the same local network as the TV to walk this exploit chain end to end. For home networks that is often a low bar, since guests, smart home devices, and compromised IoT gadgets all share the same LAN. The strongest mitigations are to segment your network so the TV sits on an isolated VLAN, to remove unnecessary services and open ports from the TV, and to apply firmware updates that may close the client-credential and command-execution gaps highlighted in the write-up. For smart home and security researchers, the finding is a reminder that TV operating systems frequently run privileged services that assume their local network is trusted, leaving a persistent root backdoor available to anyone who can reach the device on the LAN.</p>
+        </div>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://cybernews.com/security/lg-smart-tv-webos-complete-takeover-exploit" target="_blank" rel="noopener">Cybernews: LG smart TV vulnerabilities let attackers gain root access</a>; <a href="https://thehackernews.com/2026/10/lg-smart-tvs-vulnerable-to-pre-auth.html" target="_blank" rel="noopener">The Hacker News: LG Smart TVs Vulnerable to Pre-Auth Root Takeover From Local Network</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "lg-webos-preauth-root-takeover-2026";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
