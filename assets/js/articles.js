@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "ahold-delhaize-usa-cyber-incident-outage-2026",
+    "title": "Ahold Delhaize takes Food Lion, Stop & Shop, Hannaford sites offline after cybersecurity incident",
+    "excerpt": "The Dutch supermarket giant shut down its US and European banner websites and suspended online grocery ordering after a network security issue, with physical stores remaining open and no confirmed data theft.",
+    "category": "cybersecurity",
+    "date": "2026-10-15",
+    "read": 4,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/b8b43c291d42eb71e2d91d35febe467b311bcbd4e6004292b333479ab6f5e1ab.jpg"
+  },
+  {
     "slug": "net-framework-cve-2026-108398-wdac-bypass",
     "title": "Microsoft's October Patch Tuesday includes 1,413 flaws and two zero-days, one under active exploitation",
     "excerpt": "Microsoft's October 2026 Patch Tuesday fixed 1,413 vulnerabilities, including a Windows Shell zero-day under active exploitation and a .NET Framework flaw that can bypass Windows Defender Application Control.",
