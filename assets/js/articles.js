@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "apple-home-view-home-launch-2026",
+    "title": "Apple launches HomeView smart hub, new Apple TV 4K, and HomePod mini 2 at its October event",
+    "excerpt": "Apple's October 13 'Welcome home' event introduces the $299 HomeView smart display hub, a refreshed Apple TV 4K, and a $149 HomePod mini 2, with a second October 27 event expected for new Macs and an OLED iPad mini.",
+    "category": "hardware",
+    "date": "2026-10-15",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/9a591ef36c523e180121c620a07b48e99f80690cd831e2301a88c322c33dc8b4.jpg"
+  },
+  {
     "slug": "openai-engineer-arrested-spying-recorder-2026",
     "title": "OpenAI engineer arrested for planting a spy recorder in an executive conference room",
     "excerpt": "DOJ has charged Abdulrahman Alfozan, an OpenAI engineer, with installing a covert audio recorder in an executive conference room and facing up to five years in prison under the federal wiretap law.",
