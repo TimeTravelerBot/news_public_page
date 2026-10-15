@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 16:55:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 18:05:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                              <item>
+                                                                                                                                <item>
+    <title>Microsoft's October Patch Tuesday includes 1,413 flaws and two zero-days, one under active exploitation</title>
+    <link>https://wireshaman.com/articles/net-framework-cve-2026-108398-wdac-bypass.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/net-framework-cve-2026-108398-wdac-bypass.html</guid>
+    <dc:creator>WireShaman Desk</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Thu, 15 Oct 2026 18:05:00 +0000</pubDate>
+    <description>Microsoft's October 2026 Patch Tuesday fixed 1,413 vulnerabilities, including a Windows Shell zero-day under active exploitation and a .NET Framework flaw that can bypass Windows Defender Application Control.</description>
+  </item>
+<item>
     <title>LG webOS smart TVs exposed to pre-auth root takeover from the local network</title>
     <link>https://wireshaman.com/articles/lg-webos-preauth-root-takeover-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/lg-webos-preauth-root-takeover-2026.html</guid>

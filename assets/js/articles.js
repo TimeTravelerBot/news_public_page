@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "net-framework-cve-2026-108398-wdac-bypass",
+    "title": "Microsoft's October Patch Tuesday includes 1,413 flaws and two zero-days, one under active exploitation",
+    "excerpt": "Microsoft's October 2026 Patch Tuesday fixed 1,413 vulnerabilities, including a Windows Shell zero-day under active exploitation and a .NET Framework flaw that can bypass Windows Defender Application Control.",
+    "category": "cybersecurity",
+    "date": "2026-10-15",
+    "read": 7,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/c9f63c9e5d3b0b6f0fa689e8afcb915ae3a020db8758b6650aa931f98b7168d9.jpg"
+  },
+  {
     "slug": "lg-webos-preauth-root-takeover-2026",
     "title": "LG webOS smart TVs exposed to pre-auth root takeover from the local network",
     "excerpt": "Researchers chained a client-key bypass, service-level access, and a command-injection flaw to execute commands as root on LG webOS TVs from the same local network, requiring no pairing.",
