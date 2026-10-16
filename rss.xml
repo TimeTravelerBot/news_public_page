@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 10:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                                  <item>
+                                                                                                                                                    <item>
+    <title>How CPU Caches Work</title>
+    <link>https://wireshaman.com/articles/how-cpu-caches-work-explainer.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/how-cpu-caches-work-explainer.html</guid>
+    <dc:creator>WireShaman</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Fri, 16 Oct 2026 10:00:00 +0000</pubDate>
+    <description>An evergreen explainer covering L1, L2, and L3 caches, cache lines, hit rates, and why memory hierarchy is the foundation of modern CPU performance.</description>
+  </item>
+<item>
     <title>How Tokenizers Work in Language Models</title>
     <link>https://wireshaman.com/articles/how-tokenizers-work-in-llms-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-tokenizers-work-in-llms-explainer.html</guid>

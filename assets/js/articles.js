@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-cpu-caches-work-explainer",
+    "title": "How CPU Caches Work",
+    "excerpt": "An evergreen explainer covering L1, L2, and L3 caches, cache lines, hit rates, and why memory hierarchy is the foundation of modern CPU performance.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 6,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/2500caa40401168c59a50433596f3085d20e79067e6ec7c87b40c21e6060ec83.jpg"
+  },
+  {
     "slug": "how-tokenizers-work-in-llms-explainer",
     "title": "How Tokenizers Work in Language Models",
     "excerpt": "An evergreen explainer covering subword tokenization, byte-pair encoding, SentencePiece, and why the same text costs different tokens in different models.",

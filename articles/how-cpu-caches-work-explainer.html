@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-cpu-caches-work-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How CPU Caches Work — WireShaman</title>
+  <meta name="description" content="An evergreen explainer covering L1, L2, and L3 caches, cache lines, hit rates, and why memory hierarchy is the foundation of modern CPU performance.">
+  <meta name="author" content="WireShaman">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-cpu-caches-work-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-cpu-caches-work-explainer.html">
+  <meta property="og:title" content="How CPU Caches Work">
+  <meta property="og:description" content="An evergreen explainer covering L1, L2, and L3 caches, cache lines, hit rates, and why memory hierarchy is the foundation of modern CPU performance.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/2500caa40401168c59a50433596f3085d20e79067e6ec7c87b40c21e6060ec83.jpg">
+  <meta property="og:image:alt" content="Editorial illustration of a CPU with concentric cache rings">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How CPU Caches Work">
+  <meta name="twitter:description" content="An evergreen explainer covering L1, L2, and L3 caches, cache lines, hit rates, and why memory hierarchy is the foundation of modern CPU performance.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/2500caa40401168c59a50433596f3085d20e79067e6ec7c87b40c21e6060ec83.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How CPU Caches Work","description":"An evergreen explainer covering L1, L2, and L3 caches, cache lines, hit rates, and why memory hierarchy is the foundation of modern CPU performance.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-cpu-caches-work-explainer.html","datePublished":"2026-10-16","image":"https://wireshaman.com/assets/images/2500caa40401168c59a50433596f3085d20e79067e6ec7c87b40c21e6060ec83.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/android-security.html">Android Sec</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/2500caa40401168c59a50433596f3085d20e79067e6ec7c87b40c21e6060ec83.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How CPU Caches Work</h1>
+      <p class="article__sub">Modern CPUs do not get their speed from clocks alone. They get it from a hierarchy of tiny, fast memory buffers that keep the core from waiting on much slower DRAM. Understanding L1, L2, and L3 caches, cache lines, and hit rates explains why some code is fast and some is slow.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>WireShaman</b>
+        <time datetime="2026-10-16">Oct 16, 2026</time> · 6 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">A modern CPU executes hundreds of millions of instructions every second, but its main memory, the DRAM in your sticks of RAM, is far too slow to keep up. A single DRAM read takes roughly 100 nanoseconds or more, which means the core would sit idle for tens of cycles every time it needs a value that is not already handy. The architecture solution is a hierarchy of small, fast memory layers that live inside or next to the chip, each larger and slower than the one above it: L1 cache, L2 cache, and L3 cache, sitting on top of main memory.</p>
+
+        <p>The key insight is locality. Programs do not touch memory randomly. Temporal locality means a value that was just used is likely to be used again in the next few instructions. Spatial locality means memory locations near a just-used location are likely to be used soon, which is why code executes almost sequentially and data structures are scanned in order. Caches exploit both: they keep a copy of the most recently and most neighborhood-relevant data close to the core, so the vast majority of memory accesses hit a fast layer instead of reaching DRAM.</p>
+
+        <p>Caches do not copy bytes one at a time. They move data in blocks called cache lines, typically 64 bytes on x86 hardware. When the core needs one value that is not in the cache, the memory subsystem fetches the entire line containing that value and stores it in the cache. If the program then reads a neighboring value, it is already there for free. This is spatial locality being cashed in, and it is why reading a struct field to field is fast while reading scattered, stride-heavy data is not.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>When an application feels slow, the bottleneck is often not the CPU but the memory hierarchy. Tight loops over contiguous arrays run near full speed; loops that hop through pointers scattered across DRAM miss the cache on nearly every access and stall waiting for memory. Profilers that report cache miss rates, or metrics like L3 miss latency, point directly at this problem.</p>
+        </div>
+
+        <p>Each cache level has a distinct role. L1 is the smallest and fastest, typically 32 to 64 kilobytes per core, and is so close to the execution units that it can serve data in one or a few cycles. Many cores split L1 into a data cache and an instruction cache. L2 is larger, often several hundred kilobytes to a couple of megabytes per core, at a cost of a few more cycles. L3 is the largest, shared by multiple cores, and can total many tens of megabytes on server chips. Each level down trades capacity for latency, so a lookup that misses L3 still lands in DRAM only a few cycles behind what is realistic.</p>
+
+        <p>The efficiency of the whole hierarchy is measured by hit rate: the fraction of memory accesses satisfied by a given level without going lower. A well-behaved program hits L1 for most accesses, L2 for the rest, and reaches DRAM only rarely. The cost model is the weighted sum of each level's latency, scaled by how often access reaches that level. This is why doubling the L1 hit rate has more impact than doubling the L3 size: the latency savings happen on the path taken every cycle, not the rare miss path.</p>
+
+        <p>Caches also track state with simple protocols. Each line is marked valid, indicating it holds live data, and on write-capable caches, modified, indicating it holds changes not yet written back to memory. When the core writes a value, the write lands in the L1 data cache first, and the copy in DRAM is updated later, either when the line is evicted or by an explicit flush. This write-through-versus-write-back choice is a classic tradeoff: write-back saves DRAM bandwidth while write-through keeps the slow layer current at a cost.</p>
+
+        <p>In multi-core systems, every core owns its own L1 and L2, so the same variable can exist in several caches at once, with possibly different values. Keeping them coherent, all cores seeing a consistent view of memory, is handled by a cache coherency protocol. When one core writes a line, the protocol invalidates or updates the stale copies in other cores before any one of them reads it again. That background traffic is invisible in single-threaded programs but becomes a real cost when threads contend on the shared data, which is one reason lock-heavy code is slow even when the critical section is tiny.</p>
+
+        <p>The same principles shape how compilers and operating systems squeeze performance. Loop unrolling and block size tuning aim to fit working sets inside L1 or L2. Prefetching hardware predicts which lines a stream will touch next and starts fetching them before the core asks, hiding latency that would otherwise cost real cycles. NUMA servers add another twist: memory physically attached to a different socket takes longer to reach, so pinning threads and data near their local memory node matters. In every case the underlying model is identical, a fast small layer shielding a larger, slower one.</p>
+
+        <p>Understanding cache hierarchy explains a lot that feels arbitrary in performance work. A program that does ten times the arithmetic but touches data in a poor order can run slower than a simpler one. A database that reorders its row layout improves query throughput without changing the query. A game streams textures in chunks that match cache and TLB behavior. The cache is not a detail, it is the shape of every modern CPU. When you can reason about hit rates, working sets, and coherency, a large share of performance questions stop being mysterious and become arithmetic.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.intel.com/content/www/us/en/developer/architecture/ia-32-64-architectures.html" target="_blank" rel="noopener">Intel - Introduction to Intel 64 and IA-32 Architectures (chapter on memory types)</a>; <a href="https://quonruey.github.io/cs441/11_hpc.pdf" target="_blank" rel="noopener">University of Wisconsin Madison - How to Write High Performance Software (memory hierarchy)</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-cpu-caches-work-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
