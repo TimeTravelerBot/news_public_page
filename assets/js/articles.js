@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "intel-broadcom-ceos-capital-crunch-ai-bottleneck-2026",
+    "title": "Intel and Broadcom CEOs warn capital is becoming AI's biggest bottleneck",
+    "excerpt": "At the DBS Asia Future Forward Conference in Singapore, Intel CEO Lip-Bu Tan and Broadcom CEO Hock Tan both pointed to financing costs and ROI pressure as the primary constraint on AI infrastructure growth, ahead of chip and power shortages.",
+    "category": "hardware",
+    "date": "2026-10-16",
+    "read": 7,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #1c8aff 100%)",
+    "img": "assets/images/f69dea566a12e07723c4f43d937513ac30d092498b79a1818433e5fdb5e5c291.jpg"
+  },
+  {
     "slug": "how-branch-prediction-and-speculative-execution-work-explainer",
     "title": "How Branch Prediction and Speculative Execution Work, and Why They Enable Spectre and Meltdown",
     "excerpt": "Modern CPUs run many instructions at once by guessing the next path. Those guesses are what make Spectre and Meltdown possible.",

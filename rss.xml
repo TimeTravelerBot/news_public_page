@@ -9,7 +9,16 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Oct 2026 12:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                                            <item>
+                                                                                                                                                              <item>
+    <title>Intel and Broadcom CEOs warn capital is becoming AI's biggest bottleneck</title>
+    <link>https://wireshaman.com/articles/intel-broadcom-ceos-capital-crunch-ai-bottleneck-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/intel-broadcom-ceos-capital-crunch-ai-bottleneck-2026.html</guid>
+    <dc:creator>WireShaman Staff</dc:creator>
+    <category>Hardware</category>
+    <pubDate>Fri, 16 Oct 2026 12:30:00 +0000</pubDate>
+    <description>At the DBS Asia Future Forward Conference in Singapore, Intel CEO Lip-Bu Tan and Broadcom CEO Hock Tan both pointed to financing costs and ROI pressure as the primary constraint on AI infrastructure growth, ahead of chip and power shortages.</description>
+  </item>
+<item>
     <title>How Branch Prediction and Speculative Execution Work, and Why They Enable Spectre and Meltdown</title>
     <link>https://wireshaman.com/articles/how-branch-prediction-and-speculative-execution-work-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-branch-prediction-and-speculative-execution-work-explainer.html</guid>
