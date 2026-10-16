@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 23:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 22:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                                                    <item>
+                                                                                                                                                                      <item>
+    <title>How KernelSU brings Android root management into the kernel</title>
+    <link>https://wireshaman.com/articles/how-kernelsu-android-root-management-works-explainer.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/how-kernelsu-android-root-management-works-explainer.html</guid>
+    <dc:creator>WireShaman Explainer Desk</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Fri, 16 Oct 2026 22:30:00 +0000</pubDate>
+    <description>KernelSU moves superuser authorization into the Android kernel while a manager app controls access and modules provide systemless customization. Here is how its pieces fit together.</description>
+  </item>
+<item>
     <title>OEMpocalypse explained: how a permissionless Android app can reach root</title>
     <link>https://wireshaman.com/articles/oempocalypse-android-oem-root-chain-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/oempocalypse-android-oem-root-chain-explainer.html</guid>

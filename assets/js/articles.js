@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-kernelsu-android-root-management-works-explainer",
+    "title": "How KernelSU brings Android root management into the kernel",
+    "excerpt": "KernelSU moves superuser authorization into the Android kernel while a manager app controls access and modules provide systemless customization. Here is how its pieces fit together.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 8,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/49331f5cc6e8cd92e05063a3a83c7e371e166426647fde20bc99974c2521c23e.jpg"
+  },
+  {
     "slug": "oempocalypse-android-oem-root-chain-explainer",
     "title": "OEMpocalypse explained: how a permissionless Android app can reach root",
     "excerpt": "OEMpocalypse demonstrates a reusable Android exploitation strategy that chains OEM service flaws with kernel page use-after-free bugs across Samsung, Xiaomi, Oppo, OnePlus and Realme devices.",
