@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-risc-v-instruction-sets-work-explainer",
+    "title": "How RISC-V Instruction Sets Work",
+    "excerpt": "RISC-V is an open standard for processor design. Here is how its instruction sets are built, how cores are made from them, and why the ecosystem is spreading.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/8644eaa1f959997b7a5fb7bc662deafb98309cc30805fa5aa30f9d20c5724138.jpg"
+  },
+  {
     "slug": "openai-anthropic-uk-binding-ai-rules-2026",
     "title": "OpenAI and Anthropic Back Binding UK AI Law, Splitting From Rivals",
     "excerpt": "OpenAI and Anthropic told a UK parliamentary committee on October 13 that voluntary AI safety pledges are no longer enough, urging new legal obligations for frontier models. Google DeepMind and Meta resisted a broad new law, exposing a rare split among the leading AI labs.",

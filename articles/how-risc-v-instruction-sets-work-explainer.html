@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-risc-v-instruction-sets-work-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How RISC-V Instruction Sets Work — WireShaman</title>
+  <meta name="description" content="RISC-V is an open standard for processor design. Here is how its instruction sets are built, how cores are made from them, and why the ecosystem is spreading.">
+  <meta name="author" content="WireShaman Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-risc-v-instruction-sets-work-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-risc-v-instruction-sets-work-explainer.html">
+  <meta property="og:title" content="How RISC-V Instruction Sets Work">
+  <meta property="og:description" content="RISC-V is an open standard for processor design. Here is how its instruction sets are built, how cores are made from them, and why the ecosystem is spreading.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/8644eaa1f959997b7a5fb7bc662deafb98309cc30805fa5aa30f9d20c5724138.jpg">
+  <meta property="og:image:alt" content="Editorial illustration of a modern chip on a circuit board with an open-source padlock being unlocked in the background.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How RISC-V Instruction Sets Work">
+  <meta name="twitter:description" content="RISC-V is an open standard for processor design. Here is how its instruction sets are built, how cores are made from them, and why the ecosystem is spreading.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/8644eaa1f959997b7a5fb7bc662deafb98309cc30805fa5aa30f9d20c5724138.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How RISC-V Instruction Sets Work","description":"RISC-V is an open standard for processor design. Here is how its instruction sets are built, how cores are made from them, and why the ecosystem is spreading.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-risc-v-instruction-sets-work-explainer.html","datePublished":"2026-10-16","image":"https://wireshaman.com/assets/images/8644eaa1f959997b7a5fb7bc662deafb98309cc30805fa5aa30f9d20c5724138.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/android-security.html">Android Sec</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/8644eaa1f959997b7a5fb7bc662deafb98309cc30805fa5aa30f9d20c5724138.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How RISC-V Instruction Sets Work</h1>
+      <p class="article__sub">RISC-V turns a processor from a proprietary product into a set of public specifications anyone can implement. Understanding the base set and its extensions explains why chips, security roots, and AI accelerators are all converging on it.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>WireShaman Desk</b>
+        <time datetime="2026-10-16">Oct 16, 2026</time> · 7 min read
+      </div>
+      <div class="prose">
+        <h2>What a processor is really built from</h2>
+
+        <p class="dropcap">A processor does not come into existence as a finished chip. Long before any silicon is ordered, an engineer defines the <strong>instruction set architecture</strong>, or ISA: the complete catalog of machine-level operations the processor can perform, how data moves between registers, and how software talks to the machine. The ISA is the contract between the hardware that executes instructions and the compilers and operating systems that generate them. If the contract is stable, software written once runs on any implementation that honors it, which is the entire reason the concept exists.</p>
+
+        <p><strong>RISC-V</strong> is the newest major attempt to make that contract free and public. It is a reduced instruction set computer architecture defined as a set of open standards maintained by RISC-V International, a nonprofit founded in 2015 when the RISC-V work was spun out of the University of California, Berkeley. Unlike the proprietary ISAs of <strong>Intel</strong> and <strong>ARM</strong>, the RISC-V specifications are published openly. Anyone can read the full definition of every instruction, implement a core, and sell it without paying the architecture owner a royalty on the base set. That openness is the single fact that makes everything else about RISC-V possible.</p>
+
+        <h2>The base integer set and XLEN</h2>
+
+        <p>The core of RISC-V is the integer instruction set, known as <strong>RV</strong>. It starts from a small number of load and store data types and a fixed set of operations: arithmetic and logic across the register file, memory loads and stores, and branch and jump control flow. The whole design deliberately favors small, well-defined instructions that retire in a pipeline over large, variable ones, which keeps hardware simpler and more predictable.</p>
+
+        <p>The base set comes in two sizes, distinguished by the width of the general-purpose register file and the native data path: <strong>RV32</strong>, where registers and native words are 32 bits, and <strong>RV64</strong>, where they are 64 bits. A third, <strong>RV128</strong>, exists for very wide designs. This register width is called <strong>XLEN</strong>, and it is the knob that lets the same architecture scale from a tiny embedded microcontroller to a full workstation-class processor. Software that targets RV32 compiles into 32-bit addressing; software that targets RV64 gets 64-bit pointers and wider integer math. An RV32 core and an RV64 core are different, but they share the same underlying philosophy and the same extension framework.</p>
+
+        <p>The base integer set is deliberately incomplete on its own. It handles computation and control flow but says nothing about floating point, compressed instructions, or atomic operations. RISC-V answers this with <strong>optional extensions</strong>, each labeled with a single letter. The <strong>C</strong> extension provides compressed 16-bit encodings that shrink code size roughly 30 percent with a negligible instruction set. The <strong>M</strong> extension adds integer multiplication and division. The <strong>A</strong> extension adds atomic memory operations so software can build lock-free structures and synchronization primitives. The <strong>F</strong> and <strong>D</strong> extensions add single and double precision floating point. The string that names a processor is just these pieces combined, which is why you see names like <strong>RV64GC</strong>, meaning a 64-bit core with the general and compressed extensions enabled.</p>
+
+        <h2>Profiles, privmodes, and where the ecosystem goes</h2>
+
+        <p>Because extensions are optional, a vendor could in principle enable a strange and useful-incompatible combination. To keep software portable, RISC-V International defines <strong>profiles</strong>, named packages that bind a required base ISA together with a set of mandatory and optional extensions. A profile like <strong>RV64GC</strong> is the workhorse for general computing, while smaller embedded profiles target microcontrollers that cannot afford the register file or the instruction width of a server core. Profiles are what turn loose flexibility into a portable contract: a compiler or library that targets a named profile knows exactly which instructions it may assume.</p>
+
+        <p>The architecture layers privilege on top of the register file. The <strong>U</strong> extension defines a user mode for running untrusted applications, the <strong>S</strong> extension defines a supervisor mode where the operating system lives, and the <strong>M</strong> machine mode is the most privileged level, where firmware and reset code run. This three-level hierarchy mirrors the trust model of established ISAs and is what lets a RISC-V core run a full operating system such as <strong>Linux</strong> alongside protected user applications. Because the specification is open, the same layers are available to hobbyists and to datacenter builders alike, which is why open cores built on RISC-V now anchor a surprising amount of the world's silicon.</p>
+
+        <p>The spread of RISC-V is no longer limited to embedded work. It now appears in <strong>NVIDIA</strong> and other AI compute accelerators, in <strong>RISC-V</strong> server-class cores from multiple vendors, in trusted execution environments, and in security-adjacent roles where an open, auditable instruction set matters more than the last few percent of performance. Vendors can also add their own custom extensions without changing the base, and the standardization process allows new instructions to graduate from custom into ratified, portable status over time. The result is a processor world where the foundation is a public set of documents, not a single company's roadmap.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p><strong>What this means for you</strong>: The base instruction set is free and open, and the extension and profile system defines exactly which instructions a given core supports. That makes RISC-V a practical, low-risk target for compiling, and a foundation you can audit without paying for access to the spec.</p>
+        </div>
+
+        <p>If you are a developer, the practical takeaway is that RISC-V is a portable, royalty-free target and a growing one. Toolchains from <strong>LLVM</strong> and <strong>GNU</strong> support it, and the base set is small enough to learn, so it has become a popular teaching architecture and a low-risk target for embedded and security-sensitive work. If you are an engineer choosing hardware, the base ISA plus profiles tells you exactly what a core can do and where its vendor-specific additions begin. And if you are watching where computing is heading, the fact that an open standard now spans everything from microcontrollers to the accelerators driving current AI workloads is the quiet, durable story underneath all the specific products.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://riscv.org/what-is-risc-v/" target="_blank" rel="noopener">RISC-V International Foundation Overview</a>; <a href="https://docs.riscv.org/arch/isa-manual/" target="_blank" rel="noopener">RISC-V Base Integer Instruction Set Manual (ratified)</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-risc-v-instruction-sets-work-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
