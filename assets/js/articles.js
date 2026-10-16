@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "oempocalypse-android-oem-root-chain-explainer",
+    "title": "OEMpocalypse explained: how a permissionless Android app can reach root",
+    "excerpt": "OEMpocalypse demonstrates a reusable Android exploitation strategy that chains OEM service flaws with kernel page use-after-free bugs across Samsung, Xiaomi, Oppo, OnePlus and Realme devices.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 8,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/ba54e83c89cc81dc7cde9247117883928052221c94bce5bd0893d25381b57e3a.jpg"
+  },
+  {
     "slug": "dirtyfrag-android-root-chain-v1-16",
     "title": "DirtyFrag sharpens an Android root chain for locked Samsung and OnePlus phones",
     "excerpt": "DirtyFrag v1.16 hardens a public CVE-2026-43284 Android root chain, fixing vendor anti-tamper crashes and expanding reliability across Samsung, Oppo and OnePlus devices.",
