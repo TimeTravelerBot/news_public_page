@@ -163,34 +163,60 @@
     });
   }
 
-  // ---- hero "live wire" feed: type-scramble the sample headlines ----
-  var log = document.getElementById("wire-log");
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (log) {
-    var GLYPHS = "abcdefghijklmnopqrstuvwxyz0123456789#/\|-_";
-    var lines = Array.prototype.slice.call(log.querySelectorAll(".term__line"));
-    lines.forEach(function (line, i) {
-      var el = line.querySelector(".term__copy");
-      var full = el ? (el.getAttribute("data-t") || "") : "";
-      if (!el || !full) return;
-      if (reduce) { el.textContent = full; return; }
-      function type() {
-        var n = 0;
-        var iv = setInterval(function () {
-          var s = "";
-          for (var j = 0; j < full.length; j++) {
-            if (j < n) s += full[j];
-            else if (j < n + 6) s += GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
-          }
-          el.textContent = s;
-          n++;
-          if (n > full.length) { clearInterval(iv); el.textContent = full; }
-        }, 20);
+  // ---- hero signal monitor: real, published stories from articles.js ----
+  var signalFeature = document.getElementById("signal-feature");
+  var signalStream = document.getElementById("signal-stream");
+  if (signalFeature && signalStream) {
+    var signalLabels = {
+      "cybersecurity": "Cyber",
+      "android-security": "Android",
+      "tech": "AI & Tech",
+      "hardware": "Hardware",
+      "explainer": "Explainer"
+    };
+    var signals = [];
+    var seenSignalCategories = {};
+    articles.forEach(function (article) {
+      if (signals.length < 4 && !seenSignalCategories[article.category]) {
+        signals.push(article);
+        seenSignalCategories[article.category] = true;
       }
-      var delay = parseFloat(line.dataset.d || "0") * 1000 + i * 250;
-      el.textContent = "";
-      setTimeout(type, delay);
-      setInterval(type, delay + 8500 + i * 2200);
     });
+    if (signals.length < 4) {
+      articles.forEach(function (article) {
+        if (signals.length < 4 && signals.indexOf(article) === -1) signals.push(article);
+      });
+    }
+    var lead = signals.shift();
+
+    if (lead) {
+      var leadImage = lead.img
+        ? '<span class="term__feature-art" style="background-image:url(\'' + esc(lead.img) + '\')"></span>'
+        : '<span class="term__feature-art" style="background:' + esc(lead.art || "var(--grad)") + '"></span>';
+      signalFeature.href = "articles/" + encodeURIComponent(lead.slug) + ".html";
+      signalFeature.setAttribute("aria-label", lead.title);
+      signalFeature.innerHTML = leadImage +
+        '<span class="term__feature-shade"></span>' +
+        '<span class="term__feature-copy">' +
+          '<span class="tag tag--' + esc(lead.category) + '">' + esc(signalLabels[lead.category] || lead.category) + '</span>' +
+          '<strong>' + esc(lead.title) + '</strong>' +
+          '<small>' + esc(lead.date) + ' · ' + esc(lead.read) + ' min read</small>' +
+        '</span>';
+    } else {
+      signalFeature.hidden = true;
+    }
+
+    signalStream.innerHTML = signals.map(function (article) {
+      return '<a class="term__line" href="articles/' + encodeURIComponent(article.slug) + '.html">' +
+        '<span class="tag tag--' + esc(article.category) + '">' + esc(signalLabels[article.category] || article.category) + '</span>' +
+        '<span class="term__copy">' + esc(article.title) + '</span>' +
+        '<span class="term__read">' + esc(article.read) + 'm</span>' +
+      '</a>';
+    }).join("");
+
+    var signalCount = document.getElementById("signal-count");
+    var signalUpdated = document.getElementById("signal-updated");
+    if (signalCount) signalCount.textContent = String(articles.length);
+    if (signalUpdated && lead) signalUpdated.textContent = "Updated " + lead.date;
   }
 })();
