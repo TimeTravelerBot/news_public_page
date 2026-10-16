@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-ssds-work-and-why-they-fail-explainer",
+    "title": "How SSDs Work — and Why They Eventually Fail",
+    "excerpt": "An evergreen explainer covering NAND flash cells, the FTL, garbage collection, wear leveling, and why SSDs run out of life.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 8,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/0722402f6d55d8e2059c4fa245dc97d3ee69fd39f61f73be61fb492153fdde46.jpg"
+  },
+  {
     "slug": "ahold-delhaize-cyberattack-systems-offline-2026",
     "title": "Ahold Delhaize Takes Systems Offline After Cyberattack, Stores Stay Open",
     "excerpt": "The world's largest grocery retailer said a cybersecurity issue forced it to pull parts of its IT network offline on October 12, 2026, with no evidence yet that customer or employee data was stolen.",

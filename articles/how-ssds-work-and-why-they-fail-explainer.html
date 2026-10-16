@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-ssds-work-and-why-they-fail-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How SSDs Work — and Why They Eventually Fail — WireShaman</title>
+  <meta name="description" content="An evergreen explainer covering NAND flash cells, the FTL, garbage collection, wear leveling, and why SSDs run out of life.">
+  <meta name="author" content="WireShaman Staff">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-ssds-work-and-why-they-fail-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-ssds-work-and-why-they-fail-explainer.html">
+  <meta property="og:title" content="How SSDs Work — and Why They Eventually Fail">
+  <meta property="og:description" content="An evergreen explainer covering NAND flash cells, the FTL, garbage collection, wear leveling, and why SSDs run out of life.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/0722402f6d55d8e2059c4fa245dc97d3ee69fd39f61f73be61fb492153fdde46.jpg">
+  <meta property="og:image:alt" content="Isometric cutaway of an open SSD showing NAND flash chips and a controller board on a dark background.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How SSDs Work — and Why They Eventually Fail">
+  <meta name="twitter:description" content="An evergreen explainer covering NAND flash cells, the FTL, garbage collection, wear leveling, and why SSDs run out of life.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/0722402f6d55d8e2059c4fa245dc97d3ee69fd39f61f73be61fb492153fdde46.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How SSDs Work — and Why They Eventually Fail","description":"An evergreen explainer covering NAND flash cells, the FTL, garbage collection, wear leveling, and why SSDs run out of life.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-ssds-work-and-why-they-fail-explainer.html","datePublished":"2026-10-16","image":"https://wireshaman.com/assets/images/0722402f6d55d8e2059c4fa245dc97d3ee69fd39f61f73be61fb492153fdde46.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/android-security.html">Android Sec</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/0722402f6d55d8e2059c4fa245dc97d3ee69fd39f61f73be61fb492153fdde46.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How SSDs Work — and Why They Eventually Fail</h1>
+      <p class="article__sub">There is no spinning disk inside your SSD, but there is a lot of bookkeeping. This explainer covers charge traps, the FTL, erase blocks, garbage collection, wear leveling, and where wear actually kills an SSD.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>WireShaman Staff</b>
+        <time datetime="2026-10-16">Oct 16, 2026</time> · 8 min read
+      </div>
+      <div class="prose">
+        <h2>NAND Flash: Charge Traps, Not Spinning Disks</h2>
+
+        <p class="dropcap">A solid state drive looks like a small circuit board, but its real engineering is electrical. Every byte of data lives in a tiny charge trap inside a NAND flash cell. Unlike a DRAM cell, which needs continuous power to hold a charge, a NAND cell is a floating gate: once electrons are trapped inside, they stay there for years without any power at all. That static charge is the entire storage medium, and it is also the reason SSDs wear out.</p>
+
+        <p>Flash cells come in different densities. Single-level cell (SLC) stores one bit per cell, which is the simplest and most durable. Multiple-level cell (MLC) stores two bits, triple-level cell (TLC) stores three, and quad-level cell (QLC) stores four. More bits per cell means denser and cheaper storage, but each additional level requires tighter voltage thresholds and is more susceptible to read errors. Modern consumer SSDs are predominantly TLC or QLC, which is why their controller firmware does so much work to keep data reliable.</p>
+
+        <h2>The FTL: A Translation Layer Between You and the Cells</h2>
+
+        <p>NAND flash has a fundamental quirk that makes it awkward to use as a block device: cells can only be written after they are erased, and erasure happens in blocks of 64 to 128 kilobytes, not individual bytes. You cannot overwrite a single cell without first erasing the entire block it belongs to. The flash translation layer (FTL) is the firmware that solves this problem. It maintains a mapping between the logical block addresses your operating system sees and the physical block addresses in the flash. When you tell the drive to write to logical block 42, the FTL writes the data to a fresh physical location and updates the mapping, leaving the old physical block marked as garbage.</p>
+
+        <h2>Garbage Collection: Reclaiming Dead Blocks</h2>
+
+        <p>Over time, the FTL accumulates a large pool of blocks that hold no valid data but cannot be erased yet because at least one page in them is still referenced. Garbage collection sweeps through these partially valid blocks, relocates the surviving pages to new locations, erases the old block, and makes it available again. This process is invisible under light workloads but becomes very visible under sustained random write loads: the drive temporarily writes the same data twice, once to preserve it and once to service your new write. The speed of garbage collection is a major factor in why cheap TLC SSDs slow down under sustained heavy write work.</p>
+
+        <h2>Wear Leveling: Spreading the Damage</h2>
+
+        <p>NAND cells have a finite erase-write budget. SLC cells survive roughly 100,000 cycles; QLC cells manage closer to 1,000 to 3,000. If the FTL kept reusing the same physical blocks, those blocks would wear out long before the rest of the drive. Wear leveling distributes writes across the entire flash pool so no single block erodes faster than its neighbors. Static wear leveling also targets blocks that hold infrequently changing data and rotates them into the actively written pool from time to time. The end result is that the drive as a whole wears out roughly evenly rather than one block dying at a time.</p>
+
+        <h2>Where SSDs Actually Fail</h2>
+
+        <p>Wear-out is not the same as failure. A healthy SSD that has exhausted its rated endurance will not abruptly die; the controller will simply mark the entire drive as write-protected, leaving all existing data readable. That is by design: the FTL is supposed to keep enough spare blocks online to mask errors up to the very last moment. In practice, the more common failure modes are controller failure, firmware corruption, or a power loss during a critical write operation. Consumer SSDs that have small DRAM caches are also more vulnerable to sudden power loss than enterprise drives with capacitors or battery-backed cache. For most users, an SSD is most likely to die at the exact moment the power blinks, not after millions of normal writes.</p>
+
+        <h2>ECC, Over-Provisioning, and the Spare Pool</h2>
+
+        <p>Every page the FTL reads from NAND goes through an error correction code (ECC) decoder. Because flash cells degrade as they age, the raw bit error rate climbs slowly over the life of the drive. ECC masks those errors until they accumulate beyond a threshold, at which point the FTL flags the block as bad and migrates its data. This is why you can see individual bad blocks appear in an SSD's S.M.A.R.T. data without the drive failing: the spare pool is absorbing the damage. Most SSDs are also delivered with a hidden over-provisioned margin of a few percent beyond their advertised capacity. That margin is the raw material the FTL uses for garbage collection, wear leveling, and bad block retirement. Drives with no over-provisioning, such as compact flash chips soldered directly into a phone without a separate spare area, degrade noticeably faster under heavy write loads for exactly this reason.</p>
+
+        <h2>Why Your SSD Is Rated in TBW, Not Years</h2>
+
+        <p>Manufacturers rate endurance in terabytes written (TBW) rather than years because wear is a function of write volume, not time. A drive that sits idle for a decade and barely gets written to will still be healthy; a drive that writes the same 500 GB every day for a year consumes a meaningful fraction of its budget. Consumer SSDs are typically rated for somewhere between 150 TBW (entry-level 256 GB) and 2,000 TBW (high-end 4 TB) and are designed on the assumption that a typical home user will write a few dozens of gigabytes per day. If you run a write-heavy workload, such as video editing scratch space, a database, or a large download cache, you should look at TBW directly rather than expecting the drive to outlast a generic desktop. Enterprise drives, with larger over-provisioning and more robust power-loss protection, are rated orders of magnitude higher and are priced accordingly.</p>
+
+        <h2>What This Means for You</h2>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p><strong>SSDs are engineered to outlast your warranty.</strong> If you see unusual random slowness or a drive that has suddenly stopped accepting writes, check the S.M.A.R.T. wear counters rather than assuming the drive is dying. A drive that has used 20% of its endurance after three years of normal use is operating well within its design envelope and can be expected to last years more.</p>
+        </div>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://computer.how stuff works.com/ssd-2.htm" target="_blank" rel="noopener">How Computer Storage Devices Work — NAND Flash</a>; <a href="https://semiconductor.samsung.com/solutions/technology/flash/" target="_blank" rel="noopener">Samsung Semiconductor — Understanding NAND Flash</a>; <a href="https://www.kingston.com/en/insights/ssd-technology" target="_blank" rel="noopener">Kingston Technology — SSD Technology Explained</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-ssds-work-and-why-they-fail-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
