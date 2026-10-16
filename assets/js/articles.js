@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "openai-anthropic-uk-binding-ai-rules-2026",
+    "title": "OpenAI and Anthropic Back Binding UK AI Law, Splitting From Rivals",
+    "excerpt": "OpenAI and Anthropic told a UK parliamentary committee on October 13 that voluntary AI safety pledges are no longer enough, urging new legal obligations for frontier models. Google DeepMind and Meta resisted a broad new law, exposing a rare split among the leading AI labs.",
+    "category": "tech",
+    "date": "2026-10-13",
+    "read": 4,
+    "art": "linear-gradient(135deg, #0a2820 0%, #0e3340 45%, #0a4050 100%)",
+    "img": "assets/images/08bbf7974a124f9804ba9d6ea506f111006ccee6840ceb03ad98725ea6374449.jpg"
+  },
+  {
     "slug": "cisco-secure-email-gateway-cve-2026-76519-kev",
     "title": "Cisco Secure Email Gateway Flaw CVE-2026-76519 Lets Attackers Run Root Code; CISA Adds It to KEV",
     "excerpt": "CVE-2026-76519 is a CVSS 9.8 path-traversal flaw in Cisco Secure Email Gateway's Advanced Malware Protection feature. An unauthenticated attacker can send a crafted email attachment to write arbitrary files and run commands as root. CISA added the flaw to its KEV catalog on October 14, 2026.",
