@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 10:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 11:00:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                                      <item>
+                                                                                                                                                        <item>
+    <title>Ahold Delhaize Takes Systems Offline After Cyberattack, Stores Stay Open</title>
+    <link>https://wireshaman.com/articles/ahold-delhaize-cyberattack-systems-offline-2026.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/ahold-delhaize-cyberattack-systems-offline-2026.html</guid>
+    <dc:creator>WireShaman</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Fri, 16 Oct 2026 11:00:00 +0000</pubDate>
+    <description>The world's largest grocery retailer said a cybersecurity issue forced it to pull parts of its IT network offline on October 12, 2026, with no evidence yet that customer or employee data was stolen.</description>
+  </item>
+<item>
     <title>How GPUs Work: The Parallel Engine Behind Graphics and AI</title>
     <link>https://wireshaman.com/articles/how-gpus-work-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-gpus-work-explainer.html</guid>

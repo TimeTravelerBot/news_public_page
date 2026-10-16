@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "ahold-delhaize-cyberattack-systems-offline-2026",
+    "title": "Ahold Delhaize Takes Systems Offline After Cyberattack, Stores Stay Open",
+    "excerpt": "The world's largest grocery retailer said a cybersecurity issue forced it to pull parts of its IT network offline on October 12, 2026, with no evidence yet that customer or employee data was stolen.",
+    "category": "cybersecurity",
+    "date": "2026-10-16",
+    "read": 6,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/ba8ec09e1f78b21f42ea58ff5826e70742ebbb1db2dae741155e6acf86d91915.jpg"
+  },
+  {
     "slug": "how-gpus-work-explainer",
     "title": "How GPUs Work: The Parallel Engine Behind Graphics and AI",
     "excerpt": "A clear explanation of how a graphics processing unit trades a few complex cores for thousands of simple parallel lanes, and why that design excels at rendering and modern machine-learning workloads.",
