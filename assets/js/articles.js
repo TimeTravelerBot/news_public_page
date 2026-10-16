@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "dirtyfrag-android-root-chain-v1-16",
+    "title": "DirtyFrag sharpens an Android root chain for locked Samsung and OnePlus phones",
+    "excerpt": "DirtyFrag v1.16 hardens a public CVE-2026-43284 Android root chain, fixing vendor anti-tamper crashes and expanding reliability across Samsung, Oppo and OnePlus devices.",
+    "category": "android-security",
+    "date": "2026-10-16",
+    "read": 7,
+    "art": "linear-gradient(135deg, #07150a 0%, #17451d 48%, #76b82a 100%)",
+    "img": "assets/images/55abc0a854f6bb8fbcc3f6ecb694dd26c55674375375f8d1631a2c78ec94dcd1.jpg"
+  },
+  {
     "slug": "how-mp3-audio-compression-works-explainer",
     "title": "How MP3 audio compression works",
     "excerpt": "MP3 shrinks audio roughly tenfold by working with how the human ear hears rather than how sound is recorded. This explainer breaks down psychoacoustics, masking, the Fourier transform, and why bitrate and quality trade off the way they do.",

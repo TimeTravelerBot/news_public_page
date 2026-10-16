@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 12:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 18:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                                                <item>
+                                                                                                                                                                  <item>
+    <title>DirtyFrag sharpens an Android root chain for locked Samsung and OnePlus phones</title>
+    <link>https://wireshaman.com/articles/dirtyfrag-android-root-chain-v1-16.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/dirtyfrag-android-root-chain-v1-16.html</guid>
+    <dc:creator>WireShaman Android Security Desk</dc:creator>
+    <category>Android Security</category>
+    <pubDate>Fri, 16 Oct 2026 18:30:00 +0000</pubDate>
+    <description>DirtyFrag v1.16 hardens a public CVE-2026-43284 Android root chain, fixing vendor anti-tamper crashes and expanding reliability across Samsung, Oppo and OnePlus devices.</description>
+  </item>
+<item>
     <title>How MP3 audio compression works</title>
     <link>https://wireshaman.com/articles/how-mp3-audio-compression-works-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-mp3-audio-compression-works-explainer.html</guid>
