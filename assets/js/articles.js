@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-virtual-memory-and-paging-work-explainer",
+    "title": "How Virtual Memory and Memory Paging Work: The Illusion That Lets a 32-Program Laptop Feel Like It Has Endless RAM",
+    "excerpt": "Every modern process believes it owns all of memory. Virtual memory and paging are the hardware and software machinery that make that illusion true.",
+    "category": "explainer",
+    "date": "2026-10-15",
+    "read": 10,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/db54782d8eb26dc25a7a79ad3775f1c32395e0faa3588caf3f1c41824b244a55.jpg"
+  },
+  {
     "slug": "how-webauthn-passkeys-work-explainer",
     "title": "How WebAuthn and Passkeys Actually Work: The Cryptography That Makes Phishing Obsolete",
     "excerpt": "WebAuthn passkeys look like magic login buttons, but they are a well-understood cryptographic protocol. This explainer breaks down public key credentials, attestation, challenge-based signatures, and the FIDO2 trust chain that lets your face or a hardware key sign you in without handing a phisher a password.",
