@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-tokenizers-work-in-llms-explainer",
+    "title": "How Tokenizers Work in Language Models",
+    "excerpt": "An evergreen explainer covering subword tokenization, byte-pair encoding, SentencePiece, and why the same text costs different tokens in different models.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/060a10c12955b44cbb0ee882457ca07cbdccc0d41d1e9f6aff8e8fa97622aa6c.jpg"
+  },
+  {
     "slug": "how-risc-v-instruction-sets-work-explainer",
     "title": "How RISC-V Instruction Sets Work",
     "excerpt": "RISC-V is an open standard for processor design. Here is how its instruction sets are built, how cores are made from them, and why the ecosystem is spreading.",

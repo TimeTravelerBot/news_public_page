@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-tokenizers-work-in-llms-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Tokenizers Work in Language Models — WireShaman</title>
+  <meta name="description" content="An evergreen explainer covering subword tokenization, byte-pair encoding, SentencePiece, and why the same text costs different tokens in different models.">
+  <meta name="author" content="WireShaman Desk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-tokenizers-work-in-llms-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-tokenizers-work-in-llms-explainer.html">
+  <meta property="og:title" content="How Tokenizers Work in Language Models">
+  <meta property="og:description" content="An evergreen explainer covering subword tokenization, byte-pair encoding, SentencePiece, and why the same text costs different tokens in different models.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/060a10c12955b44cbb0ee882457ca07cbdccc0d41d1e9f6aff8e8fa97622aa6c.jpg">
+  <meta property="og:image:alt" content="Editorial illustration of a line of text dissolving into colorful subword token tiles that rearrange into a grid.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How Tokenizers Work in Language Models">
+  <meta name="twitter:description" content="An evergreen explainer covering subword tokenization, byte-pair encoding, SentencePiece, and why the same text costs different tokens in different models.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/060a10c12955b44cbb0ee882457ca07cbdccc0d41d1e9f6aff8e8fa97622aa6c.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How Tokenizers Work in Language Models","description":"An evergreen explainer covering subword tokenization, byte-pair encoding, SentencePiece, and why the same text costs different tokens in different models.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-tokenizers-work-in-llms-explainer.html","datePublished":"2026-10-16","image":"https://wireshaman.com/assets/images/060a10c12955b44cbb0ee882457ca07cbdccc0d41d1e9f6aff8e8fa97622aa6c.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/android-security.html">Android Sec</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/060a10c12955b44cbb0ee882457ca07cbdccc0d41d1e9f6aff8e8fa97622aa6c.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How Tokenizers Work in Language Models</h1>
+      <p class="article__sub">Language models never see words. They see tokens, the small units a tokenizer splits text into. Understanding byte-pair encoding, SentencePiece, and vocabulary size explains why the same sentence costs different bills on different models.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>WireShaman Desk</b>
+        <time datetime="2026-10-16">Oct 16, 2026</time> · 7 min read
+      </div>
+      <div class="prose">
+        <h2>Models do not read words</h2>
+
+        <p class="dropcap">When you type a sentence into a large language model, the first thing that happens is not intelligence. It is chopping. The text is passed through a program called a <strong>tokenizer</strong>, which breaks it into small units called tokens. The model never processes the words you see on screen. It processes a sequence of numbers, one number per token, and everything it knows is compressed into that mapping between text and numbers. If the tokenizer is bad, the model has to work harder on every single input. If the tokenizer is good, ordinary English becomes a compact language the model can learn easily.</p>
+
+        <p>This matters for money and memory in the same way. Pricing for model APIs is quoted per token, so the tokenizer determines your bill. Model context is measured in tokens, so the tokenizer determines how much fits in a window. Even the model's internal arithmetic runs over token positions. The tokenizer is therefore not a minor preprocessing detail. It is one of the foundational architectural choices in a language model, and understanding how tokenizers are built explains a lot about why different models behave differently.</p>
+
+        <h2>Why not just use words?</h2>
+
+        <p>The obvious tokenizer splits on whitespace, one word per token. That fails fast. Even a modest English corpus contains tens of thousands of unique words, and the real problem is words you have never seen: names, misspellings, code identifiers, and rare compounds. A model that has never seen the token <strong>unforgettably</strong> cannot give it a meaningful representation, so a pure word-based vocabulary is hopelessly leaky around the edges. The solution used by essentially all modern models is <strong>subword tokenization</strong>: store common words as single tokens, but let rare words decompose into smaller pieces the model has seen before.</p>
+
+        <p>This decomposition also gives the model useful structure. The word <strong>unforgettably</strong> splits into familiar parts: <strong>un</strong>, <strong>forget</strong>, <strong>tabl</strong>, <strong>ly</strong>. Each piece carries real semantic weight, and a model that sees them can guess the meaning of a new word from its pieces. For languages with very rich morphology, where a single word can encode person, tense, case, and possession at once, subword splitting is not just a fallback for rare words. It is the main way the vocabulary stays manageable at all.</p>
+
+        <h2>Byte-pair encoding: the workhorse algorithm</h2>
+
+        <p>The dominant way to build subword vocabularies is <strong>byte-pair encoding</strong>, or BPE. It starts from a tiny vocabulary, often the individual characters of a text or, increasingly, the individual bytes so nothing can ever be unencodable. Then it repeatedly looks at all adjacent symbol pairs in the training text and merges the pair that occurs most often, turning it into a single new symbol. After the first round of merging you have two-character chunks. After many more rounds you have common words like <strong>the</strong>, <strong>ing</strong>, and <strong>http</strong> living in the vocabulary as single symbols, while rare material still decomposes into pieces.</p>
+
+        <p>The number of merge rounds is the knob that sets the vocabulary size. A GPT-style tokenizer with roughly 100,000 tokens has performed enough merges that the vast majority of ordinary English text compresses to about one token per 1.5 words, while still guaranteeing that every input, including text in any script or a stream of symbols, maps to some valid sequence. Training on a corpus tuned for the target use case is what makes a tokenizer good for its job. A tokenizer trained mostly on web text encodes English compactly but code and mathematics less well, which is one reason model providers have increasingly retokenized their models as their target use cases broadened.</p>
+
+        <h2>SentencePiece and the BERT family</h2>
+
+        <p>A second mainstream family is represented by <strong>SentencePiece</strong>, the library behind the tokenizers used by BERT and its descendants. Where classic BPE assumes you are handed pre-split text, SentencePiece was designed to learn tokenization from raw text without trusting any upstream space-splitting step. It inserts a special separator, the <strong>invisible word-piece</strong> marker, between every character so the model must learn word boundaries itself, and then runs a merge-based algorithm, either BPE or its nearest-neighbor variant <strong>unigram</strong>. The unigram mode is different in kind: instead of greedily merging frequent pairs, it holds a large candidate vocabulary and probabilistically prunes it down, keeping the split that maximizes overall text likelihood.</p>
+
+        <p>This design made SentencePiece the natural choice for multilingual work. Space-delimited text is a property of Latin letters, not of Chinese, Japanese, or Thai, so a tokenizer that assumes spaces is structurally biased toward European languages. By learning boundaries from raw characters, SentencePiece-based tokenizers handle all scripts on equal footing, and unigram pruning tends to produce vocabulary entries that are statistically clean. If you have ever wondered why a model handles a low-resource language surprisingly well, the tokenizer's choice is at least part of the answer.</p>
+
+        <h2>Why tokens differ between models</h2>
+
+        <p>There is no universal token format. Every model family ships its own vocabulary, trained on its own corpus and tuned to its own size target, so the same sentence can produce different token counts under different models. A short phrase might be nine tokens in one model and twelve in another, and that difference scales up over a long document. This is why prompt engineers measure token budgets in the specific model they are calling, and why a model upgrade that silently changes the tokenizer can shift costs for every stored prompt. Special tokens, the reserved slots for things like the start-of-sequence marker or the assistant role, also differ between model families, which is one reason model adapters have to be learned rather than translated.</p>
+
+        <p>Modern tokenizers also have to do a job that goes beyond text. Multimodal models reserve token positions for images, audio, and other modalities, often compressing a visual frame into a fixed number of patch tokens. As these models absorb more of the workaday interface, the token has quietly stopped meaning a piece of a word. It now means a unit of billing, context, and computation, and the tokenizer is the gatekeeper that decides what gets counted.</p>
+
+        <div class="callout">
+          <span class="eyebrow">What this means for you</span>
+          <p>Token limits and token prices are not arbitrary. They reflect a specific vocabulary trained for a specific purpose. If you are managing costs or context windows, always count tokens with the tokenizer of the model you are actually calling, not an offline approximation. If you are building a model or evaluating one for an unusual language or domain, inspect what its tokenizer does with your real data before trusting any claim about how well that domain will be served.</p>
+        </div>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://huggingface.co/docs/transformers/tokenizer_summary" target="_blank" rel="noopener">Hugging Face - How to train your own tokenizer</a>; <a href="https://platform.openai.com/docs/guides/tokens" target="_blank" rel="noopener">OpenAI - GPT-4 tokenizer documentation</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-tokenizers-work-in-llms-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
