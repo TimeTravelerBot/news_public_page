@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                                          <item>
+                                                                                                                                                            <item>
+    <title>How Branch Prediction and Speculative Execution Work, and Why They Enable Spectre and Meltdown</title>
+    <link>https://wireshaman.com/articles/how-branch-prediction-and-speculative-execution-work-explainer.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/how-branch-prediction-and-speculative-execution-work-explainer.html</guid>
+    <dc:creator>WireShaman Staff</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Fri, 16 Oct 2026 12:30:00 +0000</pubDate>
+    <description>Modern CPUs run many instructions at once by guessing the next path. Those guesses are what make Spectre and Meltdown possible.</description>
+  </item>
+<item>
     <title>How SSDs Work — and Why They Eventually Fail</title>
     <link>https://wireshaman.com/articles/how-ssds-work-and-why-they-fail-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-ssds-work-and-why-they-fail-explainer.html</guid>

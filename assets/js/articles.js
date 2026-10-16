@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-branch-prediction-and-speculative-execution-work-explainer",
+    "title": "How Branch Prediction and Speculative Execution Work, and Why They Enable Spectre and Meltdown",
+    "excerpt": "Modern CPUs run many instructions at once by guessing the next path. Those guesses are what make Spectre and Meltdown possible.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 8,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/fbd747d1c17693c6b9dcfdbf4736d7e4ed535401b1bbe587a190db1528b5349a.jpg"
+  },
+  {
     "slug": "how-ssds-work-and-why-they-fail-explainer",
     "title": "How SSDs Work — and Why They Eventually Fail",
     "excerpt": "An evergreen explainer covering NAND flash cells, the FTL, garbage collection, wear leveling, and why SSDs run out of life.",
