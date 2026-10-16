@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-gpus-work-explainer",
+    "title": "How GPUs Work: The Parallel Engine Behind Graphics and AI",
+    "excerpt": "A clear explanation of how a graphics processing unit trades a few complex cores for thousands of simple parallel lanes, and why that design excels at rendering and modern machine-learning workloads.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 8,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/e128b884b62eeff678dd695ac17bf0f519ece4b9f2273a26291f8b5c2e27fd93.jpg"
+  },
+  {
     "slug": "how-cpu-caches-work-explainer",
     "title": "How CPU Caches Work",
     "excerpt": "An evergreen explainer covering L1, L2, and L3 caches, cache lines, hit rates, and why memory hierarchy is the foundation of modern CPU performance.",
