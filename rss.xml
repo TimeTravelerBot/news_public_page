@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2026 07:10:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 07:35:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                          <item>
+                                                                                                                                            <item>
+    <title>Cisco Secure Email Gateway Flaw CVE-2026-76519 Lets Attackers Run Root Code; CISA Adds It to KEV</title>
+    <link>https://wireshaman.com/articles/cisco-secure-email-gateway-cve-2026-76519-kev.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/cisco-secure-email-gateway-cve-2026-76519-kev.html</guid>
+    <dc:creator>Wireshaman editorial team</dc:creator>
+    <category>Cybersecurity</category>
+    <pubDate>Fri, 16 Oct 2026 07:35:00 +0000</pubDate>
+    <description>CVE-2026-76519 is a CVSS 9.8 path-traversal flaw in Cisco Secure Email Gateway's Advanced Malware Protection feature. An unauthenticated attacker can send a crafted email attachment to write arbitrary files and run commands as root. CISA added the flaw to its KEV catalog on October 14, 2026.</description>
+  </item>
+<item>
     <title>How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing</title>
     <link>https://wireshaman.com/articles/how-tcp-congestion-control-works-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-tcp-congestion-control-works-explainer.html</guid>

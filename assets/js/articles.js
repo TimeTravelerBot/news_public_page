@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "cisco-secure-email-gateway-cve-2026-76519-kev",
+    "title": "Cisco Secure Email Gateway Flaw CVE-2026-76519 Lets Attackers Run Root Code; CISA Adds It to KEV",
+    "excerpt": "CVE-2026-76519 is a CVSS 9.8 path-traversal flaw in Cisco Secure Email Gateway's Advanced Malware Protection feature. An unauthenticated attacker can send a crafted email attachment to write arbitrary files and run commands as root. CISA added the flaw to its KEV catalog on October 14, 2026.",
+    "category": "cybersecurity",
+    "date": "2026-10-16",
+    "read": 5,
+    "art": "linear-gradient(135deg, #06181f 0%, #0e3a40 45%, #7c1aff 100%)",
+    "img": "assets/images/e52fe2a7d8957f8d279157a07949d27fdc65200d088657cbbc238f130625be59.jpg"
+  },
+  {
     "slug": "how-tcp-congestion-control-works-explainer",
     "title": "How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing",
     "excerpt": "Every download, video call, and file transfer on the planet passes through TCP's congestion control. This explainer covers slow start, AIMD, and modern CUBIC and BBR algorithms.",
