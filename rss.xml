@@ -9,7 +9,16 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 16 Oct 2026 12:30:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                                              <item>
+                                                                                                                                                                <item>
+    <title>How MP3 audio compression works</title>
+    <link>https://wireshaman.com/articles/how-mp3-audio-compression-works-explainer.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/how-mp3-audio-compression-works-explainer.html</guid>
+    <dc:creator>WireShaman Staff</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Fri, 16 Oct 2026 12:30:00 +0000</pubDate>
+    <description>MP3 shrinks audio roughly tenfold by working with how the human ear hears rather than how sound is recorded. This explainer breaks down psychoacoustics, masking, the Fourier transform, and why bitrate and quality trade off the way they do.</description>
+  </item>
+<item>
     <title>Intel and Broadcom CEOs warn capital is becoming AI's biggest bottleneck</title>
     <link>https://wireshaman.com/articles/intel-broadcom-ceos-capital-crunch-ai-bottleneck-2026.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/intel-broadcom-ceos-capital-crunch-ai-bottleneck-2026.html</guid>

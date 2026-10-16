@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-mp3-audio-compression-works-explainer",
+    "title": "How MP3 audio compression works",
+    "excerpt": "MP3 shrinks audio roughly tenfold by working with how the human ear hears rather than how sound is recorded. This explainer breaks down psychoacoustics, masking, the Fourier transform, and why bitrate and quality trade off the way they do.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 7,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/cec970bf6862425c8b406ec7e5942cb03ddd5cf023f38eb44c27a427d0c2f1eb.jpg"
+  },
+  {
     "slug": "intel-broadcom-ceos-capital-crunch-ai-bottleneck-2026",
     "title": "Intel and Broadcom CEOs warn capital is becoming AI's biggest bottleneck",
     "excerpt": "At the DBS Asia Future Forward Conference in Singapore, Intel CEO Lip-Bu Tan and Broadcom CEO Hock Tan both pointed to financing costs and ROI pressure as the primary constraint on AI infrastructure growth, ahead of chip and power shortages.",
