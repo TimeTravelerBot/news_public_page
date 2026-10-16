@@ -31,6 +31,16 @@ window.CS.CATEGORIES = [
 /* ===== ARTICLE DATA — START ===== */
 window.CS.ARTICLES = [
   {
+    "slug": "how-tcp-congestion-control-works-explainer",
+    "title": "How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing",
+    "excerpt": "Every download, video call, and file transfer on the planet passes through TCP's congestion control. This explainer covers slow start, AIMD, and modern CUBIC and BBR algorithms.",
+    "category": "explainer",
+    "date": "2026-10-16",
+    "read": 10,
+    "art": "linear-gradient(135deg, #0f0c1e 0%, #2a2152 45%, #7c5cff 100%)",
+    "img": "assets/images/a15d5b61f94815343c2b204f3a4fb5dc5e3df66e52d363291f22d2475eaec1a4.jpg"
+  },
+  {
     "slug": "how-virtual-memory-and-paging-work-explainer",
     "title": "How Virtual Memory and Memory Paging Work: The Illusion That Lets a 32-Program Laptop Feel Like It Has Endless RAM",
     "excerpt": "Every modern process believes it owns all of memory. Virtual memory and paging are the hardware and software machinery that make that illusion true.",

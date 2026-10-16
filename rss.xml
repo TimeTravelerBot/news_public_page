@@ -7,9 +7,18 @@
     <link>https://wireshaman.com/</link>
     <description>Cybersecurity and technology intelligence: what's actually breaking, how it works, and what to do about it.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 21:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 07:10:00 +0000</lastBuildDate>
     <atom:link href="https://wireshaman.com/rss.xml" rel="self" type="application/rss+xml"/>
-                                                                                                                                        <item>
+                                                                                                                                          <item>
+    <title>How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing</title>
+    <link>https://wireshaman.com/articles/how-tcp-congestion-control-works-explainer.html</link>
+    <guid isPermaLink="true">https://wireshaman.com/articles/how-tcp-congestion-control-works-explainer.html</guid>
+    <dc:creator>Wireshaman editorial team</dc:creator>
+    <category>Explainer</category>
+    <pubDate>Fri, 16 Oct 2026 07:10:00 +0000</pubDate>
+    <description>Every download, video call, and file transfer on the planet passes through TCP's congestion control. This explainer covers slow start, AIMD, and modern CUBIC and BBR algorithms.</description>
+  </item>
+<item>
     <title>How Virtual Memory and Memory Paging Work: The Illusion That Lets a 32-Program Laptop Feel Like It Has Endless RAM</title>
     <link>https://wireshaman.com/articles/how-virtual-memory-and-paging-work-explainer.html</link>
     <guid isPermaLink="true">https://wireshaman.com/articles/how-virtual-memory-and-paging-work-explainer.html</guid>

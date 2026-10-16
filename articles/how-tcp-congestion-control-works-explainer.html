@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- generated-by: wireshaman-publisher-v1 -->
+<html lang="en" data-page="news-how-tcp-congestion-control-works-explainer">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing — WireShaman</title>
+  <meta name="description" content="Every download, video call, and file transfer on the planet passes through TCP&#x27;s congestion control. This explainer covers slow start, AIMD, and modern CUBIC and BBR algorithms.">
+  <meta name="author" content="Wireshaman editorial team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wireshaman.com/articles/how-tcp-congestion-control-works-explainer.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WireShaman">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://wireshaman.com/articles/how-tcp-congestion-control-works-explainer.html">
+  <meta property="og:title" content="How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing">
+  <meta property="og:description" content="Every download, video call, and file transfer on the planet passes through TCP&#x27;s congestion control. This explainer covers slow start, AIMD, and modern CUBIC and BBR algorithms.">
+  <meta property="og:image" content="https://wireshaman.com/assets/images/a15d5b61f94815343c2b204f3a4fb5dc5e3df66e52d363291f22d2475eaec1a4.jpg">
+  <meta property="og:image:alt" content="Editorial illustration of a vast glowing highway of data packets flowing through a dark network corridor, one lane backing off at a crowded junction.">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="article:published_time" content="2026-10-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wireshaman">
+  <meta name="twitter:creator" content="@wireshaman">
+  <meta name="twitter:title" content="How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing">
+  <meta name="twitter:description" content="Every download, video call, and file transfer on the planet passes through TCP&#x27;s congestion control. This explainer covers slow start, AIMD, and modern CUBIC and BBR algorithms.">
+  <meta name="twitter:image" content="https://wireshaman.com/assets/images/a15d5b61f94815343c2b204f3a4fb5dc5e3df66e52d363291f22d2475eaec1a4.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing","description":"Every download, video call, and file transfer on the planet passes through TCP's congestion control. This explainer covers slow start, AIMD, and modern CUBIC and BBR algorithms.","author":{"@type":"Organization","name":"WireShaman"},"publisher":{"@type":"Organization","name":"WireShaman","url":"https://wireshaman.com"},"url":"https://wireshaman.com/articles/how-tcp-congestion-control-works-explainer.html","datePublished":"2026-10-16","image":"https://wireshaman.com/assets/images/a15d5b61f94815343c2b204f3a4fb5dc5e3df66e52d363291f22d2475eaec1a4.jpg","articleSection":"Explainer"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html" aria-label="WireShaman home">
+        <span class="brand__glyph" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <path d="M5 14c3-4.5 6.8-6.8 11-6.8S24 9.5 27 14c-3 4.5-6.8 6.8-11 6.8S8 18.5 5 14Z" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="m16 10 4 4-4 4-4-4 4-4Z" fill="var(--accent-2)"/>
+            <path d="M10.5 8 8 5.5M21.5 8 24 5.5M16 7.2V3.5M16 20.8v7.7M12.5 19.8v4H9v3M19.5 19.8v4H23v3" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="24" cy="5.5" r="1.2" fill="var(--accent-2)"/><circle cx="9" cy="27" r="1.2" fill="var(--accent-2)"/><circle cx="16" cy="28.5" r="1.2" fill="var(--accent-2)"/><circle cx="23" cy="27" r="1.2" fill="var(--accent-2)"/>
+          </svg>
+        </span>
+        Wire<span class="brand__accent">Shaman</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../categories/cybersecurity.html">Cybersecurity</a>
+        <a href="../categories/android-security.html">Android Sec</a>
+        <a href="../categories/tech.html">AI &amp; Tech</a>
+        <a href="../categories/hardware.html">Hardware</a>
+        <a href="../categories/explainer.html">Explainers</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container article">
+      <a class="back" href="../categories/explainer.html"><span>&larr;</span> Back to Explainer</a>
+      <section class="article__hero" aria-hidden="true">
+        <img src="../assets/images/a15d5b61f94815343c2b204f3a4fb5dc5e3df66e52d363291f22d2475eaec1a4.jpg" width="1024" height="1024" alt="" loading="eager" fetchpriority="high">
+      </section>
+      <span class="eyebrow">Explainer</span>
+      <h1 class="article__title">How TCP Congestion Control Works: The Invisible Traffic Law That Keeps the Internet From Collapsing</h1>
+      <p class="article__sub">Slow start, AIMD, CUBIC, and BBR are the feedback rules that turn a shared network of senders into one that does not collapse. Here is how the sender-side probe-and-back-off loop works.</p>
+      <div class="article__meta">
+        <span class="tag tag--explainer">Explainer</span>
+        <b>Wireshaman editorial team</b>
+        <time datetime="2026-10-16">Oct 16, 2026</time> · 10 min read
+      </div>
+      <div class="prose">
+        <p class="dropcap">Every video call, file download, and website you have opened this month moved through a mechanism most people never think about. The internet is a shared road network, and if a single sender pushed data as fast as it could, it would flood every junction along the way. TCP's <strong>congestion control</strong> is the invisible traffic law that prevents exactly that: the sender itself constantly probes how much the path can carry, backs off when it hits the limit, and re-expands when the network has room. It is the reason a billion simultaneous flows can share the same routers without collapsing.</p>
+
+        <h2>Congestion control is not flow control</h2>
+
+        <p>The first thing to separate is <strong>flow control</strong> versus <strong>congestion control</strong>. Flow control protects the <em>receiver</em>: the destination advertises a receive window (rwnd), and the sender never puts more unacknowledged data in flight than the receiver can absorb. Congestion control protects the <em>network</em>: the sender maintains its own congestion window (cwnd) based on what the path can carry. The effective send window is the smaller of the two. Congestion is an emergent, network-wide condition, and TCP's design decision is that the senders, not the routers, should cooperate to avoid it.</p>
+
+        <p>The stakes are concrete. In 1986, Vint Cerf and Bob Kahn showed that under the naive policy of every sender retrying at full rate after a drop, the network enters <strong>congestion collapse</strong>: nearly every packet is lost, nothing gets through, and throughput falls toward zero even though link capacity is enormous. Congestion control is what keeps the internet above that collapse point.</p>
+
+        <h2>Slow start: an exponential ramp-up</h2>
+
+        <p>A brand-new TCP connection has no idea what the path can support. Rather than instantly sending as fast as allowed, it starts with a small congestion window and grows it fast. Modern implementations begin with cwnd of about ten segments; each arriving acknowledgment increases cwnd by one segment, which means it effectively <strong>doubles every round-trip</strong>. Ten segments become twenty, forty, eighty in four RTTs. The name is misleading: slow start is actually a rapid ramp, just slower than slamming on the gas immediately. It runs until cwnd reaches a threshold called <strong>ssthresh</strong> or until a sign of congestion appears. Latency matters here: on a 200 ms satellite path, the same ramp takes four times as long as on a 50 ms fiber link, which is why low latency and high bandwidth are different things.</p>
+
+        <h2>Congestion avoidance: the additive-increase crawl</h2>
+
+        <p>Once cwnd crosses ssthresh, TCP assumes it is already near the path's capacity and slows its growth: add roughly one segment per round-trip, linearly. This gentle, continuous probe is the classic <strong>congestion avoidance</strong> phase. The combined behavior is known as <strong>AIMD</strong> - additive increase, multiplicative decrease. Growth is slow and steady; when loss appears, the window shrinks aggressively. Repeated cycles of linear climb and sudden shrinkage trace the well-known <strong>sawtooth</strong> pattern on a graph of cwnd over time, the visual signature of a TCP flow continuously testing the edge of available capacity.</p>
+
+        <h2>Detecting loss without waiting for a timeout</h2>
+
+        <p>How does the sender know something is wrong? Three duplicate ACKs are the classic signal. If one packet drops, the data behind it keeps flowing; the receiver, unable to acknowledge out-of-order data in-order, re-sends the ACK for the missing segment. Three of those duplicate ACKs tell the sender a loss has occurred while the connection is still healthy - so TCP performs <strong>fast retransmit</strong>: it resends the lost segment immediately instead of waiting for its retransmission timer. In Reno-style <strong>fast recovery</strong>, ssthresh is halved, cwnd is cut to ssthresh plus three segments, and transfer continues. A full <strong>retransmission timeout</strong> is treated as far worse evidence: Tahoe-era TCP drops cwnd back to one segment and restarts slow start entirely. That is why timeouts are much more damaging to throughput than duplicate-ACK losses. The retransmit timer itself is derived from measured round-trip times using an average plus a standard-deviation margin, so a few normal jittery RTTs do not trigger a timeout.</p>
+
+        <h2>Beyond the sawtooth: CUBIC and BBR</h2>
+
+        <p>Classic AIMD was tuned for the 1990s. <strong>CUBIC</strong>, the default in modern Linux, keeps the same phase structure but replaces the linear growth with a cubic function of elapsed time since the last congestion event. Growth is steepest in the middle of the interval and flattens as it approaches the previous peak, producing a smoother curve and better behavior on high-capacity links. <strong>BBR</strong>, deployed by Google, goes further by changing what to measure. Instead of waiting for losses, it continuously estimates the bottleneck bandwidth and minimum round-trip time, and paces data at their product - the maximum sustainable throughput without filling buffers. On high bandwidth-delay-product paths, such as long-haul and data-center links, BBR routinely delivers several times the throughput of loss-based algorithms, because it stops treating a full buffer as the only signal worth listening to. Its side effect is real: buffer-friendly pacing can squeeze other traffic, so the exact mix of algorithms on a path shapes who gets what.</p>
+
+        <h2>What this means for you</h2>
+
+        <ul>
+          <li>Sender-side design: routers stay dumb; the hosts doing the sending carry the traffic-management intelligence.</li>
+          <li>Congestion is emergent: no single sender causes it, so no single sender can fully control it - the system only works because everyone backs off.</li>
+          <li>Loss is a signal, not a failure: the entire algorithm suite is built on reading drops and ACK patterns as information about capacity.</li>
+          <li>Latency and bandwidth differ: the slow-start ramp and BBR's minimum-RTT estimates exist precisely because path delay, not link speed, caps how fast a flow can grow.</li>
+          <li>Algorithm choice shapes fairness: CUBIC and BBR make the same physical network behave very differently for different users</li>
+        </ul>
+
+        <p>Nothing about a fast download is guaranteed by hardware. It is guaranteed by a set of simple feedback rules running in your operating system: probe fast, creep near the edge, halve on loss, restart on timeout. That loop, executed billions of times per second by every device on the planet, is what makes the shared internet behave like a machine instead of a free-for-all - and it is why the moment a path gets crowded, your transfer slows down before the network has to drop a single packet.</p>
+
+        <p class="source"><strong>Sources:</strong> <a href="https://www.mysimulator.uk/articles/tcp-congestion" target="_blank" rel="noopener">MySimulator: TCP Congestion Control - Slow Start, AIMD &amp; the Cwnd Sawtooth</a>; <a href="https://speedtesthq.com/guides/fundamentals/tcp-slow-start-congestion-control" target="_blank" rel="noopener">Speedtest HQ Guide: TCP Slow Start and Congestion Control Explained</a>; <a href="https://web.cs.wpi.edu/~rek/Undergrad_Nets/B05/TCP_Congestion_Control.pdf" target="_blank" rel="noopener">WPI Computer Networks course notes: TCP Congestion Control (Kurose &amp; Ross summary)</a>.</p>
+        <p class="source"><strong>Corrections:</strong> Report an error at <a href="mailto:corrections@wireshaman.com">corrections@wireshaman.com</a>.</p>
+      </div>
+      <div class="more" id="more">
+        <h2>More from the wire</h2>
+        <div class="more__cards" id="more-cards"></div>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/articles.js"></script>
+  <script>
+  (function () {
+    var CAT = {cybersecurity:"Security","android-security":"Android Sec",tech:"AI & Tech",hardware:"Hardware",explainer:"Explainer"};
+    var articles = (window.CS && window.CS.ARTICLES) || [];
+    var slug = "how-tcp-congestion-control-works-explainer";
+    var wrap = document.getElementById("more-cards");
+    var others = articles.filter(function (a) { return a.slug !== slug; }).slice(0, 3);
+    if (!wrap) return;
+    wrap.innerHTML = others.map(function (a) {
+      var img = a.img ? a.img.replace(/^\//, "") : "";
+      var artStyle = a.art ? "--art:" + a.art : "";
+      if (img) artStyle += ";background-image:url('../" + img + "');background-size:cover;background-position:center;";
+      return '<a class="card" href="./' + a.slug + '.html"><span class="card__art" style="' + artStyle + '"></span><span class="tag tag--' + a.category + '">' + (CAT[a.category] || a.category) + '</span><h3 class="card__title">' + a.title + '</h3><p class="card__excerpt">' + (a.excerpt || "") + '</p></a>';
+    }).join("");
+  })();
+  </script>
+</body>
+</html>
